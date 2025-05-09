@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from '../assets/logo.png'; // Adjust path based on your setup
+import { Link } from 'react-router-dom';
+import logo from '../assets/logo.png'; // Replace with your logo path
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,36 +12,40 @@ export default function Navbar() {
         <div className='flex justify-between items-center h-16'>
           {/* Left - Logo */}
           <div className='flex-shrink-0'>
-            <img src={logo} alt='Logo' className='h-8 w-auto' />
+            <Link to='/'>
+              <img src={logo} alt='Logo' className='h-8 w-auto' />
+            </Link>
           </div>
 
-          {/* Center - Nav links */}
+          {/* Center - Nav Links */}
           <div className='hidden md:flex space-x-6 text-gray-700 font-medium'>
-            <a href='#' className='hover:text-purple-600 transition'>
+            <Link to='/' className='hover:text-purple-600 transition'>
               Home
-            </a>
-            <a href='#' className='hover:text-purple-600 transition'>
+            </Link>
+            <Link to='/about' className='hover:text-purple-600 transition'>
               About Us
-            </a>
-            <a href='#' className='hover:text-purple-600 transition'>
+            </Link>
+            <Link to='/services' className='hover:text-purple-600 transition'>
               Services
-            </a>
-            <a href='#' className='hover:text-purple-600 transition'>
+            </Link>
+            <Link to='/events' className='hover:text-purple-600 transition'>
               Events
-            </a>
-            <a href='#' className='hover:text-purple-600 transition'>
+            </Link>
+            <Link to='/contact' className='hover:text-purple-600 transition'>
               Contact
-            </a>
+            </Link>
           </div>
 
-          {/* Right - Pitch Competition Button */}
+          {/* Right - Pitch Button */}
           <div className='hidden md:block'>
-            <button className='bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition'>
-              Pitch Competition
-            </button>
+            <Link to='/pitch'>
+              <button className='bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition'>
+                Pitch Competition
+              </button>
+            </Link>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile Menu Toggle */}
           <div className='md:hidden'>
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -82,24 +87,46 @@ export default function Navbar() {
               className='md:hidden bg-white shadow-md rounded-b-lg overflow-hidden'
             >
               <div className='px-4 py-4 space-y-4 text-center text-gray-700'>
-                <a href='#' className='block hover:text-purple-600'>
+                <Link
+                  to='/'
+                  className='block hover:text-purple-600'
+                  onClick={() => setIsOpen(false)}
+                >
                   Home
-                </a>
-                <a href='#' className='block hover:text-purple-600'>
+                </Link>
+                <Link
+                  to='/about'
+                  className='block hover:text-purple-600'
+                  onClick={() => setIsOpen(false)}
+                >
                   About Us
-                </a>
-                <a href='#' className='block hover:text-purple-600'>
+                </Link>
+                <Link
+                  to='/services'
+                  className='block hover:text-purple-600'
+                  onClick={() => setIsOpen(false)}
+                >
                   Services
-                </a>
-                <a href='#' className='block hover:text-purple-600'>
+                </Link>
+                <Link
+                  to='/events'
+                  className='block hover:text-purple-600'
+                  onClick={() => setIsOpen(false)}
+                >
                   Events
-                </a>
-                <a href='#' className='block hover:text-purple-600'>
+                </Link>
+                <Link
+                  to='/contact'
+                  className='block hover:text-purple-600'
+                  onClick={() => setIsOpen(false)}
+                >
                   Contact
-                </a>
-                <button className='w-full bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition'>
-                  Pitch Competition
-                </button>
+                </Link>
+                <Link to='/pitch' onClick={() => setIsOpen(false)}>
+                  <button className='w-full bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition'>
+                    Pitch Competition
+                  </button>
+                </Link>
               </div>
             </motion.div>
           )}
