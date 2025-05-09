@@ -2,3 +2,18 @@
     @tailwind components;
     @tailwind utilities;
 
+
+    body {
+  margin: 0;
+ font-family: 'Author', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ background-color: #080707;
+ /* padding: 0 3rem; */
+}
+
+@media screen and (max-width:940px) {
+    body {
+/* padding: 0px 16px; */
+    }
+  }

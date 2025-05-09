@@ -1,12 +1,12 @@
-
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
 
 function App() {
   return (
-    <div className="App">
-    <p className=" bg-orange-700">
-      Ifeoluwa
-    </p>
-    </div>
+    <>
+      <Navbar />
+      <Home />
+    </>
   );
 }
 
