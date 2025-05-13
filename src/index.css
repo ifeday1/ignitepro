@@ -1,6 +1,7 @@
     @tailwind base;
     @tailwind components;
     @tailwind utilities;
+    
 
 
     body {
@@ -8,7 +9,7 @@
  font-family: 'Author', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
- background-color: #080707;
+ background-color: #fbf9ff;
  /* padding: 0 3rem; */
 }
 

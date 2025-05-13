@@ -1,10 +1,18 @@
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import logo from '../assets/logo.png'; // Replace with your logo path
+import logo from '../assets/logo.png'; // Adjust the path as needed
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const navItems = [
+    { to: '/', label: 'Home' },
+    { to: '/about', label: 'About Us' },
+    { to: '/services', label: 'Services' },
+    { to: '/events', label: 'Events' },
+    { to: '/contact', label: 'Contact' },
+  ];
 
   return (
     <nav className='bg-white shadow-md fixed top-0 w-full z-50'>
@@ -12,40 +20,40 @@ export default function Navbar() {
         <div className='flex justify-between items-center h-16'>
           {/* Left - Logo */}
           <div className='flex-shrink-0'>
-            <Link to='/'>
+            <NavLink to='/'>
               <img src={logo} alt='Logo' className='h-8 w-auto' />
-            </Link>
+            </NavLink>
           </div>
 
-          {/* Center - Nav Links */}
+          {/* Center - Navigation (Desktop) */}
           <div className='hidden md:flex space-x-6 text-gray-700 font-medium'>
-            <Link to='/' className='hover:text-purple-600 transition'>
-              Home
-            </Link>
-            <Link to='/about' className='hover:text-purple-600 transition'>
-              About Us
-            </Link>
-            <Link to='/services' className='hover:text-purple-600 transition'>
-              Services
-            </Link>
-            <Link to='/events' className='hover:text-purple-600 transition'>
-              Events
-            </Link>
-            <Link to='/contact' className='hover:text-purple-600 transition'>
-              Contact
-            </Link>
+            {navItems.map(({ to, label }) => (
+              <NavLink
+                key={to}
+                to={to}
+                className={({ isActive }) =>
+                  `relative pb-1 transition ${
+                    isActive
+                      ? 'text-primary font-medium after:content-[""] after:absolute after:h-1 after:w-full after:bg-primary after:bottom-0 after:left-0'
+                      : 'text-gray-700 hover:text-primary'
+                  }`
+                }
+              >
+                {label}
+              </NavLink>
+            ))}
           </div>
 
-          {/* Right - Pitch Button */}
+          {/* Right - Pitch Button (Desktop) */}
           <div className='hidden md:block'>
-            <Link to='/pitch'>
-              <button className='bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition'>
+            <NavLink to='/pitch'>
+              <button className='bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary transition'>
                 Pitch Competition
               </button>
-            </Link>
+            </NavLink>
           </div>
 
-          {/* Mobile Menu Toggle */}
+          {/* Mobile Menu Button */}
           <div className='md:hidden'>
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -76,7 +84,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Dropdown Menu */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -87,46 +95,27 @@ export default function Navbar() {
               className='md:hidden bg-white shadow-md rounded-b-lg overflow-hidden'
             >
               <div className='px-4 py-4 space-y-4 text-center text-gray-700'>
-                <Link
-                  to='/'
-                  className='block hover:text-purple-600'
-                  onClick={() => setIsOpen(false)}
-                >
-                  Home
-                </Link>
-                <Link
-                  to='/about'
-                  className='block hover:text-purple-600'
-                  onClick={() => setIsOpen(false)}
-                >
-                  About Us
-                </Link>
-                <Link
-                  to='/services'
-                  className='block hover:text-purple-600'
-                  onClick={() => setIsOpen(false)}
-                >
-                  Services
-                </Link>
-                <Link
-                  to='/events'
-                  className='block hover:text-purple-600'
-                  onClick={() => setIsOpen(false)}
-                >
-                  Events
-                </Link>
-                <Link
-                  to='/contact'
-                  className='block hover:text-purple-600'
-                  onClick={() => setIsOpen(false)}
-                >
-                  Contact
-                </Link>
-                <Link to='/pitch' onClick={() => setIsOpen(false)}>
-                  <button className='w-full bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition'>
+                {navItems.map(({ to, label }) => (
+                  <NavLink
+                    key={to}
+                    to={to}
+                    onClick={() => setIsOpen(false)}
+                    className={({ isActive }) =>
+                      `block transition ${
+                        isActive
+                          ? 'text-primary font-semibold'
+                          : 'hover:text-primary'
+                      }`
+                    }
+                  >
+                    {label}
+                  </NavLink>
+                ))}
+                <NavLink to='/pitch' onClick={() => setIsOpen(false)}>
+                  <button className='w-full bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary transition'>
                     Pitch Competition
                   </button>
-                </Link>
+                </NavLink>
               </div>
             </motion.div>
           )}
