@@ -1,4 +1,4 @@
-import { useState, React } from 'react';
+import { React } from 'react';
 import Header from '../assets/header.png';
 import Intro from '../assets/intro.png';
 import Intro1 from '../assets/intro1.png';
@@ -6,28 +6,28 @@ import Intro2 from '../assets/intro2.png';
 import Who from '../assets/who.png';
 import Who1 from '../assets/who1.png';
 import Illustration from '../assets/Illustration.svg';
+import Pitchhome from '../assets/pitchhome.png';
 import { motion } from 'framer-motion';
 
-const imageVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.3,
-      duration: 0.5,
-      ease: 'easeOut',
-    },
-  }),
-};
-
 const textVariants = {
-  hidden: { opacity: 0, x: 30 },
+  hidden: { opacity: 0, y: 50 },
   visible: {
     opacity: 1,
-    x: 0,
-    transition: { duration: 0.6, ease: 'easeOut' },
+    y: 0,
+    transition: { duration: 0.8 },
   },
+};
+
+const imageVariants = {
+  hidden: { opacity: 0, x: 50 },
+  visible: (index) => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: index * 0.3,
+      duration: 0.8,
+    },
+  }),
 };
 
 const fadeInUp = {
@@ -48,7 +48,6 @@ const staggerContainer = {
   },
 };
 
-
 const fadeInLeft = {
   hidden: { opacity: 0, x: -40 },
   visible: {
@@ -67,10 +66,27 @@ const fadeInRight = {
   },
 };
 
-
-
 const Home = () => {
-  const [hovered, setHovered] = useState(false);
+  const testimonials = [
+    {
+      quote:
+        '“I am deeply grateful to IGNITE Pro Community for the life-changing grant that enabled me to pursue my trading career. Their support was instrumental in my success, and I am thankful for the opportunity. Their investment in me has paid off, and i am proud to be a testament to their impactful work. Thanks Team! ”',
+      name: 'William Michael',
+      role: 'William Michael',
+    },
+    {
+      quote:
+        '“We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence.”',
+      name: 'John Smith',
+      role: 'Marketing Director at XYZ Corp',
+    },
+    {
+      quote:
+        '“We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence.”',
+      name: 'John Smith',
+      role: 'Marketing Director at XYZ Corp',
+    },
+  ];
   return (
     <>
       <div className=' flex justify-center pt-10'>
@@ -136,16 +152,13 @@ const Home = () => {
         </div>
       </div>
 
-      <section
-        className='px-6 py-12  mx-auto bg-light mt-16 md:mt-24'
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-      >
+      <section className='px-6 py-12 mx-auto bg-light mt-16 md:mt-24'>
         <div className='grid md:grid-cols-2 gap-10 items-center'>
           {/* Text Section */}
           <motion.div
             initial='hidden'
-            animate={hovered ? 'visible' : 'hidden'}
+            whileInView='visible'
+            viewport={{ once: true, amount: 0.3 }}
             variants={textVariants}
             className='text-gray-700 text-xl leading-relaxed p-5 rounded-xl shadow mx-0 md:mx-32'
           >
@@ -158,6 +171,7 @@ const Home = () => {
               careers.
             </p>
           </motion.div>
+
           {/* Images Section */}
           <div className='space-y-6 flex flex-col items-center md:items-start px-0 md:px-32'>
             {[Intro, Intro1, Intro2].map((img, index) => (
@@ -165,7 +179,8 @@ const Home = () => {
                 key={index}
                 custom={index}
                 initial='hidden'
-                animate={hovered ? 'visible' : 'hidden'}
+                whileInView='visible'
+                viewport={{ once: true, amount: 0.2 }}
                 variants={imageVariants}
                 src={img}
                 alt={`IgnitePro image ${index + 1}`}
@@ -227,7 +242,7 @@ const Home = () => {
         </motion.div>
       </section>
 
-      <section className='bg-pink-100 rounded-3xl px-20 py-14 max-w-7xl mx-auto mt-10 '>
+      <section className='bg-pink-100 rounded-3xl px-7 md:px-20 py-14 max-w-7xl mx-auto mt-10 '>
         <div className='flex flex-col md:flex-row items-center justify-between gap-10'>
           {/* Text Content */}
           <motion.div
@@ -267,6 +282,89 @@ const Home = () => {
               className='w-[300px] md:w-[380px] max-w-full'
             />
           </motion.div>
+        </div>
+      </section>
+
+      <section className='px-6 py-16 max-w-7xl mx-auto'>
+        <div className='flex items-center justify-between mb-6'>
+          <motion.h2
+            initial='hidden'
+            whileInView='visible'
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className='text-white bg-primary px-4 py-2 rounded-md text-lg font-semibold w-fit'
+          >
+            PITCH COMPETITION
+          </motion.h2>
+
+          <motion.a
+            href='#'
+            initial='hidden'
+            whileInView='visible'
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className='text-primary font-semibold hover:underline text-sm'
+          >
+            VIEW MORE
+          </motion.a>
+        </div>
+
+        <motion.p
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className='text-gray-800 text-base leading-relaxed mb-10'
+        >
+          The Future Forward Pitch Competition is a central highlight of
+          Accelerate 2.0. It aims to identify and support innovative,
+          purpose-driven startups that have moved beyond the idea stage and
+          developed a Minimum Viable Product (MVP) with sustainable traction. We
+          are looking for ventures that address real national challenges across
+          sectors, from education to agriculture, hardware technology,
+          healthcare, and beyond.
+        </motion.p>
+
+        <motion.img
+          src={Pitchhome}
+          alt='Pitch Competition Winners'
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className='rounded-2xl w-full object-cover shadow-lg'
+        />
+      </section>
+
+      <section className='px-7 md:px-24 py-16 mx-auto bg-black'>
+        {/* Section Title */}
+        <h2 className='text-white bg-primary px-4 py-2 rounded-md text-lg font-medium w-fit mb-10'>
+          TESTIMONIALS
+        </h2>
+
+        {/* Testimonials Grid */}
+        <div className='grid md:grid-cols-3 gap-6'>
+          {testimonials.map((t, i) => (
+            <motion.div
+              key={i}
+              custom={i}
+              initial='hidden'
+              whileInView='visible'
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              className='bg-primary text-white p-6 rounded-xl relative'
+            >
+              {/* Speech bubble tail */}
+              <div className='absolute bottom-[-10px] left-6 w-4 h-4 bg-primary rotate-45'></div>
+
+              <p className='text-sm mb-4'>{t.quote}</p>
+
+              <div className='mt-4'>
+                <p className='text-primary font-semibold'>{t.name}</p>
+                <p className='text-white text-sm'>{t.role}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </section>
     </>

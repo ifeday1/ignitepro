@@ -1,49 +1,125 @@
-import React from 'react'
+import { React } from 'react';
+import Aboutimg from '../assets/aboutimg.png';
+import Aboutimg1 from '../assets/aboutimg1.png';
+import Aboutimg2 from '../assets/aboutimg2.png';
+import { motion } from 'framer-motion';
 
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
+};
+
+const staggerContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const fadeInLeft = {
+  hidden: { opacity: 0, x: -50 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.6, ease: 'easeOut' },
+  },
+};
+
+const fadeInRight = {
+  hidden: { opacity: 0, x: 50 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.6, ease: 'easeOut' },
+  },
+};
 const About = () => {
   return (
     <>
-      <div className="p-6 space-y-10">
-      {/* Hero Section */}
-      <section className="text-center">
-        <h1 className="text-4xl font-bold">Discover Your AI Career Path</h1>
-        <p className="text-lg text-gray-600 mt-4">Get personalized guidance, learning resources, and mentorship to thrive in the AI industry.</p>
-        <button className="mt-6 px-6 py-2 bg-blue-600 text-white rounded-xl shadow">Get Started</button>
+      <section
+        className='relative h-[70vh] bg-cover bg-center bg-no-repeat flex items-center justify-center rounded-xl mx-4 md:mx-20 mt-20 md:mt-32'
+        style={{ backgroundImage: `url(${Aboutimg})` }}
+      >
+        <motion.div
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true, amount: 0.6 }}
+          variants={fadeInUp}
+          className=' p-8 rounded-xl text-white text-center max-w-2xl mx-4'
+        >
+          <h2 className='text-3xl md:text-7xl font-bold mb-4'>ABOUT US</h2>
+        </motion.div>
       </section>
 
-      {/* Features Section */}
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-white p-4 rounded-2xl shadow">
-          <h2 className="font-semibold text-xl">Career Quiz</h2>
-          <p className="text-gray-500 mt-2">Find the perfect AI career path based on your skills and interests.</p>
-        </div>
-        <div className="bg-white p-4 rounded-2xl shadow">
-          <h2 className="font-semibold text-xl">Learning Paths</h2>
-          <p className="text-gray-500 mt-2">Access curated courses and roadmaps from beginner to expert.</p>
-        </div>
-        <div className="bg-white p-4 rounded-2xl shadow">
-          <h2 className="font-semibold text-xl">Mentorship</h2>
-          <p className="text-gray-500 mt-2">Connect with AI professionals for one-on-one guidance and advice.</p>
-        </div>
-      </section>
+      <section className='px-6 py-16 max-w-7xl mx-auto'>
+        <motion.div
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true }}
+          variants={staggerContainer}
+          className='grid md:grid-cols-2 gap-10 items-start'
+        >
+          {/* Text Section */}
+          <motion.div variants={fadeInUp}>
+            <h2 className='text-white bg-primary w-fit px-5 py-2 rounded-md text-xl font-medium mb-6'>
+              OUR VISION
+            </h2>
+            <p className='text-gray-800 text-lg leading-relaxed'>
+              To be a global community that ignites the passion and potential of
+              young people, cultivating positive transformation agents in
+              society.
+            </p>
+          </motion.div>
 
-      {/* Testimonials */}
-      <section className="bg-gray-100 p-6 rounded-2xl shadow">
-        <h2 className="text-2xl font-bold mb-4">What Our Users Say</h2>
-        <div className="space-y-4">
-          <blockquote className="text-gray-700">"This platform helped me pivot into AI with confidence. The mentorship program was a game changer." – Sarah T.</blockquote>
-          <blockquote className="text-gray-700">"I landed my first AI internship thanks to the career roadmap and resume builder!" – James K.</blockquote>
-        </div>
+          {/* Image Section */}
+          <div className='space-y-1 flex flex-col items-center md:items-start'>
+            <img
+              src={Aboutimg1}
+              alt='Placeholder 1'
+              className='rounded-lg shadow-lg w-90 '
+            />
+          </div>
+        </motion.div>
       </section>
+      
+      <section className='px-6  max-w-7xl mx-auto'>
+        <motion.div
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true, amount: 0.2 }}
+          className='grid grid-cols-1 md:grid-cols-2 gap-10 items-center'
+        >
+          {/* Image Section: Appears left on desktop, below text on mobile */}
+          <motion.div
+            variants={fadeInLeft}
+            className='order-2 md:order-1 flex justify-center md:justify-start'
+          >
+            <img
+              src={Aboutimg2}
+              alt='About IgnitePro'
+              className='rounded-lg shadow-lg w-90'
+            />
+          </motion.div>
 
-      {/* Call to Action */}
-      <section className="text-center">
-        <h2 className="text-2xl font-semibold">Ready to Launch Your AI Career?</h2>
-        <button className="mt-4 px-8 py-3 bg-green-600 text-white rounded-xl shadow">Join Now – It's Free</button>
+          {/* Text Section: Appears top on mobile, right on desktop */}
+          <motion.div variants={fadeInRight} className='order-1 md:order-2'>
+            <h2 className='text-white bg-primary w-fit px-5 py-2 rounded-md text-xl font-medium mb-6'>
+              OUR MISSION
+            </h2>
+            <p className='text-gray-800 text-lg leading-relaxed'>
+              Our mission is to equip youths with the necessary skills, mindset
+              and right values to make a positive impact on their communities
+              and society at large. As a youth-led organization, we collaborate
+              with young leaders to empower youths through various initiatives,
+              programs and resources.
+            </p>
+          </motion.div>
+        </motion.div>
       </section>
-    </div>
     </>
-  )
-}
+  );
+};
 
-export default About
+export default About;
