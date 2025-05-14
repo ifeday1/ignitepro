@@ -1,9 +1,76 @@
-import React from 'react';
+import { useState, React } from 'react';
 import Header from '../assets/header.png';
+import Intro from '../assets/intro.png';
+import Intro1 from '../assets/intro1.png';
+import Intro2 from '../assets/intro2.png';
+import Who from '../assets/who.png';
+import Who1 from '../assets/who1.png';
+import Illustration from '../assets/Illustration.svg';
 import { motion } from 'framer-motion';
+
+const imageVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.3,
+      duration: 0.5,
+      ease: 'easeOut',
+    },
+  }),
+};
+
+const textVariants = {
+  hidden: { opacity: 0, x: 30 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.6, ease: 'easeOut' },
+  },
+};
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: 'easeOut' },
+  },
+};
+
+const staggerContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+
+const fadeInLeft = {
+  hidden: { opacity: 0, x: -40 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.7, ease: 'easeOut' },
+  },
+};
+
+const fadeInRight = {
+  hidden: { opacity: 0, x: 40 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.7, ease: 'easeOut' },
+  },
+};
+
 
 
 const Home = () => {
+  const [hovered, setHovered] = useState(false);
   return (
     <>
       <div className=' flex justify-center pt-10'>
@@ -21,7 +88,8 @@ const Home = () => {
               <span className='block'>Purpose. </span>
             </p>
             <p className='text-lg text-black'>
-              Equipping tomorrow’s leaders with the skills, mindset, and<br></br>
+              Equipping tomorrow’s leaders with the skills, mindset, and
+              <br></br>
               opportunities to thrive in their careers and create purposeful
               impact.
             </p>
@@ -67,8 +135,142 @@ const Home = () => {
           </motion.div>
         </div>
       </div>
+
+      <section
+        className='px-6 py-12  mx-auto bg-light mt-16 md:mt-24'
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        <div className='grid md:grid-cols-2 gap-10 items-center'>
+          {/* Text Section */}
+          <motion.div
+            initial='hidden'
+            animate={hovered ? 'visible' : 'hidden'}
+            variants={textVariants}
+            className='text-gray-700 text-xl leading-relaxed p-5 rounded-xl shadow mx-0 md:mx-32'
+          >
+            <p>
+              Welcome to <strong>IgnitePro Community</strong>. We’re a
+              faith-based NGO dedicated to empowering students, graduates, and
+              young professionals to achieve success. Our dynamic community
+              provides a platform for youths to discover their passions, develop
+              essential personal and leadership skills, and build thriving
+              careers.
+            </p>
+          </motion.div>
+          {/* Images Section */}
+          <div className='space-y-6 flex flex-col items-center md:items-start px-0 md:px-32'>
+            {[Intro, Intro1, Intro2].map((img, index) => (
+              <motion.img
+                key={index}
+                custom={index}
+                initial='hidden'
+                animate={hovered ? 'visible' : 'hidden'}
+                variants={imageVariants}
+                src={img}
+                alt={`IgnitePro image ${index + 1}`}
+                className={`rounded-xl w-full max-w-sm ${
+                  index === 1 ? 'ml-8 md:ml-12' : ''
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className='px-6 py-16 max-w-7xl mx-auto'>
+        <motion.div
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true }}
+          variants={staggerContainer}
+          className='grid md:grid-cols-2 gap-10 items-start'
+        >
+          {/* Text Section */}
+          <motion.div variants={fadeInUp}>
+            <h2 className='text-white bg-primary w-fit px-5 py-2 rounded-md text-xl font-medium mb-6'>
+              WHO WE ARE AND WHAT WE DO
+            </h2>
+            <p className='text-gray-800 text-lg leading-relaxed mb-6'>
+              Ignite Pro Community is a one-stop hub designed to empower and
+              propel students and young professionals towards success. We're a
+              dynamic community where they can ignite their passions, develop
+              essential skills, and build a thriving career.
+            </p>
+            <p className='text-gray-800 text-lg leading-relaxed'>
+              We provide a supportive ecosystem filled with resources to help
+              individuals excel. Our programs offer valuable industry insights
+              and practical skills through sessions led by experienced
+              professionals. Additionally, we connect participants with seasoned
+              mentors who offer guidance, answer pressing questions, and provide
+              invaluable career advice. Beyond learning, we foster a vibrant
+              community where individuals can network with like-minded peers,
+              build meaningful relationships, and expand their professional
+              network.
+            </p>
+          </motion.div>
+
+          {/* Image Section */}
+          <div className='space-y-1 flex flex-col items-center md:items-start'>
+            {[Who, Who1].map((img, index) => (
+              <motion.img
+                key={index}
+                src={img}
+                alt={`Accelerate Camp ${index + 1}`}
+                variants={fadeInUp}
+                className={`rounded-xl w-56 md:w-6/12  max-w-md ${
+                  index === 0 ? 'ml-auto' : 'mr-auto'
+                }`}
+              />
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      <section className='bg-pink-100 rounded-3xl px-20 py-14 max-w-7xl mx-auto mt-10 '>
+        <div className='flex flex-col md:flex-row items-center justify-between gap-10'>
+          {/* Text Content */}
+          <motion.div
+            className='md:w-1/2'
+            initial='hidden'
+            whileInView='visible'
+            viewport={{ once: true }}
+            variants={fadeInLeft}
+          >
+            <h2 className='text-2xl md:text-3xl font-bold mb-4 text-black'>
+              Accelerate 2.0
+            </h2>
+            <p className='text-gray-800 text-lg leading-relaxed mb-6 '>
+              Accelerate 2.0 is the second edition of the annual boot camp
+              hosted by the Ignite Pro Community, created for young
+              professionals, graduates, and undergraduates. This year’s theme,
+              “Future Forward: Transforming Visions to Reality,” is designed to
+              inspire and empower young minds with the insights, tools, and
+              faith-based principles necessary to actualize their aspirations.
+            </p>
+            <button className='bg-primary hover:bg-primary text-white font-semibold px-6 py-2 rounded-xl transition duration-300'>
+              Register for Accelerate 2.0
+            </button>
+          </motion.div>
+
+          {/* Image / Illustration */}
+          <motion.div
+            className='md:w-1/2 flex justify-center'
+            initial='hidden'
+            whileInView='visible'
+            viewport={{ once: true }}
+            variants={fadeInRight}
+          >
+            <img
+              src={Illustration}
+              alt='Accelerate Illustration'
+              className='w-[300px] md:w-[380px] max-w-full'
+            />
+          </motion.div>
+        </div>
+      </section>
     </>
   );
-}
+};
 
-export default Home
+export default Home;
