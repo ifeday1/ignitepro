@@ -6,6 +6,7 @@ import Event2 from '../assets/event2.png';
 import Event3 from '../assets/event3.png';
 
 
+
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
@@ -142,6 +143,8 @@ const Events = () => {
           </div>
         </div>
       </section>
+
+  
     </>
   );
 };

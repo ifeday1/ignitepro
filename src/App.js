@@ -7,6 +7,7 @@ import Services from './pages/Services';
 import Events from './pages/Events';
 import Contact from './pages/Contact';
 import Pitch from './pages/Pitch';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         </Routes>
 
         <ScrollToTop />
+        <Footer />
       </Router>
     </>
   );

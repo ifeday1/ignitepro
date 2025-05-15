@@ -8,6 +8,20 @@ import Who1 from '../assets/who1.png';
 import Illustration from '../assets/Illustration.svg';
 import Pitchhome from '../assets/pitchhome.png';
 import { motion } from 'framer-motion';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination, Autoplay } from 'swiper/modules';
+// import Pic from '../assets/pic.svg';
+// import Pic1 from '../assets/pic1.svg';
+// import Pic2 from '../assets/pic2.svg';
+// import Pic3 from '../assets/pic3.svg';
+// import Pic4 from '../assets/pic4.svg';
+// import Pic5 from '../assets/pic5.svg';
+
+
+
+
 
 const textVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -66,25 +80,40 @@ const fadeInRight = {
   },
 };
 
+// const images = [Pic, Pic1, Pic2, Pic3, Pic4];
+
 const Home = () => {
   const testimonials = [
     {
       quote:
-        '“I am deeply grateful to IGNITE Pro Community for the life-changing grant that enabled me to pursue my trading career. Their support was instrumental in my success, and I am thankful for the opportunity. Their investment in me has paid off, and i am proud to be a testament to their impactful work. Thanks Team! ”',
-      name: 'William Michael',
+        'I am deeply grateful to IGNITE Pro Community for the life-changing grant that enabled me to pursue my trading career. Their support was instrumental in my success, and I am thankful for the opportunity. Their investment in me has paid off, and I am proud to be a testament to their impactful work .Thanks Team!',
+      name: 'John Smith',
       role: 'William Michael',
     },
+    // Add your 4 other testimonials here
     {
       quote:
-        '“We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence.”',
-      name: 'John Smith',
-      role: 'Marketing Director at XYZ Corp',
+        'With a deep gratitude and a heart felt appreciation to IGNITE PRO COMMUNITY for the life- changing business grant opportunity. Winning the grant was more than just a financial boost; it was a powerful vote of confidence in my vision, Business and potential. It was just a grant to the others, but  to me, it was a "transformative impact". Today,Mamachigos Beauty Touch is a step ahead, new skills has being added, new working equipment bought, more customers has been served and  lots more. Thank you!!! once more IGNITE pro community, your investment and impact in me is an unforgettable one!!.Thank you Team!!😊',
+      name: 'Jane Doe',
+      role: 'Osuagwu chigozirim Basillia',
     },
     {
       quote:
-        '“We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence.”',
-      name: 'John Smith',
-      role: 'Marketing Director at XYZ Corp',
+        'Reflecting on the events of that day, particularly  as an awardee for-the business grant, I would say it was truly remarkable and inspiring. It was a sign that our mission was relevant to current realities and that our story was being heard. In a world where social enterprises and nonprofits are expected to do more with limited resources, Ignite Pro Community displayed a firm belief that its time to shift the narrative and focus on what truly matters, and that is none other than changing lives.',
+      name: 'David Lee',
+      role: 'Confidence Jonathan Nwosu Founder, RAJ Foundation',
+    },
+    {
+      quote:
+        'Receiving the data analytics scholarship from Beylearning has been a truly life-changing opportunity. The program equipped me with practical, in-demand skills in data analysis, visualization, and critical thinking. I want to express my deepest gratitude to the instructors, whose expertise, patience, and support made complex concepts accessible and engaging. Their guidance played a key role in my growth and confidence in the field. I’m especially thankful to Beylearning for investing in me and creating an inclusive platform that bridges the gap between education and opportunity. As someone navigating the entry level of the analytics field, this experience has provided a strong foundation and a clearer sense of direction.',
+      name: 'Amaka Paul',
+      role: 'Aderogba Oluwapelumi',
+    },
+    {
+      quote:
+        'Positivus went above and beyond. Their guidance helped us scale fast.',
+      name: 'Grace N.',
+      role: 'Product Lead at GrowthLabs',
     },
   ];
   return (
@@ -337,36 +366,44 @@ const Home = () => {
       </section>
 
       <section className='px-7 md:px-24 py-16 mx-auto bg-black'>
-        {/* Section Title */}
         <h2 className='text-white bg-primary px-4 py-2 rounded-md text-lg font-medium w-fit mb-10'>
           TESTIMONIALS
         </h2>
 
-        {/* Testimonials Grid */}
-        <div className='grid md:grid-cols-3 gap-6'>
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={20}
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 4000, disableOnInteraction: false }}
+          breakpoints={{
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          modules={[Pagination, Autoplay]}
+        >
           {testimonials.map((t, i) => (
-            <motion.div
-              key={i}
-              custom={i}
-              initial='hidden'
-              whileInView='visible'
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              className='bg-primary text-white p-6 rounded-xl relative'
-            >
-              {/* Speech bubble tail */}
-              <div className='absolute bottom-[-10px] left-6 w-4 h-4 bg-primary rotate-45'></div>
-
-              <p className='text-sm mb-4'>{t.quote}</p>
-
-              <div className='mt-4'>
-                <p className='text-primary font-semibold'>{t.name}</p>
-                <p className='text-white text-sm'>{t.role}</p>
-              </div>
-            </motion.div>
+            <SwiperSlide key={i}>
+              <motion.div
+                custom={i}
+                initial='hidden'
+                whileInView='visible'
+                viewport={{ once: true }}
+                variants={fadeInUp}
+                className='bg-primary text-white p-6 rounded-xl relative h-full'
+              >
+                <div className='absolute bottom-[-10px] left-6 w-4 h-4 bg-primary rotate-45'></div>
+                <p className='text-sm mb-2'>{t.quote}</p>
+                <div className=''>
+                  <p className='text-primary font-semibold'>{t.name}</p>
+                  <p className='text-white text-sm'>{t.role}</p>
+                </div>
+              </motion.div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </section>
+
+          
     </>
   );
 };

@@ -4,6 +4,7 @@ import Aboutimg1 from '../assets/aboutimg1.png';
 import Aboutimg2 from '../assets/aboutimg2.png';
 import { motion } from 'framer-motion';
 
+
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
@@ -35,7 +36,40 @@ const fadeInRight = {
     transition: { duration: 0.6, ease: 'easeOut' },
   },
 };
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.2,
+      duration: 0.6,
+      ease: 'easeOut',
+    },
+  }),
+};
+
+
 const About = () => {
+
+
+const cultureData = [
+  {
+    title: 'Collaboration and Teamwork',
+    body: 'We believe that diverse perspectives foster innovation, and every voice is valued. Expect an organization where your ideas are not only heard but actively encouraged.',
+    bgColor: 'bg-green-500',
+  },
+  {
+    title: 'Continuous Learning and Growth',
+    body: 'We embrace a culture of continuous learning. Your professional and personal development growth is a priority, and we provide resources, initiatives and opportunities for skill development.',
+    bgColor: 'bg-orange',
+  },
+  {
+    title: 'Open Communication and Transparency',
+    body: 'Communication is at the heart of our culture. We believe in transparency and open dialogue at all levels.',
+    bgColor: 'bg-fuchsia-600',
+  },
+];
   return (
     <>
       <section
@@ -83,7 +117,7 @@ const About = () => {
           </div>
         </motion.div>
       </section>
-      
+
       <section className='px-6  max-w-7xl mx-auto'>
         <motion.div
           initial='hidden'
@@ -117,6 +151,35 @@ const About = () => {
             </p>
           </motion.div>
         </motion.div>
+      </section>
+
+      <section className='px-6 md:px-24 py-16 bg-light mt-20'>
+        {/* Section Title */}
+        <h2 className='text-white bg-primary px-4 py-2 rounded-md text-lg font-medium w-fit mb-10'>
+          COMMUNITY CULTURE
+        </h2>
+
+        {/* Cards */}
+        <div className='grid md:grid-cols-3 gap-10'>
+          {cultureData.map((item, i) => (
+            <motion.div
+              key={i}
+              custom={i}
+              initial='hidden'
+              whileInView='visible'
+              viewport={{ once: true }}
+              variants={cardVariants}
+              className='bg-white rounded-lg shadow-md overflow-hidden'
+            >
+              <div
+                className={`${item.bgColor} text-white px-6 py-6 font-medium text-2xl`}
+              >
+                {item.title}
+              </div>
+              <div className='px-6 py-4 text-black text-sm'>{item.body}</div>
+            </motion.div>
+          ))}
+        </div>
       </section>
     </>
   );

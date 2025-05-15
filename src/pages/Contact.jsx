@@ -2,6 +2,7 @@ import React from 'react';
 import Contacthead from '../assets/contacthead.png';
 import { motion } from 'framer-motion';
 
+
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
@@ -24,8 +25,8 @@ const Contact = () => {
           <h2 className='text-3xl md:text-7xl font-bold mb-4'>CONTACT</h2>
         </motion.div>
       </section>
+  
 
-    
     </>
   );
 };
