@@ -3,6 +3,9 @@ import Aboutimg from '../assets/aboutimg.png';
 import Aboutimg1 from '../assets/aboutimg1.png';
 import Aboutimg2 from '../assets/aboutimg2.png';
 import { motion } from 'framer-motion';
+import Act from '../assets/act.svg';
+import Act1 from '../assets/act1.png';
+import Act2 from '../assets/act2.svg';
 
 
 const fadeInUp = {
@@ -70,6 +73,25 @@ const cultureData = [
     bgColor: 'bg-fuchsia-600',
   },
 ];
+const events = [
+  {
+    title: 'Accelerate 1.0: Ten Times Better',
+    desc: 'Ignite Pro launched its maiden edition of Accelerate Bootcamp focusing on leadership and personal development. Activities included panels, business grants and more.',
+    image: Act,
+  },
+  {
+    title: 'Navigating Foreign Scholarship Opportunities',
+    desc: 'Former students shared tips on applying for scholarships abroad including document prep and standout strategies.',
+    image: Act1,
+  },
+  {
+    title: 'Unwind: Revisiting The Vision Board',
+    desc: 'The 2025 kickoff featured inspiring breakfasts with industry leaders and vision board sessions.',
+    image: Act2,
+  },
+];
+
+
   return (
     <>
       <section
@@ -181,6 +203,35 @@ const cultureData = [
           ))}
         </div>
       </section>
+
+      <section className='px-6 md:px-24 py-12 bg-[#FFF5F5]'>
+              <h2 className='text-xl font-semibold text-primary mb-4'>
+                PAST EVENTS AND ACTIVITIES
+              </h2>
+              <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
+                {events.map((event, index) => (
+                  <motion.div
+                    key={index}
+                    className='bg-white p-4 rounded-lg shadow-lg flex flex-col md:flex-row items-center'
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <img
+                      src={event.image}
+                      alt={event.title}
+                      className='w-40 h-40 object-cover rounded-full mb-4 md:mb-0 md:mr-6'
+                    />
+                    <div>
+                      <h3 className='text-primary font-bold text-lg'>
+                        {event.title}
+                      </h3>
+                      <p className='text-sm text-gray-700 mt-2'>{event.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </section>
     </>
   );
 };

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
@@ -14,7 +14,6 @@ const fadeInUp = {
     },
   }),
 };
-
 
 const Footer = () => {
   return (
@@ -115,8 +114,15 @@ const Footer = () => {
             className='flex-1'
           >
             <h3 className='font-semibold text-lg mb-4'>Contact us</h3>
-            <p className='text-sm mb-1'>Lagos, Nigeria</p>
-            <p className='text-sm'>+234 8109822728</p>
+            <p className='text-sm mb-1'>
+              Address: New Covenant Baptist Church, Behind Liberation Stadium,
+              Rumuomasi, off Faith Avenue, off Elekahia Road, P.M.B. 127, Port
+              Harcourt, Rivers State, Nigeria.
+            </p>
+            <br></br>
+            <p className='text-sm'>08132227108, 09069505198</p>
+            <br></br>
+            <p className='text-sm'>igniteprocommunity@gmail.com'</p>
           </motion.div>
         </div>
 
@@ -141,6 +147,6 @@ const Footer = () => {
       </footer>
     </>
   );
-}
+};
 
-export default Footer
+export default Footer;
