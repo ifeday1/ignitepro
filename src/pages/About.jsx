@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import Act from '../assets/act.svg';
 import Act1 from '../assets/act1.png';
 import Act2 from '../assets/act2.svg';
+import Executive from '../components/Executive';
 
 
 const fadeInUp = {
@@ -205,33 +206,35 @@ const events = [
       </section>
 
       <section className='px-6 md:px-24 py-12 bg-[#FFF5F5]'>
-              <h2 className='text-xl font-semibold text-primary mb-4'>
-                PAST EVENTS AND ACTIVITIES
-              </h2>
-              <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
-                {events.map((event, index) => (
-                  <motion.div
-                    key={index}
-                    className='bg-white p-4 rounded-lg shadow-lg flex flex-col md:flex-row items-center'
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    <img
-                      src={event.image}
-                      alt={event.title}
-                      className='w-40 h-40 object-cover rounded-full mb-4 md:mb-0 md:mr-6'
-                    />
-                    <div>
-                      <h3 className='text-primary font-bold text-lg'>
-                        {event.title}
-                      </h3>
-                      <p className='text-sm text-gray-700 mt-2'>{event.desc}</p>
-                    </div>
-                  </motion.div>
-                ))}
+        <h2 className='text-white bg-primary px-4 py-2 rounded-md text-lg font-medium w-fit mb-10'>
+          PAST EVENTS AND ACTIVITIES
+        </h2>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
+          {events.map((event, index) => (
+            <motion.div
+              key={index}
+              className='bg-white p-4 rounded-lg shadow-lg flex flex-col md:flex-row items-center'
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <img
+                src={event.image}
+                alt={event.title}
+                className='w-40 h-40 object-cover rounded-full mb-4 md:mb-0 md:mr-6'
+              />
+              <div>
+                <h3 className='text-primary font-bold text-lg'>
+                  {event.title}
+                </h3>
+                <p className='text-sm text-gray-700 mt-2'>{event.desc}</p>
               </div>
-            </section>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      <Executive/>
     </>
   );
 };
