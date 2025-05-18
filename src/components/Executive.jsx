@@ -19,77 +19,78 @@ const members = [
     role: 'Co-ordinator',
     image: Oloruntoba,
     linkedin: '#',
-    desc: 'Oloruntoba is a Lead Wells Engineer...',
+    desc: 'Oloruntoba Isehunwa is a Lead Wells Engineer at Renaissance Africa Energy (formerly Shell), driving performance improvement in wells execution. A Certified Trainer and IWCF-accredited Instructor, he teaches well engineering using advanced simulators and human factors principles. With years of experience in drilling, completions, and workovers across challenging terrains, he is passionate about mentoring young professionals. He lectures in Nigerian universities and has received awards for his contributions to human capital development. Toba is the Convener of IgnitePro Community, a youth development initiative focused on leadership and capacity building. He holds a Petroleum Engineering degree from the University of Ibadan and is married with two daughters.',
   },
   {
     name: 'Osase Igbinomwanhia',
     role: 'Project Manager',
     image: Osase,
     linkedin: '#',
-    desc: 'Osase is a Field Engineer working with...',
+    desc: 'Osase Igbinomwanhia is a Field Engineer working with an Indigenous Oil and Gas servicing company where she contributes to the successful planning and execution of well completion operations. With a B.Eng. in Chemical Engineering, she combines a solid technical foundation with hands-on industry experience in the oil and gas sector.Osase is passionate about well completions, continuous learning, and making a meaningful impact through her work. She is also deeply committed to helping others and approaches her career with integrity, collaboration, and a service-oriented mindset. As a Christian, her faith plays a guiding role in both her personal and professional life, shaping her values and approach to leadership.She currently works with Ignite Pro Community as the Project Manager.',
   },
   {
     name: 'Dorothy Douglas',
     role: 'Secretary',
     image: Dorothy,
     linkedin: '#',
-    desc: 'Dorothy is an experienced Executive Assistant...',
+    desc: 'I’m Dorothy Douglas, an experienced Executive Assistant with a passion for organization and creative problem-solving. Currently, I am the secretary for Ignite Pro Community, where I help streamline communication and foster collaboration. I’ve supported senior leaders by managing calendars, coordinating projects, and creating engaging digital content using tools like Trello, Canva, and Notion. With a B.Sc. in Microbiology and certifications in Salesforce, HSE, and web development, I bring a unique blend of analytical skills and creativity to my work. In my free time, I enjoy reading, journaling, and exploring new ideas.',
   },
   {
     name: 'Akinola Akinsola Peter',
     role: 'Communications Manager',
     image: Akinola,
-    desc: 'Akinola is a seasoned Human Resources professional...',
+    desc: 'Akinola Akinsola Peter is a seasoned Human Resources professional with over seven years of experience, transitioning from the finance sector into oil and gas. Starting as an HR Assistant at Capitalfield Investment Group, he now serves as a Human Capital Management Officer at NNPC Engineering andTechnicalCompanyLimited, having also worked with Nigeria Liquified Natural Gas. His expertise spans payroll, employee relations, talent management, and learning and development. Passionate about mentorship, he leads Winners Career BC and serves as Communication Manager for the Ignite Pro Community. Akinola is purpose-driven, committed to excellence, and dedicated to making lasting impact through his work and community engagements.',
   },
   {
     name: 'Kpeale Legbara',
     role: 'Sponsorship Team Lead',
     image: Kpeale,
     linkedin: '#',
-    desc: 'Kpeale is a nurse and self-taught developer...',
+    desc: 'Kpeale Legbara is a registered nurse and self-taught frontend developer passionate about creating responsive, accessible websites. With a degree in Nursing Sciences from Bowen University, she balances her medical career with a thriving presence in tech. Kpeale specializes in React.js, TypeScript, and Tailwind CSS, and mentors aspiring developers through engaging, beginner-friendly content. Her mission is to inspire and empower the next generation of developers by making code approachable, practical, and impactful.',
   },
   {
     name: 'CHIEMERI MOGBOLU esq.',
     role: 'Volunteers Lead',
     image: Chiemeri,
     linkedin: '#',
-    desc: 'Chiemeri is a seasoned procurement and supply chain professional...',
+    desc: 'Chiemeri is a young, vibrant and experienced lawyer and certified procurement and supply chain professional. She gained her LLB and MA Public Relations from Sheffield Hallam University, UK. And has an LLM-in-view. A member of the Chartered Institute of Procurement and Supply Chain,she’s gathered years of work experience in both fields, including litigation, legal drafting, corporate legal services, and currently works in the oil and gas industry and agricultural industry as a procurement and supply chain personnel.Alongside her career, she juggles entrepreneurship as a professional event planner. She’s passionate about God, young people and family.',
   },
   {
     name: 'Biobele West',
     role: 'Partnership & Collaboration Lead',
     image: Biobele,
     linkedin: '#',
-    desc: 'Biobele is an international development consultant...',
+    desc: 'Biobele West is an international development consultant with 4+ years of experience in health systems strengthening, program management, and applied research. She has contributed to multi-million-dollar maternal and child health, and health systems strengthening initiatives, supportingthe design and implementation of evidence-based strategies. Passionate about youth empowerment, Biobele partners with organizations to deliver impact-driven programs. She currently serves as Partnerships and Collaborations Lead at Ignite Pro Community, a network dedicated to advancing the personal and professional growth of young Nigerians.',
   },
   {
     name: 'Igbinomwanhia Oghosa',
     role: 'Finance Director',
     image: Oghosa,
     linkedin: '#',
-    desc: 'Oghosa is a finance and business professional...',
+    desc: 'Oghosa Igbinomwanhia is a finance and business professional with a strong background in Financial operations, Business management and Strategy. She currently serves as the Financial Director on the committee of IgnitePro Community, where she leads efforts in budgeting, reporting, and ensuring transparent financial practices. With a BSc in Business Administration and experience in the finance sector, she brings structure, precision, and insight to organizational decision-making. Passionate about purpose-driven work, she supports youth-focused initiatives and community development projects. She is committed to excellence, integrity, and making lasting impact through both her professional contributions and volunteer engagements.',
   },
   {
     name: 'Joel Joshua Jr.',
     role: 'Student Liaison Lead',
     image: Joel,
     linkedin: '#',
-    desc: 'Joel is a seasoned product designer...',
+    desc: 'Joel Joshua is a seasoned product designer with a proven track record of building innovative solutions that drive business growth, scalability, and social impact. With a keen eye for user-centered design, Joel has helped various organizations streamline their processes, enhance user experiences, and achieve their goals.Beyond his professional accomplishments, Joel is deeply passionate about empowering young people and building strong, vibrant communities. Through his contributions to Ignite Pro Community and The Youth Summit, he has played a pivotal role in shaping initiatives that promote leadership development, education, and economic empowerment. To date, his collective efforts have positively impacted the lives of over 5,000 young individuals in Rivers State, inspiring a new generation of leaders, entrepreneurs, and change-makers.',
   },
   {
     name: 'Fortune Jonathan',
     role: 'Team Lead for Corporate Social Responsibility',
     image: Fortune,
     linkedin: '#',
-    desc: 'Fortune is a Management Consultant at Wider Perspectives...',
+    desc: 'Fortune Jonathan is a Management Consultant at Wider Perspectives Limited, where she is building expertise across key areas such as marketing and communication, strategy, business development, and entrepreneurship.She also serves as the Team Lead for Corporate Social Responsibility at Ignite Pro Community, where she champions initiatives that drive meaningful community impact.Fortune holds both a Bachelor’s degree in Marketing and a Master’s degree in Business Administration from Covenant University.Beyond her professional pursuits, she is deeply passionate about the holistic development of children and is committed to using her time, expertise, and network to contribute to the transformation of Africa.',
   },
 ];
 
 const Executive = () => {
   return (
     <>
-      <div className='bg-pink-50 py-12 px-4 sm:px-8 md:px-12'>
-        <h2 className='text-purple-700 text-2xl sm:text-3xl font-bold mb-10 text-center'>
+      <div className=' px-6 md:px-24 py-16sm:px-8 mt-10'>
+        
+        <h2 className='text-white bg-primary w-fit px-5 py-2 rounded-md text-xl font-medium mb-6'>
           THE EXECUTIVE COMMITTEE
         </h2>
         <div className='grid gap-8 sm:grid-cols-2 lg:grid-cols-3'>
@@ -108,10 +109,10 @@ const Executive = () => {
                   className='w-16 h-16 object-cover rounded-full border-2 border-purple-400'
                 />
                 <div>
-                  <h3 className='text-lg font-semibold text-gray-900'>
+                  <h3 className='text-lg font-medium text-gray-900'>
                     {member.name}
                   </h3>
-                  <p className='text-sm text-purple-700 font-medium'>
+                  <p className='text-sm text-primary font-medium'>
                     {member.role}
                   </p>
                 </div>
@@ -119,12 +120,12 @@ const Executive = () => {
                   href={member.linkedin}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='ml-auto text-purple-600 hover:text-purple-800'
+                  className='ml-auto text-primary hover:text-purple-800'
                 >
                   <FaLinkedin size={24} />
                 </a>
               </div>
-              <hr className='border-purple-200 my-2' />
+              <hr className='border-purple-200 my-2 ' />
               <p className='text-sm text-gray-700 leading-relaxed'>
                 {member.desc}
               </p>

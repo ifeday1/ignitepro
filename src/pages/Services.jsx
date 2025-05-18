@@ -4,6 +4,9 @@ import Services1 from '../assets/services1.png';
 import Serviceswho from '../assets/servicewho.png';
 import Serviceswho1 from '../assets/servicewho1.png';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import Ready from '../assets/ready.svg';
+
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -216,6 +219,54 @@ const Services = () => {
           </motion.div>
         </motion.div>
       </section>
+
+      <motion.section
+        className='bg-primary text-white rounded-[30px] border-2 border-orange-300 p-6 sm:p-10 md:p-16 my-10 mx-6 md:mx-24 shadow-xl mt-20'
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+      >
+        <div className='flex flex-col md:flex-row items-center justify-between gap-10'>
+          {/* Text Section */}
+          <div className='flex-1 text-center md:text-left'>
+            <h2 className='text-4xl sm:text-5xl font-extrabold leading-tight mb-4'>
+              Ready to Ignite Your <br />
+              Career?
+            </h2>
+            <p className='text-lg sm:text-xl mb-6 text-white/90'>
+              Join our Coaching & Mentoring Program today and start <br />
+              building the career you were meant to lead.
+            </p>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
+              <Link to='/community'>
+                <button className='bg-orange hover:bg-orange-600 transition text-white font-semibold px-6 py-3 rounded-xl shadow-md animate-bounce-once'>
+                  Join Our Community
+                </button>
+              </Link>
+            </motion.div>
+          </div>
+
+          {/* Image Section */}
+          <motion.div
+            className='flex-1 w-full max-w-md relative group'
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.4 }}
+          >
+            <div className='overflow-hidden rounded-xl shadow-lg relative'>
+              <img
+                src={Ready} // <- replace with your path
+                alt='Accelerate Bootcamp'
+                className='w-full h-auto object-cover transition duration-300 group-hover:blur-[1px] group-hover:brightness-95'
+              />
+              <div className='absolute inset-0 bg-black/10 rounded-xl pointer-events-none' />
+            </div>
+          </motion.div>
+        </div>
+      </motion.section>
     </>
   );
 };
