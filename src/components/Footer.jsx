@@ -122,7 +122,7 @@ const Footer = () => {
             <br></br>
             <p className='text-sm'>08132227108, 09069505198</p>
             <br></br>
-            <p className='text-sm'>igniteprocommunity@gmail.com'</p>
+            <p className='text-sm'>igniteprocommunity@gmail.com</p>
           </motion.div>
         </div>
 

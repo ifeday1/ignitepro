@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaLinkedin } from 'react-icons/fa';
 
@@ -86,51 +86,73 @@ const members = [
 ];
 
 const Executive = () => {
+  const [expandedIndexes, setExpandedIndexes] = useState([]);
+
+  const toggleExpanded = (index) => {
+    setExpandedIndexes((prev) =>
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+    );
+  };
   return (
     <>
-      <div className=' px-6 md:px-24 py-16sm:px-8 mt-10'>
-        
+      <div className='px-6 md:px-24 py-16 sm:px-8 mt-10'>
         <h2 className='text-white bg-primary w-fit px-5 py-2 rounded-md text-xl font-medium mb-6'>
           THE EXECUTIVE COMMITTEE
         </h2>
         <div className='grid gap-8 sm:grid-cols-2 lg:grid-cols-3'>
-          {members.map((member, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              className='bg-white border-2 border-purple-200 p-4 rounded-2xl shadow-md hover:shadow-lg transition-all'
-            >
-              <div className='flex items-center gap-4 mb-4'>
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className='w-16 h-16 object-cover rounded-full border-2 border-purple-400'
-                />
-                <div>
-                  <h3 className='text-lg font-medium text-gray-900'>
-                    {member.name}
-                  </h3>
-                  <p className='text-sm text-primary font-medium'>
-                    {member.role}
-                  </p>
+          {members.map((member, index) => {
+            const isExpanded = expandedIndexes.includes(index);
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className='bg-white border-2 border-purple-200 p-4 rounded-2xl shadow-md hover:shadow-lg transition-all'
+              >
+                <div className='flex items-center gap-4 mb-4'>
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className='w-16 h-16 object-cover rounded-full border-2 border-purple-400'
+                  />
+                  <div>
+                    <h3 className='text-lg font-medium text-gray-900'>
+                      {member.name}
+                    </h3>
+                    <p className='text-sm text-primary font-medium'>
+                      {member.role}
+                    </p>
+                  </div>
+                  <a
+                    href={member.linkedin}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='ml-auto text-primary hover:text-purple-800'
+                  >
+                    <FaLinkedin size={24} />
+                  </a>
                 </div>
-                <a
-                  href={member.linkedin}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='ml-auto text-primary hover:text-purple-800'
+
+                <hr className='border-purple-200 my-2' />
+
+                <p
+                  className={`text-sm text-gray-700 leading-relaxed transition-all duration-300 ${
+                    isExpanded ? '' : 'line-clamp-2'
+                  }`}
                 >
-                  <FaLinkedin size={24} />
-                </a>
-              </div>
-              <hr className='border-purple-200 my-2 ' />
-              <p className='text-sm text-gray-700 leading-relaxed'>
-                {member.desc}
-              </p>
-            </motion.div>
-          ))}
+                  {member.desc}
+                </p>
+
+                <button
+                  onClick={() => toggleExpanded(index)}
+                  className='text-primary mt-2 text-sm font-medium hover:underline'
+                >
+                  {isExpanded ? 'View Less' : 'View More'}
+                </button>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </>

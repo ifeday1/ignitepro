@@ -8,11 +8,13 @@ import Events from './pages/Events';
 import Contact from './pages/Contact';
 import Pitch from './pages/Pitch';
 import Footer from './components/Footer';
+import Scroll from './components/Scroll';
 
 function App() {
   return (
     <>
       <Router>
+        <Scroll/> 
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />

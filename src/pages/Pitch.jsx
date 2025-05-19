@@ -4,6 +4,8 @@ import Pitch1 from '../assets/pitch1.png';
 import Pitch2 from '../assets/pitch2.png';
 
 import { motion } from 'framer-motion';
+import Criteria from '../components/Criteria';
+import Faq from '../components/Faq';
 
 
 const fadeInUp = {
@@ -122,14 +124,15 @@ const Pitch = () => {
               challenges across sectors, from education to agriculture, hardware
               technology, healthcare, and beyond. Winning teams will gain access
               to tools, mentorship, and funding to grow their businesses and
-              deepen their impact. Note: All types of solutions are
+              deepen their impact.Note: All types of solutions are
               welcome—whether tech-enabled or not.
             </p>
           </motion.div>
         </motion.div>
       </section>
 
-
+<Criteria/>
+<Faq/>
     </>
   );
 };
