@@ -77,7 +77,7 @@ const cultureData = [
 const events = [
   {
     title: 'Accelerate 1.0: Ten Times Better',
-    desc: 'Ignite Pro launched its maiden edition of Accelerate Bootcamp focusing on leadership and personal development. Activities included panels, business grants and more.',
+    desc: 'Ignite Pro launched its maiden edition of Accelerate Bootcamp focusing on leadership and personal development. Activities included panels, business grants and more. 13 Speakers,Over 200 attendees, Panel sessions and Leadership addresses 3 Business grants, Educational support grants',
     image: Act,
   },
   {

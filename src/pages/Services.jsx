@@ -84,7 +84,7 @@ const Services = () => {
           variants={fadeInUp}
           className=' p-8 rounded-xl text-white text-center max-w-2xl mx-4'
         >
-          <h2 className='text-3xl md:text-7xl font-bold mb-4'>SERVICES</h2>
+          <h2 className='text-3xl md:text-7xl font-bold mb-4'>WORKS</h2>
         </motion.div>
       </section>
 
@@ -242,7 +242,7 @@ const Services = () => {
               whileTap={{ scale: 0.95 }}
               transition={{ type: 'spring', stiffness: 300 }}
             >
-              <Link to='/community'>
+              <Link to='https://chat.whatsapp.com/GDL1m5e5uAx8pxGHVeIsEJ'>
                 <button className='bg-orange hover:bg-orange-600 transition text-white font-semibold px-6 py-3 rounded-xl shadow-md animate-bounce-once'>
                   Join Our Community
                 </button>

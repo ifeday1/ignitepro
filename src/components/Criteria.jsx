@@ -28,6 +28,7 @@ const Criteria = () => {
               {[
                 'Must be at least 18 years old.',
                 'Must be a founder or co-founder of a registered business entity.',
+                'The business or startup must have been in operation for more than six months',
                 'Must have a Minimum Viable Product with market traction (preferably with revenue).',
                 'The business must address purpose-driven sectors including—but not limited to—education, agriculture, hardware technology, and healthcare.',
                 'Must possess a personal or business Nigerian bank account in the applicant’s name.',

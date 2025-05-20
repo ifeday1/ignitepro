@@ -136,7 +136,7 @@ const Home = () => {
               impact.
             </p>
 
-            <motion.a
+            {/* <motion.a
               href=''
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -157,7 +157,7 @@ const Home = () => {
                   d='M9 5l7 7-7 7'
                 />
               </svg>
-            </motion.a>
+            </motion.a> */}
           </motion.div>
 
           {/* Right Section */}
@@ -324,7 +324,7 @@ const Home = () => {
           </motion.h2>
 
           <motion.a
-            href='#'
+            href='/pitch'
             initial='hidden'
             whileInView='visible'
             viewport={{ once: true }}
@@ -408,7 +408,7 @@ const Home = () => {
           variants={fadeInUp}
           className='text-white bg-primary px-4 py-2 rounded-md text-lg font-medium w-fit mt-10 '
         >
-          PICTURE EXCERPT FROM ACCELERATE 2.0
+          PICTURE EXCERPT FROM ACCELERATE 1.0
         </motion.h2>
         <img
           src={Homeimg}
