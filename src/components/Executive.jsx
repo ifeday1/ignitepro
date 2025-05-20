@@ -18,7 +18,8 @@ const members = [
     name: 'Oloruntoba Isehunwa',
     role: 'Co-ordinator',
     image: Oloruntoba,
-    linkedin: '#',
+    linkedin:
+      'https://www.linkedin.com/in/oloruntoba-isehunwa-45434a22?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
     desc: 'Oloruntoba Isehunwa is a Lead Wells Engineer at Renaissance Africa Energy (formerly Shell), driving performance improvement in wells execution. A Certified Trainer and IWCF-accredited Instructor, he teaches well engineering using advanced simulators and human factors principles. With years of experience in drilling, completions, and workovers across challenging terrains, he is passionate about mentoring young professionals. He lectures in Nigerian universities and has received awards for his contributions to human capital development. Toba is the Convener of IgnitePro Community, a youth development initiative focused on leadership and capacity building. He holds a Petroleum Engineering degree from the University of Ibadan and is married with two daughters.',
   },
   {
@@ -32,13 +33,15 @@ const members = [
     name: 'Dorothy Douglas',
     role: 'Secretary',
     image: Dorothy,
-    linkedin: '#',
+    linkedin:
+      'https://www.linkedin.com/in/dorothy-douglas-516467181?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     desc: 'I’m Dorothy Douglas, an experienced Executive Assistant with a passion for organization and creative problem-solving. Currently, I am the secretary for Ignite Pro Community, where I help streamline communication and foster collaboration. I’ve supported senior leaders by managing calendars, coordinating projects, and creating engaging digital content using tools like Trello, Canva, and Notion. With a B.Sc. in Microbiology and certifications in Salesforce, HSE, and web development, I bring a unique blend of analytical skills and creativity to my work. In my free time, I enjoy reading, journaling, and exploring new ideas.',
   },
   {
     name: 'Akinola Akinsola Peter',
     role: 'Communications Manager',
     image: Akinola,
+    linkedin: 'https://www.linkedin.com/in/akinola-akinsola-peter-12b519333',
     desc: 'Akinola Akinsola Peter is a seasoned Human Resources professional with over seven years of experience, transitioning from the finance sector into oil and gas. Starting as an HR Assistant at Capitalfield Investment Group, he now serves as a Human Capital Management Officer at NNPC Engineering andTechnicalCompanyLimited, having also worked with Nigeria Liquified Natural Gas. His expertise spans payroll, employee relations, talent management, and learning and development. Passionate about mentorship, he leads Winners Career BC and serves as Communication Manager for the Ignite Pro Community. Akinola is purpose-driven, committed to excellence, and dedicated to making lasting impact through his work and community engagements.',
   },
   {
@@ -59,14 +62,14 @@ const members = [
     name: 'Biobele West',
     role: 'Partnership & Collaboration Lead',
     image: Biobele,
-    linkedin: '#',
+    linkedin: 'https://www.linkedin.com/in/biobele-west',
     desc: 'Biobele West is an international development consultant with 4+ years of experience in health systems strengthening, program management, and applied research. She has contributed to multi-million-dollar maternal and child health, and health systems strengthening initiatives, supportingthe design and implementation of evidence-based strategies. Passionate about youth empowerment, Biobele partners with organizations to deliver impact-driven programs. She currently serves as Partnerships and Collaborations Lead at Ignite Pro Community, a network dedicated to advancing the personal and professional growth of young Nigerians.',
   },
   {
     name: 'Igbinomwanhia Oghosa',
     role: 'Finance Director',
     image: Oghosa,
-    linkedin: '#',
+    linkedin: 'http://www.linkedin.com/in/oghosa-igbinomwanhia',
     desc: 'Oghosa Igbinomwanhia is a finance and business professional with a strong background in Financial operations, Business management and Strategy. She currently serves as the Financial Director on the committee of IgnitePro Community, where she leads efforts in budgeting, reporting, and ensuring transparent financial practices. With a BSc in Business Administration and experience in the finance sector, she brings structure, precision, and insight to organizational decision-making. Passionate about purpose-driven work, she supports youth-focused initiatives and community development projects. She is committed to excellence, integrity, and making lasting impact through both her professional contributions and volunteer engagements.',
   },
   {

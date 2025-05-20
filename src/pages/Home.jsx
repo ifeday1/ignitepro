@@ -18,10 +18,7 @@ import { Pagination, Autoplay } from 'swiper/modules';
 // import Pic3 from '../assets/pic3.svg';
 // import Pic4 from '../assets/pic4.svg';
 // import Pic5 from '../assets/pic5.svg';
-
-
-
-
+import Homeimg from '../assets/homeimg.svg';
 
 const textVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -87,33 +84,33 @@ const Home = () => {
     {
       quote:
         'I am deeply grateful to IGNITE Pro Community for the life-changing grant that enabled me to pursue my trading career. Their support was instrumental in my success, and I am thankful for the opportunity. Their investment in me has paid off, and I am proud to be a testament to their impactful work .Thanks Team!',
-      name: 'John Smith',
+      name: ' ',
       role: 'William Michael',
     },
     // Add your 4 other testimonials here
     {
       quote:
         'With a deep gratitude and a heart felt appreciation to IGNITE PRO COMMUNITY for the life- changing business grant opportunity. Winning the grant was more than just a financial boost; it was a powerful vote of confidence in my vision, Business and potential. It was just a grant to the others, but  to me, it was a "transformative impact". Today,Mamachigos Beauty Touch is a step ahead, new skills has being added, new working equipment bought, more customers has been served and  lots more. Thank you!!! once more IGNITE pro community, your investment and impact in me is an unforgettable one!!.Thank you Team!!😊',
-      name: 'Jane Doe',
+      name: ' ',
       role: 'Osuagwu chigozirim Basillia',
     },
     {
       quote:
         'Reflecting on the events of that day, particularly  as an awardee for-the business grant, I would say it was truly remarkable and inspiring. It was a sign that our mission was relevant to current realities and that our story was being heard. In a world where social enterprises and nonprofits are expected to do more with limited resources, Ignite Pro Community displayed a firm belief that its time to shift the narrative and focus on what truly matters, and that is none other than changing lives.',
-      name: 'David Lee',
+      name: ' ',
       role: 'Confidence Jonathan Nwosu Founder, RAJ Foundation',
     },
     {
       quote:
         'Receiving the data analytics scholarship from Beylearning has been a truly life-changing opportunity. The program equipped me with practical, in-demand skills in data analysis, visualization, and critical thinking. I want to express my deepest gratitude to the instructors, whose expertise, patience, and support made complex concepts accessible and engaging. Their guidance played a key role in my growth and confidence in the field. I’m especially thankful to Beylearning for investing in me and creating an inclusive platform that bridges the gap between education and opportunity. As someone navigating the entry level of the analytics field, this experience has provided a strong foundation and a clearer sense of direction.',
-      name: 'Amaka Paul',
+      name: '',
       role: 'Aderogba Oluwapelumi',
     },
     {
       quote:
-        'Positivus went above and beyond. Their guidance helped us scale fast.',
-      name: 'Grace N.',
-      role: 'Product Lead at GrowthLabs',
+        'I am grateful to IGNITE Pro Community for opening the door to the Data Analytics Scholarship through their incredible network. With their support, I’ve built a strong foundation in data skills and gained clarity on my career direction. Their belief in learners like me has been both motivating and empowering. It truly gladdens my heart to be part of a community that invests in growth and potential.Thank you, IGNITE Pro Team!',
+      name: '.',
+      role: 'Diseph Mogbolu',
     },
   ];
   return (
@@ -321,7 +318,7 @@ const Home = () => {
             whileInView='visible'
             viewport={{ once: true }}
             variants={fadeInUp}
-            className='text-white bg-primary px-4 py-2 rounded-md text-lg font-semibold w-fit'
+            className='text-white bg-primary px-4 py-2 rounded-md text-lg font-medium w-fit'
           >
             PITCH COMPETITION
           </motion.h2>
@@ -403,7 +400,22 @@ const Home = () => {
         </Swiper>
       </section>
 
-          
+      <div  className='px-7 md:px-24 py-0 md:py-16 mx-auto'>
+        <motion.h2
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className='text-white bg-primary px-4 py-2 rounded-md text-lg font-medium w-fit mt-10 '
+        >
+          PICTURE EXCERPT FROM ACCELERATE 2.0
+        </motion.h2>
+        <img
+          src={Homeimg}
+          alt='Pictures'
+          class=' w-[500px] h-[auto] md:w-[1200px] mt-5 '
+        />
+      </div>
     </>
   );
 };
