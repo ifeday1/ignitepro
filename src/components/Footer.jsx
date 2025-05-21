@@ -119,10 +119,10 @@ const Footer = () => {
               Rumuomasi, off Faith Avenue, off Elekahia Road, P.M.B. 127, Port
               Harcourt, Rivers State, Nigeria.
             </p>
-            <br></br>
-            <p className='text-sm'>08132227108, 09069505198</p>
-            <br></br>
-            <p className='text-sm'>igniteprocommunity@gmail.com</p>
+
+            <p className='text-sm pt-2'>08132227108, 09069505198</p>
+
+            <p className='text-sm pt-2'>igniteprocommunity@gmail.com</p>
           </motion.div>
         </div>
 
