@@ -7,7 +7,6 @@ import { motion } from 'framer-motion';
 import Criteria from '../components/Criteria';
 import Faq from '../components/Faq';
 
-
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
@@ -60,41 +59,7 @@ const Pitch = () => {
         </motion.div>
       </section>
 
-      <section className='px-6 py-16 max-w-7xl mx-auto'>
-        <motion.div
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true }}
-          variants={staggerContainer}
-          className='grid md:grid-cols-2 gap-10 items-start'
-        >
-          {/* Text Section */}
-          <motion.div variants={fadeInUp}>
-            <h2 className='text-white bg-primary w-fit px-5 py-2 rounded-md text-xl font-medium mb-6'>
-              WHAT IS ACCELERATE 2.0?
-            </h2>
-            <p className='text-gray-800 text-lg leading-relaxed'>
-              Accelerate 2.0 is the second edition of the annual boot camp
-              hosted by the Ignite Pro Community, created for young
-              professionals, graduates, and undergraduates. This year’s theme,
-              “Future Forward: Transforming Visions to Reality,” is designed to
-              inspire and empower young minds with the insights, tools, and
-              faith-based principles necessary to actualize their aspirations.
-            </p>
-          </motion.div>
-
-          {/* Image Section */}
-          <div className='space-y-1 flex flex-col items-center md:items-start'>
-            <img
-              src={Pitch1}
-              alt='Placeholder 1'
-              className='rounded-lg shadow-lg w-90 '
-            />
-          </div>
-        </motion.div>
-      </section>
-
-      <section className='px-6  max-w-7xl mx-auto'>
+      <section className='px-6  max-w-7xl mx-auto mt-10'>
         <motion.div
           initial='hidden'
           whileInView='visible'
@@ -131,8 +96,27 @@ const Pitch = () => {
         </motion.div>
       </section>
 
-<Criteria/>
-<Faq/>
+      <section className='px-6 pt-8 max-w-7xl mx-auto'>
+        <motion.div
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true }}
+          variants={staggerContainer}
+          className='grid md:grid-cols-2 gap-10 items-start'
+        >
+          {/* Image Section */}
+          <div className='items-center md:items-start'>
+            <img
+              src={Pitch1}
+              alt='Placeholder 1'
+              className='rounded-lg shadow-lg w- '
+            />
+          </div>
+        </motion.div>
+      </section>
+
+      <Criteria />
+      <Faq />
     </>
   );
 };

@@ -9,20 +9,24 @@ import Contact from './pages/Contact';
 import Pitch from './pages/Pitch';
 import Footer from './components/Footer';
 import Scroll from './components/Scroll';
+import Team from './pages/Team';
+import Terms from './pages/Terms';
 
 function App() {
   return (
     <>
       <Router>
-        <Scroll/> 
+        <Scroll />
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
+          <Route path='/meet-the-team' element={<Team />} />
           <Route path='/works' element={<Services />} />
           <Route path='/events' element={<Events />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/pitch' element={<Pitch />} />
+          <Route path='/terms-and-condition' element={<Terms />} />
         </Routes>
 
         <ScrollToTop />

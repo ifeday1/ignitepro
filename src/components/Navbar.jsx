@@ -1,12 +1,11 @@
 import { useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../assets/logo.png';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
-  const location = useLocation();
 
   const navItems = [
     { to: '/', label: 'Home' },
@@ -14,19 +13,19 @@ export default function Navbar() {
       label: 'About Us',
       dropdown: [
         { to: '/about', label: 'Who We Are' },
-        { to: '/team', label: 'Meet the Team' },
+        { to: '/meet-the-team', label: 'Meet the Team' },
       ],
     },
     { to: '/works', label: 'Works' },
     {
       label: 'Events',
-      dropdown: [{ to: '/events', label: 'Gallery and Events' }],
+      dropdown: [
+        { to: '/events', label: 'Gallery and Events' },
+        { to: '/past-events', label: 'Past Events' },
+      ],
     },
     { to: '/contact', label: 'Contact' },
   ];
-
-  const isDropdownActive = (dropdownItems) =>
-    dropdownItems?.some((item) => location.pathname === item.to);
 
   const ChevronDownIcon = ({ rotate = false }) => (
     <svg
@@ -55,20 +54,24 @@ export default function Navbar() {
           <div className='hidden md:flex items-center space-x-6 text-gray-700 font-medium'>
             {navItems.map((item, index) =>
               item.dropdown ? (
-                <div key={index} className='relative group'>
+                <div
+                  key={index}
+                  className='relative'
+                  onMouseEnter={() => setOpenDropdown(item.label)}
+                  onMouseLeave={() => setOpenDropdown(null)}
+                >
                   <button className='flex items-center hover:text-primary transition'>
                     {item.label}
-                    <ChevronDownIcon />
+                    <ChevronDownIcon rotate={openDropdown === item.label} />
                   </button>
 
-                  {/* Dropdown */}
+                  {/* Dropdown Menu */}
                   <div
-                    className={`absolute left-0 mt-2 w-48 bg-white border rounded-lg shadow-lg z-40 transition-all duration-200
-                      ${
-                        isDropdownActive(item.dropdown)
-                          ? 'opacity-100 pointer-events-auto'
-                          : 'opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto'
-                      }`}
+                    className={`absolute left-0  w-48 bg-white border rounded-lg shadow-lg transition-opacity duration-200 z-50 ${
+                      openDropdown === item.label
+                        ? 'opacity-100 pointer-events-auto'
+                        : 'opacity-0 pointer-events-none'
+                    }`}
                   >
                     <div className='py-2'>
                       {item.dropdown.map((sub, subIdx) => (
@@ -101,7 +104,7 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* Pitch Button (Desktop) */}
+          {/* Desktop Pitch Button */}
           <div className='hidden md:block'>
             <NavLink to='/pitch'>
               <button className='bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition'>

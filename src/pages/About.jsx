@@ -6,7 +6,6 @@ import { motion } from 'framer-motion';
 import Act from '../assets/act.svg';
 import Act1 from '../assets/act1.png';
 import Act2 from '../assets/act2.svg';
-import Executive from '../components/Executive';
 
 
 const fadeInUp = {
@@ -233,8 +232,6 @@ const events = [
           ))}
         </div>
       </section>
-
-      <Executive/>
     </>
   );
 };
