@@ -7,7 +7,6 @@ import Act from '../assets/act.svg';
 import Act1 from '../assets/act1.png';
 import Act2 from '../assets/act2.svg';
 
-
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
@@ -52,45 +51,58 @@ const cardVariants = {
   }),
 };
 
-
 const About = () => {
-
-
-const cultureData = [
-  {
-    title: 'Collaboration and Teamwork',
-    body: 'We believe that diverse perspectives foster innovation, and every voice is valued. Expect an organization where your ideas are not only heard but actively encouraged.',
-    bgColor: 'bg-green-500',
-  },
-  {
-    title: 'Continuous Learning and Growth',
-    body: 'We embrace a culture of continuous learning. Your professional and personal development growth is a priority, and we provide resources, initiatives and opportunities for skill development.',
-    bgColor: 'bg-orange',
-  },
-  {
-    title: 'Open Communication and Transparency',
-    body: 'Communication is at the heart of our culture. We believe in transparency and open dialogue at all levels.',
-    bgColor: 'bg-fuchsia-600',
-  },
-];
-const events = [
-  {
-    title: 'Accelerate 1.0: Ten Times Better',
-    desc: 'Ignite Pro launched its maiden edition of Accelerate Bootcamp focusing on leadership and personal development. Activities included panels, business grants and more. 13 Speakers,Over 200 attendees, Panel sessions and Leadership addresses 3 Business grants, Educational support grants',
-    image: Act,
-  },
-  {
-    title: 'Navigating Foreign Scholarship Opportunities',
-    desc: 'Former students shared tips on applying for scholarships abroad including document prep and standout strategies.',
-    image: Act1,
-  },
-  {
-    title: 'Unwind: Revisiting The Vision Board',
-    desc: 'The 2025 kickoff featured inspiring breakfasts with industry leaders and vision board sessions.',
-    image: Act2,
-  },
-];
-
+  const cultureData = [
+    {
+      title: 'Collaboration and Teamwork',
+      body: 'We believe that diverse perspectives foster innovation, and every voice is valued. Expect an organization where your ideas are not only heard but actively encouraged.',
+      bgColor: 'bg-green-500',
+    },
+    {
+      title: 'Continuous Learning and Growth',
+      body: 'We embrace a culture of continuous learning. Your professional and personal development growth is a priority, and we provide resources, initiatives and opportunities for skill development.',
+      bgColor: 'bg-orange',
+    },
+    {
+      title: 'Open Communication and Transparency',
+      body: 'Communication is at the heart of our culture. We believe in transparency and open dialogue at all levels.',
+      bgColor: 'bg-fuchsia-600',
+    },
+  ];
+  const events = [
+    {
+      title: 'Accelerate 1.0: Ten Times Better',
+      desc: 'Ignite Pro launched its maiden edition of Accelerate Bootcamp focusing on leadership and personal development. Activities included panels, business grants and more.',
+      image: Act,
+      points: [
+        '13 Speakers',
+        'Over 200 attendees',
+        '2 Panel sessions and Leadership addresses',
+        '3 Business grants',
+        '4 Educational support grants',
+      ],
+    },
+    {
+      title: 'Navigating Foreign Scholarship Opportunities',
+      desc: 'Former students shared tips on applying for scholarships abroad including document prep and standout strategies.',
+      image: Act1,
+      points: [
+        '4 Internationally acclaimed Speakers',
+        'Over 50 attendees from 5 different countries',
+      ],
+    },
+    {
+      title: 'Unwind: Revisiting The Vision Board',
+      desc: 'The 2025 kickoff featured inspiring breakfasts with industry leaders and vision board sessions.',
+      image: Act2,
+      points: [
+        'Engaging vision board setting activity',
+        '7 Industry recognized Speakers/ Mentors 40 selected participants',
+        '40 selected participants',
+        'Roundtable mentoring sessions',
+      ],
+    },
+  ];
 
   return (
     <>
@@ -212,7 +224,7 @@ const events = [
           {events.map((event, index) => (
             <motion.div
               key={index}
-              className='bg-white p-4 rounded-lg shadow-lg flex flex-col md:flex-row items-center'
+              className='bg-white p-4 rounded-lg shadow-lg flex flex-col md:flex-row items-start'
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -227,6 +239,11 @@ const events = [
                   {event.title}
                 </h3>
                 <p className='text-sm text-gray-700 mt-2'>{event.desc}</p>
+                <ul className='mt-4 list-disc list-inside text-sm text-gray-600 space-y-1'>
+                  {event.points.map((point, i) => (
+                    <li key={i}>{point}</li>
+                  ))}
+                </ul>
               </div>
             </motion.div>
           ))}

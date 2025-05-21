@@ -44,14 +44,14 @@ export default function Navbar() {
   return (
     <nav className='bg-white shadow-md fixed top-0 w-full z-50'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-        <div className='flex justify-between items-center h-16'>
+        <div className='flex justify-between items-center h-20'>
           {/* Logo */}
           <NavLink to='/'>
             <img src={logo} alt='Logo' className='h-8 w-auto' />
           </NavLink>
 
           {/* Desktop Navigation */}
-          <div className='hidden md:flex items-center space-x-6 text-gray-700 font-medium'>
+          <div className='hidden md:flex items-center gap-8 text-gray-700 font-medium'>
             {navItems.map((item, index) =>
               item.dropdown ? (
                 <div
@@ -60,14 +60,14 @@ export default function Navbar() {
                   onMouseEnter={() => setOpenDropdown(item.label)}
                   onMouseLeave={() => setOpenDropdown(null)}
                 >
-                  <button className='flex items-center hover:text-primary transition'>
+                  <button className='inline-flex items-center px-2 py-1 hover:text-primary transition'>
                     {item.label}
                     <ChevronDownIcon rotate={openDropdown === item.label} />
                   </button>
 
                   {/* Dropdown Menu */}
                   <div
-                    className={`absolute left-0  w-48 bg-white border rounded-lg shadow-lg transition-opacity duration-200 z-50 ${
+                    className={`absolute left-0 w-48 bg-white border rounded-lg shadow-lg transition-opacity duration-200 z-50 ${
                       openDropdown === item.label
                         ? 'opacity-100 pointer-events-auto'
                         : 'opacity-0 pointer-events-none'
@@ -91,7 +91,7 @@ export default function Navbar() {
                   key={item.to}
                   to={item.to}
                   className={({ isActive }) =>
-                    `relative pb-1 transition ${
+                    `relative pb-1 transition px-2 py-1 ${
                       isActive
                         ? 'text-primary font-medium after:content-[""] after:absolute after:h-1 after:w-full after:bg-primary after:bottom-0 after:left-0'
                         : 'hover:text-primary'
