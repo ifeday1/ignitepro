@@ -78,12 +78,12 @@ const Footer = () => {
               </li>
               <li>
                 <a href='/about' className='hover:underline'>
-                  About
+                  About us
                 </a>
               </li>
               <li>
                 <a href='/services' className='hover:underline'>
-                  Services
+                  Works
                 </a>
               </li>
               <li>
