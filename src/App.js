@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route,  } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import ScrollToTop from './components/ScrollToTop';
@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import Scroll from './components/Scroll';
 import Team from './pages/Team';
 import Terms from './pages/Terms';
+import Form from './components/Form';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/pitch' element={<Pitch />} />
           <Route path='/terms-and-condition' element={<Terms />} />
+          <Route path='/pitch-form' element={<Form />} />
         </Routes>
 
         <ScrollToTop />

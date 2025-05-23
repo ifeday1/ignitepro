@@ -1,14 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { NavLink } from 'react-router-dom';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
 };
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-};
+
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
@@ -178,20 +176,13 @@ const Criteria = () => {
         </motion.a>
 
         {/* Apply Button */}
-        <motion.div
-          className='mt-6 flex justify-start '
-          variants={fadeUp}
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true }}
-        >
-          <a
-            href='https://www.instagram.com/ignite_procommunity?igsh=MWJ4M2ZqbmljcDY3YQ=='
-            className='bg-primary hover:bg-primary m-auto mb-6 text-white px-6 py-2 rounded-lg font-semibold text-sm md:text-base shadow-md'
-          >
-            Apply Now
-          </a>
-        </motion.div>
+        <div className=' px-6 md:px-64'>
+          <NavLink to='/pitch-form'>
+            <button className='bg-primary  text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition'>
+              Apply Now
+            </button>
+          </NavLink>
+        </div>
       </div>
     </>
   );

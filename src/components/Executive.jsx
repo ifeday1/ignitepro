@@ -55,7 +55,8 @@ const members = [
     name: 'CHIEMERI MOGBOLU esq.',
     role: 'Volunteers Lead',
     image: Chiemeri,
-    linkedin: '#',
+    linkedin:
+      'https://www.linkedin.com/in/chiemeri-mogbolu-b909a5108?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
     desc: 'Chiemeri is a young, vibrant and experienced lawyer and certified procurement and supply chain professional. She gained her LLB and MA Public Relations from Sheffield Hallam University, UK. And has an LLM-in-view. A member of the Chartered Institute of Procurement and Supply Chain,she’s gathered years of work experience in both fields, including litigation, legal drafting, corporate legal services, and currently works in the oil and gas industry and agricultural industry as a procurement and supply chain personnel.Alongside her career, she juggles entrepreneurship as a professional event planner. She’s passionate about God, young people and family.',
   },
   {
