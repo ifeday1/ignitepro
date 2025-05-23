@@ -213,7 +213,7 @@ export default function Form() {
 
         <div>
           <label className='block mb-1 font-medium'>
-            Upload 3-Min Video Pitch (MP4/MOV or link)
+            Upload 3-Min Video Pitch (MP4/MOV or link(preferably link))
           </label>
           <input
             type='file'

@@ -21,7 +21,7 @@ export default function Navbar() {
       label: 'Events',
       dropdown: [
         { to: '/events', label: 'Upcoming Events' },
-        { to: '/past-events', label: 'Gallery' },
+        { to: '/gallery', label: 'Gallery' },
       ],
     },
     { to: '/contact', label: 'Contact' },

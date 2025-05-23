@@ -1,26 +1,17 @@
 import React from 'react';
 import Pitchhead from '../assets/pitchhead.png';
-import Pitch1 from '../assets/pitch1.png';
+// import Pitch1 from '../assets/pitch1.png';
 import Pitch2 from '../assets/pitch2.png';
 
 import { motion } from 'framer-motion';
 import Criteria from '../components/Criteria';
 import Faq from '../components/Faq';
 
-
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
 };
 
-const staggerContainer = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.3,
-    },
-  },
-};
 
 const fadeInLeft = {
   hidden: { opacity: 0, x: -50 },
@@ -97,28 +88,8 @@ const Pitch = () => {
         </motion.div>
       </section>
 
-      <section className='px-6 pt-8 max-w-7xl mx-auto'>
-        <motion.div
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true }}
-          variants={staggerContainer}
-          className='grid md:grid-cols-2 gap-10 items-start'
-        >
-          {/* Image Section */}
-          <div className='items-center md:items-start'>
-            <img
-              src={Pitch1}
-              alt='Placeholder 1'
-              className='rounded-lg shadow-lg w- '
-            />
-          </div>
-        </motion.div>
-      </section>
-
       <Criteria />
       <Faq />
-
     </>
   );
 };

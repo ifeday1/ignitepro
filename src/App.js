@@ -12,6 +12,7 @@ import Scroll from './components/Scroll';
 import Team from './pages/Team';
 import Terms from './pages/Terms';
 import Form from './components/Form';
+import Gallery from './pages/Gallery';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path='/meet-the-team' element={<Team />} />
           <Route path='/works' element={<Services />} />
           <Route path='/events' element={<Events />} />
+          <Route path='/gallery' element={<Gallery />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/pitch' element={<Pitch />} />
           <Route path='/terms-and-condition' element={<Terms />} />

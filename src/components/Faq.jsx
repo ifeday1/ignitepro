@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { NavLink } from 'react-router-dom';
 
 const faqs = [
   {
@@ -99,12 +100,11 @@ const faqs = [
 ];
 
 const Faq = () => {
+  const [openIndex, setOpenIndex] = useState(null);
 
-    const [openIndex, setOpenIndex] = useState(null);
-
-    const toggle = (i) => {
-      setOpenIndex(openIndex === i ? null : i);
-    };
+  const toggle = (i) => {
+    setOpenIndex(openIndex === i ? null : i);
+  };
   return (
     <>
       <div className='max-w-2xl mx-auto px-4 py-8'>
@@ -152,17 +152,16 @@ const Faq = () => {
         </p>
 
         {/* Apply Button */}
-        <div className='mt-8 text-center'>
-          <a
-            href='https://www.instagram.com/ignite_procommunity?igsh=MWJ4M2ZqbmljcDY3YQ=='
-            className='bg-primary hover:bg-primary text-white px-6 py-2 rounded-lg font-semibold text-sm md:text-base shadow-md'
-          >
-            Apply Now
-          </a>
+        <div className=' px-6 md:px-64 pb-10 pt-7'>
+          <NavLink to='/pitch-form'>
+            <button className='bg-primary  text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition'>
+              Apply Now
+            </button>
+          </NavLink>
         </div>
       </div>
     </>
   );
-}
+};
 
-export default Faq
+export default Faq;

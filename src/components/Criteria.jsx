@@ -176,7 +176,7 @@ const Criteria = () => {
         </motion.a>
 
         {/* Apply Button */}
-        <div className=' px-6 md:px-64'>
+        <div className=' px-6 md:px-64 pb-10'>
           <NavLink to='/pitch-form'>
             <button className='bg-primary  text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition'>
               Apply Now
