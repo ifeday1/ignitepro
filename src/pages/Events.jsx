@@ -71,7 +71,7 @@ const Events = () => {
               Date: July, 26th 2025, 10am
             </p>
             <motion.a
-              href='https://incognitotechs.com/'
+              href='https://tix.africa/accelerate2'
               target='_blank'
               rel='noopener noreferrer'
               className='inline-block text-lg mt-4 bg-primary text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition transition-all duration-300'
@@ -143,8 +143,6 @@ const Events = () => {
           </div>
         </div>
       </section>
-
-  
     </>
   );
 };

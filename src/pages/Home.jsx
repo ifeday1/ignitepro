@@ -20,8 +20,6 @@ import { Pagination, Autoplay } from 'swiper/modules';
 // import Pic5 from '../assets/pic5.svg';
 import Homeimg from '../assets/homeimg.svg';
 
-
-
 const textVariants = {
   hidden: { opacity: 0, y: 50 },
   visible: {
@@ -232,42 +230,48 @@ const Home = () => {
         >
           {/* Text Section */}
           <motion.div variants={fadeInUp}>
-      <h2 className='text-white bg-primary w-fit px-5 py-2 rounded-md text-xl font-medium mb-6'>
-        WHO WE ARE AND WHAT WE DO
-      </h2>
-      <p className='text-gray-800 text-lg leading-relaxed mb-6'>
-        Ignite Pro Community is a one-stop hub designed to empower and
-        propel students and young professionals towards success. We're a
-        dynamic community where they can ignite their passions, develop
-        essential skills, and build a thriving career.
-      </p>
-      <p className='text-gray-800 text-lg leading-relaxed'>
-        We provide a supportive ecosystem filled with resources to help
-        individuals excel. Our programs offer valuable industry insights
-        and practical skills through sessions led by experienced
-        professionals.{' '}
-        {!showMore && (
-          <>
-            <span className='text-primary font-medium cursor-pointer' onClick={() => setShowMore(true)}>
-              Read more
-            </span>
-          </>
-        )}
-        {showMore && (
-          <>
-            Additionally, we connect participants with seasoned
-            mentors who offer guidance, answer pressing questions, and provide
-            invaluable career advice. Beyond learning, we foster a vibrant
-            community where individuals can network with like-minded peers,
-            build meaningful relationships, and expand their professional
-            network.
-            <span className='block mt-2 text-primary font-semibold cursor-pointer' onClick={() => setShowMore(false)}>
-              Show less
-            </span>
-          </>
-        )}
-      </p>
-    </motion.div>
+            <h2 className='text-white bg-primary w-fit px-5 py-2 rounded-md text-xl font-medium mb-6'>
+              WHO WE ARE AND WHAT WE DO
+            </h2>
+            <p className='text-gray-800 text-lg leading-relaxed mb-6'>
+              Ignite Pro Community is a one-stop hub designed to empower and
+              propel students and young professionals towards success. We're a
+              dynamic community where they can ignite their passions, develop
+              essential skills, and build a thriving career.
+            </p>
+            <p className='text-gray-800 text-lg leading-relaxed'>
+              We provide a supportive ecosystem filled with resources to help
+              individuals excel. Our programs offer valuable industry insights
+              and practical skills through sessions led by experienced
+              professionals.{' '}
+              {!showMore && (
+                <>
+                  <span
+                    className='text-primary font-medium cursor-pointer'
+                    onClick={() => setShowMore(true)}
+                  >
+                    Read more
+                  </span>
+                </>
+              )}
+              {showMore && (
+                <>
+                  Additionally, we connect participants with seasoned mentors
+                  who offer guidance, answer pressing questions, and provide
+                  invaluable career advice. Beyond learning, we foster a vibrant
+                  community where individuals can network with like-minded
+                  peers, build meaningful relationships, and expand their
+                  professional network.
+                  <span
+                    className='block mt-2 text-primary font-semibold cursor-pointer'
+                    onClick={() => setShowMore(false)}
+                  >
+                    Show less
+                  </span>
+                </>
+              )}
+            </p>
+          </motion.div>
 
           {/* Image Section */}
           <div className='space-y-1 flex flex-col items-center md:items-start'>
@@ -307,9 +311,17 @@ const Home = () => {
               inspire and empower young minds with the insights, tools, and
               faith-based principles necessary to actualize their aspirations.
             </p>
-            <button className='bg-primary hover:bg-primary text-white font-semibold px-6 py-2 rounded-xl transition duration-300'>
-              Register for Accelerate 2.0
-            </button>
+
+            <motion.a
+              href='https://tix.africa/accelerate2'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='inline-block text-lg mt-4 bg-primary text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition transition-all duration-300'
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Register for Accelerate 2.0 →
+            </motion.a>
           </motion.div>
 
           {/* Image / Illustration */}
