@@ -1,8 +1,8 @@
 import { React, useState } from 'react';
 import Header from '../assets/header.png';
 import Intro from '../assets/intro.png';
-import Intro1 from '../assets/intro1.png';
-import Intro2 from '../assets/intro2.png';
+// import Intro1 from '../assets/intro1.png';
+// import Intro2 from '../assets/intro2.png';
 import Who from '../assets/who.png';
 import Who1 from '../assets/who1.png';
 import Illustration from '../assets/Illustration.svg';
@@ -201,7 +201,7 @@ const Home = () => {
 
           {/* Images Section */}
           <div className='space-y-6 flex flex-col items-center md:items-start px-0 md:px-32'>
-            {[Intro, Intro1, Intro2].map((img, index) => (
+            {[Intro].map((img, index) => (
               <motion.img
                 key={index}
                 custom={index}
@@ -230,7 +230,7 @@ const Home = () => {
         >
           {/* Text Section */}
           <motion.div variants={fadeInUp}>
-            <h2 className='text-white bg-primary w-fit px-5 py-2 rounded-md text-xl font-medium mb-6'>
+            <h2 className='text-white bg-primary w-fit px-5 py-2 rounded-md text-sm md:text-xl font-medium mb-6'>
               WHO WE ARE AND WHAT WE DO
             </h2>
             <p className='text-gray-800 text-lg leading-relaxed mb-6'>
@@ -352,17 +352,6 @@ const Home = () => {
           >
             PITCH COMPETITION
           </motion.h2>
-
-          <motion.a
-            href='/pitch'
-            initial='hidden'
-            whileInView='visible'
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className='text-primary font-semibold hover:underline text-sm'
-          >
-            VIEW MORE
-          </motion.a>
         </div>
 
         <motion.p
@@ -370,7 +359,7 @@ const Home = () => {
           whileInView='visible'
           viewport={{ once: true }}
           variants={fadeInUp}
-          className='text-gray-800 text-base leading-relaxed mb-10'
+          className='text-gray-800 text-base leading-relaxed '
         >
           The Future Forward Pitch Competition is a central highlight of
           Accelerate 2.0. It aims to identify and support innovative,
@@ -380,6 +369,16 @@ const Home = () => {
           sectors, from education to agriculture, hardware technology,
           healthcare, and beyond.
         </motion.p>
+        <motion.a
+          href='/pitch'
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className='text-primary font-semibold hover:underline text-sm'
+        >
+          VIEW MORE
+        </motion.a>
 
         <motion.img
           src={Pitchhome}
@@ -388,7 +387,7 @@ const Home = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className='rounded-2xl w-full object-cover shadow-lg'
+          className='rounded-2xl w-full object-cover shadow-lg mt-10'
         />
       </section>
 
