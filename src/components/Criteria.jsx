@@ -58,7 +58,7 @@ const Criteria = () => {
               <p className='font-bold'>Applicants must submit:</p>
               <ul className='list-disc ml-5 mt-2 space-y-1'>
                 <li>
-                  A video pitch (maximum 4 minutes), uploaded to YouTube/Vimeo
+                  A video pitch (maximum 3 minutes), uploaded to YouTube/Vimeo
                   or linked via Google Drive.
                 </li>
                 <li>
