@@ -52,7 +52,7 @@ const members = [
     desc: 'Kpeale Legbara is a registered nurse and self-taught frontend developer passionate about creating responsive, accessible websites. With a degree in Nursing Sciences from Bowen University, she balances her medical career with a thriving presence in tech. Kpeale specializes in React.js, TypeScript, and Tailwind CSS, and mentors aspiring developers through engaging, beginner-friendly content. Her mission is to inspire and empower the next generation of developers by making code approachable, practical, and impactful.',
   },
   {
-    name: 'CHIEMERI MOGBOLU esq.',
+    name: 'Chiemeri Mogbolu esq.',
     role: 'Volunteers Lead',
     image: Chiemeri,
     linkedin:

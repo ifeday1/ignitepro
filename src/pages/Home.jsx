@@ -5,7 +5,7 @@ import Intro from '../assets/intro.png';
 // import Intro2 from '../assets/intro2.png';
 import Who from '../assets/who.png';
 import Who1 from '../assets/who1.png';
-import Illustration from '../assets/Illustration.svg';
+// import Illustration from '../assets/Illustration.svg';
 import Pitchhome from '../assets/pitchhome.png';
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -25,6 +25,9 @@ import Serviceswho1 from '../assets/servicewho1.png';
 import Img5 from '../assets/5.jpg';
 import Img7 from '../assets/7.jpg';
 import Img6 from '../assets/6.jpg';
+import Design from '../assets/design.jpeg';
+
+
 
 
 
@@ -332,7 +335,7 @@ const Home = () => {
             variants={fadeInRight}
           >
             <img
-              src={Illustration}
+              src={Design}
               alt='Accelerate Illustration'
               className='w-[300px] md:w-[380px] max-w-full'
             />
@@ -444,6 +447,7 @@ const Home = () => {
           class=' w-[500px] h-[auto] md:w-[1200px] mt-5 '
         />
       </div>
+  
     </>
   );
 };

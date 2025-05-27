@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route,  } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import ScrollToTop from './components/ScrollToTop';
@@ -13,6 +13,7 @@ import Team from './pages/Team';
 import Terms from './pages/Terms';
 import Form from './components/Form';
 import Gallery from './pages/Gallery';
+
 
 function App() {
   return (
