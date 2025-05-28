@@ -220,6 +220,7 @@ const About = () => {
         <h2 className='text-white bg-primary px-4 py-2 rounded-md text-lg font-medium w-fit mb-10'>
           PAST EVENTS AND ACTIVITIES
         </h2>
+
         <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
           {events.map((event, index) => (
             <motion.div
@@ -244,6 +245,16 @@ const About = () => {
                     <li key={i}>{point}</li>
                   ))}
                 </ul>
+
+                {/* Conditionally render the View Gallery button for first and last event */}
+                {(index === 0 || index === events.length - 1) && (
+                  <a
+                    href='/gallery'
+                    className='inline-block mt-4 px-4 py-2 bg-primary text-white rounded-md text-sm hover:bg-primary/90 transition'
+                  >
+                    View Pictures
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}

@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react'
+import ImageGallery from '../components/ImageGallery';
 import Img1 from '../assets/1.jpg';
 import Img2 from '../assets/2.jpg';
 import Img3 from '../assets/3.jpg';
@@ -20,8 +20,29 @@ import Img17 from '../assets/17.jpg';
 import Img18 from '../assets/18.jpg';
 import Img19 from '../assets/19.jpg';
 import Img20 from '../assets/20.jpg';
+import Img21 from '../assets/21.jpg';
+import Img22 from '../assets/22.jpg';
+import Img23 from '../assets/23.jpg';
+import Img24 from '../assets/24.jpg';
+import Img25 from '../assets/25.jpg';
+import Img26 from '../assets/26.jpg';
+import Img27 from '../assets/27.jpg';
+import Img28 from '../assets/28.jpg';
+import Img29 from '../assets/29.jpg';
+import Img30 from '../assets/30.jpg';
+import Img31 from '../assets/31.jpg';
+import Img32 from '../assets/32.jpg';
+import Img33 from '../assets/33.jpg';
+import Img34 from '../assets/34.jpg';
+import Img35 from '../assets/35.jpg';
 
-const images = [
+
+
+
+
+
+
+const galleryOneImages = [
   Img1,
   Img2,
   Img3,
@@ -43,82 +64,35 @@ const images = [
   Img19,
   Img20,
 ];
+const galleryTwoImages = [
+  Img21,
+  Img22,
+  Img23,
+  Img24,
+  Img25,
+  Img26,
+  Img27,
+  Img28,
+  Img29,
+  Img30,
+  Img31,
+  Img32,
+  Img33,
+  Img34,
+  Img35,
+];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
-};
 
-export default function Gallery() {
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [showAll, setShowAll] = useState(false);
-
-  const visibleImages = showAll ? images : images.slice(0, 4);
-
+const GalleryUse = () => {
   return (
     <>
-      <section className='px-6 md:px-24 py-12 bg-gray-50 mt-14'>
-        <motion.h1
-          className='bg-primary text-white text-lg md:text-xl font-medium px-4 py-2 w-fit rounded-lg mb-2'
-          variants={fadeUp}
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true }}
-        >
-          PICTURE EXCERPT FROM ACCELERATE 1.0
-        </motion.h1>
-
-        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
-          {visibleImages.map((img, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ scale: 1.05 }}
-              className='cursor-pointer'
-              onClick={() => setSelectedImage(img)}
-            >
-              <img
-                src={img}
-                alt={`Gallery ${index + 1}`}
-                className='w-full h-48 object-cover rounded-lg shadow-md'
-              />
-            </motion.div>
-          ))}
-        </div>
-
-        {/* View More Button */}
-        {images.length > 4 && (
-          <div className='text-center mt-6'>
-            <button
-              onClick={() => setShowAll(!showAll)}
-              className='px-6 py-2 bg-black text-white rounded-lg hover:bg-primary transition duration-300'
-            >
-              {showAll ? 'View Less' : 'View More'}
-            </button>
-          </div>
-        )}
-
-        {/* Modal */}
-        <AnimatePresence>
-          {selectedImage && (
-            <motion.div
-              className='fixed inset-0 bg-black/70 flex items-center justify-center z-50'
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setSelectedImage(null)}
-            >
-              <motion.img
-                src={selectedImage}
-                alt='Enlarged'
-                className='max-w-full max-h-[90vh] rounded-lg shadow-lg'
-                initial={{ scale: 0.8 }}
-                animate={{ scale: 1 }}
-                exit={{ scale: 0.8 }}
-              />
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </section>
+      <ImageGallery title='PICTURES FROM ACCELERATE 1.0' images={galleryOneImages} />
+      <ImageGallery
+        title='PICTURES FROM UNWIND: REVISITING THE VISION BOARD'
+        images={galleryTwoImages}
+      />
     </>
   );
 }
+
+export default GalleryUse
