@@ -74,14 +74,18 @@ export default function Form() {
           required
           className='w-full border px-3 py-2 rounded'
         />
-        <input
-          type='number'
-          name='age'
-          placeholder='Age'
-          onChange={handleChange}
-          required
-          className='w-full border px-3 py-2 rounded'
-        />
+
+        {/* 🔄 Birth Date Picker replacing Age input */}
+        <div>
+          <label className='block mb-1 font-medium'>Date of Birth</label>
+          <input
+            type='date'
+            name='birthDate'
+            onChange={handleChange}
+            required
+            className='w-full border px-3 py-2 rounded'
+          />
+        </div>
 
         <select
           name='gender'

@@ -181,15 +181,15 @@ const Home = () => {
         </div>
       </div>
 
-      <section className='px-6 py-12 mx-auto bg-light mt-16 md:mt-24'>
-        <div className='grid md:grid-cols-2 gap-10 items-center'>
+      <section className='px-4 sm:px-6 lg:px-12 py-12 mx-auto bg-light mt-16 md:mt-24'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-10 items-center'>
           {/* Text Section */}
           <motion.div
             initial='hidden'
             whileInView='visible'
             viewport={{ once: true, amount: 0.3 }}
             variants={textVariants}
-            className='text-gray-700 text-xl leading-relaxed p-5 rounded-xl shadow mx-0 md:mx-32'
+            className='text-gray-700 text-base sm:text-lg md:text-xl leading-relaxed p-4 sm:p-6 md:p-8 rounded-xl shadow mx-0 md:mx-4 lg:mx-12'
           >
             <p>
               Welcome to <strong>IgnitePro Community</strong>. We’re a
@@ -202,22 +202,16 @@ const Home = () => {
           </motion.div>
 
           {/* Images Section */}
-          <div className='space-y-6 flex flex-col items-center md:items-start px-0 md:px-32'>
-            {[Intro].map((img, index) => (
-              <motion.img
-                key={index}
-                custom={index}
-                initial='hidden'
-                whileInView='visible'
-                viewport={{ once: true, amount: 0.2 }}
-                variants={imageVariants}
-                src={img}
-                alt={`IgnitePro image ${index + 1}`}
-                className={`rounded-xl w-full max-w-sm ${
-                  index === 1 ? 'ml-8 md:ml-12' : ''
-                }`}
-              />
-            ))}
+          <div className='flex justify-center md:justify-start'>
+            <motion.img
+              initial='hidden'
+              whileInView='visible'
+              viewport={{ once: true, amount: 0.2 }}
+              variants={imageVariants}
+              src={Intro}
+              alt='IgnitePro image'
+              className='rounded-xl w-full max-w-[90%] sm:max-w-[70%] md:max-w-sm lg:max-w-md'
+            />
           </div>
         </div>
       </section>
@@ -447,7 +441,6 @@ const Home = () => {
           class=' w-[500px] h-[auto] md:w-[1200px] mt-5 '
         />
       </div>
-  
     </>
   );
 };
