@@ -159,7 +159,6 @@ const About = () => {
           viewport={{ once: true, amount: 0.2 }}
           className='grid grid-cols-1 md:grid-cols-2 gap-10 items-center'
         >
-          {/* Image Section: Appears left on desktop, below text on mobile */}
           <motion.div
             variants={fadeInLeft}
             className='order-2 md:order-1 flex justify-center md:justify-start'
