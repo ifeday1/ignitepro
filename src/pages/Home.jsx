@@ -26,11 +26,7 @@ import Img5 from '../assets/5.jpg';
 import Img7 from '../assets/7.jpg';
 import Img6 from '../assets/6.jpg';
 import { NavLink } from 'react-router-dom';
-import Design from '../assets/design.jpeg'; 
-
-
-
-
+import Design from '../assets/design.jpeg';
 
 const textVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -92,17 +88,15 @@ const fadeInRight = {
 // const images = [Pic, Pic1, Pic2, Pic3, Pic4];
 const images = [Services1, Serviceswho, Serviceswho1, Img5, Img6, Img7];
 
-
 const Home = () => {
+  const [current, setCurrent] = useState(0);
 
-   const [current, setCurrent] = useState(0);
-  
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setCurrent((prev) => (prev + 1) % images.length);
-      }, 4000);
-      return () => clearInterval(interval);
-    }, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
   const [showMore, setShowMore] = useState(false);
 
   const testimonials = [
@@ -112,7 +106,7 @@ const Home = () => {
       name: ' ',
       role: 'William Michael',
     },
-    // Add your 4 other testimonials here
+
     {
       quote:
         'With a deep gratitude and a heart felt appreciation to IGNITE PRO COMMUNITY for the life- changing business grant opportunity. Winning the grant was more than just a financial boost; it was a powerful vote of confidence in my vision, Business and potential. It was just a grant to the others, but  to me, it was a "transformative impact". Today,Mamachigos Beauty Touch is a step ahead, new skills has being added, new working equipment bought, more customers has been served and  lots more. Thank you!!! once more IGNITE pro community, your investment and impact in me is an unforgettable one!!.Thank you Team!!😊',
