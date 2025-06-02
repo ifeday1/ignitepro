@@ -25,7 +25,8 @@ import Serviceswho1 from '../assets/servicewho1.png';
 import Img5 from '../assets/5.jpg';
 import Img7 from '../assets/7.jpg';
 import Img6 from '../assets/6.jpg';
-import Design from '../assets/design.jpeg';
+import { NavLink } from 'react-router-dom';
+import Design from '../assets/design.jpeg'; 
 
 
 
@@ -372,9 +373,18 @@ const Home = () => {
           viewport={{ once: true }}
           variants={fadeInUp}
           className='text-primary font-semibold hover:underline text-sm'
+        ></motion.a>
+
+        <NavLink
+          to='/pitch'
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className='text-primary font-semibold hover:underline text-sm'
         >
           VIEW MORE
-        </motion.a>
+        </NavLink>
 
         <motion.img
           src={Pitchhome}

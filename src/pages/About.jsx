@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import Act from '../assets/act.svg';
 import Act1 from '../assets/act1.png';
 import Act2 from '../assets/act2.svg';
+import { NavLink } from 'react-router-dom';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -129,7 +130,6 @@ const About = () => {
           variants={staggerContainer}
           className='grid md:grid-cols-2 gap-10 items-start'
         >
-         
           <motion.div variants={fadeInUp}>
             <h2 className='text-white bg-primary w-fit px-5 py-2 rounded-md text-xl font-medium mb-6'>
               OUR VISION
@@ -246,12 +246,14 @@ const About = () => {
 
                 {/* Conditionally render the View Gallery button for first and last event */}
                 {(index === 0 || index === events.length - 1) && (
-                  <a
-                    href='/gallery'
-                    className='inline-block mt-4 px-4 py-2 bg-primary text-white rounded-md text-sm hover:bg-primary/90 transition'
-                  >
-                    View Pictures
-                  </a>
+                  <div>
+                    <NavLink
+                      className='inline-block mt-4 px-4 py-2 bg-primary text-white rounded-md text-sm hover:bg-primary/90 transition'
+                      to='/gallery'
+                    >
+                      View Pictures
+                    </NavLink>
+                  </div>
                 )}
               </div>
             </motion.div>
