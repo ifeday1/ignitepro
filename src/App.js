@@ -14,6 +14,7 @@ import Terms from './pages/Terms';
 import Form from './components/Form';
 import Banner from './components/Banner';
 import Gallery from './pages/Gallery';
+import Speakers from './pages/Speakers';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path='/pitch' element={<Pitch />} />
           <Route path='/terms-and-condition' element={<Terms />} />
           <Route path='/pitch-form' element={<Form />} />
+          <Route path='/speakers' element={<Speakers />} />
         </Routes>
 
         <ScrollToTop />

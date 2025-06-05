@@ -53,7 +53,7 @@ export default function AccelerateBanner() {
             Register
           </Link>
           <Link
-            to='/accelerate'
+            to='/speakers'
             className='text-white font-medium hover:underline transition'
           >
             View More
