@@ -1,5 +1,5 @@
 import SpeakerCard from '../components/SpeakerCard';
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 import Oladiwura from '../assets/Oladiwura.jpeg';
 import Uche from '../assets/Uche.jpeg';
 import Babatunde from '../assets/Babatunde.jpeg';
@@ -36,27 +36,27 @@ const panelist = [
   },
 ];
 
-const speakers = [
-  {
-    name: 'Onyeka Nwobu',
-    title: 'Founder, The Authentic Leadership Institute (ALI Global)',
-    bio: 'Onyeka is a globally recognized leadership strategist...',
-    image: '/images/onyeka.jpg',
-  },
-  {
-    name: 'Clinton Nnaemeka',
-    title: 'CEO, Africa Technology Expo',
-    bio: 'Clinton has led the Africa Tech Expo since 2020...',
-    image: '/images/clinton.jpg',
-  },
-  {
-    name: 'Clinton Nnaemeka',
-    title: 'CEO, Africa Technology Expo',
-    bio: 'Clinton has led the Africa Tech Expo since 2020...',
-    image: '/images/clinton.jpg',
-  },
-  // Add more speakers...
-];
+// const speakers = [
+//   {
+//     name: 'Onyeka Nwobu',
+//     title: 'Founder, The Authentic Leadership Institute (ALI Global)',
+//     bio: 'Onyeka is a globally recognized leadership strategist...',
+//     image: '/images/onyeka.jpg',
+//   },
+//   {
+//     name: 'Clinton Nnaemeka',
+//     title: 'CEO, Africa Technology Expo',
+//     bio: 'Clinton has led the Africa Tech Expo since 2020...',
+//     image: '/images/clinton.jpg',
+//   },
+//   {
+//     name: 'Clinton Nnaemeka',
+//     title: 'CEO, Africa Technology Expo',
+//     bio: 'Clinton has led the Africa Tech Expo since 2020...',
+//     image: '/images/clinton.jpg',
+//   },
+//   // Add more speakers...
+// ];
 
 export default function Speakers() {
   return (
