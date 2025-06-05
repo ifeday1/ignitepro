@@ -120,7 +120,7 @@ const Footer = () => {
               Harcourt, Rivers State, Nigeria.
             </p>
 
-            <p className='text-sm pt-2'>08132227108, 09069505198</p>
+            <p className='text-sm pt-2'>08132227108, 09037965483</p>
 
             <p className='text-sm pt-2'>igniteprocommunity@gmail.com</p>
           </motion.div>

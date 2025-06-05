@@ -12,15 +12,16 @@ import Scroll from './components/Scroll';
 import Team from './pages/Team';
 import Terms from './pages/Terms';
 import Form from './components/Form';
+import Banner from './components/Banner';
 import Gallery from './pages/Gallery';
-
 
 function App() {
   return (
     <>
       <Router>
+        <Banner />
         <Scroll />
-        <Navbar />
+        {/* <Navbar /> */}
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
