@@ -35,7 +35,7 @@ const members = [
     image: Dorothy,
     linkedin:
       'https://www.linkedin.com/in/dorothy-douglas-516467181?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-    desc: 'I’m Dorothy Douglas, an experienced Executive Assistant with a passion for organization and creative problem-solving. Currently, I am the secretary for Ignite Pro Community, where I help streamline communication and foster collaboration. I’ve supported senior leaders by managing calendars, coordinating projects, and creating engaging digital content using tools like Trello, Canva, and Notion. With a B.Sc. in Microbiology and certifications in Salesforce, HSE, and web development, I bring a unique blend of analytical skills and creativity to my work. In my free time, I enjoy reading, journaling, and exploring new ideas.',
+    desc: 'Dorothy Douglas is an experienced Executive Assistant with a passion for organization and creative problem-solving. She currently serves as the secretary of Ignite Pro Community, where she supports communication and collaboration. Dorothy has worked closely with senior leaders, managing calendars, coordinating projects, and creating digital content using tools like Trello, Canva, and Notion. With a B.Sc. in Microbiology and certifications in Salesforce, HSE, and web development, she blends analytical thinking with creativity. She enjoys reading, journaling, and exploring new ideas.'
   },
   {
     name: 'Akinola Akinsola Peter',

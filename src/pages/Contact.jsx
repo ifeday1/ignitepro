@@ -20,7 +20,7 @@ const Contact = () => {
     {
       icon: <FaPhoneAlt className='text-purple-600 text-lg' />,
       title: 'Call Us',
-      text: '08132227108, 09069505198',
+      text: '08132227108, 09037965483',
     },
     {
       icon: <FaEnvelope className='text-purple-600 text-lg' />,

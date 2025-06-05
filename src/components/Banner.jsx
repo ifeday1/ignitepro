@@ -28,37 +28,37 @@ export default function AccelerateBanner() {
 
   return (
     <motion.div
-      className='fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-[#ff416c] to-[#ff4b2b] text-white px-4 py-3 md:px-12 md:py-4 shadow-lg flex flex-col md:flex-row items-center justify-between gap-4'
+      className='fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-[#ff416c] to-[#ff4b2b] text-white text-sm px-4 py-2 shadow-md overflow-x-auto whitespace-nowrap'
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
     >
-      <div className='text-center md:text-left'>
-        <h2 className='text-lg font-bold tracking-wide uppercase'>
-          🚀 Accelerate 2.0 is Coming — July 29th, 2025
-        </h2>
-        <p className='text-sm md:text-base mt-1'>
-          Countdown:{' '}
-          <span className='font-medium'>
-            {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m{' '}
+      <div className='flex items-center justify-between gap-6 min-w-full'>
+        <div className='flex items-center gap-2'>
+          <span className='font-semibold'>
+            🚀 Accelerate 2.0 — July 29, 2025
+          </span>
+          <span>|</span>
+          <span>
+            Countdown: {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m{' '}
             {timeLeft.seconds}s
           </span>
-        </p>
-      </div>
+        </div>
 
-      <div className='flex gap-3'>
-        <Link
-          to='/register'
-          className=' text-white font-medium hover:underline transition'
-        >
-          Register
-        </Link>
-        <Link
-          to='/accelerate'
-          className=' text-white font-medium  hover:underline transition'
-        >
-          View More
-        </Link>
+        <div className='flex items-center gap-2'>
+          <Link
+            to='/register'
+            className='text-white font-medium hover:underline  transition'
+          >
+            Register
+          </Link>
+          <Link
+            to='/accelerate'
+            className='text-white font-medium hover:underline transition'
+          >
+            View More
+          </Link>
+        </div>
       </div>
     </motion.div>
   );

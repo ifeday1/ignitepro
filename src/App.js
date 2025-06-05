@@ -21,7 +21,7 @@ function App() {
       <Router>
         <Banner />
         <Scroll />
-        {/* <Navbar /> */}
+        <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
