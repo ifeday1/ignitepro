@@ -4,7 +4,7 @@ import Oladiwura from '../assets/Oladiwura.jpeg';
 import Uche from '../assets/Uche.jpeg';
 import Babatunde from '../assets/Babatunde.jpeg';
 
-const panelist = [
+const speakers = [
   {
     name: 'Oladiwura Oladepo ',
     title:
@@ -36,27 +36,6 @@ const panelist = [
   },
 ];
 
-// const speakers = [
-//   {
-//     name: 'Onyeka Nwobu',
-//     title: 'Founder, The Authentic Leadership Institute (ALI Global)',
-//     bio: 'Onyeka is a globally recognized leadership strategist...',
-//     image: '/images/onyeka.jpg',
-//   },
-//   {
-//     name: 'Clinton Nnaemeka',
-//     title: 'CEO, Africa Technology Expo',
-//     bio: 'Clinton has led the Africa Tech Expo since 2020...',
-//     image: '/images/clinton.jpg',
-//   },
-//   {
-//     name: 'Clinton Nnaemeka',
-//     title: 'CEO, Africa Technology Expo',
-//     bio: 'Clinton has led the Africa Tech Expo since 2020...',
-//     image: '/images/clinton.jpg',
-//   },
-//   // Add more speakers...
-// ];
 
 export default function Speakers() {
   return (
@@ -64,11 +43,11 @@ export default function Speakers() {
       <div className=' bg-primary'>
         <div className=' text-white text-center px-4 pt-12 mt-28'>
           <h2 className='text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight'>
-            MEET OUR PANELIST FOR ACCELERATE 2.0!
+            MEET OUR SPEAKERS FOR ACCELERATE 2.0!
           </h2>
         </div>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 py-10 '>
-          {panelist.map((speaker, idx) => (
+          {speakers.map((speaker, idx) => (
             <SpeakerCard key={idx} {...speaker} />
           ))}
         </div>

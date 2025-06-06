@@ -34,24 +34,15 @@ export default function AccelerateBanner() {
       transition={{ duration: 0.5, ease: 'easeOut' }}
     >
       <div className='flex items-center justify-between gap-6 min-w-full'>
-        <div className='flex items-center gap-2'>
-          <span className='font-semibold'>
-            🚀 Accelerate 2.0 — July 26, 2025
-          </span>
-          <span>|</span>
-          <span>
-            Countdown: {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m{' '}
-            {timeLeft.seconds}s
-          </span>
-        </div>
+        <span className='font-semibold'>🚀 Accelerate 2.0 — July 26, 2025</span>
 
-        <div className='flex items-center gap-2'>
-          <Link
-            to='/register'
-            className='text-white font-medium hover:underline  transition'
+        <div className='flex items-center gap-2 text-white font-medium hover:underline transition'>
+          <a
+            href='https://forms.gle/grAKHAZ97yGhLW9j8'
+            className='hover:underline'
           >
             Register
-          </Link>
+          </a>
           <Link
             to='/speakers'
             className='text-white font-medium hover:underline transition'
@@ -59,6 +50,12 @@ export default function AccelerateBanner() {
             View More
           </Link>
         </div>
+
+      
+        <span>
+          Countdown: {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m{' '}
+          {timeLeft.seconds}s
+        </span>
       </div>
     </motion.div>
   );
