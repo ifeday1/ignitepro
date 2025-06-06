@@ -182,6 +182,8 @@ const Criteria = () => {
               Apply Now
             </button>
           </NavLink>
+
+      
         </div>
       </div>
     </>

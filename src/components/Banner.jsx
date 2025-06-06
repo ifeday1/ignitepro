@@ -37,10 +37,7 @@ export default function AccelerateBanner() {
         <span className='font-semibold'>🚀 Accelerate 2.0 — July 26, 2025</span>
 
         <div className='flex items-center gap-2 text-white font-medium hover:underline transition'>
-          <a
-            href='https://forms.gle/grAKHAZ97yGhLW9j8'
-            className='hover:underline'
-          >
+          <a href='https://tix.africa/accelerate2' className='hover:underline'>
             Register
           </a>
           <Link
@@ -51,7 +48,6 @@ export default function AccelerateBanner() {
           </Link>
         </div>
 
-      
         <span>
           Countdown: {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m{' '}
           {timeLeft.seconds}s

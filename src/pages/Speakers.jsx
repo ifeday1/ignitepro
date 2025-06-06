@@ -3,8 +3,25 @@ import SpeakerCard from '../components/SpeakerCard';
 import Oladiwura from '../assets/Oladiwura.jpeg';
 import Uche from '../assets/Uche.jpeg';
 import Babatunde from '../assets/Babatunde.jpeg';
+import Olamide from '../assets/Olamide.jpeg';
+import David from '../assets/David Adepoju.jpeg';
+
 
 const speakers = [
+  {
+    name: 'David Adepoju',
+    title: 'Managing Partner at Co-creation Hub',
+    bio: 'Oluwaseun ADEPOJU serves as a Managing Partner at Co-creation Hub. Prior to his tenure at CcHUB, he held a faculty position at the African Leadership University in Kigali, Rwanda. Mr. Adepoju is recognised as a thought leader in technology, bringing over a decade of experience in innovation, technology, and digital transformation. ',
+    image: David,
+  },
+
+  {
+    name: 'Olamide Kuteyi',
+    title: 'Lawyer',
+    bio: 'Olamide Kuteyi is a lawyer, programme manager, and development professional passionate about bridging gender gaps and building inclusive systems for women, youth, and children. Her work sits at the intersection of policy, advocacy, and innovation to drive sustainable change across sectors.She has led and supported multi-stakeholder projects with organisations such as UN Women, UNICEF, British Council, Lagos State Government, WISCAR, and Narrative 4 Africa. Her portfolio includes coordinating the UN Women Africa Regional Dialogue, co-curating West Africa’s first private sector-led GBV initiative, and laying the groundwork for private sector affirmative procurement frameworks. A recognised advocate for children’s rights, Olamide was a UNICEF Young Influencer and Global Youth Ambassador. She is the author of Child’s Rights Act Simplified and the creator of CRAG – the Child’s Rights Awareness Game, a board game designed to educate children and communities on legal rights in an engaging and accessible way. Her creative approach to advocacy has informed strategy documents, child engagement manuals, and community-level interventions across Nigeria. Her contributions have earned her several honours, including being named one of IMPACT AFRICA’s 50 Female African Change Makers and one of Guardian Woman’s 7 Wonder Women for Inclusion in 2024. She has also been invited to strategic policy dialogues by the British and US Consulates focused on women’s inclusion and youth empowerment. As an experienced event host and moderator, Olamide brings energy, empathy, and structure to high-level gatherings facilitating meaningful conversations that lead to action. Currently, she is deepening her expertise at the intersection of AI, gender, and social impact, exploring how emerging technologies can support inclusive leadership, public policy, and youth-centred development in Africa.',
+    image: Olamide,
+  },
+
   {
     name: 'Oladiwura Oladepo ',
     title:
@@ -35,7 +52,6 @@ const speakers = [
     image: Babatunde,
   },
 ];
-
 
 export default function Speakers() {
   return (

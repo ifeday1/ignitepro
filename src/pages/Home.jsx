@@ -313,6 +313,7 @@ const Home = () => {
             >
               Register for Accelerate 2.0 →
             </motion.a>
+            
           </motion.div>
 
           {/* Image / Illustration */}

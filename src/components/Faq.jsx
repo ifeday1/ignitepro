@@ -153,7 +153,7 @@ const Faq = () => {
 
         {/* Apply Button */}
         <div className=' px-6 md:px-64 pb-10 pt-7'>
-          <NavLink to='/pitch-form'>
+          <NavLink to='https://forms.gle/grAKHAZ97yGhLW9j8'>
             <button className='bg-primary  text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition'>
               Apply Now
             </button>
