@@ -69,7 +69,7 @@ const Criteria = () => {
               </ul>
               <p className='mt-4'>
                 <strong>Deadline:</strong> All submissions must be received by{' '}
-                <strong>11:59 PM on Friday, 30th June 2025</strong>.
+                <strong>11:59 PM on Monday, 30th June 2025</strong>.
               </p>
               <p className='mt-2 text-sm italic text-gray-600'>
                 Late or incomplete applications will not be accepted. Every
