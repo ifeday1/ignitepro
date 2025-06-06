@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 const faqs = [
   {
     question: 'What is the application deadline for this pitch competition?',
-    answer: 'Application deadline is 11:59PM on Friday 20 June 2025.',
+    answer: 'Application deadline is 11:59PM on Friday 30th June 2025.',
   },
   {
     question:

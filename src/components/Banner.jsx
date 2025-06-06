@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-const targetDate = new Date('2025-07-29T00:00:00');
+const targetDate = new Date('2025-07-26T00:00:00');
 
 function getTimeRemaining() {
   const now = new Date();
@@ -36,7 +36,7 @@ export default function AccelerateBanner() {
       <div className='flex items-center justify-between gap-6 min-w-full'>
         <div className='flex items-center gap-2'>
           <span className='font-semibold'>
-            🚀 Accelerate 2.0 — July 29, 2025
+            🚀 Accelerate 2.0 — July 26, 2025
           </span>
           <span>|</span>
           <span>
