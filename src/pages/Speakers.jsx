@@ -5,9 +5,26 @@ import Uche from '../assets/Uche.jpeg';
 import Babatunde from '../assets/Babatunde.jpeg';
 import Olamide from '../assets/Olamide.jpeg';
 import David from '../assets/David Adepoju.jpeg';
-
+import Okey from '../assets/Okey.jpeg';
+import Tonye from '../assets/Tonye.jpeg';
+import { motion } from 'framer-motion';
 
 const speakers = [
+  {
+    name: 'Tonye Patrick Cole',
+    title:
+      ' Co-founded and served as the former Group Executive Director of Sahara Group',
+    bio: 'Tonye Patrick Cole, mni, co-founded and served as the former Group Executive Director of Sahara Group, a prominent energy conglomerate active in 38 countries with an annual turnover exceeding $11 billion. As an alumnus of UNILAG, Harvard Business School, and Oxford University, he is also a philanthropist and advocate for youth, spearheading initiatives such as the Nehemiah Youth Empowerment Initiative, The REACH, and Cole’s Tech Yard. He chairs Enactus Nigeria and supports various causes, including Down Syndrome awareness and the Slum2School project. Recognized as one of Africa’s 100 most influential figures by The New African, he is a two-time gubernatorial candidate for Rivers State and is committed to mentoring young people. ',
+    image: Tonye,
+  },
+
+  {
+    name: 'Dr. Okey Nwuke',
+    title: 'Finance and corporate governance expert',
+    bio: 'Dr. Okey Nwuke is a seasoned finance and corporate governance expert with over 33 years of leadership in Nigeria’s banking and corporate sectors. A former Group Executive Director at Access Bank and Board Member at Coscharis Group, he currently serves as a Non-Executive Director at Access Bank Plc and other blue-chip firms. A DBA holder from Walden University, he is a Senior Fellow at Lagos Business School, driving thought leadership in Family Business Management and governance. An accomplished academic and industry leader, Dr. Nwuke champions sustainability and effective leadership succession in family businesses across Nigeria and emerging markets. ',
+    image: Okey,
+  },
+
   {
     name: 'David Adepoju',
     title: 'Managing Partner at Co-creation Hub',
@@ -68,6 +85,20 @@ export default function Speakers() {
           ))}
         </div>
       </div>
+
+      <section className=' flex items-center justify-center mt-6'>
+          <motion.a
+            href='https://tix.africa/accelerate2'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='inline-block text-lg text-center bg-primary text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-all duration-300'
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Register for Accelerate 2.0 →
+          </motion.a>
+    
+      </section>
 
       {/* <div className=' bg-orange'>
         <div className=' text-white text-center px-4 py-12'>
