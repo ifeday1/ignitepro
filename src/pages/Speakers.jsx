@@ -40,6 +40,13 @@ const speakers = [
   },
 
   {
+    name: 'Davies Awoingo – ',
+    title: 'Tech Founder & Innovation Strategist',
+    bio: 'Davies Awoingo is a Nigerian technologist and startup founder building at the intersection of AI, agriculture, and digital creativity. He is the Co-founder and CTO of Ojunu, a US-based AI platform helping creators scale and monetize their work, and the founder of Fico Africa, an AgTech SaaS transforming farm management across the continent. He also leads Wider NetFarms DIH, supporting agricultural MSMEs through digital innovation. With a background in Marine Engineering and deep expertise in product development and DevOps, Davies is passionate about creating scalable tools that drive inclusive growth and tech-enabled impact across Africa.',
+    image: Oladiwura,
+  },
+
+  {
     name: 'Oladiwura Oladepo ',
     title:
       'Executive Director and Co-Founder at Technology for Social Change and Development Initiative (DBA Tech4Dev)',
