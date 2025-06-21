@@ -26,7 +26,7 @@ import Img5 from '../assets/5.jpg';
 import Img7 from '../assets/7.jpg';
 import Img6 from '../assets/6.jpg';
 import { NavLink } from 'react-router-dom';
-import Design from '../assets/design.jpeg';
+import Design1 from '../assets/design1.jpeg';
 
 const textVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -123,7 +123,7 @@ const Home = () => {
       quote:
         'Receiving the data analytics scholarship from Beylearning has been a truly life-changing opportunity. The program equipped me with practical, in-demand skills in data analysis, visualization, and critical thinking. I want to express my deepest gratitude to the instructors, whose expertise, patience, and support made complex concepts accessible and engaging. Their guidance played a key role in my growth and confidence in the field. I’m especially thankful to Beylearning for investing in me and creating an inclusive platform that bridges the gap between education and opportunity. As someone navigating the entry level of the analytics field, this experience has provided a strong foundation and a clearer sense of direction.',
       name: '',
-      role: 'Aderogba Oluwapelumi',
+      role: ' ',
     },
     {
       quote:
@@ -313,7 +313,6 @@ const Home = () => {
             >
               Register for Accelerate 2.0 →
             </motion.a>
-            
           </motion.div>
 
           {/* Image / Illustration */}
@@ -325,7 +324,7 @@ const Home = () => {
             variants={fadeInRight}
           >
             <img
-              src={Design}
+              src={Design1}
               alt='Accelerate Illustration'
               className='w-[300px] md:w-[380px] max-w-full'
             />
