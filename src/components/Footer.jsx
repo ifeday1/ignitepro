@@ -104,7 +104,6 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Right: Contact */}
           <motion.div
             custom={2}
             initial='hidden'
