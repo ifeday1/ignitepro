@@ -12,6 +12,14 @@ import Biobele from '../assets/Biobele.png';
 import Oghosa from '../assets/Oghosa.png';
 import Joel from '../assets/Joel.png';
 import Fortune from '../assets/Fortune.png';
+import Chuks from '../assets/chuks.png';
+import Rev from '../assets/rev.png';
+import Solo from '../assets/solo.png';
+import Henry from '../assets/henry.jpeg';
+import Han from '../assets/han.jpeg';
+import Bel from '../assets/bel.jpeg';
+
+
 
 const members = [
   {
@@ -93,37 +101,37 @@ const trustees = [
   {
     name: 'Chuks Ikeobi',
     position: 'Asset Manager E&P Company',
-    image: '/path-to-image/john.png',
+    image: Chuks,
   },
   {
     name: 'Edughom Hanson',
     position: 'Trustee',
-    image: '/path-to-image/jane.png',
+    image: Han,
   },
   {
-    name: 'Edughom Hanson',
-    position: 'Trustee',
-    image: '/path-to-image/jane.png',
+    name: ' Henry Mogbolu (PhD)',
+    position: 'ssociate VP Supply Chain Mnagement Heirs Energy Ltd',
+    image: Henry,
   },
   {
-    name: 'Edughom Hanson',
-    position: 'Trustee',
-    image: '/path-to-image/jane.png',
+    name: ' Belema Koleoso',
+    position: 'Automation Technology Lead Africa, Schneider Electric',
+    image: Bel,
   },
   {
-    name: 'Edughom Hanson',
-    position: 'Trustee',
-    image: '/path-to-image/jane.png',
+    name: ' Oloruntoba Isehunwa',
+    position: 'Leads Well Engineer Renaissance Africa Energy Company',
+    image: Oloruntoba,
   },
   {
-    name: 'Edughom Hanson',
-    position: 'Trustee',
-    image: '/path-to-image/jane.png',
+    name: 'Revd. Joy Umukoro',
+    position: ' Lead Pastor New Covenant Baptist Church ',
+    image: Rev,
   },
   {
-    name: 'Edughom Hanson',
-    position: 'Trustee',
-    image: '/path-to-image/jane.png',
+    name: '  Solomon  Ayano',
+    position: 'IT Professional Total Energies',
+    image: Solo,
   },
 ];
 
@@ -215,7 +223,7 @@ const Executive = () => {
                   alt={trustee.name}
                   className='w-20 h-20 object-cover rounded-full mx-auto border-2 border-purple-400 mb-4'
                 />
-                <h3 className='text-lg font-semibold text-gray-900'>
+                <h3 className='text-lg font-medium text-gray-900'>
                   {trustee.name}
                 </h3>
                 <p className='text-sm text-primary font-medium'>
