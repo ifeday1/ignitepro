@@ -1,5 +1,4 @@
 import SpeakerCard from '../components/SpeakerCard';
-// import { motion } from 'framer-motion';
 import Oladiwura from '../assets/Oladiwura.jpeg';
 import Uche from '../assets/Uche.jpeg';
 import Babatunde from '../assets/Babatunde.jpeg';
