@@ -35,7 +35,7 @@ const members = [
     image: Dorothy,
     linkedin:
       'https://www.linkedin.com/in/dorothy-douglas-516467181?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-    desc: 'Dorothy Douglas is an experienced Executive Assistant with a passion for organization and creative problem-solving. She currently serves as the secretary of Ignite Pro Community, where she supports communication and collaboration. Dorothy has worked closely with senior leaders, managing calendars, coordinating projects, and creating digital content using tools like Trello, Canva, and Notion. With a B.Sc. in Microbiology and certifications in Salesforce, HSE, and web development, she blends analytical thinking with creativity. She enjoys reading, journaling, and exploring new ideas.'
+    desc: 'Dorothy Douglas is an experienced Executive Assistant with a passion for organization and creative problem-solving. She currently serves as the secretary of Ignite Pro Community, where she supports communication and collaboration. Dorothy has worked closely with senior leaders, managing calendars, coordinating projects, and creating digital content using tools like Trello, Canva, and Notion. With a B.Sc. in Microbiology and certifications in Salesforce, HSE, and web development, she blends analytical thinking with creativity. She enjoys reading, journaling, and exploring new ideas.',
   },
   {
     name: 'Akinola Akinsola Peter',
@@ -86,6 +86,44 @@ const members = [
     image: Fortune,
     linkedin: '#',
     desc: 'Fortune Jonathan is a Management Consultant at Wider Perspectives Limited, where she is building expertise across key areas such as marketing and communication, strategy, business development, and entrepreneurship.She also serves as the Team Lead for Corporate Social Responsibility at Ignite Pro Community, where she champions initiatives that drive meaningful community impact.Fortune holds both a Bachelor’s degree in Marketing and a Master’s degree in Business Administration from Covenant University.Beyond her professional pursuits, she is deeply passionate about the holistic development of children and is committed to using her time, expertise, and network to contribute to the transformation of Africa.',
+  },
+];
+
+const trustees = [
+  {
+    name: 'Chuks Ikeobi',
+    position: 'Asset Manager E&P Company',
+    image: '/path-to-image/john.png',
+  },
+  {
+    name: 'Edughom Hanson',
+    position: 'Trustee',
+    image: '/path-to-image/jane.png',
+  },
+  {
+    name: 'Edughom Hanson',
+    position: 'Trustee',
+    image: '/path-to-image/jane.png',
+  },
+  {
+    name: 'Edughom Hanson',
+    position: 'Trustee',
+    image: '/path-to-image/jane.png',
+  },
+  {
+    name: 'Edughom Hanson',
+    position: 'Trustee',
+    image: '/path-to-image/jane.png',
+  },
+  {
+    name: 'Edughom Hanson',
+    position: 'Trustee',
+    image: '/path-to-image/jane.png',
+  },
+  {
+    name: 'Edughom Hanson',
+    position: 'Trustee',
+    image: '/path-to-image/jane.png',
   },
 ];
 
@@ -157,6 +195,35 @@ const Executive = () => {
               </motion.div>
             );
           })}
+        </div>
+
+        <div className='mt-16'>
+          <h2 className='text-white bg-primary w-fit px-5 py-2 rounded-md text-xl font-medium mb-6'>
+            BOARD OF TRUSTEES
+          </h2>
+          <div className='grid gap-8 sm:grid-cols-2 lg:grid-cols-3'>
+            {trustees.map((trustee, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className='bg-white border-2 border-purple-200 p-4 rounded-2xl shadow-md hover:shadow-lg transition-all text-center'
+              >
+                <img
+                  src={trustee.image}
+                  alt={trustee.name}
+                  className='w-20 h-20 object-cover rounded-full mx-auto border-2 border-purple-400 mb-4'
+                />
+                <h3 className='text-lg font-semibold text-gray-900'>
+                  {trustee.name}
+                </h3>
+                <p className='text-sm text-primary font-medium'>
+                  {trustee.position}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </>
