@@ -105,7 +105,7 @@ const trustees = [
   },
   {
     name: 'Edughom Hanson',
-    position: 'Trustee',
+    position: 'MD Wider Perspective Limited',
     image: Han,
   },
   {
