@@ -110,7 +110,7 @@ const trustees = [
   },
   {
     name: ' Henry Mogbolu (PhD)',
-    position: 'ssociate VP Supply Chain Mnagement Heirs Energy Ltd',
+    position: 'Associate VP Supply Chain Management Heirs Energy Ltd',
     image: Henry,
   },
   {
