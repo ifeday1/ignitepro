@@ -5,8 +5,6 @@ import Event1 from '../assets/event1.png';
 import Event2 from '../assets/event2.png';
 import Event3 from '../assets/event3.png';
 
-
-
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
@@ -58,7 +56,6 @@ const Events = () => {
 
       <section className='px-10 md:px-20 py-16 max-w-7xl mx-auto bg-light rounded-2xl'>
         <div className='flex flex-col md:flex-row items-center gap-10'>
-          {/* Text and Button Section */}
           <div className='flex-1 space-y-5'>
             <h2 className='text-3xl font-bold text-primary'> Accelerate 2.0</h2>
             <p className='text-gray-600'>
