@@ -79,7 +79,6 @@ const Events = () => {
             </motion.a>
           </div>
 
-          {/* Image Section */}
           <div className='flex-1'>
             <img
               src={Event1}
