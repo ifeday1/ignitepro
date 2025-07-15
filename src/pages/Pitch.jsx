@@ -70,7 +70,6 @@ const Pitch = () => {
             />
           </motion.div>
 
-          {/* Text Section: Appears top on mobile, right on desktop */}
           <motion.div variants={fadeInRight} className='order-1 md:order-2'>
             <p className='text-gray-800 text-lg leading-relaxed'>
               The Future Forward Pitch Competition is a central highlight of
