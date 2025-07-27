@@ -131,7 +131,7 @@ const Footer = () => {
         {/* Bottom Row */}
         <div className='flex flex-col md:flex-row justify-between items-center text-xs text-white'>
           <p>
-            Designed & Development by{' '}
+            Designed & Developed by{' '}
             <span className=' font-semibold'>
               <a
                 href='https://ifeoluwaoladeni.com/'

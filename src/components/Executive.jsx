@@ -130,7 +130,7 @@ const trustees = [
   },
   {
     name: '  Solomon  Ayano',
-    position: 'IT Professional Total Energies',
+    position: 'IT Business Partner, E&P Company',
     image: Solo,
   },
 ];
