@@ -149,7 +149,6 @@ const Home = () => {
             />
           ))}
 
-   
           <div className='absolute inset-0 bg-black bg-opacity-70'></div>
         </div>
 
@@ -178,7 +177,6 @@ const Home = () => {
 
       <section className='px-4 sm:px-6 lg:px-12 py-12 mx-auto bg-light mt-16 md:mt-24'>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-10 items-center'>
-          {/* Text Section */}
           <motion.div
             initial='hidden'
             whileInView='visible'
