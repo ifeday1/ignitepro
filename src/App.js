@@ -12,7 +12,6 @@ import Scroll from './components/Scroll';
 import Team from './pages/Team';
 import Terms from './pages/Terms';
 import Form from './components/Form';
-import Banner from './components/Banner';
 import Gallery from './pages/Gallery';
 import Speakers from './pages/Speakers';
 
@@ -20,7 +19,6 @@ function App() {
   return (
     <>
       <Router>
-        <Banner />
         <Scroll />
         <Navbar />
         <Routes>
