@@ -1,23 +1,13 @@
 import { React, useState, useEffect } from 'react';
-// import Header from '../assets/header.png';
 import Intro from '../assets/intro.png';
-// import Intro1 from '../assets/intro1.png';
-// import Intro2 from '../assets/intro2.png';
 import Who from '../assets/who.png';
 import Who1 from '../assets/who1.png';
-// import Illustration from '../assets/Illustration.svg';
-import Pitchhome from '../assets/pitchhome.png';
+// import Pitchhome from '../assets/pitchhome.png';
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules';
-// import Pic from '../assets/pic.svg';
-// import Pic1 from '../assets/pic1.svg';
-// import Pic2 from '../assets/pic2.svg';
-// import Pic3 from '../assets/pic3.svg';
-// import Pic4 from '../assets/pic4.svg';
-// import Pic5 from '../assets/pic5.svg';
 import Homeimg from '../assets/homeimg.svg';
 import Services1 from '../assets/services1.png';
 import Serviceswho from '../assets/servicewho.png';
@@ -25,8 +15,7 @@ import Serviceswho1 from '../assets/servicewho1.png';
 import Img5 from '../assets/5.jpg';
 import Img7 from '../assets/7.jpg';
 import Img6 from '../assets/6.jpg';
-import { NavLink } from 'react-router-dom';
-import Design1 from '../assets/design1.jpeg';
+// import { NavLink } from 'react-router-dom';
 
 const textVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -67,23 +56,23 @@ const staggerContainer = {
   },
 };
 
-const fadeInLeft = {
-  hidden: { opacity: 0, x: -40 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.7, ease: 'easeOut' },
-  },
-};
+// const fadeInLeft = {
+//   hidden: { opacity: 0, x: -40 },
+//   visible: {
+//     opacity: 1,
+//     x: 0,
+//     transition: { duration: 0.7, ease: 'easeOut' },
+//   },
+// };
 
-const fadeInRight = {
-  hidden: { opacity: 0, x: 40 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.7, ease: 'easeOut' },
-  },
-};
+// const fadeInRight = {
+//   hidden: { opacity: 0, x: 40 },
+//   visible: {
+//     opacity: 1,
+//     x: 0,
+//     transition: { duration: 0.7, ease: 'easeOut' },
+//   },
+// };
 
 // const images = [Pic, Pic1, Pic2, Pic3, Pic4];
 const images = [Services1, Serviceswho, Serviceswho1, Img5, Img6, Img7];
@@ -279,9 +268,9 @@ const Home = () => {
         </motion.div>
       </section>
 
-      <section className='bg-pink-100 rounded-3xl px-7 md:px-20 py-14 max-w-7xl mx-auto mt-10 '>
+      {/* <section className='bg-pink-100 rounded-3xl px-7 md:px-20 py-14 max-w-7xl mx-auto mt-10 '>
         <div className='flex flex-col md:flex-row items-center justify-between gap-10'>
-          {/* Text Content */}
+      
           <motion.div
             className='md:w-1/2'
             initial='hidden'
@@ -313,7 +302,7 @@ const Home = () => {
             </motion.a>
           </motion.div>
 
-          {/* Image / Illustration */}
+         
           <motion.div
             className='md:w-1/2 flex justify-center'
             initial='hidden'
@@ -328,9 +317,9 @@ const Home = () => {
             />
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
-      <section className='px-6 py-16 max-w-7xl mx-auto'>
+      {/* <section className='px-6 py-16 max-w-7xl mx-auto'>
         <div className='flex items-center justify-between mb-6'>
           <motion.h2
             initial='hidden'
@@ -387,7 +376,7 @@ const Home = () => {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className='rounded-2xl w-full object-cover shadow-lg mt-10'
         />
-      </section>
+      </section> */}
 
       <section className='px-7 md:px-24 py-16 mx-auto bg-black'>
         <h2 className='text-white bg-primary px-4 py-2 rounded-md text-lg font-medium w-fit mb-10'>
