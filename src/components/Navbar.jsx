@@ -105,13 +105,13 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Pitch Button */}
-          <div className='hidden md:block'>
+          {/* <div className='hidden md:block'>
             <NavLink to='/pitch'>
               <button className='bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition'>
                 Pitch Competition
               </button>
             </NavLink>
-          </div>
+          </div> */}
 
           {/* Mobile Menu Button */}
           <div className='md:hidden'>
