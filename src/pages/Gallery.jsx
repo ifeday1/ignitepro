@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import ImageGallery from '../components/ImageGallery';
 import Img1 from '../assets/1.jpg';
 import Img2 from '../assets/2.jpg';
@@ -36,13 +36,12 @@ import Img33 from '../assets/33.jpg';
 import Img34 from '../assets/34.jpg';
 import Img35 from '../assets/35.jpg';
 
-
-
-
-
-
-
 const galleryOneImages = [
+  Img1,
+
+];
+
+const galleryTwoImages = [
   Img1,
   Img2,
   Img3,
@@ -64,7 +63,7 @@ const galleryOneImages = [
   Img19,
   Img20,
 ];
-const galleryTwoImages = [
+const galleryThreeImages = [
   Img21,
   Img22,
   Img23,
@@ -82,17 +81,23 @@ const galleryTwoImages = [
   Img35,
 ];
 
-
 const GalleryUse = () => {
   return (
     <>
-      <ImageGallery title='PICTURES FROM ACCELERATE 1.0' images={galleryOneImages} />
+      <ImageGallery
+        title='PICTURES FROM ACCELERATE 2.0'
+        images={galleryOneImages}
+      />
+      <ImageGallery
+        title='PICTURES FROM ACCELERATE 1.0'
+        images={galleryTwoImages}
+      />
       <ImageGallery
         title='PICTURES FROM UNWIND: REVISITING THE VISION BOARD'
-        images={galleryTwoImages}
+        images={galleryThreeImages}
       />
     </>
   );
-}
+};
 
-export default GalleryUse
+export default GalleryUse;

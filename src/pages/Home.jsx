@@ -9,12 +9,10 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules';
 import Homeimg from '../assets/homeimg.svg';
-import Services1 from '../assets/services1.png';
-import Serviceswho from '../assets/servicewho.png';
-import Serviceswho1 from '../assets/servicewho1.png';
-import Img5 from '../assets/5.jpg';
-import Img7 from '../assets/7.jpg';
-import Img6 from '../assets/6.jpg';
+import Vol from '../assets/vol.jpg';
+import Second from '../assets/second.jpeg';
+import Jug from '../assets/jug.jpeg';
+
 // import { NavLink } from 'react-router-dom';
 
 const textVariants = {
@@ -75,7 +73,7 @@ const staggerContainer = {
 // };
 
 // const images = [Pic, Pic1, Pic2, Pic3, Pic4];
-const images = [Services1, Serviceswho, Serviceswho1, Img5, Img6, Img7];
+const images = [Vol, Second, Jug];
 
 const Home = () => {
   const [current, setCurrent] = useState(0);
