@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from 'react';
-import Intro from '../assets/intro.png';
+import Intro from '../assets/Intro.jpeg';
 import Who from '../assets/who.png';
 import Who1 from '../assets/who1.png';
 // import Pitchhome from '../assets/pitchhome.png';
@@ -422,7 +422,7 @@ const Home = () => {
           variants={fadeInUp}
           className='text-white bg-primary px-4 py-2 rounded-md text-lg font-medium w-fit mt-10 '
         >
-          PICTURE EXCERPT FROM ACCELERATE 1.0
+          PICTURE EXCERPT FROM ACCELERATE 2.0
         </motion.h2>
         <img
           src={Homeimg}
