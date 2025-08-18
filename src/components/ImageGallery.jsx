@@ -35,7 +35,7 @@ export default function ImageGallery({ title, images }) {
             <img
               src={img}
               alt={`Gallery ${index + 1}`}
-              className='w-full h-48 object-cover rounded-lg shadow-md'
+              className='w-full h-80 object-cover rounded-lg shadow-md'
             />
           </motion.div>
         ))}

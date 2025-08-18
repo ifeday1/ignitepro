@@ -1,7 +1,7 @@
 import React from 'react';
 import Eventshead from '../assets//eventshead.png';
 import { motion } from 'framer-motion';
-import Event1 from '../assets/event1.png';
+// import Event1 from '../assets/event1.png';
 import Event2 from '../assets/event2.png';
 import Event3 from '../assets/event3.png';
 
@@ -54,7 +54,7 @@ const Events = () => {
         </motion.div>
       </section>
 
-      <section className='px-10 md:px-20 py-16 max-w-7xl mx-auto bg-light rounded-2xl'>
+      {/* <section className='px-10 md:px-20 py-16 max-w-7xl mx-auto bg-light rounded-2xl'>
         <div className='flex flex-col md:flex-row items-center gap-10'>
           <div className='flex-1 space-y-5'>
             <h2 className='text-3xl font-bold text-primary'> Accelerate 2.0</h2>
@@ -87,7 +87,7 @@ const Events = () => {
             />
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className='px-10 md:px-20 py-16 max-w-7xl mx-auto bg-amber-100 rounded-2xl mt-7'>
         <div className='flex flex-col md:flex-row items-center gap-10'>

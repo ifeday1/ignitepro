@@ -35,10 +35,64 @@ import Img32 from '../assets/32.jpg';
 import Img33 from '../assets/33.jpg';
 import Img34 from '../assets/34.jpg';
 import Img35 from '../assets/35.jpg';
+import A1 from '../assets/a1.jpeg';
+import A2 from '../assets/a2.jpeg';
+import A3 from '../assets/a3.jpeg';
+import A4 from '../assets/a4.jpeg';
+import A5 from '../assets/a5.jpeg';
+import A6 from '../assets/a6.jpeg';
+import A7 from '../assets/a7.jpeg';
+import A8 from '../assets/a8.jpeg';
+import A9 from '../assets/a9.jpeg';
+import A10 from '../assets/a10.jpeg';
+import A11 from '../assets/a11.jpeg';
+import A12 from '../assets/a12.jpeg';
+import A13 from '../assets/a13.jpeg';
+import A14 from '../assets/a14.jpeg';
+import A15 from '../assets/a15.jpeg';
+import A16 from '../assets/a16.jpeg';
+import A17 from '../assets/a17.jpeg';
+import A18 from '../assets/a18.jpeg';
+import A19 from '../assets/a19.jpeg';
+import A20 from '../assets/a20.jpeg';
+import A21 from '../assets/a21.jpeg';
+import A22 from '../assets/a22.jpeg';
+import A23 from '../assets/a23.jpeg';
+import A24 from '../assets/a24.jpeg';
+import A25 from '../assets/a25.jpeg';
+import A26 from '../assets/a26.jpeg';
+import A27 from '../assets/a27.jpeg';
+import A28 from '../assets/a28.jpeg';
 
 const galleryOneImages = [
-  Img1,
-
+  A1,
+  A2,
+  A3,
+  A4,
+  A5,
+  A6,
+  A7,
+  A8,
+  A9,
+  A10,
+  A11,
+  A12,
+  A13,
+  A14,
+  A15,
+  A16,
+  A17,
+  A18,
+  A19,
+  A20,
+  A21,
+  A22,
+  A23,
+  A24,
+  A25,
+  A26,
+  A27,
+  A28,
 ];
 
 const galleryTwoImages = [
