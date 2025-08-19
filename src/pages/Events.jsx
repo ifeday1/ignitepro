@@ -114,7 +114,6 @@ const Events = () => {
 
       <section className='px-10 md:px-20 py-16 max-w-7xl mx-auto bg-sky-100 rounded-2xl mt-7'>
         <div className='flex flex-col md:flex-row items-center gap-10'>
-          {/* Text and Button Section */}
           <div className='flex-1 space-y-5'>
             <h2 className='text-3xl font-bold text-primary'>
               {' '}
