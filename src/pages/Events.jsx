@@ -127,7 +127,6 @@ const Events = () => {
             <p className='text-md text-gray-500'>Anticipate</p>
           </div>
 
-          {/* Image Section */}
           <div className='flex-1'>
             <img
               src={Event3}
