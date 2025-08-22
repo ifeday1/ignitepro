@@ -62,7 +62,7 @@ const Services = () => {
       text: 'Group mentoring sessions led by industry experts who share real-world insights and actionable advice..',
     },
     {
-      title: 'GoalSetting & Accountability',
+      title: 'Goal Setting & Accountability',
       text: ' Practical tools and regular check-ins to keep you on track with your personal and professional development.',
     },
     {

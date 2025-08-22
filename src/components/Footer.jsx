@@ -92,15 +92,15 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href='/contacts' className='hover:underline'>
-                  Contacts
+                <a href='/contact' className='hover:underline'>
+                  Contact
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a href='/pitch' className='hover:underline'>
                   Pitch
                 </a>
-              </li>
+              </li> */}
             </ul>
           </motion.div>
 
