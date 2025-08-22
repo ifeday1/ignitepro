@@ -60,7 +60,6 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Center: Links */}
           <motion.div
             custom={1}
             initial='hidden'
