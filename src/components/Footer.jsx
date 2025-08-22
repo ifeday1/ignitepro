@@ -124,7 +124,6 @@ const Footer = () => {
           </motion.div>
         </div>
 
-        {/* Divider */}
         <div className='border-t border-white my-6'></div>
 
         {/* Bottom Row */}
