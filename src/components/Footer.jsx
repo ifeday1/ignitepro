@@ -20,7 +20,6 @@ const Footer = () => {
     <>
       <footer className=' bg-primary text-white py-10 px-6 md:px-24 mt-14'>
         <div className='flex flex-col md:flex-row justify-between gap-10 md:gap-20'>
-          {/* Left: Logo + Description */}
           <motion.div
             custom={0}
             initial='hidden'
