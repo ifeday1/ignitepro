@@ -1,7 +1,7 @@
 import React from 'react';
 import Eventshead from '../assets//eventshead.png';
 import { motion } from 'framer-motion';
-// import Event1 from '../assets/event1.png';
+import Bts from '../assets/bts.jpg';
 import Event2 from '../assets/event2.png';
 import Event3 from '../assets/event3.png';
 
@@ -54,17 +54,22 @@ const Events = () => {
         </motion.div>
       </section>
 
-      {/* <section className='px-10 md:px-20 py-16 max-w-7xl mx-auto bg-light rounded-2xl'>
+      <section className='px-10 md:px-20 py-16 max-w-7xl mx-auto bg-light rounded-2xl'>
         <div className='flex flex-col md:flex-row items-center gap-10'>
           <div className='flex-1 space-y-5'>
-            <h2 className='text-3xl font-bold text-primary'> Accelerate 2.0</h2>
+            <h2 className='text-3xl font-bold text-primary'>
+              {' '}
+              Back-to-School Project
+            </h2>
             <p className='text-gray-600'>
-              The 2nd edition of our annual bootcamp is set to help youths turn
-              visions into reality. Through panel discussions and other
-              activities participants will be able to clarify visions, set
-              goals, create strategic plans and execute actions
+              The Back-to-School Project is designed to equip students in
+              selected Community Secondary Schools in Rivers State with the
+              tools they need to learn with confidence. By providing essential
+              school supplies, the project ensures that every child begins the
+              academic year with dignity, hope, and the opportunity to succeed.
+              Support a child’s education today.
             </p>
-            <p className='text-md text-gray-500 font-semibold'>
+            {/* <p className='text-md text-gray-500 font-semibold'>
               Date: July, 26th 2025, 10am
             </p>
             <motion.a
@@ -76,18 +81,54 @@ const Events = () => {
               whileTap={{ scale: 0.95 }}
             >
               Register →
-            </motion.a>
+            </motion.a> */}
           </div>
 
           <div className='flex-1'>
             <img
-              src={Event1}
+              src={Bts}
               alt='Event'
               className='rounded-xl w-full object-cover shadow-md'
             />
           </div>
         </div>
-      </section> */}
+      </section>
+
+      <section className='px-10 md:px-20 py-16 max-w-7xl mx-auto bg-amber-100 rounded-2xl mt-7'>
+        <div className='flex flex-col md:flex-row items-center gap-10'>
+          <div className='flex-1 space-y-5'>
+            <h2 className='text-3xl font-bold text-primary'>
+              {' '}
+              THE IGNITE ROOM PODCAST
+            </h2>
+            <p className='text-gray-600'>
+              WHAT IT IS<br></br> The Ignite Room Podcast is a platform that offers
+              insightful conversations with Christian leaders and trailblazers,
+              on various aspects of leadership, and living out their truth and
+              faith in the ‘marketace’. This program offers visions, advice,
+              guidance and personal stories and thoughts from experts from
+              different fields. <br></br>WHY A PODCAST <br></br>To educate and inspire the target
+              audience. To share experiences of Christian leaders and
+              professionals in the ‘marketplace’ and their different fields. To
+              help target audience develop a consciousness towards excellence,
+              leadership, innovation and Christian/right values Christian living<br></br>
+              TARGET AUDIENC<br>
+              </br> Young professionals Students Other young people
+              Entrepreneurs
+            </p>
+            <p className='text-md text-gray-500'>Anticipate</p>
+          </div>
+
+          {/* Image Section */}
+          <div className='flex-1'>
+            <img
+              src={Event2}
+              alt='Event'
+              className='rounded-xl w-full object-cover shadow-md'
+            />
+          </div>
+        </div>
+      </section>
 
       <section className='px-10 md:px-20 py-16 max-w-7xl mx-auto bg-amber-100 rounded-2xl mt-7'>
         <div className='flex flex-col md:flex-row items-center gap-10'>

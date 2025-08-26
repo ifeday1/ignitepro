@@ -204,11 +204,11 @@ export default function Navbar() {
                     </NavLink>
                   )
                 )}
-                <NavLink to='/pitch' onClick={() => setIsOpen(false)}>
+                {/* <NavLink to='/pitch' onClick={() => setIsOpen(false)}>
                   <button className='w-full bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition'>
                     Pitch Competition
                   </button>
-                </NavLink>
+                </NavLink> */}
               </div>
             </motion.div>
           )}

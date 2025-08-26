@@ -1,4 +1,4 @@
-import { React } from 'react';
+import React, { useState } from 'react';
 import Aboutimg from '../assets/aboutimg.png';
 import Aboutimg1 from '../assets/aboutimg1.png';
 import Aboutimg2 from '../assets/aboutimg2.png';
@@ -39,9 +39,10 @@ const fadeInRight = {
     transition: { duration: 0.6, ease: 'easeOut' },
   },
 };
+
 const cardVariants = {
   hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
+  visible: (i) => ({
     opacity: 1,
     y: 0,
     transition: {
@@ -53,6 +54,8 @@ const cardVariants = {
 };
 
 const About = () => {
+  const [expanded, setExpanded] = useState(false);
+
   const cultureData = [
     {
       title: 'Collaboration and Teamwork',
@@ -62,7 +65,7 @@ const About = () => {
     {
       title: 'Continuous Learning and Growth',
       body: 'We embrace a culture of continuous learning. Your professional and personal development growth is a priority, and we provide resources, initiatives and opportunities for skill development.',
-      bgColor: 'bg-orange',
+      bgColor: 'bg-orange-500',
     },
     {
       title: 'Open Communication and Transparency',
@@ -70,7 +73,36 @@ const About = () => {
       bgColor: 'bg-fuchsia-600',
     },
   ];
+
   const events = [
+    {
+      title: 'Accelerate 2.0',
+      desc: `Accelerate 2.0 is the second edition of the annual boot camp hosted by the Ignite Pro Community, designed for young professionals, graduates, and undergraduates. 
+
+The event aimed to empower participants by providing them with valuable skills, mentorship, and networking opportunities to accelerate their personal and professional growth.
+
+The theme "Future Forward: Transforming Visions to Reality" was crafted to engage and inspire young minds, providing them with the tools, insights, and faith-based principles essential for turning their visions into reality. 
+
+It highlighted the importance of looking ahead, adopting a proactive mindset, and taking intentional steps toward shaping a desired future. The focus was on fostering forward-thinking, innovation, and an openness to new possibilities.
+
+Transforming visions into reality demands thoughtful and systematic approach, encompassing the clarification of your vision, the establishment of goals and objectives, the development of a strategic plan, and the execution of decisive actions.
+
+Accelerate 2.0 delivered an empowering and inspiring message, motivating young professionals to take control of their goals and aspirations, while emphasizing their ability to shape their own future.
+
+Objectives:
+To Inspire;
+To Equip; and
+To Connect
+
+Event Highlights:
+
+Keynote Addresses: This focused on the importance of aligning one's personal and professional goals with a sense of purpose guided by faith and vision. The address also inspired participants to move on from envisioning their dreams to actively working towards making them a reality, highlighting key principles for success, resilience and integrity for the journey ahead.
+
+Panel Discussions: Interactive sessions with experts and thought leaders who delved into key topics that spread across transforming vision into action, overcoming challenges and building resilience, aligning purpose with vision, and other crucial areas relevant to young professionals, graduates, and undergraduates. These discussions provided valuable insights to help participants transform their visions into reality.
+
+Networking Opportunities: Dedicated spaces and activities facilitated meaningful connections among attendees, speakers, and sponsors.`,
+      image: Act,
+    },
     {
       title: 'Accelerate 1.0: Ten Times Better',
       desc: 'Ignite Pro launched its maiden edition of Accelerate Bootcamp focusing on leadership and personal development. Activities included panels, business grants and more.',
@@ -85,7 +117,7 @@ const About = () => {
     },
     {
       title: 'Navigating Foreign Scholarship Opportunities',
-      desc: 'Former students shared tips on applying for scholarships abroad including document prep and standout strategies.',
+      desc: `This event was designed to empower participants by providing valuable insights into international scholarships. Sessions included keynote addresses, panel discussions, and networking opportunities that connected attendees with experts and mentors across the globe.`,
       image: Act1,
       points: [
         '4 Internationally acclaimed Speakers',
@@ -97,8 +129,8 @@ const About = () => {
       desc: 'The 2025 kickoff featured inspiring breakfasts with industry leaders and vision board sessions.',
       image: Act2,
       points: [
-        'Engaging vision board setting activity',
-        '7 Industry recognized Speakers/ Mentors 40 selected participants',
+        'Engaging vision board activity',
+        '7 Industry recognized Speakers/Mentors',
         '40 selected participants',
         'Roundtable mentoring sessions',
       ],
@@ -107,6 +139,7 @@ const About = () => {
 
   return (
     <>
+      {/* Hero Section */}
       <section
         className='relative h-[70vh] bg-cover bg-center bg-no-repeat flex items-center justify-center rounded-xl mx-4 md:mx-20 mt-20 md:mt-32'
         style={{ backgroundImage: `url(${Aboutimg})` }}
@@ -116,12 +149,13 @@ const About = () => {
           whileInView='visible'
           viewport={{ once: true, amount: 0.6 }}
           variants={fadeInUp}
-          className=' p-8 rounded-xl text-white text-center max-w-2xl mx-4'
+          className='p-8 rounded-xl text-white text-center max-w-2xl mx-4'
         >
           <h2 className='text-3xl md:text-7xl font-bold mb-4'>ABOUT US</h2>
         </motion.div>
       </section>
 
+      {/* Vision Section */}
       <section className='px-6 py-16 max-w-7xl mx-auto'>
         <motion.div
           initial='hidden'
@@ -144,14 +178,15 @@ const About = () => {
           <div className='space-y-1 flex flex-col items-center md:items-start'>
             <img
               src={Aboutimg1}
-              alt='Placeholder 1'
-              className='rounded-lg shadow-lg w-90 '
+              alt='Vision'
+              className='rounded-lg shadow-lg w-full max-w-md'
             />
           </div>
         </motion.div>
       </section>
 
-      <section className='px-6  max-w-7xl mx-auto'>
+      {/* Mission Section */}
+      <section className='px-6 max-w-7xl mx-auto'>
         <motion.div
           initial='hidden'
           whileInView='visible'
@@ -164,12 +199,11 @@ const About = () => {
           >
             <img
               src={Aboutimg2}
-              alt='About IgnitePro'
-              className='rounded-lg shadow-lg w-90'
+              alt='Mission'
+              className='rounded-lg shadow-lg w-full max-w-md'
             />
           </motion.div>
 
-          {/* Text Section: Appears top on mobile, right on desktop */}
           <motion.div variants={fadeInRight} className='order-1 md:order-2'>
             <h2 className='text-white bg-primary w-fit px-5 py-2 rounded-md text-xl font-medium mb-6'>
               OUR MISSION
@@ -185,13 +219,12 @@ const About = () => {
         </motion.div>
       </section>
 
+      {/* Culture Section */}
       <section className='px-6 md:px-24 py-16 bg-light mt-20'>
-        {/* Section Title */}
         <h2 className='text-white bg-primary px-4 py-2 rounded-md text-lg font-medium w-fit mb-10'>
           COMMUNITY CULTURE
         </h2>
 
-        {/* Cards */}
         <div className='grid md:grid-cols-3 gap-10'>
           {cultureData.map((item, i) => (
             <motion.div
@@ -214,6 +247,7 @@ const About = () => {
         </div>
       </section>
 
+      {/* Events Section */}
       <section className='px-6 md:px-24 py-12 bg-[#FFF5F5]'>
         <h2 className='text-white bg-primary px-4 py-2 rounded-md text-lg font-medium w-fit mb-10'>
           PAST EVENTS AND ACTIVITIES
@@ -237,14 +271,38 @@ const About = () => {
                 <h3 className='text-primary font-bold text-lg'>
                   {event.title}
                 </h3>
-                <p className='text-sm text-gray-700 mt-2'>{event.desc}</p>
-                <ul className='mt-4 list-disc list-inside text-sm text-gray-600 space-y-1'>
-                  {event.points.map((point, i) => (
-                    <li key={i}>{point}</li>
-                  ))}
-                </ul>
 
-                {/* Conditionally render the View Gallery button for first and last event */}
+                {/* Special handling for Accelerate 2.0 */}
+                {index === 0 ? (
+                  <>
+                    <p
+                      className={`text-sm text-gray-700 mt-2 whitespace-pre-line transition-all duration-300 ${
+                        expanded ? '' : 'line-clamp-6'
+                      }`}
+                    >
+                      {event.desc}
+                    </p>
+                    <button
+                      onClick={() => setExpanded(!expanded)}
+                      className='mt-2 text-blue-600 text-sm font-medium hover:underline'
+                    >
+                      {expanded ? 'View Less ▲' : 'View More ▼'}
+                    </button>
+                  </>
+                ) : (
+                  <p className='text-sm text-gray-700 mt-2 whitespace-pre-line'>
+                    {event.desc}
+                  </p>
+                )}
+
+                {event.points?.length > 0 && (
+                  <ul className='mt-4 list-disc list-inside text-sm text-gray-600 space-y-1'>
+                    {event.points.map((point, i) => (
+                      <li key={i}>{point}</li>
+                    ))}
+                  </ul>
+                )}
+
                 {(index === 0 || index === events.length - 1) && (
                   <div>
                     <NavLink
