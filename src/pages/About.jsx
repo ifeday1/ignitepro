@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import Act from '../assets/act.svg';
 import Act1 from '../assets/act1.png';
 import Act2 from '../assets/act2.svg';
+import Act4 from '../assets/act4.svg';
 import { NavLink } from 'react-router-dom';
 
 const fadeInUp = {
@@ -101,7 +102,7 @@ Keynote Addresses: This focused on the importance of aligning one's personal and
 Panel Discussions: Interactive sessions with experts and thought leaders who delved into key topics that spread across transforming vision into action, overcoming challenges and building resilience, aligning purpose with vision, and other crucial areas relevant to young professionals, graduates, and undergraduates. These discussions provided valuable insights to help participants transform their visions into reality.
 
 Networking Opportunities: Dedicated spaces and activities facilitated meaningful connections among attendees, speakers, and sponsors.`,
-      image: Act,
+      image: Act4,
     },
     {
       title: 'Accelerate 1.0: Ten Times Better',
@@ -219,6 +220,7 @@ Networking Opportunities: Dedicated spaces and activities facilitated meaningful
         </motion.div>
       </section>
 
+      {/* Culture Section */}
       <section className='px-6 md:px-24 py-16 bg-light mt-20'>
         <h2 className='text-white bg-primary px-4 py-2 rounded-md text-lg font-medium w-fit mb-10'>
           COMMUNITY CULTURE
