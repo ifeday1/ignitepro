@@ -140,7 +140,7 @@ Networking Opportunities: Dedicated spaces and activities facilitated meaningful
 
   return (
     <>
-      {/* Hero Section */}
+
       <section
         className='relative h-[70vh] bg-cover bg-center bg-no-repeat flex items-center justify-center rounded-xl mx-4 md:mx-20 mt-20 md:mt-32'
         style={{ backgroundImage: `url(${Aboutimg})` }}
