@@ -219,7 +219,6 @@ Networking Opportunities: Dedicated spaces and activities facilitated meaningful
         </motion.div>
       </section>
 
-      {/* Culture Section */}
       <section className='px-6 md:px-24 py-16 bg-light mt-20'>
         <h2 className='text-white bg-primary px-4 py-2 rounded-md text-lg font-medium w-fit mb-10'>
           COMMUNITY CULTURE
