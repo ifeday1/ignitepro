@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Bts from '../assets/bts.jpg';
 import Event2 from '../assets/event2.png';
 import Event3 from '../assets/event3.png';
+import Pod from '../assets/pod.png';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -102,19 +103,19 @@ const Events = () => {
               THE IGNITE ROOM PODCAST
             </h2>
             <p className='text-gray-600'>
-              WHAT IT IS<br></br> The Ignite Room Podcast is a platform that offers
-              insightful conversations with Christian leaders and trailblazers,
-              on various aspects of leadership, and living out their truth and
-              faith in the ‘marketace’. This program offers visions, advice,
-              guidance and personal stories and thoughts from experts from
-              different fields. <br></br>WHY A PODCAST <br></br>To educate and inspire the target
-              audience. To share experiences of Christian leaders and
-              professionals in the ‘marketplace’ and their different fields. To
-              help target audience develop a consciousness towards excellence,
-              leadership, innovation and Christian/right values Christian living<br></br>
-              TARGET AUDIENC<br>
-              </br> Young professionals Students Other young people
-              Entrepreneurs
+              WHAT IT IS<br></br> The Ignite Room Podcast is a platform that
+              offers insightful conversations with Christian leaders and
+              trailblazers, on various aspects of leadership, and living out
+              their truth and faith in the ‘marketace’. This program offers
+              visions, advice, guidance and personal stories and thoughts from
+              experts from different fields. <br></br>WHY A PODCAST <br></br>To
+              educate and inspire the target audience. To share experiences of
+              Christian leaders and professionals in the ‘marketplace’ and their
+              different fields. To help target audience develop a consciousness
+              towards excellence, leadership, innovation and Christian/right
+              values Christian living<br></br>
+              TARGET AUDIENC<br></br> Young professionals Students Other young
+              people Entrepreneurs
             </p>
             <p className='text-md text-gray-500'>Anticipate</p>
           </div>
@@ -122,7 +123,7 @@ const Events = () => {
           {/* Image Section */}
           <div className='flex-1'>
             <img
-              src={Event2}
+              src={Pod}
               alt='Event'
               className='rounded-xl w-full object-cover shadow-md'
             />

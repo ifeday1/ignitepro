@@ -1,12 +1,11 @@
 import React from 'react';
 import Serviceshead from '../assets/serviceshead.png';
 import Services1 from '../assets/services1.png';
-import Serviceswho from '../assets/servicewho.png';
-import Serviceswho1 from '../assets/servicewho1.png';
+import Serviceswho from '../assets/serviceswho.png';
+import Serviceswho1 from '../assets/serviceswho1.png';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Ready from '../assets/ready.svg';
-
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -179,7 +178,7 @@ const Services = () => {
           {/* Image Section */}
           <div className='space-y-1 flex flex-col items-center md:items-start'>
             <img
-              src={Serviceswho}
+              src={Serviceswho1}
               alt='Placeholder 1'
               className='rounded-lg shadow-lg w-90 '
             />
@@ -200,7 +199,7 @@ const Services = () => {
             className='order-2 md:order-1 flex justify-center md:justify-start'
           >
             <img
-              src={Serviceswho1}
+              src={Serviceswho}
               alt='About IgnitePro'
               className='rounded-lg shadow-lg w-90'
             />
