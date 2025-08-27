@@ -89,6 +89,12 @@ const Home = () => {
   const testimonials = [
     {
       quote:
+        'The Ignite Pro grant has really helped us at Straqa. We’re passionate about building tools that support SMEs and businesses to grow, and this support gave us the push we needed to move faster and reach more people.',
+      name: ' ',
+      role: 'Straqa',
+    },
+    {
+      quote:
         'I am deeply grateful to IGNITE Pro Community for the life-changing grant that enabled me to pursue my trading career. Their support was instrumental in my success, and I am thankful for the opportunity. Their investment in me has paid off, and I am proud to be a testament to their impactful work .Thanks Team!',
       name: ' ',
       role: 'William Michael',
