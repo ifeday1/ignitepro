@@ -89,6 +89,12 @@ const Home = () => {
   const testimonials = [
     {
       quote:
+        'For Uri, winning the Ignite Pro Competition in Port Harcourt and receiving the grant came at the perfect time. The support has helped us strengthen our product, onboard new clients, and accelerate growth. Beyond funding, the competition also opened doors to valuable introductions and new client opportunities. We’re truly grateful for this boost and the belief in our vision.',
+      name: ' ',
+      role: 'Uri Creative',
+    },
+    {
+      quote:
         'The Ignite Pro grant has really helped us at Straqa. We’re passionate about building tools that support SMEs and businesses to grow, and this support gave us the push we needed to move faster and reach more people.',
       name: ' ',
       role: 'Straqa',
