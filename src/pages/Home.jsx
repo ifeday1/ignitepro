@@ -95,6 +95,12 @@ const Home = () => {
     },
     {
       quote:
+        'Ignite Pro is doing a great job as a community for young professionals and entrepreneurs, Accelerate 2.0 was an exciting experience, filled with impactful sessions. A lot was revealed by the speakers, we also got financial support from the pitching event, which enabled push our product development to another level. Ignite Pro is a community I recommend for aspiring entrepreneurs and leaders.',
+      name: ' ',
+      role: 'Green Paragon Limited',
+    },
+    {
+      quote:
         'I am deeply grateful to IGNITE Pro Community for the life-changing grant that enabled me to pursue my trading career. Their support was instrumental in my success, and I am thankful for the opportunity. Their investment in me has paid off, and I am proud to be a testament to their impactful work .Thanks Team!',
       name: ' ',
       role: 'William Michael',
