@@ -12,6 +12,7 @@ import Homeimg from '../assets/homeimg.svg';
 import Vol from '../assets/vol.jpg';
 import Second from '../assets/second.jpeg';
 import Jug from '../assets/jug.jpeg';
+import Ill from '../assets/Illustration.svg';
 
 // import { NavLink } from 'react-router-dom';
 
@@ -54,23 +55,23 @@ const staggerContainer = {
   },
 };
 
-// const fadeInLeft = {
-//   hidden: { opacity: 0, x: -40 },
-//   visible: {
-//     opacity: 1,
-//     x: 0,
-//     transition: { duration: 0.7, ease: 'easeOut' },
-//   },
-// };
+const fadeInLeft = {
+  hidden: { opacity: 0, x: -40 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.7, ease: 'easeOut' },
+  },
+};
 
-// const fadeInRight = {
-//   hidden: { opacity: 0, x: 40 },
-//   visible: {
-//     opacity: 1,
-//     x: 0,
-//     transition: { duration: 0.7, ease: 'easeOut' },
-//   },
-// };
+const fadeInRight = {
+  hidden: { opacity: 0, x: 40 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.7, ease: 'easeOut' },
+  },
+};
 
 // const images = [Pic, Pic1, Pic2, Pic3, Pic4];
 const images = [Vol, Second, Jug];
@@ -284,9 +285,8 @@ const Home = () => {
         </motion.div>
       </section>
 
-      {/* <section className='bg-pink-100 rounded-3xl px-7 md:px-20 py-14 max-w-7xl mx-auto mt-10 '>
+      <section className='bg-pink-100 rounded-3xl px-7 md:px-20 py-14 max-w-7xl mx-auto mt-10 mb-28 '>
         <div className='flex flex-col md:flex-row items-center justify-between gap-10'>
-      
           <motion.div
             className='md:w-1/2'
             initial='hidden'
@@ -295,30 +295,28 @@ const Home = () => {
             variants={fadeInLeft}
           >
             <h2 className='text-2xl md:text-3xl font-bold mb-4 text-black'>
-              Accelerate 2.0
+              Upcoming Events
             </h2>
             <p className='text-gray-800 text-lg leading-relaxed mb-6 '>
-              Accelerate 2.0 is the second edition of the annual boot camp
-              hosted by the Ignite Pro Community, created for young
-              professionals, graduates, and undergraduates. This year’s theme,
-              “Future Forward: Transforming Visions to Reality,” is designed to
-              inspire and empower young minds with the insights, tools, and
-              faith-based principles necessary to actualize their aspirations.
+              Stay plugged in! At Ignite Pro, we create spaces that spark
+              growth, connection, and fresh ideas. Mark your calendar and don’t
+              miss out on what’s next.
+              <br></br>✨ More events coming soon — stay tuned and be part of
+              the Ignite experience!
             </p>
 
             <motion.a
-              href='https://tix.africa/accelerate2'
+              href='/events'
               target='_blank'
               rel='noopener noreferrer'
               className='inline-block text-lg mt-4 bg-primary text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition transition-all duration-300'
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              Register for Accelerate 2.0 →
+              View up Coming Events→
             </motion.a>
           </motion.div>
 
-         
           <motion.div
             className='md:w-1/2 flex justify-center'
             initial='hidden'
@@ -327,13 +325,13 @@ const Home = () => {
             variants={fadeInRight}
           >
             <img
-              src={Design1}
+              src={Ill}
               alt='Accelerate Illustration'
               className='w-[300px] md:w-[380px] max-w-full'
             />
           </motion.div>
         </div>
-      </section> */}
+      </section>
 
       {/* <section className='px-6 py-16 max-w-7xl mx-auto'>
         <div className='flex items-center justify-between mb-6'>

@@ -2,8 +2,8 @@ import React from 'react';
 import Eventshead from '../assets//eventshead.png';
 import { motion } from 'framer-motion';
 import Bts from '../assets/bts.jpg';
-import Event2 from '../assets/event2.png';
-import Event3 from '../assets/event3.png';
+import Event2 from '../assets/event2.jpeg';
+import Event3 from '../assets/event3.jpeg';
 import Pod from '../assets/pod.png';
 
 const fadeInUp = {
@@ -104,18 +104,18 @@ const Events = () => {
             </h2>
             <p className='text-gray-600'>
               WHAT IT IS?
-              <br></br> The Ignite Room Podcast is a platform that
-              offers insightful conversations with Christian Leaders and
-              Trailblazers, on various aspects of leadership, and living out
-              their truth and faith in the market place. This program offers
-              Visions, Advice, Guidance and Personal stories and Thoughts from
-              Experts from different fields.<br>
-              </br> <br></br>WHY A PODCAST <br></br>To
+              <br></br> The Ignite Room Podcast is a platform that offers
+              insightful conversations with Christian Leaders and Trailblazers,
+              on various aspects of leadership, and living out their truth and
+              faith in the market place. This program offers Visions, Advice,
+              Guidance and Personal stories and Thoughts from Experts from
+              different fields.<br></br> <br></br>WHY A PODCAST <br></br>To
               educate and inspire the target audience. To share experiences of
               Christian Leaders and Professionals in the marketplace and their
               different fields. To help target audience develop a consciousness
               towards Excellence, Leadership, Innovation and Christian values/
-              Christian living<br></br><br></br>
+              Christian living<br></br>
+              <br></br>
               TARGET AUDIENCE<br></br> Young professionals Students Other young
               people Entrepreneurs
             </p>
@@ -137,9 +137,9 @@ const Events = () => {
           <div className='flex-1 space-y-5'>
             <h2 className='text-3xl font-bold text-primary'> CSR Initiative</h2>
             <p className='text-gray-600'>
-              As an organisation seeking to impact the society and
-              environment, Corporate Social Responsibility is key to us. We’ll
-              begin to take action through our 1st CSR program
+              As an organisation seeking to impact the society and environment,
+              Corporate Social Responsibility is key to us. We’ll begin to take
+              action through our 1st CSR program
             </p>
             <p className='text-md text-gray-500'>Anticipate</p>
           </div>
