@@ -100,21 +100,23 @@ const Events = () => {
           <div className='flex-1 space-y-5'>
             <h2 className='text-3xl font-bold text-primary'>
               {' '}
-              THE IGNITE ROOM PODCAST
+              The Ignite Room Podcast
             </h2>
             <p className='text-gray-600'>
-              WHAT IT IS<br></br> The Ignite Room Podcast is a platform that
-              offers insightful conversations with Christian leaders and
-              trailblazers, on various aspects of leadership, and living out
-              their truth and faith in the ‘marketace’. This program offers
-              visions, advice, guidance and personal stories and thoughts from
-              experts from different fields. <br></br>WHY A PODCAST <br></br>To
+              WHAT IT IS?
+              <br></br> The Ignite Room Podcast is a platform that
+              offers insightful conversations with Christian Leaders and
+              Trailblazers, on various aspects of leadership, and living out
+              their truth and faith in the market place. This program offers
+              Visions, Advice, Guidance and Personal stories and Thoughts from
+              Experts from different fields.<br>
+              </br> <br></br>WHY A PODCAST <br></br>To
               educate and inspire the target audience. To share experiences of
-              Christian leaders and professionals in the ‘marketplace’ and their
+              Christian Leaders and Professionals in the marketplace and their
               different fields. To help target audience develop a consciousness
-              towards excellence, leadership, innovation and Christian/right
-              values Christian living<br></br>
-              TARGET AUDIENC<br></br> Young professionals Students Other young
+              towards Excellence, Leadership, Innovation and Christian values/
+              Christian living<br></br><br></br>
+              TARGET AUDIENCE<br></br> Young professionals Students Other young
               people Entrepreneurs
             </p>
             <p className='text-md text-gray-500'>Anticipate</p>
@@ -135,7 +137,7 @@ const Events = () => {
           <div className='flex-1 space-y-5'>
             <h2 className='text-3xl font-bold text-primary'> CSR Initiative</h2>
             <p className='text-gray-600'>
-              As an organisation seeking to impact the our society and
+              As an organisation seeking to impact the society and
               environment, Corporate Social Responsibility is key to us. We’ll
               begin to take action through our 1st CSR program
             </p>
