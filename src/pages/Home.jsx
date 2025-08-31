@@ -141,7 +141,6 @@ const Home = () => {
   return (
     <>
       <div className='relative h-screen w-full overflow-hidden mt-20'>
-        {/* Background Carousel */}
         <div className='absolute inset-0 z-0'>
           {images.map((src, index) => (
             <motion.img
