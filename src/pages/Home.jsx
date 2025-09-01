@@ -157,7 +157,6 @@ const Home = () => {
           <div className='absolute inset-0 bg-black bg-opacity-70'></div>
         </div>
 
-        {/* Text Content */}
         <div className='relative z-10 flex flex-col justify-center h-full text-white px-6 md:px-16'>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
