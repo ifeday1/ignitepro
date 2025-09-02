@@ -198,7 +198,6 @@ const Home = () => {
             </p>
           </motion.div>
 
-          {/* Images Section */}
           <div className='flex justify-center md:justify-start'>
             <motion.img
               initial='hidden'
