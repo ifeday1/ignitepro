@@ -109,7 +109,6 @@ const Services = () => {
             </p>
           </motion.div>
 
-          {/* Image Section */}
           <div className='space-y-1 flex flex-col items-center md:items-start'>
             <img
               src={Services1}
