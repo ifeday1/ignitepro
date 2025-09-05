@@ -95,7 +95,6 @@ const Services = () => {
           variants={staggerContainer}
           className='grid md:grid-cols-2 gap-10 items-start'
         >
-          {/* Text Section */}
           <motion.div variants={fadeInUp}>
             <h2 className='text-white bg-primary w-fit px-5 py-2 rounded-md text-xl font-medium mb-6'>
               CAREER COACHING AND MENTORSHIP
