@@ -130,7 +130,6 @@ const Services = () => {
           WHAT WE OFFER{' '}
         </motion.h2>
 
-        {/* Grid of Vision Items */}
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
           {visionItems.map((item, index) => (
             <motion.div
