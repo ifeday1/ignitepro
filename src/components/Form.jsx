@@ -75,7 +75,6 @@ export default function Form() {
           className='w-full border px-3 py-2 rounded'
         />
 
-        {/* 🔄 Birth Date Picker replacing Age input */}
         <div>
           <label className='block mb-1 font-medium'>Date of Birth</label>
           <input
