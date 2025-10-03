@@ -26,7 +26,7 @@ const ScrollToTop = () => {
       initial={{ opacity: 0, scale: 0 }}
       animate={{ opacity: isVisible ? 1 : 0, scale: isVisible ? 1 : 0 }}
       transition={{ duration: 0.3 }}
-      whileHover={{ y: -5, transition: { yoyo: Infinity, duration: 0.3 } }} // Jump effect
+      whileHover={{ y: -5, transition: { yoyo: Infinity, duration: 0.3 } }}
     >
       <FaArrowUp className='text-xl md:text-2xl' />
     </motion.button>
