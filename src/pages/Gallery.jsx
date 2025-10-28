@@ -64,13 +64,49 @@ import A26 from '../assets/a26.jpeg';
 import A27 from '../assets/a27.jpeg';
 import A28 from '../assets/a28.jpeg';
 import CSR from '../assets/csr.jpg';
-
+import CSR1 from '../assets/csr1.jpg';
+import CSR2 from '../assets/csr2.jpg';
+import CSR3 from '../assets/csr3.jpg';
+import CSR4 from '../assets/csr4.jpg';
+import CSR5 from '../assets/csr5.jpg';
+import CSR6 from '../assets/csr6.jpg';
+import CSR7 from '../assets/csr7.jpg';
+import CSR8 from '../assets/csr8.jpg';
+import CSR9 from '../assets/csr9.jpg';
+import CSR10 from '../assets/csr10.jpg';
+import CSR11 from '../assets/csr11.jpg';
+import CSR12 from '../assets/csr12.jpg';
+import CSR13 from '../assets/csr13.jpg';
+import CSR15 from '../assets/csr15.jpg';
+import CSR16 from '../assets/csr16.jpg';
+import CSR17 from '../assets/csr17.jpg';
+import CSR18 from '../assets/csr18.jpg';
+import CSR19 from '../assets/csr19.jpg';
+import CSR20 from '../assets/csr20.jpg';
 
 const csr = [
   CSR,
- 
-];
+  CSR1,
+  CSR2,
+  CSR3,
+  CSR4,
+  CSR5,
+  CSR6,
+  CSR7,
+  CSR8,
+  CSR9,
+  CSR10,
+  CSR11,
+  CSR12,
+  CSR13,
 
+  CSR15,
+  CSR16,
+  CSR17,
+  CSR18,
+  CSR19,
+  CSR20,
+];
 
 const galleryOneImages = [
   A1,
@@ -146,10 +182,7 @@ const galleryThreeImages = [
 const GalleryUse = () => {
   return (
     <>
-      <ImageGallery
-        title='BACK TO SCHOOL INITIATIVE'
-        images={csr}
-      />
+      <ImageGallery title='BACK TO SCHOOL INITIATIVE' images={csr} />
 
       <ImageGallery
         title='PICTURES FROM ACCELERATE 2.0'

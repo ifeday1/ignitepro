@@ -13,7 +13,7 @@ export default function ImageGallery({ title, images }) {
   const visibleImages = showAll ? images : images.slice(0, 4);
 
   return (
-    <section className='px-6 md:px-24 py-12 bg-gray-50 mt-14'>
+    <section className='px-6 md:px-24 py-12 bg-gray-50 mt-16'>
       <motion.h1
         className='bg-primary text-white text-lg md:text-xl font-medium px-4 py-2 w-fit rounded-lg mb-2'
         variants={fadeUp}
