@@ -1,8 +1,8 @@
 import React from 'react';
 import Eventshead from '../assets//eventshead.png';
 import { motion } from 'framer-motion';
-import Bts from '../assets/bts.jpg';
-import Event2 from '../assets/event2.jpeg';
+// import Bts from '../assets/bts.jpg';
+// import Event2 from '../assets/event2.jpeg';
 import Event3 from '../assets/event3.jpeg';
 import Pod from '../assets/pod.png';
 
@@ -55,7 +55,7 @@ const Events = () => {
         </motion.div>
       </section>
 
-      <section className='px-10 md:px-20 py-16 max-w-7xl mx-auto bg-light rounded-2xl'>
+      {/* <section className='px-10 md:px-20 py-16 max-w-7xl mx-auto bg-light rounded-2xl'>
         <div className='flex flex-col md:flex-row items-center gap-10'>
           <div className='flex-1 space-y-5'>
             <h2 className='text-3xl font-bold text-primary'>
@@ -69,8 +69,8 @@ const Events = () => {
               school supplies, the project ensures that every child begins the
               academic year with dignity, hope, and the opportunity to succeed.
               Support a child’s education today.
-            </p>
-            {/* <p className='text-md text-gray-500 font-semibold'>
+            </p> */}
+      {/* <p className='text-md text-gray-500 font-semibold'>
               Date: July, 26th 2025, 10am
             </p>
             <motion.a
@@ -83,7 +83,7 @@ const Events = () => {
             >
               Register →
             </motion.a> */}
-          </div>
+      {/* </div>
 
           <div className='flex-1'>
             <img
@@ -93,7 +93,7 @@ const Events = () => {
             />
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className='px-10 md:px-20 py-16 max-w-7xl mx-auto bg-amber-100 rounded-2xl mt-7'>
         <div className='flex flex-col md:flex-row items-center gap-10'>
@@ -132,28 +132,7 @@ const Events = () => {
         </div>
       </section>
 
-      <section className='px-10 md:px-20 py-16 max-w-7xl mx-auto bg-amber-100 rounded-2xl mt-7'>
-        <div className='flex flex-col md:flex-row items-center gap-10'>
-          <div className='flex-1 space-y-5'>
-            <h2 className='text-3xl font-bold text-primary'> CSR Initiative</h2>
-            <p className='text-gray-600'>
-              As an organisation seeking to impact the society and environment,
-              Corporate Social Responsibility is key to us. We’ll begin to take
-              action through our 1st CSR program
-            </p>
-            <p className='text-md text-gray-500'>Anticipate</p>
-          </div>
-
-          {/* Image Section */}
-          <div className='flex-1'>
-            <img
-              src={Event2}
-              alt='Event'
-              className='rounded-xl w-full object-cover shadow-md'
-            />
-          </div>
-        </div>
-      </section>
+   
 
       <section className='px-10 md:px-20 py-16 max-w-7xl mx-auto bg-sky-100 rounded-2xl mt-7'>
         <div className='flex flex-col md:flex-row items-center gap-10'>

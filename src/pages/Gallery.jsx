@@ -63,6 +63,14 @@ import A25 from '../assets/a25.jpeg';
 import A26 from '../assets/a26.jpeg';
 import A27 from '../assets/a27.jpeg';
 import A28 from '../assets/a28.jpeg';
+import CSR from '../assets/csr.jpg';
+
+
+const csr = [
+  CSR,
+ 
+];
+
 
 const galleryOneImages = [
   A1,
@@ -138,6 +146,11 @@ const galleryThreeImages = [
 const GalleryUse = () => {
   return (
     <>
+      <ImageGallery
+        title='BACK TO SCHOOL INITIATIVE'
+        images={csr}
+      />
+
       <ImageGallery
         title='PICTURES FROM ACCELERATE 2.0'
         images={galleryOneImages}
