@@ -3,7 +3,7 @@ import Eventshead from '../assets//eventshead.png';
 import { motion } from 'framer-motion';
 // import Bts from '../assets/bts.jpg';
 // import Event2 from '../assets/event2.jpeg';
-import Event3 from '../assets/event3.jpeg';
+// import Event3 from '../assets/event3.jpeg';
 import Pod from '../assets/pod.png';
 
 const fadeInUp = {
@@ -132,9 +132,7 @@ const Events = () => {
         </div>
       </section>
 
-   
-
-      <section className='px-10 md:px-20 py-16 max-w-7xl mx-auto bg-sky-100 rounded-2xl mt-7'>
+      {/* <section className='px-10 md:px-20 py-16 max-w-7xl mx-auto bg-sky-100 rounded-2xl mt-7'>
         <div className='flex flex-col md:flex-row items-center gap-10'>
           <div className='flex-1 space-y-5'>
             <h2 className='text-3xl font-bold text-primary'>
@@ -157,7 +155,7 @@ const Events = () => {
             />
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };
