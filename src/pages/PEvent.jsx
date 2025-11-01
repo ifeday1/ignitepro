@@ -20,7 +20,7 @@ const staggerContainer = {
   },
 };
 
-const Events = () => {
+const PEvent = () => {
   return (
     <>
       <section
@@ -34,9 +34,7 @@ const Events = () => {
           variants={fadeInUp}
           className=' p-8 rounded-xl text-white text-center max-w-2xl mx-4'
         >
-          <h2 className='text-3xl md:text-7xl font-bold mb-4'>
-            UPCOMING EVENTS
-          </h2>
+          <h2 className='text-3xl md:text-7xl font-bold mb-4'>PAST EVENTS</h2>
         </motion.div>
       </section>
 
@@ -161,5 +159,4 @@ const Events = () => {
     </>
   );
 };
-
-export default Events;
+export default PEvent;

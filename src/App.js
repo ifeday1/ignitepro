@@ -14,6 +14,7 @@ import Terms from './pages/Terms';
 import Form from './components/Form';
 import Gallery from './pages/Gallery';
 import Speakers from './pages/Speakers';
+import PEvent from './pages/PEvent';
 
 function App() {
   return (
@@ -26,7 +27,8 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/meet-the-team' element={<Team />} />
           <Route path='/works' element={<Services />} />
-          <Route path='/events' element={<Events />} />
+          <Route path='/upcomingevents' element={<PEvent />} />
+          <Route path='/pastevents' element={<Events />} />
           <Route path='/gallery' element={<Gallery />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/pitch' element={<Pitch />} />
