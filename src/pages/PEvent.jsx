@@ -39,7 +39,7 @@ const PEvent = () => {
               {' '}
               BACK TO SCHOOL INITIATIVE
             </h2>
-            <p className='text-gray-600'>
+            <p className='text-gray-600 text-justify'>
               Ignite Pro Community Back to School Project 2025 Ignite Pro
               Community successfully held its first ever Corporate Social
               Responsibility (CSR) initiative, the “Back to School Project” at
@@ -57,7 +57,7 @@ const PEvent = () => {
               more meaningful CSR projects in the future.
             </p>
           </div>
-          ç
+
           <div className='flex-1'>
             <img
               src={Csr19}
@@ -72,18 +72,18 @@ const PEvent = () => {
         <div className='flex flex-col md:flex-row items-center gap-10'>
           <div className='flex-1 space-y-5'>
             <h2 className='text-3xl font-bold text-primary'> ACCELERATE 2.0</h2>
-            <p className='text-gray-600'>
+            <p className='text-gray-600 text-justify'>
               Accelerate 2.0 was the second edition of the annual boot camp
               hosted by the Ignite Pro Community, tailored for young
               professionals, graduates, and undergraduates. With the theme
-              *“Future Forward: Transforming Visions to Reality,”* the event
+              “Future Forward: Transforming Visions to Reality,” the event
               empowered participants through impactful mentorship sessions,
               practical workshops, and valuable networking opportunities. It
               emphasized the importance of vision clarity, goal setting, and
               taking intentional steps toward a purposeful future. A major
               highlight was the **Pitch Tank Competition**, where participants
               showcased innovative ideas and received expert feedback to refine
-              their concepts. Overall, *Accelerate 2.0* inspired attendees to
+              their concepts. Overall, Accelerate 2.0 inspired attendees to
               embrace forward-thinking, faith-based principles, and actionable
               strategies to transform their dreams into reality and accelerate
               both personal and professional growth.
@@ -107,7 +107,7 @@ const PEvent = () => {
               {' '}
               UNWIND: REVISITING THE VISION BOARD
             </h2>
-            <p className='text-gray-600'>
+            <p className='text-gray-600 text-justify'>
               Unwind was an exclusive breakfast and mentorship experience that
               brought professionals together to learn, connect, and grow.
               Participants engaged in insightful conversations with industry
@@ -133,7 +133,7 @@ const PEvent = () => {
         <div className='flex flex-col md:flex-row items-center gap-10'>
           <div className='flex-1 space-y-5'>
             <h2 className='text-3xl font-bold text-primary'> ACCELERATE 1.0</h2>
-            <p className='text-gray-600'>
+            <p className='text-gray-600 text-justify'>
               The event, is a leadership and personal development bootcamp, it’s
               an initiative powered by the New Covenant Baptist church in
               partnership with other proposed entities. Its maiden edition is
