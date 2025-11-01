@@ -20,8 +20,8 @@ export default function Navbar() {
     {
       label: 'Events',
       dropdown: [
-        { to: '/pastevents', label: 'Past Events' },
         { to: '/upcomingevents', label: 'Upcoming Events' },
+        { to: '/pastevents', label: 'Past Events' },
         { to: '/gallery', label: 'Gallery' },
       ],
     },

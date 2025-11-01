@@ -11,15 +11,6 @@ const fadeInUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
 };
 
-const staggerContainer = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.3,
-    },
-  },
-};
-
 const Events = () => {
   return (
     <>
@@ -37,23 +28,6 @@ const Events = () => {
           <h2 className='text-3xl md:text-7xl font-bold mb-4'>
             UPCOMING EVENTS
           </h2>
-        </motion.div>
-      </section>
-
-      <section className='px-6 py-16 max-w-7xl mx-auto'>
-        <motion.div
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true }}
-          variants={staggerContainer}
-          className='grid md:grid-cols-2 gap-10 items-start'
-        >
-          {/* Text Section */}
-          <motion.div variants={fadeInUp}>
-            <h2 className='text-white bg-primary w-fit px-5 py-2 rounded-md text-xl font-medium '>
-              UPCOMING EVENTS
-            </h2>
-          </motion.div>
         </motion.div>
       </section>
 

@@ -4,20 +4,13 @@ import { motion } from 'framer-motion';
 // import Bts from '../assets/bts.jpg';
 // import Event2 from '../assets/event2.jpeg';
 // import Event3 from '../assets/event3.jpeg';
-import Pod from '../assets/pod.png';
+import Img15 from '../assets/15.jpg';
+import Img30 from '../assets/30.jpg';
+import A11 from '../assets/a11.jpeg';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
-};
-
-const staggerContainer = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.3,
-    },
-  },
 };
 
 const PEvent = () => {
@@ -38,124 +31,96 @@ const PEvent = () => {
         </motion.div>
       </section>
 
-      <section className='px-6 py-16 max-w-7xl mx-auto'>
-        <motion.div
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true }}
-          variants={staggerContainer}
-          className='grid md:grid-cols-2 gap-10 items-start'
-        >
-          {/* Text Section */}
-          <motion.div variants={fadeInUp}>
-            <h2 className='text-white bg-primary w-fit px-5 py-2 rounded-md text-xl font-medium '>
-              UPCOMING EVENTS
-            </h2>
-          </motion.div>
-        </motion.div>
-      </section>
-
-      {/* <section className='px-10 md:px-20 py-16 max-w-7xl mx-auto bg-light rounded-2xl'>
+      <section className='px-10 md:px-20 py-16 max-w-7xl mx-auto bg-cyan-100 rounded-2xl mt-7'>
         <div className='flex flex-col md:flex-row items-center gap-10'>
           <div className='flex-1 space-y-5'>
-            <h2 className='text-3xl font-bold text-primary'>
-              {' '}
-              Back-to-School Project
-            </h2>
+            <h2 className='text-3xl font-bold text-primary'> ACCELERATE 2.0</h2>
             <p className='text-gray-600'>
-              The Back-to-School Project is designed to equip students in
-              selected Community Secondary Schools in Rivers State with the
-              tools they need to learn with confidence. By providing essential
-              school supplies, the project ensures that every child begins the
-              academic year with dignity, hope, and the opportunity to succeed.
-              Support a child’s education today.
-            </p> */}
-      {/* <p className='text-md text-gray-500 font-semibold'>
-              Date: July, 26th 2025, 10am
+              *Accelerate 2.0* was the second edition of the annual boot camp
+              hosted by the Ignite Pro Community, tailored for young
+              professionals, graduates, and undergraduates. With the theme
+              *“Future Forward: Transforming Visions to Reality,”* the event
+              empowered participants through impactful mentorship sessions,
+              practical workshops, and valuable networking opportunities. It
+              emphasized the importance of vision clarity, goal setting, and
+              taking intentional steps toward a purposeful future. A major
+              highlight was the **Pitch Tank Competition**, where participants
+              showcased innovative ideas and received expert feedback to refine
+              their concepts. Overall, *Accelerate 2.0* inspired attendees to
+              embrace forward-thinking, faith-based principles, and actionable
+              strategies to transform their dreams into reality and accelerate
+              both personal and professional growth.
             </p>
-            <motion.a
-              href='https://tix.africa/accelerate2'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='inline-block text-lg mt-4 bg-primary text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition transition-all duration-300'
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Register →
-            </motion.a> */}
-      {/* </div>
+          </div>
 
           <div className='flex-1'>
             <img
-              src={Bts}
+              src={A11}
               alt='Event'
               className='rounded-xl w-full object-cover shadow-md'
             />
           </div>
         </div>
-      </section> */}
+      </section>
+
+      <section className='px-10 md:px-20 py-16 max-w-7xl mx-auto bg-lime-100 rounded-2xl mt-7'>
+        <div className='flex flex-col md:flex-row items-center gap-10'>
+          <div className='flex-1 space-y-5'>
+            <h2 className='text-3xl font-bold text-primary'>
+              {' '}
+              UNWIND: REVISITING THE VISION BOARD
+            </h2>
+            <p className='text-gray-600'>
+              Unwind was an exclusive breakfast and mentorship experience that
+              brought professionals together to learn, connect, and grow.
+              Participants engaged in insightful conversations with industry
+              leaders, gaining valuable career guidance and clarity. The event
+              also featured an Expert Vision Board Workshop, where attendees
+              crafted a clear roadmap for a more fulfilling and productive year.
+              Beyond learning, Unwind offered rich networking opportunities that
+              fostered meaningful connections and expanded professional circles.
+            </p>
+          </div>
+
+          <div className='flex-1'>
+            <img
+              src={Img30}
+              alt='Event'
+              className='rounded-xl w-full object-cover shadow-md'
+            />
+          </div>
+        </div>
+      </section>
 
       <section className='px-10 md:px-20 py-16 max-w-7xl mx-auto bg-amber-100 rounded-2xl mt-7'>
         <div className='flex flex-col md:flex-row items-center gap-10'>
           <div className='flex-1 space-y-5'>
-            <h2 className='text-3xl font-bold text-primary'>
-              {' '}
-              The Ignite Room Podcast
-            </h2>
+            <h2 className='text-3xl font-bold text-primary'> ACCELERATE 1.0</h2>
             <p className='text-gray-600'>
-              WHAT IT IS?
-              <br></br> The Ignite Room Podcast is a platform that offers
-              insightful conversations with Christian Leaders and Trailblazers,
-              on various aspects of leadership, and living out their truth and
-              faith in the market place. This program offers Visions, Advice,
-              Guidance and Personal stories and Thoughts from Experts from
-              different fields.<br></br> <br></br>WHY A PODCAST <br></br>To
-              educate and inspire the target audience. To share experiences of
-              Christian Leaders and Professionals in the marketplace and their
-              different fields. To help target audience develop a consciousness
-              towards Excellence, Leadership, Innovation and Christian values/
-              Christian living<br></br>
-              <br></br>
-              TARGET AUDIENCE<br></br> Young professionals Students Other young
-              people Entrepreneurs
+              The event, is a leadership and personal development bootcamp, it’s
+              an initiative powered by the New Covenant Baptist church in
+              partnership with other proposed entities. Its maiden edition is
+              tagged ‘TEN TIMES BETTER’, coined from the scripture Daniel 1:20
+              and seeks to equip youths with a world of knowledge and wisdom
+              needed for a life of excellence. The program is an intense one-day
+              program for undergraduate students, graduates and young
+              professionals aged 18 and above. The boot camp held on the 27th of
+              July, 2024 in Port Harcourt, Nigeria. With the use of resource
+              persons and keynote speakers ranging from the corporate world,
+              creative industry and entrepreneurial sphere, the program achieved
+              its goals and objectives.
             </p>
-            <p className='text-md text-gray-500'>Anticipate</p>
           </div>
 
           <div className='flex-1'>
             <img
-              src={Pod}
+              src={Img15}
               alt='Event'
               className='rounded-xl w-full object-cover shadow-md'
             />
           </div>
         </div>
       </section>
-
-      {/* <section className='px-10 md:px-20 py-16 max-w-7xl mx-auto bg-sky-100 rounded-2xl mt-7'>
-        <div className='flex flex-col md:flex-row items-center gap-10'>
-          <div className='flex-1 space-y-5'>
-            <h2 className='text-3xl font-bold text-primary'>
-              {' '}
-              Ignite Teams Hangout
-            </h2>
-            <p className='text-gray-600'>
-              A social physical event for team members of Ignite Pro Community
-              targeted at building stronger connections, enhancing collaboration
-              and teamwork, and having fun
-            </p>
-            <p className='text-md text-gray-500'>Anticipate</p>
-          </div>
-
-          <div className='flex-1'>
-            <img
-              src={Event3}
-              alt='Event'
-              className='rounded-xl w-full object-cover shadow-md'
-            />
-          </div>
-        </div>
-      </section> */}
     </>
   );
 };
