@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import Img15 from '../assets/15.jpg';
 import Img30 from '../assets/30.jpg';
 import A11 from '../assets/a11.jpeg';
+import Csr19 from '../assets/csr19.jpg';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -34,9 +35,45 @@ const PEvent = () => {
       <section className='px-10 md:px-20 py-16 max-w-7xl mx-auto bg-cyan-100 rounded-2xl mt-7'>
         <div className='flex flex-col md:flex-row items-center gap-10'>
           <div className='flex-1 space-y-5'>
+            <h2 className='text-3xl font-bold text-primary'>
+              {' '}
+              BACK TO SCHOOL INITIATIVE
+            </h2>
+            <p className='text-gray-600'>
+              Ignite Pro Community Back to School Project 2025 Ignite Pro
+              Community successfully held its first ever Corporate Social
+              Responsibility (CSR) initiative, the “Back to School Project” at
+              Elekahia Government Secondary School, Port Harcourt, Rivers State
+              reaching out to 244 students in JSS3. The project was designed to
+              give back to society, promote academic excellence, and inspire joy
+              among students as they began a new academic session. As part of
+              the initiative, we presented the students with school bags,
+              exercise books, and mathematical sets to support their learning
+              experience. The joy and gratitude expressed by the students were
+              truly heartwarming, making it a deeply fulfilling experience for
+              the entire team. This initiative reflects Ignite Pro Community’s
+              ongoing commitment to empowering young minds and driving community
+              development. We look forward to sustaining this impact through
+              more meaningful CSR projects in the future.
+            </p>
+          </div>
+          ç
+          <div className='flex-1'>
+            <img
+              src={Csr19}
+              alt='Event'
+              className='rounded-xl w-full object-cover shadow-md'
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className='px-10 md:px-20 py-16 max-w-7xl mx-auto bg-pink-100 rounded-2xl mt-7'>
+        <div className='flex flex-col md:flex-row items-center gap-10'>
+          <div className='flex-1 space-y-5'>
             <h2 className='text-3xl font-bold text-primary'> ACCELERATE 2.0</h2>
             <p className='text-gray-600'>
-              *Accelerate 2.0* was the second edition of the annual boot camp
+              Accelerate 2.0 was the second edition of the annual boot camp
               hosted by the Ignite Pro Community, tailored for young
               professionals, graduates, and undergraduates. With the theme
               *“Future Forward: Transforming Visions to Reality,”* the event
