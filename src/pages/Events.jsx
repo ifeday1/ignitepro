@@ -78,7 +78,7 @@ const Events = () => {
               {' '}
               The Ignite Room Podcast
             </h2>
-            <p className='text-gray-600'>
+            <p className='text-gray-600 text-justify'>
               WHAT IT IS?
               <br></br> The Ignite Room Podcast is a platform that offers
               insightful conversations with Christian Leaders and Trailblazers,

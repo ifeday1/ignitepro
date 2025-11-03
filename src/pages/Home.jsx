@@ -303,7 +303,7 @@ const Home = () => {
             </p>
 
             <motion.a
-              href='/events'
+              href='/upcomingevents'
               target='_blank'
               rel='noopener noreferrer'
               className='inline-block text-lg mt-4 bg-primary text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition transition-all duration-300'

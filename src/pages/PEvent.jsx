@@ -81,7 +81,7 @@ const PEvent = () => {
               practical workshops, and valuable networking opportunities. It
               emphasized the importance of vision clarity, goal setting, and
               taking intentional steps toward a purposeful future. A major
-              highlight was the **Pitch Tank Competition**, where participants
+              highlight was the Pitch Tank Competition, where participants
               showcased innovative ideas and received expert feedback to refine
               their concepts. Overall, Accelerate 2.0 inspired attendees to
               embrace forward-thinking, faith-based principles, and actionable
