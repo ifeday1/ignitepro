@@ -52,7 +52,6 @@ const Terms = () => {
           </p>
         </motion.section>
 
-        {/* Section 1 – Eligibility */}
         <motion.section
           variants={fadeUp}
           initial='hidden'
