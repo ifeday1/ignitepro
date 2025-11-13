@@ -14,7 +14,7 @@ const DownloadPdf = () => {
   };
 
   return (
-    <div className='flex flex-col items-center justify-center py-10 bg-indigo-100 min-h-[40vh] text-center'>
+    <div className='flex flex-col items-center justify-center py-10 bg-indigo-100 min-h-[40vh] text-center mt-20'>
       <Toaster position='top-right' />
 
       <h2 className='text-2xl md:text-3xl font-semibold text-gray-800 mb-2'>

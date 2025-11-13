@@ -13,7 +13,7 @@ import Vol from '../assets/vol.jpg';
 import Second from '../assets/second.jpeg';
 import Jug from '../assets/jug.jpeg';
 import Ill from '../assets/Illustration.svg';
-import DownloadPdf from '../components/DownloadPdf';
+
 
 // import { NavLink } from 'react-router-dom';
 
@@ -428,9 +428,7 @@ const Home = () => {
         </Swiper>
       </section>
 
-      <section>
-        <DownloadPdf/>
-      </section>
+     
 
       <div className='px-7 md:px-24 py-0 md:py-16 mx-auto'>
         <motion.h2

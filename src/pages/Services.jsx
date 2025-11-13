@@ -6,6 +6,7 @@ import Serviceswho1 from '../assets/serviceswho1.png';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Ready from '../assets/ready.svg';
+import DownloadPdf from '../components/DownloadPdf';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -214,6 +215,10 @@ const Services = () => {
             </p>
           </motion.div>
         </motion.div>
+      </section>
+
+      <section>
+        <DownloadPdf />
       </section>
 
       <motion.section
