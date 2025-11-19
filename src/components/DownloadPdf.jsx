@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowDownToLine } from 'lucide-react'; // icon
+import { ArrowDownToLine } from 'lucide-react';
 import toast, { Toaster } from 'react-hot-toast';
 
 const DownloadPdf = () => {
