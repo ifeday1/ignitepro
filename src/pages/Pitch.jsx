@@ -1,6 +1,6 @@
 import React from 'react';
 import Pitchhead from '../assets/pitchhead.png';
-// import Pitch1 from '../assets/pitch1.png';
+
 import Pitch2 from '../assets/pitch2.png';
 
 import { motion } from 'framer-motion';
