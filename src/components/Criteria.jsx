@@ -16,7 +16,6 @@ const Criteria = () => {
     <>
       <div className=' bg-light mt-20'>
         <div className='p-6 md:p-12 max-w-5xl mx-auto space-y-10 text-gray-800 font-sans'>
-          {/* Eligibility Criteria */}
           <motion.section
             variants={fadeIn}
             initial='hidden'
@@ -182,8 +181,6 @@ const Criteria = () => {
               Apply Now
             </button>
           </NavLink>
-
-      
         </div>
       </div>
     </>
