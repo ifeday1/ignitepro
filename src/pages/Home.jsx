@@ -14,7 +14,6 @@ import Second from '../assets/second.jpeg';
 import Jug from '../assets/jug.jpeg';
 import Ill from '../assets/Illustration.svg';
 
-
 // import { NavLink } from 'react-router-dom';
 
 const textVariants = {
