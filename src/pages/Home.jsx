@@ -13,6 +13,7 @@ import Vol from '../assets/vol.jpg';
 import Second from '../assets/second.jpeg';
 import Jug from '../assets/jug.jpeg';
 import Ill from '../assets/Illustration.svg';
+import Podcast from '../assets/podcast.jpeg';
 
 // import { NavLink } from 'react-router-dom';
 
@@ -330,6 +331,36 @@ const Home = () => {
         </div>
       </section>
 
+      <section className='w-full bg-white py-12 px-4'>
+        <div className='max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8'>
+          {/* Left Text Section */}
+          <div className='w-full md:w-1/2'>
+            <h2 className='text-2xl md:text-3xl font-bold text-primary mb-3'>
+              Inspiring Conversations, One Episode at a Time
+            </h2>
+
+            <p className='text-gray-600 leading-relaxed'>
+              Our podcast brings together creators, founders, and innovators to
+              share real stories, lessons, and experiences that shape their
+              journeys. Each episode explores creativity, technology, personal
+              growth, and the challenges behind building meaningful work — told
+              in an honest and relatable way. Whether you're learning, building,
+              or seeking inspiration, these conversations spark ideas and
+              empower you to keep growing.
+            </p>
+          </div>
+
+          {/* Right Image Section */}
+          <div className='w-full md:w-1/2'>
+            <img
+              src={Podcast}
+              alt='Podcast Session'
+              className='w-full h-auto rounded-lg object-cover shadow-md'
+            />
+          </div>
+        </div>
+      </section>
+
       {/* <section className='px-6 py-16 max-w-7xl mx-auto'>
         <div className='flex items-center justify-between mb-6'>
           <motion.h2
@@ -426,8 +457,6 @@ const Home = () => {
           ))}
         </Swiper>
       </section>
-
-     
 
       <div className='px-7 md:px-24 py-0 md:py-16 mx-auto'>
         <motion.h2
