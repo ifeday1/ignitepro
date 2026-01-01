@@ -333,7 +333,6 @@ const Home = () => {
 
       <section className='w-full bg-white py-12 px-4'>
         <div className='max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8'>
-          {/* Left Text Section */}
           <div className='w-full md:w-1/2'>
             <h2 className='text-2xl md:text-3xl font-bold text-primary mb-3'>
               Inspiring Conversations, One Episode at a Time
