@@ -74,7 +74,6 @@ const fadeInRight = {
   },
 };
 
-// const images = [Pic, Pic1, Pic2, Pic3, Pic4];
 const images = [Vol, Second, Jug];
 
 const Home = () => {
