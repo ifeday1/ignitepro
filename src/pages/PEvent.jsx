@@ -3,7 +3,7 @@ import Eventshead from '../assets//eventshead.png';
 import { motion } from 'framer-motion';
 // import Bts from '../assets/bts.jpg';
 // import Event2 from '../assets/event2.jpeg';
-// import Event3 from '../assets/event3.jpeg';
+
 import Img15 from '../assets/15.jpg';
 import Img30 from '../assets/30.jpg';
 import A11 from '../assets/a11.jpeg';
