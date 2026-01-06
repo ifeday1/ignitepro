@@ -1,7 +1,6 @@
 import React from 'react';
 import Eventshead from '../assets//eventshead.png';
 import { motion } from 'framer-motion';
-// import Bts from '../assets/bts.jpg';
 
 import Img15 from '../assets/15.jpg';
 import Img30 from '../assets/30.jpg';
