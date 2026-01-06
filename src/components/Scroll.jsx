@@ -5,7 +5,7 @@ export default function Scroll() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // Scroll to the top when the pathname changes
+    // Scroll to the top when the pathname
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [pathname]);
 
