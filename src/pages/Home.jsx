@@ -13,7 +13,8 @@ import Vol from '../assets/vol.jpg';
 import Second from '../assets/second.jpeg';
 import Jug from '../assets/jug.jpeg';
 import Ill from '../assets/Illustration.svg';
-import Podcast from '../components/Podcast';
+// import Podcast from '../components/Podcast';
+import PodcastHero from '../components/PodcastHero';
 
 // import { NavLink } from 'react-router-dom';
 
@@ -330,7 +331,8 @@ const Home = () => {
         </div>
       </section>
 
-      <Podcast />
+      {/* <Podcast /> */}
+      <PodcastHero />
 
       {/* <section className='px-6 py-16 max-w-7xl mx-auto'>
         <div className='flex items-center justify-between mb-6'>

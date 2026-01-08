@@ -1,8 +1,14 @@
 import React from 'react';
-import Podcast1 from '../assets/Podcast.jpeg';
 import { motion } from 'framer-motion';
+import Countdown from './Countdown';
+import useReleaseStatus from '../hooks/useReleaseStatus.jsx';
+import Podcast1 from '../assets/Podcast.jpeg';
 
-const Podcast = () => {
+const RELEASE_DATE = '2026-01-27T00:00:00';
+
+const PodcastHero = () => {
+  const isLive = useReleaseStatus(RELEASE_DATE);
+
   return (
     <section className='bg-gradient-to-br from-[#1B0F2E] via-[#2E145D] to-[#FF6A3D] py-20 px-4'>
       <div className='max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center'>
@@ -22,9 +28,16 @@ const Podcast = () => {
 
           <h2 className='text-white text-xl mb-4'>Leadership Podcast</h2>
 
-          <span className='inline-block bg-orange-500 text-xs px-3 py-1 rounded-full text-white mb-4'>
-            First Episode
-          </span>
+          {/* STATUS BADGE */}
+          {!isLive ? (
+            <span className='inline-block bg-orange-500 text-xs px-3 py-1 rounded-full text-white mb-4'>
+              Coming Soon
+            </span>
+          ) : (
+            <span className='inline-block bg-green-500 text-xs px-3 py-1 rounded-full text-white mb-4'>
+              Now Streaming
+            </span>
+          )}
 
           <h3 className='text-white text-2xl md:text-3xl font-semibold mb-3'>
             Faith, Creativity & Cultural Influence
@@ -40,14 +53,19 @@ const Podcast = () => {
             without losing spiritual grounding.
           </p>
 
-          <a
-            href='https://www.youtube.com/@IgniteProCommunity'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='inline-flex items-center gap-2 mt-8 bg-red-600 hover:bg-red-700 transition px-6 py-3 rounded-md text-white'
-          >
-            ▶ Watch on YouTube
-          </a>
+          {/* COUNTDOWN OR CTA */}
+          {!isLive ? (
+            <Countdown targetDate={RELEASE_DATE} />
+          ) : (
+            <a
+              href='https://www.youtube.com/@IgniteProCommunity'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='inline-flex items-center gap-2 mt-8 bg-red-600 hover:bg-red-700 transition px-6 py-3 rounded-md text-white'
+            >
+              ▶ Watch on YouTube
+            </a>
+          )}
         </motion.div>
 
         {/* IMAGE */}
@@ -67,4 +85,4 @@ const Podcast = () => {
   );
 };
 
-export default Podcast;
+export default PodcastHero;
