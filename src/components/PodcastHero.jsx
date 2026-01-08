@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Countdown from './Countdown';
-import useReleaseStatus from '../hooks/UseReleaseStatus';
-import Obinna from '../assets/Obinna.jpeg';
+import useReleaseStatus from '../hooks/useReleaseStatus'
+import Pod1 from '../assets/podcast.jpeg';
 
 const RELEASE_DATE = '2026-01-27T00:00:00';
 
@@ -75,7 +75,7 @@ const PodcastHero = () => {
           transition={{ duration: 0.7 }}
         >
           <img
-            src={Obinna}
+            src={Pod1}
             alt='Ignite Room Leadership Podcast'
             className='rounded-xl shadow-2xl w-full'
           />
