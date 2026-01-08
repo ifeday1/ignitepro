@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Countdown from './Countdown';
 import useReleaseStatus from '../hooks/useReleaseStatus.jsx';
-import Podcast1 from '../assets/Podcast.jpeg';
+import Pod from '../assets/Podcast.jpeg';
 
 const RELEASE_DATE = '2026-01-27T00:00:00';
 
@@ -75,7 +75,7 @@ const PodcastHero = () => {
           transition={{ duration: 0.7 }}
         >
           <img
-            src={Podcast1}
+            src={Pod}
             alt='Ignite Room Leadership Podcast'
             className='rounded-xl shadow-2xl w-full'
           />
