@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Countdown from './Countdown';
-import useReleaseStatus from '../hooks/useReleaseStatus.jsx';
+import useReleaseStatus from '../hooks/useReleaseStatus';
 import Pod from '../assets/Podcast.jpeg';
 
 const RELEASE_DATE = '2026-01-27T00:00:00';
