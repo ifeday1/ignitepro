@@ -1,25 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 
 const Countdown = ({ targetDate }) => {
-  const calculateTimeLeft = () => {
+  const calculateTimeLeft = useCallback(() => {
     const diff = new Date(targetDate) - new Date();
     if (diff <= 0) return null;
 
     return {
       days: Math.floor(diff / (1000 * 60 * 60 * 24)),
       hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((diff / 1000 / 60) % 60),
+      minutes: Math.floor((diff / (1000 * 60)) % 60),
     };
-  };
+  }, [targetDate]);
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [timeLeft, setTimeLeft] = useState(() => calculateTimeLeft());
 
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 60000);
+
     return () => clearInterval(timer);
-  }, []);
+  }, [calculateTimeLeft]);
 
   if (!timeLeft) return null;
 
