@@ -12,7 +12,7 @@ const PodcastHero = () => {
   return (
     <section className='bg-gradient-to-br from-[#1B0F2E] via-[#2E145D] to-[#FF6A3D] py-20 px-4'>
       <div className='max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center'>
-        {/* TEXT */}
+      
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
