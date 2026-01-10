@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Countdown from './Countdown';
-import useReleaseStatus from '../hooks/useReleaseStatus'
+import useReleaseStatus from '../hooks/useReleaseStatus';
 import Pod1 from '../assets/podcast.jpeg';
 
 const RELEASE_DATE = '2026-01-27T00:00:00';
@@ -12,7 +12,6 @@ const PodcastHero = () => {
   return (
     <section className='bg-gradient-to-br from-[#1B0F2E] via-[#2E145D] to-[#FF6A3D] py-20 px-4'>
       <div className='max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center'>
-      
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -68,7 +67,6 @@ const PodcastHero = () => {
           )}
         </motion.div>
 
-        {/* IMAGE */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
