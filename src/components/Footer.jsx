@@ -125,7 +125,6 @@ const Footer = () => {
 
         <div className='border-t border-white my-6'></div>
 
-        {/* Bottom Row */}
         <div className='flex flex-col md:flex-row justify-between items-center text-xs text-white'>
           <p>
             Designed & Developed by{' '}
