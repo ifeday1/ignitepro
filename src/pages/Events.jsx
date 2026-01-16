@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 // import Event2 from '../assets/event2.jpeg';
 // import Event3 from '../assets/event3.jpeg';
 import Pod from '../assets/pod.png';
+import UpcomingEvents from '../components/UpcomingEvents';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -28,8 +29,13 @@ const Events = () => {
           <h2 className='text-3xl md:text-7xl font-bold mb-4'>
             UPCOMING EVENTS
           </h2>
+          <p className=' text-white leading-relaxed'>
+            Carefully curated experiences designed to inspire growth, spark
+            leadership, and ignite purpose.
+          </p>
         </motion.div>
       </section>
+      <UpcomingEvents />
 
       {/* <section className='px-10 md:px-20 py-16 max-w-7xl mx-auto bg-light rounded-2xl'>
         <div className='flex flex-col md:flex-row items-center gap-10'>
