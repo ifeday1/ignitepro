@@ -18,7 +18,7 @@ const fadeInUp = {
 const Footer = () => {
   return (
     <>
-      <footer className=' bg-primary text-white py-10 px-6 md:px-24 mt-14'>
+      <footer className=' bg-primary text-white py-10 px-6 md:px-24'>
         <div className='flex flex-col md:flex-row justify-between gap-10 md:gap-20'>
           <motion.div
             custom={0}

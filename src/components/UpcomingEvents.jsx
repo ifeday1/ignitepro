@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 
 // Replace with your real assets
 import Podcast from '../assets/podcast.jpeg';
-import Creative from '../assets/podcast.jpeg';
-import Accelerate from '../assets/podcast.jpeg';
+import Creative from '../assets/mentor.jpeg';
+import Accelerate from '../assets/1.jpg';
 
 const events = [
   {
@@ -19,13 +19,13 @@ const events = [
   },
   {
     type: 'event',
-    title: 'Creative Leadership Experience',
-    date: 'March 2026',
+    title: 'Ignite Pro Mentorship Breakfast',
+    date: '7th February 2026',
     subtitle: 'Vision • Expression • Impact',
     description:
-      'An immersive creative gathering designed to help young leaders unlock expression, build influence, and execute ideas with clarity.',
+      'A focused mentorship experience designed to provide clarity, direction, and practical guidance for growth. This is a space for learning, connection, and intentional development.',
     image: Creative,
-    link: '#',
+    link: 'https://tix.africa/discover/blueace',
     reverse: true,
   },
   {
@@ -42,28 +42,8 @@ const events = [
 
 const UpcomingEvents = () => {
   return (
-    <section className='bg-[#0F0625] py-28 px-4 overflow-hidden'>
+    <section className='bg-[#0F0625] py-28 px-4 overflow-hidden mt-20'>
       <div className='max-w-7xl mx-auto space-y-32'>
-        {/* HEADER */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className='text-center max-w-3xl mx-auto'
-        >
-          <p className='text-orange-400 text-sm tracking-widest uppercase mb-3'>
-            Ignite Pro Community
-          </p>
-          <h1 className='text-white text-4xl md:text-5xl font-bold mb-4'>
-            Upcoming Events
-          </h1>
-          <p className='text-gray-300 leading-relaxed'>
-            Curated experiences designed to inspire leadership, creativity, and
-            purposeful growth.
-          </p>
-        </motion.div>
-
         {/* EVENTS */}
         {events.map((event, index) => (
           <motion.div
@@ -91,10 +71,7 @@ const UpcomingEvents = () => {
                 className='w-full h-[420px] md:h-[540px] object-cover rounded-2xl shadow-2xl'
               />
 
-              {/* STATUS */}
-              <div className='absolute top-6 left-6 z-20 bg-orange-500 text-white text-xs px-4 py-1 rounded-full tracking-wide'>
-                Anticipate
-              </div>
+       
             </motion.div>
 
             {/* TEXT */}

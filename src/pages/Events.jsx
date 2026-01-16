@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 // import Bts from '../assets/bts.jpg';
 // import Event2 from '../assets/event2.jpeg';
 // import Event3 from '../assets/event3.jpeg';
-import Pod from '../assets/pod.png';
+// import Pod from '../assets/pod.png';
 import UpcomingEvents from '../components/UpcomingEvents';
 
 const fadeInUp = {
@@ -76,43 +76,6 @@ const Events = () => {
           </div>
         </div>
       </section> */}
-
-      <section className='px-10 md:px-20 py-16 max-w-7xl mx-auto bg-amber-100 rounded-2xl mt-7'>
-        <div className='flex flex-col md:flex-row items-center gap-10'>
-          <div className='flex-1 space-y-5'>
-            <h2 className='text-3xl font-bold text-primary'>
-              {' '}
-              The Ignite Room Podcast
-            </h2>
-            <p className='text-gray-600 text-justify'>
-              WHAT IT IS?
-              <br></br> The Ignite Room Podcast is a platform that offers
-              insightful conversations with Christian Leaders and Trailblazers,
-              on various aspects of leadership, and living out their truth and
-              faith in the market place. This program offers Visions, Advice,
-              Guidance and Personal stories and Thoughts from Experts from
-              different fields.<br></br> <br></br>WHY A PODCAST <br></br>To
-              educate and inspire the target audience. To share experiences of
-              Christian Leaders and Professionals in the marketplace and their
-              different fields. To help target audience develop a consciousness
-              towards Excellence, Leadership, Innovation and Christian values/
-              Christian living<br></br>
-              <br></br>
-              TARGET AUDIENCE<br></br> Young professionals Students Other young
-              people Entrepreneurs
-            </p>
-            <p className='text-md text-gray-500'>Anticipate</p>
-          </div>
-
-          <div className='flex-1'>
-            <img
-              src={Pod}
-              alt='Event'
-              className='rounded-xl w-full object-cover shadow-md'
-            />
-          </div>
-        </div>
-      </section>
 
       {/* <section className='px-10 md:px-20 py-16 max-w-7xl mx-auto bg-sky-100 rounded-2xl mt-7'>
         <div className='flex flex-col md:flex-row items-center gap-10'>
