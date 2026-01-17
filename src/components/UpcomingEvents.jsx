@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-// Replace with your real assets
 import Podcast from '../assets/podcast.jpeg';
 import Creative from '../assets/mentor.jpeg';
 import Accelerate from '../assets/1.jpg';
@@ -70,8 +69,6 @@ const UpcomingEvents = () => {
                 alt={event.title}
                 className='w-full h-[420px] md:h-[540px] object-cover rounded-2xl shadow-2xl'
               />
-
-       
             </motion.div>
 
             {/* TEXT */}
