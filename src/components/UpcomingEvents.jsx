@@ -71,7 +71,6 @@ const UpcomingEvents = () => {
               />
             </motion.div>
 
-            {/* TEXT */}
             <motion.div
               initial={{ opacity: 0, x: event.reverse ? 60 : -60 }}
               whileInView={{ opacity: 1, x: 0 }}
