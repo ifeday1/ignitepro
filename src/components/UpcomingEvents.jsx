@@ -43,7 +43,6 @@ const UpcomingEvents = () => {
   return (
     <section className='bg-[#0F0625] py-28 px-4 overflow-hidden mt-20'>
       <div className='max-w-7xl mx-auto space-y-32'>
-        {/* EVENTS */}
         {events.map((event, index) => (
           <motion.div
             key={index}
