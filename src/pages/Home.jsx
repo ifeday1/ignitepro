@@ -331,7 +331,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* <Podcast /> */}
       <PodcastHero />
 
       {/* <section className='px-6 py-16 max-w-7xl mx-auto'>
