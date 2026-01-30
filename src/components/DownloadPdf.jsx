@@ -4,7 +4,7 @@ import toast, { Toaster } from 'react-hot-toast';
 
 const DownloadPdf = () => {
   const handleDownload = () => {
-    const fileUrl = '/Ignite Pro Impact Note 2025.pdf';
+    const fileUrl = '/Ignite Pro Impact Note 20251.pdf';
     const link = document.createElement('a');
     link.href = fileUrl;
     link.download = 'ignitepro-report.pdf';
