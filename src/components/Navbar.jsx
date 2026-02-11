@@ -64,7 +64,6 @@ export default function Navbar() {
     <nav className='bg-white shadow-md fixed top-0 w-full z-50'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='flex justify-between items-center h-20'>
-          {/* Logo */}
           <NavLink to='/'>
             <img src={logo} alt='Logo' className='h-8 w-auto' />
           </NavLink>
