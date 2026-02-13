@@ -14,6 +14,11 @@ export default function Navbar() {
       dropdown: [
         { to: '/about', label: 'Who We Are' },
         { to: '/meet-the-team', label: 'Meet the Team' },
+        {
+          type: 'download',
+          href: '/Ignite Pro Impact Note 20251.pdf',
+          label: 'Download Impact Note',
+        },
       ],
     },
     { to: '/works', label: 'Works' },
@@ -84,22 +89,34 @@ export default function Navbar() {
                   </button>
 
                   <div
-                    className={`absolute left-0 w-48 bg-white border rounded-lg shadow-lg transition-opacity duration-200 ${
+                    className={`absolute left-0 w-56 bg-white border rounded-lg shadow-lg transition-opacity duration-200 ${
                       openDropdown === item.label
                         ? 'opacity-100 pointer-events-auto'
                         : 'opacity-0 pointer-events-none'
                     }`}
                   >
                     <div className='py-2'>
-                      {item.dropdown.map((sub, subIdx) => (
-                        <NavLink
-                          key={subIdx}
-                          to={sub.to}
-                          className='block px-4 py-2 text-sm hover:bg-gray-100'
-                        >
-                          {sub.label}
-                        </NavLink>
-                      ))}
+                      {item.dropdown.map((sub, subIdx) =>
+                        sub.type === 'download' ? (
+                          <a
+                            key={subIdx}
+                            href={sub.href}
+                            download
+                            className='flex items-center justify-between px-4 py-2 text-sm hover:bg-gray-100 text-primary font-medium'
+                          >
+                            {sub.label}
+                            <DownloadIcon />
+                          </a>
+                        ) : (
+                          <NavLink
+                            key={subIdx}
+                            to={sub.to}
+                            className='block px-4 py-2 text-sm hover:bg-gray-100'
+                          >
+                            {sub.label}
+                          </NavLink>
+                        ),
+                      )}
                     </div>
                   </div>
                 </div>
@@ -119,19 +136,9 @@ export default function Navbar() {
                 </NavLink>
               ),
             )}
-
-            {/* IMPACT NOTE DOWNLOAD */}
-            <a
-              href='/Ignite Pro Impact Note 20251.pdf'
-              download
-              className='inline-flex items-center px-3 py-1 text-primary font-semibold hover:text-primary/80 transition'
-            >
-              Impact Note
-              <DownloadIcon />
-            </a>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Button */}
           <div className='md:hidden'>
             <button onClick={() => setIsOpen(!isOpen)}>
               <svg
@@ -185,16 +192,28 @@ export default function Navbar() {
 
                       {openDropdown === item.label && (
                         <div className='mt-2 pl-4 space-y-2'>
-                          {item.dropdown.map((sub, j) => (
-                            <NavLink
-                              key={j}
-                              to={sub.to}
-                              onClick={() => setIsOpen(false)}
-                              className='block text-sm'
-                            >
-                              {sub.label}
-                            </NavLink>
-                          ))}
+                          {item.dropdown.map((sub, j) =>
+                            sub.type === 'download' ? (
+                              <a
+                                key={j}
+                                href={sub.href}
+                                download
+                                className='flex items-center justify-between text-sm text-primary font-medium'
+                              >
+                                {sub.label}
+                                <DownloadIcon />
+                              </a>
+                            ) : (
+                              <NavLink
+                                key={j}
+                                to={sub.to}
+                                onClick={() => setIsOpen(false)}
+                                className='block text-sm'
+                              >
+                                {sub.label}
+                              </NavLink>
+                            ),
+                          )}
                         </div>
                       )}
                     </div>
@@ -209,16 +228,6 @@ export default function Navbar() {
                     </NavLink>
                   ),
                 )}
-
-                {/* MOBILE IMPACT NOTE */}
-                <a
-                  href='/ignite-pro-impact-note.pdf'
-                  download
-                  className='flex items-center font-semibold text-primary'
-                >
-                  Impact Note
-                  <DownloadIcon />
-                </a>
               </div>
             </motion.div>
           )}
