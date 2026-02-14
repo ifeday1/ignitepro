@@ -1,32 +1,32 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-import Podcast from '../assets/podcast.jpeg';
-import Creative from '../assets/mentor.jpeg';
+// import Podcast from '../assets/podcast.jpeg';
+// import Creative from '../assets/mentor.jpeg';
 import Accelerate from '../assets/1.jpg';
 
 const events = [
-  {
-    type: 'podcast',
-    title: 'The Ignite Room Podcast',
-    date: 'February 2026',
-    subtitle: 'Faith • Creativity • Culture',
-    description:
-      'A leadership podcast experience exploring how faith-driven creatives can influence culture, media, and society with purpose.',
-    image: Podcast,
-    link: 'https://www.youtube.com/@IgniteProCommunity',
-  },
-  {
-    type: 'event',
-    title: 'Ignite Pro Mentorship Breakfast',
-    date: '7th February 2026',
-    subtitle: 'Vision • Expression • Impact',
-    description:
-      'A focused mentorship experience designed to provide clarity, direction, and practical guidance for growth. This is a space for learning, connection, and intentional development.',
-    image: Creative,
-    link: 'https://tix.africa/discover/blueace',
-    reverse: true,
-  },
+  // {
+  //   type: 'podcast',
+  //   title: 'The Ignite Room Podcast',
+  //   date: 'February 2026',
+  //   subtitle: 'Faith • Creativity • Culture',
+  //   description:
+  //     'A leadership podcast experience exploring how faith-driven creatives can influence culture, media, and society with purpose.',
+  //   image: Podcast,
+  //   link: 'https://www.youtube.com/@IgniteProCommunity',
+  // },
+  // {
+  //   type: 'event',
+  //   title: 'Ignite Pro Mentorship Breakfast',
+  //   date: '7th February 2026',
+  //   subtitle: 'Vision • Expression • Impact',
+  //   description:
+  //     'A focused mentorship experience designed to provide clarity, direction, and practical guidance for growth. This is a space for learning, connection, and intentional development.',
+  //   image: Creative,
+  //   link: 'https://tix.africa/discover/blueace',
+  //   reverse: true,
+  // },
   {
     type: 'event',
     title: 'Accelerate 3.0',
