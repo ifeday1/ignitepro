@@ -8,13 +8,12 @@ import A11 from '../assets/a11.jpeg';
 import Csr19 from '../assets/csr19.jpg';
 import mb from '../assets/mb.jpg';
 
-
 const events = [
   {
     title: 'Mentorship Breakfast: BLUEPRINT: BUILDING THE FUTURE',
     year: '2026',
     description:
-      'Ignite Pro Community launched its first CSR initiative impacting 244 students by providing essential school supplies and inspiring academic excellence.',
+      'The second edition of the Ignite Pro mentorship breakfast, which is targeted at young professionals, recent graduates, and entrepreneurs, has as its theme BLUEPRINT: BUILDING THE FUTURE. In accordance with the theme, the event gave attendees the tools they needed to succeed through productive workshops, networking opportunities, and powerful mentoring sessions. It highlighted how crucial it is to have a clear vision, set goals, and take deliberate action in the direction of a purposeful future. The productivity session and roundtable discussion between mentors and mentees, where participants had in-depth Q&A with the mentors and received professional feedback to improve their concepts, was a highlight. Overall, the mentorship program encouraged participants to embrace visionary and future-ready leaders in order to drive positive change and to create a lasting future for both themselves and society.',
     image: mb,
     accent: 'from-cyan-500/10 to-transparent',
   },
