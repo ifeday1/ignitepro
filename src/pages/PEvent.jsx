@@ -99,7 +99,7 @@ const fadeUp = {
 };
 
 const PEvent = () => {
-  const WORD_LIMIT = 150;
+  const WORD_LIMIT = 50;
   const [expanded, setExpanded] = useState({});
 
   const toggleExpand = (index) => {
