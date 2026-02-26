@@ -200,7 +200,7 @@ const ImpactToast = () => {
 
               {/* Download Report */}
               <a
-                href='/public/ignite_2025_impact_report.pdf'
+                href='/Ignite Pro Impact Note 20251.pdf'
                 download
                 onClick={() => trackEvent('impact_report_downloaded')}
                 className='block mt-4 text-sm font-semibold text-indigo-600 hover:text-indigo-800 text-center'
