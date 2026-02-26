@@ -15,11 +15,13 @@ import Form from './components/Form';
 import Gallery from './pages/Gallery';
 import Speakers from './pages/Speakers';
 import PEvent from './pages/PEvent';
+import ImpactToast from './components/impactNotes';
 
 function App() {
   return (
     <>
       <Router>
+        <ImpactToast />
         <Scroll />
         <Navbar />
         <Routes>
