@@ -15,6 +15,7 @@ import Jug from '../assets/jug.jpeg';
 import Ill from '../assets/Illustration.svg';
 // import Podcast from '../components/Podcast';
 import PodcastHero from '../components/PodcastHero';
+import AccelerateSection from '../components/AccelerateSection';
 
 // import { NavLink } from 'react-router-dom';
 
@@ -282,6 +283,8 @@ const Home = () => {
           </div>
         </motion.div>
       </section>
+
+      <AccelerateSection />
 
       <section className='bg-pink-100 rounded-3xl px-7 md:px-20 py-14 max-w-7xl mx-auto mt-10 mb-28 '>
         <div className='flex flex-col md:flex-row items-center justify-between gap-10'>
