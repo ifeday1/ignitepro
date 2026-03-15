@@ -17,7 +17,7 @@ const AccelerateSection = () => {
 
           <p className='text-lg text-gray-600 font-medium'>
             <span className='text-purple-600 font-semibold'>Theme:</span> Future
-            Proof — Sustaining Relevance
+            Proof Sustaining Relevance
           </p>
 
           <p className='text-gray-600 leading-relaxed max-w-xl mx-auto lg:mx-0'>

@@ -16,6 +16,7 @@ import Ill from '../assets/Illustration.svg';
 // import Podcast from '../components/Podcast';
 import PodcastHero from '../components/PodcastHero';
 import AccelerateSection from '../components/AccelerateSection';
+import glanceImage from '../assets/glance.jpg';
 
 // import { NavLink } from 'react-router-dom';
 
@@ -76,15 +77,23 @@ const fadeInRight = {
   },
 };
 
-const images = [Vol, Second, Jug];
+//const images = [Vol, Second, Jug];
+const slides = [
+  { type: 'image', src: Vol },
+  { type: 'image', src: Second },
+  { type: 'image', src: Jug },
+
+  // Special slide
+  { type: 'glance', src: glanceImage },
+];
 
 const Home = () => {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % images.length);
-    }, 4000);
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 8000);
     return () => clearInterval(interval);
   }, []);
   const [showMore, setShowMore] = useState(false);
@@ -142,7 +151,7 @@ const Home = () => {
   ];
   return (
     <>
-      <div className='relative h-screen w-full overflow-hidden mt-20'>
+      {/* <div className='relative h-screen w-full overflow-hidden mt-20'>
         <div className='absolute inset-0 z-0'>
           {images.map((src, index) => (
             <motion.img
@@ -179,6 +188,85 @@ const Home = () => {
             Shaping Future Leaders, to Thrive with Purpose.
           </motion.p>
         </div>
+      </div> */}
+      <div className='relative h-screen w-full overflow-hidden mt-20'>
+        {/* BACKGROUND SLIDES */}
+        <div className='absolute inset-0 z-0'>
+          {slides.map((slide, index) => (
+            <motion.div
+              key={index}
+              className='absolute h-full w-full'
+              initial={{ opacity: 0 }}
+              animate={{ opacity: index === current ? 1 : 0 }}
+              transition={{ duration: 1 }}
+            >
+              <img
+                src={slide.src}
+                alt='slide'
+                className='h-full w-full object-cover'
+              />
+
+              {/* Overlay ONLY for normal slides */}
+              {slide.type !== 'glance' && (
+                <div className='absolute inset-0 bg-black/70'></div>
+              )}
+            </motion.div>
+          ))}
+        </div>
+
+        {/* HERO TEXT (hidden on glance slide) */}
+        {slides[current].type !== 'glance' && (
+          <div className='relative z-10 flex flex-col justify-center h-full text-white px-6 md:px-16'>
+            <motion.h1
+              key={current}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className='text-5xl md:text-9xl font-bold leading-tight mb-4'
+            >
+              BUILD. <br /> INSPIRE. <br /> ACCELERATE.
+              <span className='block h-1 w-20 bg-primary rounded-full'></span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 1 }}
+              className='text-lg md:text-xl mb-6 max-w-lg'
+            >
+              Shaping Future Leaders, to Thrive with Purpose.
+            </motion.p>
+          </div>
+        )}
+
+        {/* 2025 AT A GLANCE CONTENT */}
+        {slides[current].type === 'glance' && (
+          <div className='relative z-10 flex items-center justify-center h-full px-6'>
+            <motion.div
+              key='glance'
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              className='bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-10 text-center max-w-xl'
+            >
+              <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>
+                2025 At a Glance
+              </h2>
+
+              <p className='text-gray-600 mb-6'>
+                A quick snapshot of the impact Ignite Pro Community made in 2025
+                empowering young professionals, hosting leadership bootcamps,
+                and creating meaningful opportunities for growth.
+              </p>
+
+              <img
+                src={glanceImage}
+                alt='2025 Impact'
+                className='rounded-xl shadow-lg'
+              />
+            </motion.div>
+          </div>
+        )}
       </div>
 
       <section className='px-4 sm:px-6 lg:px-12 py-12 mx-auto bg-light mt-16 md:mt-24'>
