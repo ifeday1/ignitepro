@@ -2,22 +2,6 @@ import React, { useEffect, useState, useRef } from 'react';
 import Confetti from 'react-confetti';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
-/*
-========================================
-IGNITE PRO – 2025 IMPACT WIDGET
-========================================
-• Static (no pop animation)
-• Bottom-left fixed
-• Auto change every 10s
-• Swipe support (mobile)
-• Manual arrows
-• Count-up animation
-• Confetti on last stat
-• Auto-hide after full cycle
-• Download report
-• Clean & responsive
-*/
-
 const impactNotes = [
   { label: 'Young Professionals Empowered', value: 1200 },
   { label: 'Leadership Bootcamps Hosted', value: 4 },
