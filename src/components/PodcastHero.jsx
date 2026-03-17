@@ -1,83 +1,88 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import Countdown from './Countdown';
-import useReleaseStatus from '../hooks/useReleaseStatus';
-import Pod1 from '../assets/podcast.jpeg';
+// import { motion } from 'framer-motion';
+// import Countdown from './Countdown';
+// import useReleaseStatus from '../hooks/useReleaseStatus';
+import Pod1 from '../assets/podcast1.jpeg';
 
-const RELEASE_DATE = '2026-01-27T00:00:00';
+// const RELEASE_DATE = '2026-01-27T00:00:00';
 
 const PodcastHero = () => {
-  const isLive = useReleaseStatus(RELEASE_DATE);
+  // const isLive = useReleaseStatus(RELEASE_DATE);
 
   return (
-    <section className='bg-gradient-to-br from-[#1B0F2E] via-[#2E145D] to-[#FF6A3D] py-20 px-4'>
-      <div className='max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center'>
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-        >
-          <p className='text-orange-400 text-sm mb-2 text-white'>
-            Ignite Pro Community
-          </p>
+    <section className='w-full bg-white py-20 px-6 md:px-12 lg:px-20'>
+      <div className='max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center'>
+        {/* LEFT CONTENT */}
+        <div className='space-y-6 text-center lg:text-left'>
+          {/* Label */}
+          <span className='text-sm font-semibold tracking-widest text-purple-600 uppercase'>
+            Featured Podcast
+          </span>
 
-          <h1 className='text-white text-4xl md:text-5xl font-bold mb-3'>
-            The Ignite Room
-          </h1>
+          {/* Title */}
+          <h2 className='text-3xl md:text-5xl font-bold text-gray-900 leading-tight'>
+            The Ignite Room <br />
+            <span className='text-purple-600'>Leadership Podcast</span>
+          </h2>
 
-          <h2 className='text-white text-xl mb-4'>Leadership Podcast</h2>
-
-          {/* STATUS BADGE */}
-          {!isLive ? (
-            <span className='inline-block bg-orange-500 text-xs px-3 py-1 rounded-full text-white mb-4'>
-              Coming Soon
+          {/* Theme */}
+          <p className='text-lg md:text-xl text-gray-700 font-medium'>
+            Engineering, Excellence, and Evolving with Grace:
+            <span className='block text-purple-600'>
+              Leading in Industry and the Home.
             </span>
-          ) : (
-            <span className='inline-block bg-green-500 text-xs px-3 py-1 rounded-full text-white mb-4'>
-              Now Streaming
+          </p>
+
+          {/* Description */}
+          <p className='text-gray-600 leading-relaxed max-w-xl mx-auto lg:mx-0'>
+            Join us for an inspiring conversation with industry leaders as we
+            explore the balance between career excellence, innovation, and
+            purpose-driven living. This episode brings practical insights to
+            help you grow professionally while staying grounded in what truly
+            matters.
+          </p>
+
+          {/* Date & Time */}
+          <div className='flex flex-col sm:flex-row gap-4 justify-center lg:justify-start'>
+            <span className='bg-purple-100 text-purple-700 px-5 py-2 rounded-lg font-medium'>
+              Mar 18th, 2026
             </span>
-          )}
+            <span className='bg-gray-100 text-gray-800 px-5 py-2 rounded-lg font-medium'>
+              8PM
+            </span>
+          </div>
 
-          <h3 className='text-white text-2xl md:text-3xl font-semibold mb-3'>
-            Faith, Creativity & Cultural Influence
-          </h3>
-
-          <p className='text-orange-300 mb-4 text-white'>
-            Becoming a Kingdom-Minded Creative in Today’s Media Landscape
-          </p>
-
-          <p className='text-gray-200 leading-relaxed max-w-xl'>
-            In this debut episode, we explore how faith-driven creatives can
-            shape culture, influence media, and build purposeful narratives
-            without losing spiritual grounding.
-          </p>
-
-          {/* COUNTDOWN OR CTA */}
-          {!isLive ? (
-            <Countdown targetDate={RELEASE_DATE} />
-          ) : (
+          {/* CTA */}
+          <div className='flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4'>
             <a
-              href='https://www.youtube.com/@IgniteProCommunity'
+              href='https://youtube.com'
               target='_blank'
               rel='noopener noreferrer'
-              className='inline-flex items-center gap-2 mt-8 bg-red-600 hover:bg-red-700 transition px-6 py-3 rounded-md text-white'
+              className='bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition shadow-md'
             >
               ▶ Watch on YouTube
             </a>
-          )}
-        </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7 }}
-        >
-          <img
-            src={Pod1}
-            alt='Ignite Room Leadership Podcast'
-            className='rounded-xl shadow-2xl w-full'
-          />
-        </motion.div>
+            <button className='border border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white px-6 py-3 rounded-lg font-semibold transition'>
+              Listen Now
+            </button>
+          </div>
+        </div>
+
+        {/* RIGHT IMAGE */}
+        <div className='flex justify-center lg:justify-end'>
+          <div className='relative group max-w-md w-full'>
+            {/* Glow */}
+            <div className='absolute -inset-2 bg-purple-200 blur-2xl opacity-40 group-hover:opacity-60 transition rounded-2xl'></div>
+
+            {/* Image */}
+            <img
+              src={Pod1}
+              alt='Ignite Podcast'
+              className='relative rounded-2xl shadow-2xl w-full object-cover'
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

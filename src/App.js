@@ -15,6 +15,7 @@ import Form from './components/Form';
 import Gallery from './pages/Gallery';
 import Speakers from './pages/Speakers';
 import PEvent from './pages/PEvent';
+import Podcast from './components/Podcast';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path='/works' element={<Services />} />
           <Route path='/pastevents' element={<PEvent />} />
           <Route path='/upcomingevents' element={<Events />} />
+          <Route path='/podcast' element={<Podcast />} />
           <Route path='/gallery' element={<Gallery />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/pitch' element={<Pitch />} />

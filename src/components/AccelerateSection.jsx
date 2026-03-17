@@ -1,6 +1,7 @@
 import React from 'react';
 import Flyer from '../assets/accelerate3.jpeg';
 
+
 const AccelerateSection = () => {
   return (
     <section className='w-full bg-gradient-to-b from-white to-gray-50 py-20 px-6 md:px-12 lg:px-20'>

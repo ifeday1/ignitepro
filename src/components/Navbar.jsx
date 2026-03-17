@@ -27,6 +27,7 @@ export default function Navbar() {
       dropdown: [
         { to: '/upcomingevents', label: 'Upcoming Events' },
         { to: '/pastevents', label: 'Past Events' },
+        { to: '/podcast', label: 'Podcast' },
         { to: '/gallery', label: 'Gallery' },
       ],
     },
