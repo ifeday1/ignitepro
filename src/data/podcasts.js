@@ -13,7 +13,7 @@ const podcasts = [
     title:
       'Engineering, Excellence, and Evolving with Grace: Leading in Industry and the Home.',
     thumbnail: Podthumb2,
-    youtube: 'https://www.youtube.com/@IgniteProCommunity',
+    youtube: 'https://youtu.be/yKRczvfaxZM?si=hVNsnTn-dFkECspW',
     date: '18th,March 2026',
   },
   // {

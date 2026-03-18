@@ -55,7 +55,7 @@ const PodcastHero = () => {
           {/* CTA */}
           <div className='flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4'>
             <a
-              href='https://www.youtube.com/@IgniteProCommunity'
+              href='https://youtu.be/yKRczvfaxZM?si=hVNsnTn-dFkECspW'
               target='_blank'
               rel='noopener noreferrer'
               className='bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition shadow-md'
