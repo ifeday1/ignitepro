@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-// import Creative from '../assets/mentor.jpeg';
 import Accelerate from '../assets/1.jpg';
 
 const events = [
