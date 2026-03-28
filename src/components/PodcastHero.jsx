@@ -42,7 +42,6 @@ const PodcastHero = () => {
             matters.
           </p>
 
-          {/* Date & Time */}
           <div className='flex flex-col sm:flex-row gap-4 justify-center lg:justify-start'>
             <span className='bg-purple-100 text-purple-700 px-5 py-2 rounded-lg font-medium'>
               Mar 18th, 2026
@@ -52,7 +51,6 @@ const PodcastHero = () => {
             </span>
           </div>
 
-          {/* CTA */}
           <div className='flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4'>
             <a
               href='https://youtu.be/yKRczvfaxZM?si=hVNsnTn-dFkECspW'
