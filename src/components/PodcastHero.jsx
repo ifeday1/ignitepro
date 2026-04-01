@@ -19,7 +19,6 @@ const PodcastHero = () => {
             Featured Podcast
           </span>
 
-          {/* Title */}
           <h2 className='text-3xl md:text-5xl font-bold text-gray-900 leading-tight'>
             The Ignite Room <br />
             <span className='text-purple-600'>Leadership Podcast</span>
