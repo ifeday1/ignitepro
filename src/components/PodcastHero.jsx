@@ -30,7 +30,6 @@ const PodcastHero = () => {
             </span>
           </p>
 
-          {/* Description */}
           <p className='text-gray-600 leading-relaxed max-w-xl mx-auto lg:mx-0'>
             Join us for an inspiring conversation with industry leaders as we
             explore the balance between career excellence, innovation, and
