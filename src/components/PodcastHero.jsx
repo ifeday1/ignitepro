@@ -12,9 +12,7 @@ const PodcastHero = () => {
   return (
     <section className='w-full bg-white py-20 px-6 md:px-12 lg:px-20'>
       <div className='max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center'>
-        {/* LEFT CONTENT */}
         <div className='space-y-6 text-center lg:text-left'>
-          {/* Label */}
           <span className='text-sm font-semibold tracking-widest text-purple-600 uppercase'>
             Featured Podcast
           </span>
