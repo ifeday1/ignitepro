@@ -59,7 +59,6 @@ const PodcastHero = () => {
           </div>
         </div>
 
-        {/* RIGHT IMAGE */}
         <div className='flex justify-center lg:justify-end'>
           <div className='relative group max-w-md w-full'>
             {/* Glow */}
