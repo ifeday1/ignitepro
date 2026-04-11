@@ -64,7 +64,7 @@ const PodcastHero = () => {
             {/* Glow */}
             <div className='absolute -inset-2 bg-purple-200 blur-2xl opacity-40 group-hover:opacity-60 transition rounded-2xl'></div>
 
-            {/* Image */}
+          
             <img
               src={Pod1}
               alt='Ignite Podcast'
