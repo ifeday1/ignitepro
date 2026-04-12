@@ -61,7 +61,7 @@ const PodcastHero = () => {
 
         <div className='flex justify-center lg:justify-end'>
           <div className='relative group max-w-md w-full'>
-            {/* Glow */}
+         
             <div className='absolute -inset-2 bg-purple-200 blur-2xl opacity-40 group-hover:opacity-60 transition rounded-2xl'></div>
 
           
