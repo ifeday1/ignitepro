@@ -6,7 +6,7 @@ const Podcast = () => {
     <div className='min-h-screen bg-gradient-to-b from-[#0f0f1a] via-[#121226] to-black text-white mt-20'>
       {/* HERO */}
       <section className='relative py-24 px-6 md:px-16 text-center overflow-hidden'>
-        {/* Glow Background */}
+
         <div className='absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-purple-600 opacity-20 blur-[120px] rounded-full'></div>
 
         <div className='relative z-10 max-w-4xl mx-auto'>
