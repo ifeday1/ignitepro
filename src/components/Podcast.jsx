@@ -21,7 +21,7 @@ const Podcast = () => {
         </div>
       </section>
 
-      {/* PODCAST GRID */}
+  
       <section className='px-6 md:px-16 pb-20'>
         <div className='max-w-7xl mx-auto'>
           <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-8'>
