@@ -43,9 +43,6 @@ const ImpactToast = () => {
     return () => clearInterval(interval);
   }, [visible, paused, cycleDone]);
 
-  // ======================
-  // CONFETTI ON LAST
-  // ======================
   useEffect(() => {
     if (currentIndex === impactNotes.length - 1) {
       setShowConfetti(true);
