@@ -50,9 +50,6 @@ const ImpactToast = () => {
     }
   }, [currentIndex]);
 
-  // ======================
-  // COUNT UP
-  // ======================
   useEffect(() => {
     let start = 0;
     const end = impactNotes[currentIndex].value;
