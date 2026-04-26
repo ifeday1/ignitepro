@@ -1,7 +1,17 @@
 import Podthumb1 from '../assets/podthumb1.jpeg';
 import Podthumb2 from '../assets/podthumb2.jpeg';
+import Pod1 from '../assets/podcast1.jpeg';
+
 
 const podcasts = [
+  {
+    title:
+      'TAKING CHANCES: The Audacity to Turn Challenges Into Opportunities',
+    thumbnail: Pod1,
+    youtube: 'https://youtu.be/ZZ5ZbrbW6JY?si=g-K53Aisd6gUgYuY',
+    date: '25th,May 2026',
+  },
+
   {
     title:
       'Engineering, Excellence, and Evolving with Grace: Leading in Industry and the Home.',
