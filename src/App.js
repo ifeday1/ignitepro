@@ -16,6 +16,7 @@ import Gallery from './pages/Gallery';
 import Speakers from './pages/Speakers';
 import PEvent from './pages/PEvent';
 import Podcast from './components/Podcast';
+import AcceleratePage from './pages/AcceleratePage';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path='/terms-and-condition' element={<Terms />} />
           <Route path='/pitch-form' element={<Form />} />
           <Route path='/speakers' element={<Speakers />} />
+          <Route path='/accelerate3.0' element={<AcceleratePage />} />
         </Routes>
 
         <ScrollToTop />
