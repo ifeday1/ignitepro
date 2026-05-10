@@ -1,12 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-/*
-========================================
-ACCELERATE 3.0 PAGE
-Clean • Modern • Responsive
-========================================
-*/
 
 /* ========================================
    IMPORT IMAGES
