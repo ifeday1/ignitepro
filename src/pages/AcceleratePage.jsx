@@ -32,7 +32,7 @@ const speakers = [
 const fireside = [
   {
     image: Fire1,
-    name: ' Nicon Iwedi',
+    name: ' Nixon Iwedi',
     role: 'Managing Director/Chief Executive Officer of Signature Bank Limited',
   },
 ];
@@ -40,7 +40,7 @@ const fireside = [
 const panelists = [
   {
     image: Panel1,
-    name: 'Obi Imeba ',
+    name: 'Obi Imemba ',
     role: 'Executive Director at TotalEnergies EP Nigeria Limited.',
   },
   // {
