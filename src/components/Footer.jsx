@@ -137,7 +137,7 @@ const Footer = () => {
               </a>
             </span>
           </p>
-          <p>Copyright © 2025 Ignitepro community, Inc. All rights reserved</p>
+          <p>Copyright © 2026 Ignitepro community, Inc. All rights reserved</p>
         </div>
       </footer>
     </>

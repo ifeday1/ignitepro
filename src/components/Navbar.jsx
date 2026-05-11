@@ -274,7 +274,7 @@ export default function Navbar() {
                   className='pt-2'
                 >
                   <NavLink
-                    to='/accelerate3'
+                    to='/accelerate3.0'
                     onClick={() => setIsOpen(false)}
                     className='flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg'
                   >
