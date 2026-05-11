@@ -17,6 +17,7 @@ import Speakers from './pages/Speakers';
 import PEvent from './pages/PEvent';
 import Podcast from './components/Podcast';
 import AcceleratePage from './pages/AcceleratePage';
+import AccelerateCountdown from './components/AccelerateCountdown';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path='/speakers' element={<Speakers />} />
           <Route path='/accelerate3.0' element={<AcceleratePage />} />
         </Routes>
+        <AccelerateCountdown />
 
         <ScrollToTop />
         <Footer />
