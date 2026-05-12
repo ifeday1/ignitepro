@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../assets/logo.png';
-import AccelerateCountdown from './AccelerateCountdown';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -72,7 +71,6 @@ export default function Navbar() {
   );
 
   return (
-   
     <nav className='bg-white/95 backdrop-blur-md shadow-sm fixed top-0 w-full z-50 border-b border-gray-100'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='flex justify-between items-center h-20'>
