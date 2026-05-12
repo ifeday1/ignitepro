@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { Clock3, ExternalLink } from 'lucide-react';
 
@@ -6,7 +6,8 @@ const AccelerateCountdown = () => {
   // EVENT DATE
   const targetDate = new Date('2026-07-25T09:00:00').getTime();
 
-  const calculateTimeLeft = () => {
+  // FIXED: wrapped inside useCallback
+  const calculateTimeLeft = useCallback(() => {
     const now = new Date().getTime();
     const difference = targetDate - now;
 
@@ -37,9 +38,9 @@ const AccelerateCountdown = () => {
 
       seconds: String(Math.floor((difference / 1000) % 60)).padStart(2, '0'),
     };
-  };
+  }, [targetDate]);
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -47,7 +48,7 @@ const AccelerateCountdown = () => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [calculateTimeLeft]);
 
   const timeBlocks = [
     { label: 'Days', value: timeLeft.days },
@@ -57,13 +58,13 @@ const AccelerateCountdown = () => {
   ];
 
   return (
-    <section className='relative overflow-hidden bg-gradient-to-r from-[#2B0A57] via-[#5B21B6] to-[#7C3AED] text-white py-36 px-4 md:px-8'>
+    <section className='relative overflow-hidden bg-gradient-to-r from-[#2B0A57] via-[#5B21B6] to-[#7C3AED] text-white py-32 px-4 md:px-8'>
       {/* BACKGROUND GLOW */}
       <div className='absolute -top-24 -left-16 h-64 w-64 rounded-full bg-pink-500/20 blur-3xl'></div>
 
       <div className='absolute -bottom-24 right-0 h-64 w-64 rounded-full bg-orange-400/20 blur-3xl'></div>
 
-      <div className='relative max-w-7xl mx-auto flex flex-col xl:flex-row items-center justify-between gap-8'>
+      <div className='relative max-w-7xl mx-auto flex flex-col xl:flex-row items-center justify-between gap-10'>
         {/* LEFT CONTENT */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
@@ -72,7 +73,7 @@ const AccelerateCountdown = () => {
           transition={{ duration: 0.7 }}
           className='text-center xl:text-left'
         >
-          <div className='inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/10 rounded-full px-4 py-2 mb-4'>
+          <div className='inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/10 rounded-full px-4 py-2 mb-5'>
             <Clock3 className='w-4 h-4 text-orange-300' />
 
             <span className='text-sm font-medium tracking-wide'>
@@ -98,7 +99,7 @@ const AccelerateCountdown = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className='flex flex-col items-center gap-5 w-full xl:w-auto'
+          className='flex flex-col items-center gap-6 w-full xl:w-auto'
         >
           {/* TIMER */}
           <div className='flex items-center justify-center gap-3 md:gap-5 flex-wrap'>

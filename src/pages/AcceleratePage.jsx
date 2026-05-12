@@ -149,7 +149,7 @@ const AcceleratePage = () => {
             {/* BUTTONS */}
             <div className='flex flex-wrap gap-4 pt-4'>
               <a
-                href='https://forms.gle/your-registration-link'
+                href='https://bit.ly/4wb7gwc'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='bg-primary text-white px-8 py-4 rounded-2xl font-semibold shadow-lg hover:scale-105 transition duration-300'
