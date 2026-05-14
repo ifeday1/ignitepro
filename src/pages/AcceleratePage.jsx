@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 ======================================== */
 import HeroImage from '../assets/accelerate3.jpeg';
 
-// import Speaker1 from '../assets/speaker1.jpg';
+import Speaker1 from '../assets/Falade.jpeg';
 
 import Fire1 from '../assets/Nixon.jpeg';
 
@@ -22,11 +22,11 @@ import Fac from '../assets/Nei.jpeg';
 ======================================== */
 
 const speakers = [
-  //   {
-  //     image: Speaker1,
-  //     name: 'John Doe',
-  //     role: 'Leadership Coach',
-  //   },
+  {
+    image: Speaker1,
+    name: 'Adegbite Falade',
+    role: ' MD/CEO of Aradel Holdings Plc',
+  },
 ];
 
 const fireside = [
