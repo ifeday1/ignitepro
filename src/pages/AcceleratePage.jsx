@@ -21,9 +21,7 @@ import Panel4 from '../assets/Hanson.jpeg';
 
 import Fac from '../assets/Nei.jpeg';
 
-/* ========================================
-   DATA
-======================================== */
+
 
 const speakers = [
   {
