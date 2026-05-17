@@ -144,6 +144,16 @@ export default function Navbar() {
               ),
             )}
 
+            {/* DONATE BUTTON */}
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.96 }}>
+              <NavLink
+                to='/donate'
+                className='inline-flex items-center rounded-full border-2 border-purple-600 px-6 py-3 text-sm font-semibold text-purple-700 bg-white hover:bg-purple-50 transition-all duration-300 shadow-sm hover:shadow-lg'
+              >
+                Donate
+              </NavLink>
+            </motion.div>
+
             {/* ACCELERATE 3.0 BUTTON */}
             <motion.div
               animate={{
@@ -262,25 +272,36 @@ export default function Navbar() {
                   ),
                 )}
 
-                {/* MOBILE ACCELERATE BUTTON */}
-                <motion.div
-                  animate={{
-                    scale: [1, 1.03, 1],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                  }}
-                  className='pt-2'
-                >
+                {/* MOBILE BUTTONS */}
+                <div className='flex flex-col gap-4 pt-2'>
+                  {/* DONATE BUTTON */}
                   <NavLink
-                    to='/accelerate3.0'
+                    to='/donate'
                     onClick={() => setIsOpen(false)}
-                    className='flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg'
+                    className='flex items-center justify-center rounded-full border-2 border-purple-600 px-6 py-3 text-sm font-semibold text-purple-700 bg-white hover:bg-purple-50 transition-all duration-300'
                   >
-                    Accelerate 3.0
+                    Donate
                   </NavLink>
-                </motion.div>
+
+                  {/* ACCELERATE BUTTON */}
+                  <motion.div
+                    animate={{
+                      scale: [1, 1.03, 1],
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                    }}
+                  >
+                    <NavLink
+                      to='/accelerate3.0'
+                      onClick={() => setIsOpen(false)}
+                      className='flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg'
+                    >
+                      Accelerate 3.0
+                    </NavLink>
+                  </motion.div>
+                </div>
               </div>
             </motion.div>
           )}

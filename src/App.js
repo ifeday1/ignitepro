@@ -18,6 +18,7 @@ import PEvent from './pages/PEvent';
 import Podcast from './components/Podcast';
 import AcceleratePage from './pages/AcceleratePage';
 import AccelerateCountdown from './components/AccelerateCountdown';
+import Donate from './pages/Donate';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path='/pitch-form' element={<Form />} />
           <Route path='/speakers' element={<Speakers />} />
           <Route path='/accelerate3.0' element={<AcceleratePage />} />
+          <Route path='/donate' element={<Donate/>} />
         </Routes>
         <AccelerateCountdown />
 

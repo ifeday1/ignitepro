@@ -1,15 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-
-/* ========================================
-   IMPORT IMAGES
-======================================== */
 import HeroImage from '../assets/accelerate3.jpeg';
 
 import Speaker1 from '../assets/Falade.jpeg';
 import Speaker2 from '../assets/Olusola.jpg';
-
 
 import Fire1 from '../assets/Nixon.jpeg';
 
@@ -18,10 +13,7 @@ import Panel1 from '../assets/Obi.jpeg';
 import Panel3 from '../assets/Tracy.jpeg';
 import Panel4 from '../assets/Hanson.jpeg';
 
-
 import Fac from '../assets/Nei.jpeg';
-
-
 
 const speakers = [
   {
