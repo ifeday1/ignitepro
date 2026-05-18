@@ -12,12 +12,13 @@ import Homeimg from '../assets/homeimg.svg';
 import Vol from '../assets/vol.jpg';
 import Second from '../assets/second.jpeg';
 import Jug from '../assets/jug.jpeg';
-import Ill from '../assets/Illustration.svg';
+// import Ill from '../assets/Illustration.svg';
 // import Podcast from '../components/Podcast';
 import PodcastHero from '../components/PodcastHero';
 import AccelerateSection from '../components/AccelerateSection';
 import glanceImage from '../assets/glance.jpg';
-
+import csr17 from '../assets/csr17.jpg';
+import mb6 from '../assets/mb6.webp';
 // import { NavLink } from 'react-router-dom';
 
 const textVariants = {
@@ -374,50 +375,145 @@ const Home = () => {
 
       <AccelerateSection />
 
-      <section className='bg-pink-100 rounded-3xl px-7 md:px-20 py-14 max-w-7xl mx-auto mt-10 mb-28 '>
-        <div className='flex flex-col md:flex-row items-center justify-between gap-10'>
+      <section className='relative overflow-hidden bg-gradient-to-br from-[#FFF7FB] via-[#FDF4FF] to-[#F3E8FF] py-16 md:py-24 px-6 md:px-12 rounded-[2rem] max-w-7xl mx-auto mt-14 mb-28 shadow-[0_20px_80px_rgba(124,58,237,0.08)] border border-purple-100'>
+        {/* BACKGROUND GLOW */}
+        <div className='absolute -top-20 -left-20 w-72 h-72 bg-pink-300/20 rounded-full blur-3xl'></div>
+
+        <div className='absolute bottom-0 right-0 w-80 h-80 bg-purple-300/20 rounded-full blur-3xl'></div>
+
+        {/* SMALL DECORATION */}
+        <div className='absolute top-10 right-10 h-24 w-24 border border-primary/10 rounded-full hidden md:block'></div>
+
+        <div className='relative z-10 flex flex-col-reverse lg:flex-row items-center justify-between gap-14'>
+          {/* LEFT CONTENT */}
           <motion.div
-            className='md:w-1/2'
+            className='w-full lg:w-1/2 text-center lg:text-left'
             initial='hidden'
             whileInView='visible'
             viewport={{ once: true }}
             variants={fadeInLeft}
           >
-            <h2 className='text-2xl md:text-3xl font-bold mb-4 text-black'>
-              Upcoming Events
+            {/* BADGE */}
+            <div className='inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6'>
+              <span className='h-2 w-2 rounded-full bg-primary animate-pulse'></span>
+              Upcoming Experiences
+            </div>
+
+            {/* HEADING */}
+            <h2 className='text-4xl md:text-5xl font-black leading-tight text-gray-900'>
+              Exciting Events
+              <span className='block text-primary mt-1'>
+                Are Coming Your Way
+              </span>
             </h2>
-            <p className='text-gray-800 text-lg leading-relaxed mb-6 '>
-              Stay plugged in! At Ignite Pro, we create spaces that spark
-              growth, connection, and fresh ideas. Mark your calendar and don’t
-              miss out on what’s next.
-              <br></br>✨ More events coming soon — stay tuned and be part of
-              the Ignite experience!
+
+            {/* LINE */}
+            <div className='h-1 w-24 bg-primary rounded-full mt-6 mx-auto lg:mx-0'></div>
+
+            {/* TEXT */}
+            <p className='text-gray-700 text-base md:text-lg leading-relaxed mt-6 max-w-2xl mx-auto lg:mx-0'>
+              Stay plugged in with transformative gatherings designed to inspire
+              growth, spark fresh ideas, and build meaningful connections.
+              <br />
+              <br />
+              From leadership bootcamps to mentorship experiences and networking
+              sessions, Ignite Pro creates spaces where future leaders are
+              equipped to thrive.
+              <br />
+              <br />✨ More impactful events are on the horizon don’t miss the
+              next Ignite experience.
             </p>
 
-            <motion.a
-              href='/upcomingevents'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='inline-block text-lg mt-4 bg-primary text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition transition-all duration-300'
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              View up Coming Events→
-            </motion.a>
+            {/* BUTTONS */}
+            <div className='flex flex-col sm:flex-row items-center gap-4 mt-8 justify-center lg:justify-start'>
+              <motion.a
+                href='/upcomingevents'
+                className='inline-flex items-center gap-2 bg-primary text-white px-7 py-4 rounded-2xl font-semibold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300'
+                whileHover={{ y: -3 }}
+                whileTap={{ scale: 0.96 }}
+              >
+                View Upcoming Events →
+              </motion.a>
+
+              <motion.a
+                href='/accelerate3.0'
+                className='inline-flex items-center gap-2 border-2 border-primary text-primary px-7 py-4 rounded-2xl font-semibold hover:bg-primary hover:text-white transition-all duration-300'
+                whileHover={{ y: -3 }}
+                whileTap={{ scale: 0.96 }}
+              >
+                Explore Accelerate 3.0
+              </motion.a>
+            </div>
           </motion.div>
 
+          {/* RIGHT VISUAL SECTION */}
           <motion.div
-            className='md:w-1/2 flex justify-center'
+            className='w-full lg:w-1/2 relative flex justify-center items-center'
             initial='hidden'
             whileInView='visible'
             viewport={{ once: true }}
             variants={fadeInRight}
           >
-            <img
-              src={Ill}
-              alt='Accelerate Illustration'
-              className='w-[300px] md:w-[380px] max-w-full'
-            />
+            {/* BACKGROUND GLOW */}
+            <div className='absolute w-[420px] h-[420px] bg-primary/10 rounded-full blur-3xl'></div>
+
+            {/* MAIN CARD */}
+            <div className='relative z-10 w-full max-w-[520px]'>
+              {/* TOP FLOATING TAG */}
+              <div className='absolute -top-5 left-6 bg-white shadow-xl rounded-2xl px-5 py-3 border border-purple-100 hidden md:flex items-center gap-3 z-20'>
+                <div className='h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center'>
+                  <span className='text-xl'>🔥</span>
+                </div>
+
+                <div>
+                  <h4 className='font-bold text-gray-900 text-sm'>
+                    Ignite Pro Experiences
+                  </h4>
+                  <p className='text-xs text-gray-500'>
+                    Leadership • Mentorship • Growth
+                  </p>
+                </div>
+              </div>
+
+              {/* IMAGE GRID */}
+              <div className='grid grid-cols-2 gap-4'>
+                {/* LARGE IMAGE */}
+                <div className='col-span-2 overflow-hidden rounded-[2rem] shadow-2xl h-[280px] md:h-[340px]'>
+                  <img
+                    src={Vol}
+                    alt='Accelerate Event'
+                    className='w-full h-full object-cover hover:scale-105 transition duration-700'
+                  />
+                </div>
+
+                {/* SMALL IMAGE 1 */}
+                <div className='overflow-hidden rounded-[1.5rem] shadow-xl h-[180px]'>
+                  <img
+                    src={csr17}
+                    alt='Mentorship Breakfast'
+                    className='w-full h-full object-cover hover:scale-105 transition duration-700'
+                  />
+                </div>
+
+                {/* SMALL IMAGE 2 */}
+                <div className='overflow-hidden rounded-[1.5rem] shadow-xl h-[180px]'>
+                  <img
+                    src={mb6}
+                    alt='CSR Initiative'
+                    className='w-full h-full object-cover hover:scale-105 transition duration-700'
+                  />
+                </div>
+              </div>
+
+              {/* BOTTOM FLOATING CARD */}
+              <div className='absolute -bottom-5 right-4 bg-white shadow-2xl rounded-2xl px-6 py-4 border border-purple-100 hidden md:block'>
+                <h3 className='text-3xl font-black text-primary'>5+</h3>
+
+                <p className='text-sm text-gray-500'>
+                  Transformative Events Hosted
+                </p>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
