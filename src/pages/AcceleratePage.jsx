@@ -9,7 +9,7 @@ import Speaker2 from '../assets/Olusola.jpg';
 import Fire1 from '../assets/Nixon.jpeg';
 
 import Panel1 from '../assets/Obi.jpeg';
-// import Panel2 from '../assets/Sola.jpeg';
+import Panel2 from '../assets/Sola.jpeg';
 import Panel3 from '../assets/Tracy.jpeg';
 import Panel4 from '../assets/Hanson.jpeg';
 
@@ -42,11 +42,11 @@ const panelists = [
     name: 'Obi Imemba ',
     role: 'Executive Director at TotalEnergies EP Nigeria Limited.',
   },
-  // {
-  //   image: Panel2,
-  //   name: 'Sola Adesakin',
-  //   role: 'Founder of Smart Stewards Financial Advisory',
-  // },
+  {
+    image: Panel2,
+    name: 'Sola Adesakin',
+    role: 'Founder of Smart Stewards Financial Advisory',
+  },
   {
     image: Panel3,
     name: 'Tracy Diamonds',
