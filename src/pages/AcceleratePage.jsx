@@ -67,10 +67,6 @@ const facilitator = [
   },
 ];
 
-/* ========================================
-   COMPONENT
-======================================== */
-
 const AcceleratePage = () => {
   return (
     <div className='bg-white overflow-hidden'>
