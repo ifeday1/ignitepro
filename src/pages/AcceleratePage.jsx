@@ -79,7 +79,7 @@ const AcceleratePage = () => {
         <div className='absolute bottom-0 right-0 w-80 h-80 bg-orange-500/10 blur-3xl rounded-full'></div>
 
         <div className='relative max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center'>
-          {/* LEFT CONTENT */}
+      
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
