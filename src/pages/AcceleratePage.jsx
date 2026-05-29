@@ -74,7 +74,7 @@ const AcceleratePage = () => {
           HERO SECTION
       ========================================= */}
       <section className='relative min-h-screen flex items-center py-24 px-6 md:px-16 bg-gradient-to-br from-[#f8f7ff] via-white to-[#f2ecff]'>
-        {/* Background Glow */}
+     
         <div className='absolute top-0 left-0 w-72 h-72 bg-purple-500/10 blur-3xl rounded-full'></div>
         <div className='absolute bottom-0 right-0 w-80 h-80 bg-orange-500/10 blur-3xl rounded-full'></div>
 
