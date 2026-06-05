@@ -1,269 +1,172 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import {
-  HeartHandshake,
-  Copy,
-  Building2,
-  Landmark,
-  ShieldCheck,
-  CheckCircle2,
-  X,
-} from 'lucide-react';
+// import React, { useState } from 'react';
+// import { motion, AnimatePresence } from 'framer-motion';
+import one from '../assets/1.jpg';
+import DonationAccounts from '../components/DonationAccounts';
 
 const Donate = () => {
-  const [showToast, setShowToast] = useState(false);
-  const [toastText, setToastText] = useState('');
-
-  const accountDetails = {
-    bank: 'First Bank of Nigeria',
-    accountName: 'Pro-ignite Youth Development Network',
-    accountNumber: '2048570923',
-  };
-
-  // COPY FUNCTION
-  const copyToClipboard = async (text, label) => {
-    try {
-      await navigator.clipboard.writeText(text);
-
-      setToastText(`${label} copied successfully`);
-      setShowToast(true);
-
-      setTimeout(() => {
-        setShowToast(false);
-      }, 3000);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   return (
-    <div className='bg-gray-50 min-h-screen pt-24 md:pt-28 pb-16 overflow-hidden relative'>
-      {/* =========================
-          CUSTOM TOAST
-      ========================= */}
-      <AnimatePresence>
-        {showToast && (
-          <motion.div
-            initial={{ opacity: 0, y: 40, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 30, scale: 0.9 }}
-            transition={{ duration: 0.3 }}
-            className='fixed bottom-6 right-4 md:right-6 z-50'
-          >
-            <div className='flex items-center gap-3 bg-white border border-green-100 shadow-2xl rounded-2xl px-4 py-4 min-w-[280px] max-w-[90vw]'>
-              <div className='h-10 w-10 rounded-full bg-green-100 flex items-center justify-center'>
-                <CheckCircle2 className='text-green-600 w-5 h-5' />
+    <div>
+      <section className='relative overflow-hidden bg-gradient-to-br from-[#2B0A57] via-[#5B21B6] to-[#7C3AED] pt-32 pb-24'>
+        {/* Glow Effects */}
+        <div className='absolute -top-24 left-0 h-96 w-96 rounded-full bg-pink-500/20 blur-3xl'></div>
+        <div className='absolute bottom-0 right-0 h-96 w-96 rounded-full bg-orange-400/20 blur-3xl'></div>
+
+        <div className='max-w-7xl mx-auto px-6 lg:px-8 relative z-10'>
+          <div className='grid lg:grid-cols-2 gap-16 items-center'>
+            {/* LEFT */}
+            <div>
+              <div className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/10 text-white mb-6'>
+                ❤️ Support Ignite Pro
               </div>
 
-              <div className='flex-1'>
-                <h4 className='font-semibold text-gray-800'>
-                  Copied Successfully
-                </h4>
+              <h1 className='text-5xl md:text-7xl font-black text-white leading-tight'>
+                Invest In The Future.
+                <span className='block text-orange-300'>
+                  Empower The Next Generation.
+                </span>
+              </h1>
 
-                <p className='text-sm text-gray-500'>{toastText}</p>
+              <p className='mt-6 text-lg text-gray-200 max-w-2xl'>
+                Every donation helps Ignite Pro provide mentorship, leadership
+                development, educational support, and transformational
+                opportunities for young people.
+              </p>
+
+              <div className='flex flex-wrap gap-4 mt-8'>
+                <a
+                  href='#donation-accounts'
+                  className='bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full font-semibold'
+                >
+                  Donate Now
+                </a>
+
+                <a
+                  href='/Ignite Pro Impact Note 20251.pdf'
+                  download
+                  className='border border-white/20 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10'
+                >
+                  View Impact Report
+                </a>
               </div>
 
-              <button
-                onClick={() => setShowToast(false)}
-                className='text-gray-400 hover:text-gray-700 transition'
-              >
-                <X className='w-4 h-4' />
-              </button>
+              {/* Stats */}
+              <div className='grid grid-cols-3 gap-4 mt-12'>
+                <div>
+                  <h3 className='text-4xl font-black text-white'>1200+</h3>
+                  <p className='text-gray-300 text-sm'>Professionals Reached</p>
+                </div>
+
+                <div>
+                  <h3 className='text-4xl font-black text-white'>244</h3>
+                  <p className='text-gray-300 text-sm'>Students Supported</p>
+                </div>
+
+                <div>
+                  <h3 className='text-4xl font-black text-white'>500+</h3>
+                  <p className='text-gray-300 text-sm'>
+                    Mentorship Connections
+                  </p>
+                </div>
+              </div>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
-      {/* =========================
-          HERO SECTION
-      ========================= */}
-      <section className='relative px-4 sm:px-6 md:px-10 lg:px-12'>
-        <div className='max-w-7xl mx-auto'>
-          <div className='relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#2B0A57] via-[#5B21B6] to-[#7C3AED] px-5 py-12 sm:px-8 md:px-12 md:py-20 shadow-2xl'>
-            {/* GLOW EFFECTS */}
-            <div className='absolute -top-20 -left-16 w-72 h-72 bg-pink-500/20 blur-3xl rounded-full'></div>
-
-            <div className='absolute bottom-0 right-0 w-72 h-72 bg-orange-400/20 blur-3xl rounded-full'></div>
-
-            <div className='relative z-10 grid grid-cols-1 xl:grid-cols-2 gap-12 items-center'>
-              {/* =========================
-                  LEFT CONTENT
-              ========================= */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-                className='text-center xl:text-left'
-              >
-                {/* TAG */}
-                <div className='inline-flex items-center gap-2 bg-white/10 border border-white/10 backdrop-blur-xl px-4 py-2 rounded-full mb-6'>
-                  <HeartHandshake className='w-4 h-4 text-orange-300' />
-
-                  <span className='text-sm tracking-wide text-white'>
-                    Support Ignite Pro
-                  </span>
-                </div>
-
-                {/* HEADING */}
-                <h1 className='text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-white'>
-                  Empower The Next
-                  <span className='block text-orange-300'>
-                    Generation of Leaders
-                  </span>
-                </h1>
-
-                {/* TEXT */}
-                <p className='mt-6 text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed max-w-2xl mx-auto xl:mx-0'>
-                  Your support helps Ignite Pro Community continue building,
-                  mentoring, equipping, and empowering young professionals,
-                  students, and future leaders through impactful initiatives,
-                  leadership programs, mentorship, and community outreach.
-                </p>
-
-                {/* STATS */}
-                <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 mt-10'>
-                  <div className='bg-white/10 backdrop-blur-xl rounded-2xl p-5 border border-white/10 text-left'>
-                    <h3 className='text-3xl md:text-4xl font-black text-white'>
-                      1200+
-                    </h3>
-
-                    <p className='text-sm text-gray-200 mt-1'>
-                      Young Professionals Reached
-                    </p>
-                  </div>
-
-                  <div className='bg-white/10 backdrop-blur-xl rounded-2xl p-5 border border-white/10 text-left'>
-                    <h3 className='text-3xl md:text-4xl font-black text-white'>
-                      244
-                    </h3>
-
-                    <p className='text-sm text-gray-200 mt-1'>
-                      Students Supported
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* =========================
-                  RIGHT CARD
-              ========================= */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className='w-full'
-              >
-                <div className='bg-white text-gray-800 rounded-[2rem] shadow-2xl p-5 sm:p-7 md:p-10'>
-                  {/* HEADER */}
-                  <div className='flex flex-col sm:flex-row sm:items-center gap-4 mb-8'>
-                    <div className='h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0'>
-                      <Landmark className='text-primary w-7 h-7' />
-                    </div>
-
-                    <div>
-                      <h3 className='text-2xl font-bold'>Donation Details</h3>
-
-                      <p className='text-gray-500 text-sm'>
-                        Support the vision of Ignite Pro
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* ACCOUNT DETAILS */}
-                  <div className='space-y-5'>
-                    {/* BANK */}
-                    <div className='border border-gray-200 rounded-2xl p-4 md:p-5'>
-                      <p className='text-sm text-gray-500 mb-3'>Bank Name</p>
-
-                      <div className='flex items-start sm:items-center justify-between gap-4'>
-                        <div className='flex items-start gap-3 min-w-0'>
-                          <Building2 className='w-5 h-5 text-primary shrink-0 mt-1 sm:mt-0' />
-
-                          <h4 className='font-semibold text-base md:text-lg break-words'>
-                            {accountDetails.bank}
-                          </h4>
-                        </div>
-
-                        <button
-                          onClick={() =>
-                            copyToClipboard(accountDetails.bank, 'Bank name')
-                          }
-                          className='text-primary hover:scale-110 transition shrink-0'
-                        >
-                          <Copy className='w-5 h-5' />
-                        </button>
-                      </div>
-                    </div>
-
-                    {/* ACCOUNT NAME */}
-                    <div className='border border-gray-200 rounded-2xl p-4 md:p-5'>
-                      <p className='text-sm text-gray-500 mb-3'>Account Name</p>
-
-                      <div className='flex items-start justify-between gap-4'>
-                        <h4 className='font-semibold text-base md:text-lg break-words'>
-                          {accountDetails.accountName}
-                        </h4>
-
-                        <button
-                          onClick={() =>
-                            copyToClipboard(
-                              accountDetails.accountName,
-                              'Account name',
-                            )
-                          }
-                          className='text-primary hover:scale-110 transition shrink-0'
-                        >
-                          <Copy className='w-5 h-5' />
-                        </button>
-                      </div>
-                    </div>
-
-                    {/* ACCOUNT NUMBER */}
-                    <div className='border-2 border-primary rounded-2xl p-4 md:p-5 bg-primary/5'>
-                      <p className='text-sm text-gray-500 mb-3'>
-                        Account Number
-                      </p>
-
-                      <div className='flex flex-col sm:flex-row sm:items-center justify-between gap-4'>
-                        <h4 className='font-black text-2xl sm:text-3xl tracking-wider text-primary break-all'>
-                          {accountDetails.accountNumber}
-                        </h4>
-
-                        <button
-                          onClick={() =>
-                            copyToClipboard(
-                              accountDetails.accountNumber,
-                              'Account number',
-                            )
-                          }
-                          className='bg-primary text-white p-3 rounded-xl hover:scale-105 transition w-fit'
-                        >
-                          <Copy className='w-5 h-5' />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* SECURITY */}
-                  <div className='mt-8 flex items-start gap-3 bg-green-50 border border-green-200 rounded-2xl p-4'>
-                    <ShieldCheck className='text-green-600 w-5 h-5 mt-0.5 shrink-0' />
-
-                    <p className='text-sm text-green-700 leading-relaxed'>
-                      Every donation supports impactful leadership initiatives,
-                      mentorship programs, and community development projects.
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
+            {/* RIGHT */}
+            <div>
+              <img
+                src={one}
+                alt='Ignite Pro Impact'
+                className='rounded-[2rem] shadow-2xl w-full h-[600px] object-cover'
+              />
             </div>
           </div>
         </div>
       </section>
 
-    
-    
+      <section className='py-20 px-6 bg-white'>
+        <div className='max-w-7xl mx-auto'>
+          <div className='text-center mb-14'>
+            <h2 className='text-4xl font-bold text-gray-900'>
+              Why Your Donation Matters
+            </h2>
+
+            <p className='text-gray-600 mt-4 max-w-2xl mx-auto'>
+              Every contribution helps us equip young professionals, support
+              students, provide mentorship opportunities, and create
+              transformational leadership experiences.
+            </p>
+          </div>
+
+          <div className='grid md:grid-cols-3 gap-8'>
+            <div className='bg-gray-50 rounded-3xl p-8'>
+              <h3 className='font-bold text-xl mb-3'>Leadership Development</h3>
+
+              <p className='text-gray-600'>
+                Funding leadership bootcamps, mentorship breakfasts, and
+                transformational learning experiences.
+              </p>
+            </div>
+
+            <div className='bg-gray-50 rounded-3xl p-8'>
+              <h3 className='font-bold text-xl mb-3'>Student Support</h3>
+
+              <p className='text-gray-600'>
+                Supporting students with educational resources, school materials
+                and growth opportunities.
+              </p>
+            </div>
+
+            <div className='bg-gray-50 rounded-3xl p-8'>
+              <h3 className='font-bold text-xl mb-3'>Community Impact</h3>
+
+              <p className='text-gray-600'>
+                Driving meaningful CSR projects that create lasting positive
+                change in communities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className='py-20 px-6 bg-purple-100 '>
+        <div className='max-w-4xl mx-auto text-center'>
+          <h2 className='text-4xl font-bold mb-10'>The Impact Is Real</h2>
+
+          <div className='bg-gray-50 rounded-3xl p-10'>
+            <p className='text-lg text-gray-700 italic'>
+              "Ignite Pro helped me gain clarity, confidence, and direction for
+              my career. The mentorship and leadership programs changed my
+              perspective completely."
+            </p>
+
+            <div className='mt-6'>
+              <h4 className='font-bold'>Program Participant</h4>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <DonationAccounts />
+
+      <section className='py-24 px-6 bg-gradient-to-r from-primary to-purple-700 text-white'>
+        <div className='max-w-5xl mx-auto text-center'>
+          <h2 className='text-4xl md:text-5xl font-black'>
+            Help Us Build The Future
+          </h2>
+
+          <p className='mt-6 text-lg text-white/90 max-w-3xl mx-auto'>
+            Your donation today helps us continue empowering young leaders,
+            supporting students, and creating opportunities that transform
+            lives.
+          </p>
+
+          <a
+            href='https://docs.google.com/forms/d/1Jy6BJG0jkRkuuW3JmXjeFefnswHTq-dgguKEHLJjGPk/viewform'
+            className='inline-block mt-8 bg-white text-primary font-bold px-10 py-4 rounded-full'
+          >
+            Donate Now
+          </a>
+        </div>
+      </section>
     </div>
   );
 };
