@@ -7,7 +7,6 @@ const Donate = () => {
   return (
     <div>
       <section className='relative overflow-hidden bg-gradient-to-br from-[#2B0A57] via-[#5B21B6] to-[#7C3AED] pt-32 pb-24'>
-        {/* Glow Effects */}
         <div className='absolute -top-24 left-0 h-96 w-96 rounded-full bg-pink-500/20 blur-3xl'></div>
         <div className='absolute bottom-0 right-0 h-96 w-96 rounded-full bg-orange-400/20 blur-3xl'></div>
 
