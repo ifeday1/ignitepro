@@ -1,6 +1,6 @@
 // import React, { useState } from 'react';
 // import { motion, AnimatePresence } from 'framer-motion';
-import one from '../assets/1.jpg';
+import a23 from '../assets/a23.jpeg';
 import DonationAccounts from '../components/DonationAccounts';
 
 const Donate = () => {
@@ -72,7 +72,7 @@ const Donate = () => {
             {/* RIGHT */}
             <div>
               <img
-                src={one}
+                src={a23}
                 alt='Ignite Pro Impact'
                 className='rounded-[2rem] shadow-2xl w-full h-[600px] object-cover'
               />
