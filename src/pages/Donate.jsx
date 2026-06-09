@@ -12,7 +12,6 @@ const Donate = () => {
 
         <div className='max-w-7xl mx-auto px-6 lg:px-8 relative z-10'>
           <div className='grid lg:grid-cols-2 gap-16 items-center'>
-            {/* LEFT */}
             <div>
               <div className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/10 text-white mb-6'>
                 ❤️ Support Ignite Pro
