@@ -47,7 +47,6 @@ const Donate = () => {
                 </a>
               </div>
 
-              {/* Stats */}
               <div className='grid grid-cols-3 gap-4 mt-12'>
                 <div>
                   <h3 className='text-4xl font-black text-white'>1200+</h3>
