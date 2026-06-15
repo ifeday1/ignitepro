@@ -92,7 +92,6 @@ const Donate = () => {
               transformational leadership experiences.
             </p>
           </div>
-        
 
           <div className='grid md:grid-cols-3 gap-8'>
             <div className='bg-gray-50 rounded-3xl p-8'>
