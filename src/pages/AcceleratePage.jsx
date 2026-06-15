@@ -74,12 +74,10 @@ const AcceleratePage = () => {
           HERO SECTION
       ========================================= */}
       <section className='relative min-h-screen flex items-center py-24 px-6 md:px-16 bg-gradient-to-br from-[#f8f7ff] via-white to-[#f2ecff]'>
-     
         <div className='absolute top-0 left-0 w-72 h-72 bg-purple-500/10 blur-3xl rounded-full'></div>
         <div className='absolute bottom-0 right-0 w-80 h-80 bg-orange-500/10 blur-3xl rounded-full'></div>
 
         <div className='relative max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center'>
-      
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -182,6 +180,121 @@ const AcceleratePage = () => {
               className='relative w-full max-w-lg rounded-[2rem] shadow-2xl border border-white/40'
             />
           </motion.div>
+        </div>
+      </section>
+      <section className='py-20 px-6 md:px-16 bg-gradient-to-br from-purple-50 via-white to-orange-50'>
+        <div className='max-w-7xl mx-auto'>
+          <div className='grid lg:grid-cols-2 gap-12 items-center'>
+            {/* Left Content */}
+            <div>
+              <span className='inline-flex items-center bg-purple-100 text-primary px-4 py-2 rounded-full text-sm font-semibold'>
+                🎓 Scholarship Opportunity
+              </span>
+
+              <h2 className='mt-6 text-4xl md:text-5xl font-black text-gray-900 leading-tight'>
+                Earn a Scholarship to Learn
+                <span className='block text-primary'>Product Management</span>
+              </h2>
+
+              <p className='mt-6 text-lg text-gray-600 leading-relaxed'>
+                Accelerate 3.0 is offering a limited number of scholarships
+                worth
+                <span className='font-bold text-primary'> ₦420,000 </span>
+                to eligible students, recent graduates, and early-career
+                professionals in Rivers State.
+              </p>
+
+              <div className='mt-8 space-y-4'>
+                <div className='flex items-center gap-3'>
+                  <span className='text-green-500 text-xl'>✓</span>
+                  <span>Learn Product Management from industry experts</span>
+                </div>
+
+                <div className='flex items-center gap-3'>
+                  <span className='text-green-500 text-xl'>✓</span>
+                  <span>Scholarship covers the full programme fee</span>
+                </div>
+
+                <div className='flex items-center gap-3'>
+                  <span className='text-green-500 text-xl'>✓</span>
+                  <span>Open to students, graduates & early professionals</span>
+                </div>
+
+                <div className='flex items-center gap-3'>
+                  <span className='text-green-500 text-xl'>✓</span>
+                  <span>Applications close June 30, 2026</span>
+                </div>
+              </div>
+
+              <div className='mt-10 flex flex-wrap gap-4'>
+                <a
+                  href='/accelerate3.0/scholarship'
+                  className='bg-primary text-white px-8 py-4 rounded-2xl font-semibold shadow-lg hover:scale-105 transition duration-300'
+                >
+                  Apply For Scholarship
+                </a>
+
+                <a
+                  href='/accelerate3.0/scholarship'
+                  className='border-2 border-primary text-primary px-8 py-4 rounded-2xl font-semibold hover:bg-primary hover:text-white transition duration-300'
+                >
+                  View Eligibility
+                </a>
+              </div>
+            </div>
+
+            {/* Right Card */}
+            <div className='relative'>
+              <div className='bg-white rounded-[2rem] shadow-2xl border border-gray-100 p-8'>
+                <div className='flex justify-between items-start'>
+                  <div>
+                    <p className='text-sm uppercase tracking-widest text-primary font-semibold'>
+                      Scholarship Value
+                    </p>
+
+                    <h3 className='text-5xl font-black text-gray-900 mt-2'>
+                      ₦420K
+                    </h3>
+                  </div>
+
+                  <div className='bg-orange-100 text-orange-600 px-4 py-2 rounded-full font-semibold'>
+                    Limited Slots
+                  </div>
+                </div>
+
+                <div className='mt-8 space-y-4'>
+                  <div className='flex justify-between border-b pb-3'>
+                    <span className='text-gray-500'>Location</span>
+                    <span className='font-semibold'>Rivers State</span>
+                  </div>
+
+                  <div className='flex justify-between border-b pb-3'>
+                    <span className='text-gray-500'>Age Range</span>
+                    <span className='font-semibold'>18 - 30 Years</span>
+                  </div>
+
+                  <div className='flex justify-between border-b pb-3'>
+                    <span className='text-gray-500'>Laptop Required</span>
+                    <span className='font-semibold'>Yes</span>
+                  </div>
+
+                  <div className='flex justify-between'>
+                    <span className='text-gray-500'>Deadline</span>
+                    <span className='font-semibold text-red-500'>
+                      June 30, 2026
+                    </span>
+                  </div>
+                </div>
+
+                <a
+                  href='/accelerate3.0/scholarship'
+                  className='block text-center mt-8 bg-primary text-white py-4 rounded-xl font-semibold hover:opacity-90'
+                >
+                  Explore Scholarship Details
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
