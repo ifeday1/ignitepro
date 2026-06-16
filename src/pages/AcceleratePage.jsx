@@ -270,7 +270,7 @@ const AcceleratePage = () => {
 
                   <div className='flex justify-between border-b pb-3'>
                     <span className='text-gray-500'>Age Range</span>
-                    <span className='font-semibold'>18 - 30 Years</span>
+                    <span className='font-semibold'>18 - 35 Years</span>
                   </div>
 
                   <div className='flex justify-between border-b pb-3'>

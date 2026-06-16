@@ -173,7 +173,7 @@ const ScholarshipPage = () => {
               <h3 className='font-bold text-xl mb-3'>Age Requirement</h3>
 
               <p className='text-gray-600'>
-                Applicants must be between 18 and 30 years old.
+                Applicants must be between 18 and 35 years old.
               </p>
             </div>
           </div>
