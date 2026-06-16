@@ -6,6 +6,7 @@ import {
   GraduationCap,
   MapPin,
   Users,
+  ClipboardCheck,
 } from 'lucide-react';
 import SH from '../assets/SCimg.jpeg';
 import Logo from '../assets/logo.png';
@@ -106,7 +107,7 @@ const ScholarshipPage = () => {
             </div>
           </div>
           <div className='inline-flex items-center gap-2 bg-red-50 border border-red-200 text-red-600 px-4 py-2 rounded-full font-semibold mt-4'>
-            ⏰ Applications Close: June 30, 2026
+            ⏰ Applications Close: June 28, 2026
           </div>
         </div>
       </section>
@@ -174,6 +175,20 @@ const ScholarshipPage = () => {
 
               <p className='text-gray-600'>
                 Applicants must be between 18 and 35 years old.
+              </p>
+            </div>
+            <div className='bg-white p-8 rounded-2xl shadow-sm md:col-span-2'>
+              <ClipboardCheck className='text-purple-600 mb-4' />
+
+              <h3 className='font-bold text-xl mb-3'>
+                Accelerate 3.0 Registration Requirement
+              </h3>
+
+              <p className='text-gray-600 leading-relaxed'>
+                Scholarship applicants must first register for Accelerate 3.0
+                before submitting a scholarship application. Only candidates
+                with a valid Accelerate 3.0 registration will be considered
+                during the scholarship screening and selection process.
               </p>
             </div>
           </div>

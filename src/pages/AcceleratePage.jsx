@@ -281,7 +281,7 @@ const AcceleratePage = () => {
                   <div className='flex justify-between'>
                     <span className='text-gray-500'>Deadline</span>
                     <span className='font-semibold text-red-500'>
-                      June 30, 2026
+                      June 28, 2026
                     </span>
                   </div>
                 </div>
