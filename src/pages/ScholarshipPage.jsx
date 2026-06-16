@@ -7,7 +7,9 @@ import {
   MapPin,
   Users,
 } from 'lucide-react';
-import SH from '../assets/35.jpg';
+import SH from '../assets/SCimg.jpeg';
+import Logo from '../assets/logo.png';
+import ProductDiveLogo from '../assets/PD.png';
 
 const ScholarshipPage = () => {
   const applyLink =
@@ -24,7 +26,27 @@ const ScholarshipPage = () => {
                 Accelerate 3.0 Scholarship
               </span>
 
-              <h1 className='mt-6 text-5xl md:text-6xl font-bold leading-tight'>
+              <div className='flex flex-wrap items-center gap-6 mb-8 mt m-8'>
+                <div className='flex items-center gap-3'>
+                  <img
+                    src={Logo}
+                    alt='Ignite Pro Community'
+                    className='h-10 object-contain'
+                  />
+                </div>
+
+                <div className='text-2xl text-gray-400'>×</div>
+
+                <div className='flex items-center gap-3'>
+                  <img
+                    src={ProductDiveLogo}
+                    alt='ProductDive'
+                    className='h-10 object-contain'
+                  />
+                </div>
+              </div>
+
+              <h1 className=' text-5xl md:text-6xl font-bold leading-tight'>
                 Earn a Scholarship to Learn
                 <span className='text-purple-600 block'>
                   Product Management
