@@ -108,7 +108,6 @@ export default function PodcastHero() {
                 className='w-full max-w-xl mx-auto rounded-[32px] shadow-[0_30px_80px_rgba(0,0,0,0.18)]'
               />
 
-              {/* Floating Play Button */}
               <a
                 href='https://www.youtube.com/@IgniteProCommunity'
                 target='_blank'
