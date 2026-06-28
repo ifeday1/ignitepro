@@ -1,8 +1,15 @@
 import Podthumb1 from '../assets/podthumb1.jpeg';
 import Podthumb2 from '../assets/podthumb2.jpeg';
 import Podthumb3 from '../assets/Podthumb3.jpeg';
+import Podthumb4 from '../assets/Podthumb4.jpeg';
 
 const podcasts = [
+  {
+    title: 'CREATING IMPACT BEYOND PROFIT',
+    thumbnail: Podthumb4,
+    youtube: 'https://www.youtube.com/watch?v=iDE-S5CLTkA',
+    date: '27th,June 2026',
+  },
   {
     title: 'TAKING CHANCES: The Audacity to Turn Challenges Into Opportunities',
     thumbnail: Podthumb3,
