@@ -3,13 +3,6 @@ import { motion } from 'framer-motion';
 import ImageGallery from '../components/ImageGallery';
 import Eventshead from '../assets/eventshead.png';
 
-/* ================== IMPORT IMAGES ================== */
-
-// Breakfast Mentorship (🔥 NEW SECTION — ADD YOUR IMAGES)
-// import B1 from '../assets/b1.jpg';
-// import B2 from '../assets/b2.jpg';
-// import B3 from '../assets/b3.jpg';
-
 // CSR
 import CSR from '../assets/csr.jpg';
 import CSR1 from '../assets/csr1.jpg';
