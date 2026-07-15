@@ -376,7 +376,6 @@ const Home = () => {
       <AccelerateSection />
 
       <section className='relative overflow-hidden bg-gradient-to-br from-[#FFF7FB] via-[#FDF4FF] to-[#F3E8FF] py-16 md:py-24 px-6 md:px-12 rounded-[2rem] max-w-7xl mx-auto mt-14 mb-28 shadow-[0_20px_80px_rgba(124,58,237,0.08)] border border-purple-100'>
-        {/* BACKGROUND GLOW */}
         <div className='absolute -top-20 -left-20 w-72 h-72 bg-pink-300/20 rounded-full blur-3xl'></div>
 
         <div className='absolute bottom-0 right-0 w-80 h-80 bg-purple-300/20 rounded-full blur-3xl'></div>
