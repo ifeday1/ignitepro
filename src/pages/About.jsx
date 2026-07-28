@@ -8,6 +8,7 @@ import Act1 from '../assets/act1.png';
 import Act2 from '../assets/act2.svg';
 import Act4 from '../assets/act4.svg';
 import { NavLink } from 'react-router-dom';
+import DownloadPdf from '../components/DownloadPdf';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -261,6 +262,7 @@ Networking Opportunities: Dedicated spaces and activities facilitated meaningful
               className='bg-white p-4 rounded-lg shadow-lg flex flex-col md:flex-row items-start'
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6 }}
             >
               <img
@@ -319,6 +321,13 @@ Networking Opportunities: Dedicated spaces and activities facilitated meaningful
           ))}
         </div>
       </section>
+
+      <DownloadPdf
+        fileUrl='/Accelerate 3.0 Brochure.pdf'
+        downloadName='Accelerate-3.0-Brochure.pdf'
+        title='Download Accelerate 3.0 Brochure'
+        description='Get all the details on Accelerate 3.0 — speakers, program schedule, and how to apply for the scholarship.'
+      />
     </>
   );
 };

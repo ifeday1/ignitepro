@@ -72,6 +72,7 @@ const Contact = () => {
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.6 }}
           className='text-3xl md:text-4xl font-extrabold text-purple-700 mb-4'
         >
@@ -81,6 +82,7 @@ const Contact = () => {
         <motion.p
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
           transition={{ delay: 0.2, duration: 0.6 }}
           className='text-gray-700 max-w-3xl mx-auto mb-6'
         >
@@ -92,6 +94,7 @@ const Contact = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.4 }}
           transition={{ delay: 0.3, duration: 0.5 }}
           className='inline-block bg-purple-600 text-white px-6 py-3 rounded-lg shadow-md mb-12'
         >
@@ -106,6 +109,7 @@ const Contact = () => {
               key={i}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ delay: i * 0.2 }}
               className='border border-purple-500 rounded-lg p-6 bg-white hover:shadow-lg transition duration-300'
             >

@@ -20,6 +20,11 @@ export default function Navbar() {
           href: '/Ignite Pro Impact Note 20251.pdf',
           label: 'Download Impact Note',
         },
+        {
+          type: 'download',
+          href: '/Accelerate 3.0 Brochure.pdf',
+          label: 'Download Accelerate 3.0 Brochure',
+        },
       ],
     },
 
@@ -154,26 +159,7 @@ export default function Navbar() {
               </NavLink>
             </motion.div>
 
-            {/* ACCELERATE 3.0 BUTTON */}
-            <motion.div
-              animate={{
-                y: [0, -3, 0],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-              }}
-            >
-              <NavLink
-                to='/accelerate3.0'
-                className='relative inline-flex items-center overflow-hidden rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl'
-              >
-                <span className='relative z-10'>Accelerate 3.0</span>
-
-                {/* Glow Effect */}
-                <span className='absolute inset-0 bg-white/20 opacity-0 hover:opacity-100 transition duration-300'></span>
-              </NavLink>
-            </motion.div>
+     
           </div>
 
           {/* MOBILE MENU BUTTON */}

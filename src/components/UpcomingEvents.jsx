@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
-import Accelerate from '../assets/1.jpg';
+import { CalendarHeart, Instagram } from 'lucide-react';
 
 const events = [
   // {
@@ -25,19 +24,46 @@ const events = [
   //   link: 'https://tix.africa/discover/blueace',
   //   reverse: true,
   // },
-  {
-    type: 'event',
-    title: 'Accelerate 3.0',
-    date: 'April 2026',
-    subtitle: 'Leadership • Growth • Purpose',
-    description:
-      'Accelerate 3.0 is a transformational bootcamp equipping young professionals with leadership capacity, clarity, and faith-driven excellence.',
-    image: Accelerate,
-    link: '#',
-  },
 ];
 
 const UpcomingEvents = () => {
+  if (events.length === 0) {
+    return (
+      <section className='bg-[#0F0625] py-28 px-4 mt-20'>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className='max-w-xl mx-auto text-center flex flex-col items-center'
+        >
+          <div className='w-20 h-20 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-8'>
+            <CalendarHeart className='w-10 h-10 text-orange-400' />
+          </div>
+
+          <h2 className='text-white text-3xl md:text-4xl font-bold mb-4'>
+            Nothing Scheduled Yet
+          </h2>
+
+          <p className='text-gray-400 leading-relaxed text-lg mb-10'>
+            We're in the middle of planning our next experience. Follow us so
+            you're the first to know when the next event drops.
+          </p>
+
+          <a
+            href='https://www.instagram.com/ignite_procommunity?igsh=MWJ4M2ZqbmljcDY3YQ=='
+            target='_blank'
+            rel='noopener noreferrer'
+            className='inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-semibold bg-primary hover:bg-orange-600 text-white transition'
+          >
+            <Instagram className='w-4 h-4' />
+            Follow for Updates
+          </a>
+        </motion.div>
+      </section>
+    );
+  }
+
   return (
     <section className='bg-[#0F0625] py-28 px-4 overflow-hidden mt-20'>
       <div className='max-w-7xl mx-auto space-y-32'>
@@ -56,6 +82,7 @@ const UpcomingEvents = () => {
             <motion.div
               initial={{ scale: 0.95 }}
               whileInView={{ scale: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 1 }}
               className='relative w-full md:w-1/2'
             >
@@ -71,6 +98,7 @@ const UpcomingEvents = () => {
             <motion.div
               initial={{ opacity: 0, x: event.reverse ? 60 : -60 }}
               whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8 }}
               className='w-full md:w-1/2 text-center md:text-left'
             >

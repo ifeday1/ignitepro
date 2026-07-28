@@ -17,7 +17,6 @@ import Speakers from './pages/Speakers';
 import PEvent from './pages/PEvent';
 import Podcast from './components/Podcast';
 import AcceleratePage from './pages/AcceleratePage';
-import AccelerateCountdown from './components/AccelerateCountdown';
 import Donate from './pages/Donate';
 import ScholarshipPage from './pages/ScholarshipPage';
 
@@ -45,7 +44,7 @@ function App() {
           <Route path='/accelerate3.0/scholarship' element={<ScholarshipPage />} />
           <Route path='/donate' element={<Donate />} />
         </Routes>
-        <AccelerateCountdown />
+      
 
         <ScrollToTop />
         <Footer />

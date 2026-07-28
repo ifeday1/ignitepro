@@ -15,7 +15,7 @@ import Jug from '../assets/jug.jpeg';
 // import Ill from '../assets/Illustration.svg';
 // import Podcast from '../components/Podcast';
 import PodcastHero from '../components/PodcastHero';
-import AccelerateSection from '../components/AccelerateSection';
+import { Quote } from 'lucide-react';
 import glanceImage from '../assets/glance.jpg';
 import csr17 from '../assets/csr17.jpg';
 import mb6 from '../assets/mb6.webp';
@@ -270,14 +270,14 @@ const Home = () => {
         )}
       </div>
 
-      <section className='px-4 sm:px-6 lg:px-12 py-12 mx-auto bg-light mt-16 md:mt-24'>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-10 items-center'>
+      <section className='px-4 sm:px-6 lg:px-12 py-16 md:py-20 bg-light mt-16 md:mt-24'>
+        <div className='max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center'>
           <motion.div
             initial='hidden'
             whileInView='visible'
             viewport={{ once: true, amount: 0.3 }}
             variants={textVariants}
-            className='text-gray-700 text-base sm:text-lg md:text-xl leading-relaxed p-4 sm:p-6 md:p-8 rounded-xl shadow mx-0 md:mx-4 lg:mx-12'
+            className='text-gray-700 text-base sm:text-lg md:text-xl leading-relaxed p-4 sm:p-6 md:p-8 rounded-xl bg-white shadow-sm border border-purple-100 mx-0 md:mx-4 lg:mx-12'
           >
             <p>
               Welcome to <strong>IgnitePro Community</strong>. We’re a
@@ -313,7 +313,7 @@ const Home = () => {
         >
           {/* Text Section */}
           <motion.div variants={fadeInUp}>
-            <h2 className='text-white bg-primary w-fit px-5 py-2 rounded-md text-sm md:text-xl font-medium mb-6'>
+            <h2 className='text-white bg-primary w-fit px-5 py-2 rounded-md text-sm md:text-lg font-medium mb-6'>
               WHO WE ARE AND WHAT WE DO
             </h2>
             <p className='text-gray-800 text-lg leading-relaxed mb-6'>
@@ -357,15 +357,17 @@ const Home = () => {
           </motion.div>
 
           {/* Image Section */}
-          <div className='space-y-1 flex flex-col items-center md:items-start'>
+          <div className='relative flex flex-col items-center md:items-stretch max-w-md mx-auto md:mx-0'>
             {[Who, Who1].map((img, index) => (
               <motion.img
                 key={index}
                 src={img}
                 alt={`Accelerate Camp ${index + 1}`}
                 variants={fadeInUp}
-                className={`rounded-xl w-56 md:w-6/12  max-w-md ${
-                  index === 0 ? 'ml-auto' : 'mr-auto'
+                className={`rounded-xl w-4/5 md:w-4/5 shadow-xl border-4 border-white ${
+                  index === 0
+                    ? 'ml-auto'
+                    : 'mr-auto -mt-16 md:-mt-20 relative z-10'
                 }`}
               />
             ))}
@@ -373,12 +375,12 @@ const Home = () => {
         </motion.div>
       </section>
 
-      <AccelerateSection />
+      {/* <AccelerateSection /> */}
 
-      <section className='relative overflow-hidden bg-gradient-to-br from-[#FFF7FB] via-[#FDF4FF] to-[#F3E8FF] py-16 md:py-24 px-6 md:px-12 rounded-[2rem] max-w-7xl mx-auto mt-14 mb-28 shadow-[0_20px_80px_rgba(124,58,237,0.08)] border border-purple-100'>
-        <div className='absolute -top-20 -left-20 w-72 h-72 bg-pink-300/20 rounded-full blur-3xl'></div>
+      <section className='relative overflow-hidden bg-gradient-to-br from-[#FFF7FB] via-[#FDF4FF] to-[#F3E8FF] py-16 md:py-24 px-6 md:px-12 rounded-[2rem] max-w-7xl mx-auto mt-14 mb-28 shadow-sm border border-purple-100'>
+        <div className='absolute -top-20 -left-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl'></div>
 
-        <div className='absolute bottom-0 right-0 w-80 h-80 bg-purple-300/20 rounded-full blur-3xl'></div>
+        <div className='absolute bottom-0 right-0 h-72 w-72 bg-orange-400/10 rounded-full blur-3xl'></div>
 
         {/* SMALL DECORATION */}
         <div className='absolute top-10 right-10 h-24 w-24 border border-primary/10 rounded-full hidden md:block'></div>
@@ -427,7 +429,7 @@ const Home = () => {
             <div className='flex flex-col sm:flex-row items-center gap-4 mt-8 justify-center lg:justify-start'>
               <motion.a
                 href='/upcomingevents'
-                className='inline-flex items-center gap-2 bg-primary text-white px-7 py-4 rounded-2xl font-semibold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300'
+                className='inline-flex items-center gap-2 bg-primary text-white px-7 py-4 rounded-2xl font-semibold shadow-lg transition-all duration-300'
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.96 }}
               >
@@ -459,7 +461,7 @@ const Home = () => {
             {/* MAIN CARD */}
             <div className='relative z-10 w-full max-w-[520px]'>
               {/* TOP FLOATING TAG */}
-              <div className='absolute -top-5 left-6 bg-white shadow-xl rounded-2xl px-5 py-3 border border-purple-100 hidden md:flex items-center gap-3 z-20'>
+              <div className='absolute -top-5 left-6 bg-white shadow-lg rounded-2xl px-5 py-3 border border-purple-100 hidden md:flex items-center gap-3 z-20'>
                 <div className='h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center'>
                   <span className='text-xl'>🔥</span>
                 </div>
@@ -477,7 +479,7 @@ const Home = () => {
               {/* IMAGE GRID */}
               <div className='grid grid-cols-2 gap-4'>
                 {/* LARGE IMAGE */}
-                <div className='col-span-2 overflow-hidden rounded-[2rem] shadow-2xl h-[280px] md:h-[340px]'>
+                <div className='col-span-2 overflow-hidden rounded-[2rem] shadow-xl h-[280px] md:h-[340px]'>
                   <img
                     src={Vol}
                     alt='Accelerate Event'
@@ -486,7 +488,7 @@ const Home = () => {
                 </div>
 
                 {/* SMALL IMAGE 1 */}
-                <div className='overflow-hidden rounded-[1.5rem] shadow-xl h-[180px]'>
+                <div className='overflow-hidden rounded-[1.5rem] shadow-md h-[180px]'>
                   <img
                     src={csr17}
                     alt='Mentorship Breakfast'
@@ -495,7 +497,7 @@ const Home = () => {
                 </div>
 
                 {/* SMALL IMAGE 2 */}
-                <div className='overflow-hidden rounded-[1.5rem] shadow-xl h-[180px]'>
+                <div className='overflow-hidden rounded-[1.5rem] shadow-md h-[180px]'>
                   <img
                     src={mb6}
                     alt='CSR Initiative'
@@ -505,7 +507,7 @@ const Home = () => {
               </div>
 
               {/* BOTTOM FLOATING CARD */}
-              <div className='absolute -bottom-5 right-4 bg-white shadow-2xl rounded-2xl px-6 py-4 border border-purple-100 hidden md:block'>
+              <div className='absolute -bottom-5 right-4 bg-white shadow-lg rounded-2xl px-6 py-4 border border-purple-100 hidden md:block'>
                 <h3 className='text-3xl font-black text-primary'>5+</h3>
 
                 <p className='text-sm text-gray-500'>
@@ -593,6 +595,12 @@ const Home = () => {
             1024: { slidesPerView: 3 },
           }}
           modules={[Pagination, Autoplay]}
+          style={{
+            '--swiper-pagination-color': '#FF6131',
+            '--swiper-pagination-bullet-inactive-color': '#ffffff',
+            '--swiper-pagination-bullet-inactive-opacity': 0.3,
+            paddingBottom: '2.5rem',
+          }}
         >
           {testimonials.map((t, i) => (
             <SwiperSlide key={i}>
@@ -602,13 +610,17 @@ const Home = () => {
                 whileInView='visible'
                 viewport={{ once: true }}
                 variants={fadeInUp}
-                className='bg-primary text-white p-6 rounded-xl relative h-full'
+                className='bg-primary/90 text-white p-6 pt-8 rounded-2xl relative h-full border border-white/10 shadow-md'
               >
-                <div className='absolute bottom-[-10px] left-6 w-4 h-4 bg-primary rotate-45'></div>
-                <p className='text-sm mb-2'>{t.quote}</p>
-                <div className=''>
-                  <p className='text-primary font-semibold'>{t.name}</p>
-                  <p className='text-white text-sm'>{t.role}</p>
+                <Quote className='absolute top-4 right-5 w-8 h-8 text-white/15' />
+                <p className='text-sm leading-relaxed mb-4 relative z-10'>
+                  {t.quote}
+                </p>
+                <div className='pt-3 border-t border-white/15'>
+                  {t.name?.trim() && (
+                    <p className='font-semibold'>{t.name}</p>
+                  )}
+                  <p className='text-white/70 text-sm'>{t.role}</p>
                 </div>
               </motion.div>
             </SwiperSlide>
@@ -616,20 +628,20 @@ const Home = () => {
         </Swiper>
       </section>
 
-      <div className='px-7 md:px-24 py-0 md:py-16 mx-auto'>
+      <div className='px-6 md:px-12 py-16 md:py-20 max-w-7xl mx-auto'>
         <motion.h2
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true }}
           variants={fadeInUp}
-          className='text-white bg-primary px-4 py-2 rounded-md text-lg font-medium w-fit mt-10 '
+          className='text-white bg-primary px-4 py-2 rounded-md text-sm md:text-lg font-medium w-fit mb-6'
         >
           PICTURE EXCERPT FROM ACCELERATE 2.0
         </motion.h2>
         <img
           src={Homeimg}
           alt='Pictures'
-          class=' w-[500px] h-[auto] md:w-[1200px] mt-5 '
+          className='w-full max-w-5xl mx-auto rounded-xl shadow-sm'
         />
       </div>
     </>

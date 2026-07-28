@@ -7,8 +7,21 @@ import Img30 from '../assets/30.jpg';
 import A11 from '../assets/a11.jpeg';
 import Csr19 from '../assets/csr19.jpg';
 import mb from '../assets/mb.jpg';
+import Accelerate3 from '../assets/accelerate3.jpeg';
 
 const events = [
+  {
+    title: 'Accelerate 3.0 – Future Proof: Sustaining Relevance',
+    year: '2026',
+    description: `Accelerate 3.0 is the third edition of the annual boot camp hosted by the Ignite Pro Community, designed for young professionals, graduates, and undergraduates.
+
+The theme "Future Proof: Sustaining Relevance" equipped beneficiaries with the skills, mindset, and systems needed to remain resilient, adaptable, and relevant in the face of continuous change, strengthening future-ready capacities such as digital literacy, critical thinking, and innovative ideas through mentorship training.
+
+The bootcamp featured a Keynote Address by Mr. Gbite Falade (Group MD/CEO, Aradel Holdings Plc), a Fireside Chat with Mr. Nixon Iwedi (MD/CEO, Signature Bank Limited), a Panel Session with industry leaders, practical workshops on Adaptive Leadership and Tech as an Ally, and a Spotlight Session on personal branding.
+
+Accelerate 3.0 built adaptive, confident, and future-ready individuals capable of sustaining impact, responding to uncertainty, and remaining relevant in the face of ongoing global transformation.`,
+    image: Accelerate3,
+  },
   {
     title: 'Mentorship Breakfast: BLUEPRINT – BUILDING THE FUTURE',
     year: '2026',

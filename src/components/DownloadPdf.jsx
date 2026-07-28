@@ -2,12 +2,16 @@ import React from 'react';
 import { ArrowDownToLine } from 'lucide-react';
 import toast, { Toaster } from 'react-hot-toast';
 
-const DownloadPdf = () => {
+const DownloadPdf = ({
+  fileUrl = '/Ignite Pro Impact Note 20251.pdf',
+  downloadName = 'ignitepro-report.pdf',
+  title = "Download Ignite Pro's Impact Note 2025",
+  description = 'Get a detailed overview of Ignite Pro’s recent projects and growth insights.',
+}) => {
   const handleDownload = () => {
-    const fileUrl = '/Ignite Pro Impact Note 20251.pdf';
     const link = document.createElement('a');
     link.href = fileUrl;
-    link.download = 'ignitepro-report.pdf';
+    link.download = downloadName;
     link.click();
 
     toast.success('Your PDF is downloading 📄');
@@ -18,12 +22,9 @@ const DownloadPdf = () => {
       <Toaster position='top-right' />
 
       <h2 className='text-2xl md:text-3xl font-semibold text-gray-800 mb-2'>
-        Download Ignite Pro's Impact Note 2025
+        {title}
       </h2>
-      <p className='text-gray-600 mb-6 max-w-md'>
-        Get a detailed overview of Ignite Pro’s recent projects and growth
-        insights.
-      </p>
+      <p className='text-gray-600 mb-6 max-w-md'>{description}</p>
 
       <button
         onClick={handleDownload}
