@@ -3,15 +3,17 @@ import { motion } from 'framer-motion';
 import { FaLinkedin } from 'react-icons/fa';
 
 import Oloruntoba from '../assets/Oloruntoba.png';
-import Osase from '../assets/Osase.png';
-import Dorothy from '../assets/Dorothy.png';
-import Akinola from '../assets/Akinola.png';
-import Kpeale from '../assets/Kpeale.png';
-import Chiemeri from '../assets/Chiemeri.png';
-import Biobele from '../assets/Biobele.png';
-import Oghosa from '../assets/Oghosa.png';
-import Joel from '../assets/Joel.png';
-import Fortune from '../assets/Fortune.png';
+import Osase from '../assets/osase.jpeg';
+import Dorothy from '../assets/dorothy.jpeg';
+import Akinola from '../assets/akinola.jpeg';
+import Kpeale from '../assets/kpeale.jpeg';
+import Chiemeri from '../assets/chiemeri.jpeg';
+import Biobele from '../assets/biobele.jpeg';
+import Oghosa from '../assets/oghosa.jpeg';
+import Joel from '../assets/joel.jpeg';
+import Fortune from '../assets/fortune.jpeg';
+import Nyeche from '../assets/nyeche.jpeg';
+import Esther from '../assets/esther.jpeg';
 import Chuks from '../assets/chuks.png';
 import Rev from '../assets/rev.png';
 import Solo from '../assets/solo.png';
@@ -31,11 +33,11 @@ const members = [
     desc: 'Oloruntoba Isehunwa is a Lead Wells Engineer at Renaissance Africa Energy (Formerly Shell Petroleum Development Company), driving performance improvement in wells execution. A Certified Trainer and IWCF-accredited Instructor, he teaches well engineering using advanced simulators and human factors principles. With years of experience in drilling, completions, and workovers across challenging terrains, he is passionate about mentoring young professionals. He lectures in Nigerian universities and has received awards for his contributions to human capital development. Toba is the Convener of IgnitePro Community, a youth development initiative focused on leadership and capacity building. He holds a Petroleum Engineering degree from the University of Ibadan and is married with two daughters.',
   },
   {
-    name: 'Osase Igbinomwanhia',
+    name: 'Osase Joel',
     role: 'Project Manager',
     image: Osase,
     linkedin: '#',
-    desc: 'Osase Igbinomwanhia is a Field Engineer working with an Indigenous Oil and Gas servicing company where she contributes to the successful planning and execution of well completion operations. With a B.Eng. in Chemical Engineering, she combines a solid technical foundation with hands-on industry experience in the oil and gas sector.Osase is passionate about well completions, continuous learning, and making a meaningful impact through her work. She is also deeply committed to helping others and approaches her career with integrity, collaboration, and a service-oriented mindset. As a Christian, her faith plays a guiding role in both her personal and professional life, shaping her values and approach to leadership.She currently works with Ignite Pro Community as the Project Manager.',
+    desc: 'Osase Joel is a Field Engineer working with an Indigenous Oil and Gas servicing company where she contributes to the successful planning and execution of well completion operations. With a B.Eng. in Chemical Engineering, she combines a solid technical foundation with hands-on industry experience in the oil and gas sector.Osase is passionate about well completions, continuous learning, and making a meaningful impact through her work. She is also deeply committed to helping others and approaches her career with integrity, collaboration, and a service-oriented mindset. As a Christian, her faith plays a guiding role in both her personal and professional life, shaping her values and approach to leadership.She currently works with Ignite Pro Community as the Project Manager.',
   },
   {
     name: 'Dorothy Douglas',
@@ -76,7 +78,7 @@ const members = [
   },
   {
     name: 'Igbinomwanhia Oghosa',
-    role: 'Finance Director',
+    role: 'Finance Director (Chairperson Planning Committee - Accelerate 3.0)',
     image: Oghosa,
     linkedin: 'http://www.linkedin.com/in/oghosa-igbinomwanhia',
     desc: 'Oghosa Igbinomwanhia is a finance and business professional with a strong background in Financial operations, Business management and Strategy. She currently serves as the Financial Director on the committee of IgnitePro Community, where she leads efforts in budgeting, reporting, and ensuring transparent financial practices. With a BSc in Business Administration and experience in the finance sector, she brings structure, precision, and insight to organizational decision-making. Passionate about purpose-driven work, she supports youth-focused initiatives and community development projects. She is committed to excellence, integrity, and making lasting impact through both her professional contributions and volunteer engagements.',
@@ -94,6 +96,20 @@ const members = [
     image: Fortune,
     linkedin: '#',
     desc: 'Fortune Jonathan is a Management Consultant at Wider Perspectives Limited, where she is building expertise across key areas such as marketing and communication, strategy, business development, and entrepreneurship.She also serves as the Team Lead for Corporate Social Responsibility at Ignite Pro Community, where she champions initiatives that drive meaningful community impact.Fortune holds both a Bachelor’s degree in Marketing and a Master’s degree in Business Administration from Covenant University.Beyond her professional pursuits, she is deeply passionate about the holistic development of children and is committed to using her time, expertise, and network to contribute to the transformation of Africa.',
+  },
+  {
+    name: 'Nyeche Konita Onyinyechi',
+    role: 'Deputy Project Lead',
+    image: Nyeche,
+    linkedin: '#',
+    desc: 'Nyeche Konita Onyinyechi serves as the Deputy Project Lead at Ignite Pro Community, supporting the coordination and execution of the organization’s programs and initiatives.',
+  },
+  {
+    name: 'Awah-Isaac Monovie Esther',
+    role: 'Assistant Director of Media and Communications',
+    image: Esther,
+    linkedin: '#',
+    desc: 'Awah-Isaac Monovie Esther serves as the Assistant Director of Media and Communications at Ignite Pro Community, supporting the organization’s media presence and communications efforts.',
   },
 ];
 
@@ -158,48 +174,53 @@ const Executive = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className='bg-white border-2 border-purple-200 p-4 rounded-2xl shadow-md hover:shadow-lg transition-all'
+                className='group bg-white border border-purple-100 rounded-2xl shadow-sm hover:shadow-lg transition-all overflow-hidden'
               >
-                <div className='flex items-center gap-4 mb-4'>
+                <div className='aspect-[4/5] w-full overflow-hidden bg-purple-50'>
                   <img
                     src={member.image}
                     alt={member.name}
-                    className='w-16 h-16 object-cover rounded-full border-2 border-purple-400'
+                    className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-500'
                   />
-                  <div>
-                    <h3 className='text-lg font-medium text-gray-900'>
-                      {member.name}
-                    </h3>
-                    <p className='text-sm text-primary font-medium'>
-                      {member.role}
-                    </p>
-                  </div>
-                  <a
-                    href={member.linkedin}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='ml-auto text-primary hover:text-purple-800'
-                  >
-                    <FaLinkedin size={24} />
-                  </a>
                 </div>
 
-                <hr className='border-purple-200 my-2' />
+                <div className='p-5'>
+                  <div className='flex items-start justify-between gap-3'>
+                    <div>
+                      <h3 className='text-lg font-medium text-gray-900'>
+                        {member.name}
+                      </h3>
+                      <p className='text-sm text-primary font-medium'>
+                        {member.role}
+                      </p>
+                    </div>
+                    <a
+                      href={member.linkedin}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='shrink-0 mt-1 text-primary hover:text-purple-800'
+                    >
+                      <FaLinkedin size={22} />
+                    </a>
+                  </div>
 
-                <p
-                  className={`text-sm text-gray-700 leading-relaxed transition-all duration-300 ${
-                    isExpanded ? '' : 'line-clamp-2'
-                  }`}
-                >
-                  {member.desc}
-                </p>
+                  <hr className='border-purple-100 my-3' />
 
-                <button
-                  onClick={() => toggleExpanded(index)}
-                  className='text-primary mt-2 text-sm font-medium hover:underline'
-                >
-                  {isExpanded ? 'View Less' : 'View More'}
-                </button>
+                  <p
+                    className={`text-sm text-gray-700 leading-relaxed transition-all duration-300 ${
+                      isExpanded ? '' : 'line-clamp-2'
+                    }`}
+                  >
+                    {member.desc}
+                  </p>
+
+                  <button
+                    onClick={() => toggleExpanded(index)}
+                    className='text-primary mt-2 text-sm font-medium hover:underline'
+                  >
+                    {isExpanded ? 'View Less' : 'View More'}
+                  </button>
+                </div>
               </motion.div>
             );
           })}
@@ -216,19 +237,24 @@ const Executive = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className='bg-white border-2 border-purple-200 p-4 rounded-2xl shadow-md hover:shadow-lg transition-all text-center'
+                className='group bg-white border border-purple-100 rounded-2xl shadow-sm hover:shadow-lg transition-all overflow-hidden text-center'
               >
-                <img
-                  src={trustee.image}
-                  alt={trustee.name}
-                  className='w-20 h-20 object-cover rounded-full mx-auto border-2 border-purple-400 mb-4'
-                />
-                <h3 className='text-lg font-medium text-gray-900'>
-                  {trustee.name}
-                </h3>
-                <p className='text-sm text-primary font-medium'>
-                  {trustee.position}
-                </p>
+                <div className='aspect-[4/5] w-full overflow-hidden bg-purple-50'>
+                  <img
+                    src={trustee.image}
+                    alt={trustee.name}
+                    className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-500'
+                  />
+                </div>
+
+                <div className='p-5'>
+                  <h3 className='text-lg font-medium text-gray-900'>
+                    {trustee.name}
+                  </h3>
+                  <p className='text-sm text-primary font-medium'>
+                    {trustee.position}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
