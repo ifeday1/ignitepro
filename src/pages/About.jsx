@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import Aboutimg from '../assets/accelerate3-group.jpg';
-import Aboutimg1 from '../assets/aboutimg1.png';
-import Aboutimg2 from '../assets/aboutimg2.png';
+import VisionImg from '../assets/vision.jpg';
+import MissionImg from '../assets/mission.jpg';
 import { motion } from 'framer-motion';
-import Act from '../assets/act.svg';
+import Act from '../assets/accelerate1-event.jpg';
 import Act1 from '../assets/act1.png';
-import Act2 from '../assets/act2.svg';
-import Act4 from '../assets/act4.svg';
+import Act2 from '../assets/unwind-event.jpg';
+import Act4 from '../assets/accelerate2-event.jpg';
 import { NavLink } from 'react-router-dom';
 import DownloadPdf from '../components/DownloadPdf';
 
@@ -181,7 +181,7 @@ Networking Opportunities: Dedicated spaces and activities facilitated meaningful
 
           <div className='space-y-1 flex flex-col items-center md:items-start'>
             <img
-              src={Aboutimg1}
+              src={VisionImg}
               alt='Vision'
               className='rounded-lg shadow-lg w-full max-w-md'
             />
@@ -202,7 +202,7 @@ Networking Opportunities: Dedicated spaces and activities facilitated meaningful
             className='order-2 md:order-1 flex justify-center md:justify-start'
           >
             <img
-              src={Aboutimg2}
+              src={MissionImg}
               alt='Mission'
               className='rounded-lg shadow-lg w-full max-w-md'
             />
@@ -257,22 +257,25 @@ Networking Opportunities: Dedicated spaces and activities facilitated meaningful
           PAST EVENTS AND ACTIVITIES
         </h2>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
           {events.map((event, index) => (
             <motion.div
               key={index}
-              className='bg-white p-4 rounded-lg shadow-lg flex flex-col md:flex-row items-start'
+              className='group bg-white border border-purple-100 rounded-2xl shadow-sm hover:shadow-lg transition-all overflow-hidden flex flex-col'
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6 }}
             >
-              <img
-                src={event.image}
-                alt={event.title}
-                className='w-40 h-40 object-cover rounded-full mb-4 md:mb-0 md:mr-6'
-              />
-              <div>
+              <div className='aspect-[4/3] w-full overflow-hidden bg-purple-50 flex items-center justify-center p-4'>
+                <img
+                  src={event.image}
+                  alt={event.title}
+                  className='max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500'
+                />
+              </div>
+
+              <div className='p-6 flex flex-col flex-1'>
                 <h3 className='text-primary font-bold text-lg'>
                   {event.title}
                 </h3>
@@ -289,7 +292,7 @@ Networking Opportunities: Dedicated spaces and activities facilitated meaningful
                     </p>
                     <button
                       onClick={() => setExpanded(!expanded)}
-                      className='mt-2 text-blue-600 text-sm font-medium hover:underline'
+                      className='mt-2 text-primary text-sm font-medium hover:underline self-start'
                     >
                       {expanded ? 'View Less ▲' : 'View More ▼'}
                     </button>
@@ -309,9 +312,9 @@ Networking Opportunities: Dedicated spaces and activities facilitated meaningful
                 )}
 
                 {(index === 0 || index === events.length - 1) && (
-                  <div>
+                  <div className='mt-auto pt-4'>
                     <NavLink
-                      className='inline-block mt-4 px-4 py-2 bg-primary text-white rounded-md text-sm hover:bg-primary/90 transition'
+                      className='inline-block px-4 py-2 bg-primary text-white rounded-md text-sm hover:bg-primary/90 transition'
                       to='/gallery'
                     >
                       View Pictures
