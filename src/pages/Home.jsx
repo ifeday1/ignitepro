@@ -1,21 +1,47 @@
 import { React, useState, useEffect } from 'react';
-import Intro from '../assets/Intro.jpeg';
-import Who from '../assets/who.png';
-import Who1 from '../assets/who1.png';
+import GroupPhoto from '../assets/accelerate3-group.jpg';
+import WhoPortrait from '../assets/who-portrait.jpg';
+import WhoPortrait2 from '../assets/who-portrait2.jpg';
+import WhoPortrait3 from '../assets/who-portrait3.jpg';
+import WhoSpeaker from '../assets/who-speaker.jpg';
+import WhoSpeaker2 from '../assets/who-speaker2.jpg';
+import WhoSpeaker3 from '../assets/who-speaker3.jpg';
+import WhoCrowd from '../assets/who-crowd.jpg';
+import WhoCrowd2 from '../assets/who-crowd2.jpg';
+import WhoCrowd3 from '../assets/who-crowd3.jpg';
 // import Pitchhome from '../assets/pitchhome.png';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules';
-import Homeimg from '../assets/homeimg.svg';
+import Excerpt1 from '../assets/excerpt/excerpt-1.jpg';
+import Excerpt2 from '../assets/excerpt/excerpt-2.jpg';
+import Excerpt3 from '../assets/excerpt/excerpt-3.jpg';
+import Excerpt4 from '../assets/excerpt/excerpt-4.jpg';
+import Excerpt5 from '../assets/excerpt/excerpt-5.jpg';
+import Excerpt6 from '../assets/excerpt/excerpt-6.jpg';
+import Excerpt7 from '../assets/excerpt/excerpt-7.jpg';
+import Excerpt8 from '../assets/excerpt/excerpt-8.jpg';
+import Excerpt9 from '../assets/excerpt/excerpt-9.jpg';
+import Excerpt10 from '../assets/excerpt/excerpt-10.jpg';
+import Excerpt11 from '../assets/excerpt/excerpt-11.jpg';
+import Excerpt12 from '../assets/excerpt/excerpt-12.jpg';
+import Excerpt13 from '../assets/excerpt/excerpt-13.jpg';
+import Excerpt14 from '../assets/excerpt/excerpt-14.jpg';
+import Excerpt15 from '../assets/excerpt/excerpt-15.jpg';
+import Excerpt16 from '../assets/excerpt/excerpt-16.jpg';
+import Excerpt17 from '../assets/excerpt/excerpt-17.jpg';
+import Excerpt18 from '../assets/excerpt/excerpt-18.jpg';
+import Excerpt19 from '../assets/excerpt/excerpt-19.jpg';
+import Excerpt20 from '../assets/excerpt/excerpt-20.jpg';
 import Vol from '../assets/vol.jpg';
 import Second from '../assets/second.jpeg';
 import Jug from '../assets/jug.jpeg';
 // import Ill from '../assets/Illustration.svg';
 // import Podcast from '../components/Podcast';
 import PodcastHero from '../components/PodcastHero';
-import { Quote } from 'lucide-react';
+import { Quote, Star } from 'lucide-react';
 import glanceImage from '../assets/glance.jpg';
 import csr17 from '../assets/csr17.jpg';
 import mb6 from '../assets/mb6.webp';
@@ -78,6 +104,118 @@ const fadeInRight = {
   },
 };
 
+const getInitials = (str) => {
+  const clean = str?.trim();
+  if (!clean) return null;
+  return clean
+    .split(' ')
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((w) => w[0])
+    .join('')
+    .toUpperCase();
+};
+
+const RotatingImage = ({ images, alt, className, interval = 4000 }) => {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, interval);
+    return () => clearInterval(timer);
+  }, [images.length, interval]);
+
+  return (
+    <div className={`relative overflow-hidden ${className}`}>
+      {images.map((img, i) => (
+        <motion.img
+          key={img}
+          src={img}
+          alt={alt}
+          initial={false}
+          animate={{ opacity: i === index ? 1 : 0 }}
+          whileHover={{ scale: 1.05 }}
+          transition={{ opacity: { duration: 1 }, scale: { duration: 0.4 } }}
+          className='absolute inset-0 w-full h-full object-cover'
+        />
+      ))}
+    </div>
+  );
+};
+
+const excerptPhotos = [
+  Excerpt1,
+  Excerpt2,
+  Excerpt3,
+  Excerpt4,
+  Excerpt5,
+  Excerpt6,
+  Excerpt7,
+  Excerpt8,
+  Excerpt9,
+  Excerpt10,
+  Excerpt11,
+  Excerpt12,
+  Excerpt13,
+  Excerpt14,
+  Excerpt15,
+  Excerpt16,
+  Excerpt17,
+  Excerpt18,
+  Excerpt19,
+  Excerpt20,
+];
+
+const PhotoMasonry = ({ images }) => {
+  const [selected, setSelected] = useState(null);
+
+  return (
+    <>
+      <div className='columns-2 sm:columns-3 lg:columns-5 gap-4 space-y-4'>
+        {images.map((img, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: (i % 5) * 0.08 }}
+            className='break-inside-avoid overflow-hidden rounded-xl shadow-sm cursor-pointer'
+            onClick={() => setSelected(img)}
+          >
+            <img
+              src={img}
+              alt={`Accelerate 3.0 excerpt ${i + 1}`}
+              className='w-full h-auto object-cover hover:scale-105 transition-transform duration-500'
+            />
+          </motion.div>
+        ))}
+      </div>
+
+      <AnimatePresence>
+        {selected && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className='fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-6'
+            onClick={() => setSelected(null)}
+          >
+            <motion.img
+              src={selected}
+              alt='Accelerate 3.0 excerpt enlarged'
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.9 }}
+              className='max-w-full max-h-[90vh] rounded-xl shadow-2xl'
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
+
 //const images = [Vol, Second, Jug];
 const slides = [
   { type: 'image', src: Vol },
@@ -100,6 +238,27 @@ const Home = () => {
   const [showMore, setShowMore] = useState(false);
 
   const testimonials = [
+    {
+      quote:
+        'Thank you! I saw excellence in this conference and I was wowed. Thank you for the intentionality, for the careful selection of speakers and for giving us an amazing experience. Well done!',
+      name: 'Juliana Edem',
+      role: 'Student, Accelerate 3.0',
+      rating: 5,
+    },
+    {
+      quote:
+        'I love everything Ignite Pro stands for. It’s a picture of possibilities that I truly believe is limitless. The conference enthusiast in me is thoroughly satisfied. This made my month.',
+      name: 'Rosephnienaan Dickson',
+      role: 'Student, Accelerate 3.0',
+      rating: 5,
+    },
+    {
+      quote:
+        'Thank you for investing your time, effort and resources into organising this event. I left inspired, challenged and motivated to become a better version of myself. Keep up the amazing work.',
+      name: 'Oluebube Ezeabasili',
+      role: 'Graduate, Accelerate 3.0',
+      rating: 5,
+    },
     {
       quote:
         'For Uri, winning the Ignite Pro Competition in Port Harcourt and receiving the grant came at the perfect time. The support has helped us strengthen our product, onboard new clients, and accelerate growth. Beyond funding, the competition also opened doors to valuable introductions and new client opportunities. We’re truly grateful for this boost and the belief in our vision.',
@@ -152,44 +311,6 @@ const Home = () => {
   ];
   return (
     <>
-      {/* <div className='relative h-screen w-full overflow-hidden mt-20'>
-        <div className='absolute inset-0 z-0'>
-          {images.map((src, index) => (
-            <motion.img
-              key={index}
-              src={src}
-              alt='Child'
-              className='absolute h-full w-full object-cover transition-opacity duration-1000'
-              initial={{ opacity: 0 }}
-              animate={{ opacity: index === current ? 1 : 0 }}
-              transition={{ duration: 1 }}
-            />
-          ))}
-
-          <div className='absolute inset-0 bg-black bg-opacity-70'></div>
-        </div>
-
-        <div className='relative z-10 flex flex-col justify-center h-full text-white px-6 md:px-16'>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className='text-5xl md:text-9xl font-bold leading-tight mb-4'
-          >
-            BUILD. <br /> INSPIRE. <br /> ACCELERATE.
-            <span className='block h-1 w-20 bg-primary  rounded-full'></span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 1 }}
-            className='text-lg md:text-xl mb-6 max-w-lg'
-          >
-            Shaping Future Leaders, to Thrive with Purpose.
-          </motion.p>
-        </div>
-      </div> */}
       <div className='relative h-screen w-full overflow-hidden mt-20'>
         {/* BACKGROUND SLIDES */}
         <div className='absolute inset-0 z-0'>
@@ -270,16 +391,51 @@ const Home = () => {
         )}
       </div>
 
-      <section className='px-4 sm:px-6 lg:px-12 py-16 md:py-20 bg-light mt-16 md:mt-24'>
-        <div className='max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center'>
+      <section className='relative overflow-hidden bg-light py-16 md:py-24 px-4 sm:px-6 lg:px-12 mt-16 md:mt-24'>
+        <div className='absolute -top-16 -right-16 w-72 h-72 bg-primary/10 rounded-full blur-3xl'></div>
+
+        <div className='relative max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 lg:gap-16 items-center'>
+          {/* IMAGE */}
+          <motion.div
+            initial='hidden'
+            whileInView='visible'
+            viewport={{ once: true, amount: 0.2 }}
+            variants={imageVariants}
+            className='relative pb-8 sm:pb-0'
+          >
+            <img
+              src={GroupPhoto}
+              alt='Ignite Pro Community at Accelerate 3.0'
+              className='w-full rounded-3xl shadow-xl object-cover aspect-[3/2]'
+            />
+
+            {/* FLOATING BADGE */}
+            <div className='absolute bottom-0 sm:-bottom-6 left-6 bg-white shadow-lg rounded-2xl px-5 py-3 border border-purple-100 flex items-center gap-3'>
+              <div className='h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center text-lg shrink-0'>
+                🔥
+              </div>
+              <div>
+                <h4 className='font-bold text-gray-900 text-sm'>
+                  Accelerate 3.0
+                </h4>
+                <p className='text-xs text-gray-500'>
+                  Future Proof: Sustaining Relevance
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* TEXT */}
           <motion.div
             initial='hidden'
             whileInView='visible'
             viewport={{ once: true, amount: 0.3 }}
             variants={textVariants}
-            className='text-gray-700 text-base sm:text-lg md:text-xl leading-relaxed p-4 sm:p-6 md:p-8 rounded-xl bg-white shadow-sm border border-purple-100 mx-0 md:mx-4 lg:mx-12'
           >
-            <p>
+            <h2 className='text-white bg-primary w-fit px-5 py-2 rounded-md text-sm md:text-lg font-medium mb-6'>
+              WHO WE ARE
+            </h2>
+            <p className='text-gray-700 text-base sm:text-lg md:text-xl leading-relaxed'>
               Welcome to <strong>IgnitePro Community</strong>. We’re a
               faith-based NGO dedicated to empowering students, graduates, and
               young professionals to achieve success. Our dynamic community
@@ -288,22 +444,10 @@ const Home = () => {
               careers.
             </p>
           </motion.div>
-
-          <div className='flex justify-center md:justify-start'>
-            <motion.img
-              initial='hidden'
-              whileInView='visible'
-              viewport={{ once: true, amount: 0.2 }}
-              variants={imageVariants}
-              src={Intro}
-              alt='IgnitePro image'
-              className='rounded-xl w-full max-w-[90%] sm:max-w-[70%] md:max-w-sm lg:max-w-md'
-            />
-          </div>
         </div>
       </section>
 
-      <section className='px-6 py-16 max-w-7xl mx-auto'>
+      <section className='px-6 py-16 md:py-24 max-w-7xl mx-auto'>
         <motion.div
           initial='hidden'
           whileInView='visible'
@@ -357,21 +501,29 @@ const Home = () => {
           </motion.div>
 
           {/* Image Section */}
-          <div className='relative flex flex-col items-center md:items-stretch max-w-md mx-auto md:mx-0'>
-            {[Who, Who1].map((img, index) => (
-              <motion.img
-                key={index}
-                src={img}
-                alt={`Accelerate Camp ${index + 1}`}
-                variants={fadeInUp}
-                className={`rounded-xl w-4/5 md:w-4/5 shadow-xl border-4 border-white ${
-                  index === 0
-                    ? 'ml-auto'
-                    : 'mr-auto -mt-16 md:-mt-20 relative z-10'
-                }`}
-              />
-            ))}
-          </div>
+          <motion.div
+            variants={fadeInUp}
+            className='grid grid-cols-2 gap-4 max-w-lg mx-auto md:mx-0 md:max-w-none'
+          >
+            <RotatingImage
+              images={[WhoPortrait, WhoPortrait2, WhoPortrait3]}
+              alt='Speaker at Accelerate 3.0'
+              className='row-span-2 rounded-2xl shadow-lg'
+              interval={4500}
+            />
+            <RotatingImage
+              images={[WhoSpeaker, WhoSpeaker2, WhoSpeaker3]}
+              alt='Keynote session at Accelerate 3.0'
+              className='rounded-2xl shadow-lg h-40 md:h-48'
+              interval={5000}
+            />
+            <RotatingImage
+              images={[WhoCrowd, WhoCrowd2, WhoCrowd3]}
+              alt='Community energy at Accelerate 3.0'
+              className='rounded-2xl shadow-lg h-40 md:h-48'
+              interval={5500}
+            />
+          </motion.div>
         </motion.div>
       </section>
 
@@ -434,15 +586,6 @@ const Home = () => {
                 whileTap={{ scale: 0.96 }}
               >
                 View Upcoming Events →
-              </motion.a>
-
-              <motion.a
-                href='/accelerate3.0'
-                className='inline-flex items-center gap-2 border-2 border-primary text-primary px-7 py-4 rounded-2xl font-semibold hover:bg-primary hover:text-white transition-all duration-300'
-                whileHover={{ y: -3 }}
-                whileTap={{ scale: 0.96 }}
-              >
-                Explore Accelerate 3.0
               </motion.a>
             </div>
           </motion.div>
@@ -580,52 +723,82 @@ const Home = () => {
         />
       </section> */}
 
-      <section className='px-7 md:px-24 py-16 mx-auto bg-black'>
-        <h2 className='text-white bg-primary px-4 py-2 rounded-md text-lg font-medium w-fit mb-10'>
-          TESTIMONIALS
-        </h2>
+      <section className='bg-light py-16 md:py-20 px-6 md:px-12'>
+        <div className='max-w-7xl mx-auto'>
+          <h2 className='text-white bg-primary px-4 py-2 rounded-md text-sm md:text-lg font-medium w-fit mb-2'>
+            TESTIMONIALS
+          </h2>
+          <p className='text-gray-600 mb-10 max-w-xl'>
+            Real words from the professionals, students, and graduates who've
+            been part of an Ignite Pro experience.
+          </p>
 
-        <Swiper
-          slidesPerView={1}
-          spaceBetween={20}
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 4000, disableOnInteraction: false }}
-          breakpoints={{
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-          modules={[Pagination, Autoplay]}
-          style={{
-            '--swiper-pagination-color': '#FF6131',
-            '--swiper-pagination-bullet-inactive-color': '#ffffff',
-            '--swiper-pagination-bullet-inactive-opacity': 0.3,
-            paddingBottom: '2.5rem',
-          }}
-        >
-          {testimonials.map((t, i) => (
-            <SwiperSlide key={i}>
-              <motion.div
-                custom={i}
-                initial='hidden'
-                whileInView='visible'
-                viewport={{ once: true }}
-                variants={fadeInUp}
-                className='bg-primary/90 text-white p-6 pt-8 rounded-2xl relative h-full border border-white/10 shadow-md'
-              >
-                <Quote className='absolute top-4 right-5 w-8 h-8 text-white/15' />
-                <p className='text-sm leading-relaxed mb-4 relative z-10'>
-                  {t.quote}
-                </p>
-                <div className='pt-3 border-t border-white/15'>
-                  {t.name?.trim() && (
-                    <p className='font-semibold'>{t.name}</p>
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={24}
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 4000, disableOnInteraction: false }}
+            breakpoints={{
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+            modules={[Pagination, Autoplay]}
+            style={{
+              '--swiper-pagination-color': '#5D1AE5',
+              '--swiper-pagination-bullet-inactive-color': '#5D1AE5',
+              '--swiper-pagination-bullet-inactive-opacity': 0.2,
+              paddingBottom: '2.5rem',
+            }}
+          >
+            {testimonials.map((t, i) => (
+              <SwiperSlide key={i}>
+                <motion.div
+                  custom={i}
+                  initial='hidden'
+                  whileInView='visible'
+                  viewport={{ once: true }}
+                  variants={fadeInUp}
+                  className='bg-white border border-purple-100 rounded-2xl shadow-sm hover:shadow-md transition-all p-6 h-full flex flex-col'
+                >
+                  <Quote className='w-8 h-8 text-primary/15 mb-2' />
+
+                  {t.rating && (
+                    <div className='flex items-center gap-1 mb-3'>
+                      {Array.from({ length: 5 }).map((_, idx) => (
+                        <Star
+                          key={idx}
+                          className={`w-4 h-4 ${
+                            idx < t.rating
+                              ? 'fill-orange-500 text-orange-500'
+                              : 'text-purple-100'
+                          }`}
+                        />
+                      ))}
+                    </div>
                   )}
-                  <p className='text-white/70 text-sm'>{t.role}</p>
-                </div>
-              </motion.div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+
+                  <p className='text-sm text-gray-700 leading-relaxed mb-5 flex-1'>
+                    {t.quote}
+                  </p>
+
+                  <div className='flex items-center gap-3 pt-4 border-t border-purple-50'>
+                    <div className='h-10 w-10 rounded-full bg-primary/10 text-primary font-semibold text-sm flex items-center justify-center shrink-0'>
+                      {getInitials(t.name) || getInitials(t.role) || '★'}
+                    </div>
+                    <div>
+                      {t.name?.trim() && (
+                        <p className='font-semibold text-gray-900 text-sm'>
+                          {t.name}
+                        </p>
+                      )}
+                      <p className='text-gray-500 text-xs'>{t.role}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </section>
 
       <div className='px-6 md:px-12 py-16 md:py-20 max-w-7xl mx-auto'>
@@ -636,13 +809,9 @@ const Home = () => {
           variants={fadeInUp}
           className='text-white bg-primary px-4 py-2 rounded-md text-sm md:text-lg font-medium w-fit mb-6'
         >
-          PICTURE EXCERPT FROM ACCELERATE 2.0
+          PICTURE EXCERPT FROM ACCELERATE 3.0
         </motion.h2>
-        <img
-          src={Homeimg}
-          alt='Pictures'
-          className='w-full max-w-5xl mx-auto rounded-xl shadow-sm'
-        />
+        <PhotoMasonry images={excerptPhotos} />
       </div>
     </>
   );

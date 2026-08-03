@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Aboutimg from '../assets/aboutimg.png';
+import Aboutimg from '../assets/accelerate3-group.jpg';
 import Aboutimg1 from '../assets/aboutimg1.png';
 import Aboutimg2 from '../assets/aboutimg2.png';
 import { motion } from 'framer-motion';
@@ -143,15 +143,17 @@ Networking Opportunities: Dedicated spaces and activities facilitated meaningful
     <>
 
       <section
-        className='relative h-[70vh] bg-cover bg-center bg-no-repeat flex items-center justify-center rounded-xl mx-4 md:mx-20 mt-20 md:mt-32'
+        className='relative h-[70vh] bg-cover bg-center bg-no-repeat flex items-center justify-center rounded-xl mx-4 md:mx-20 mt-20 md:mt-32 overflow-hidden'
         style={{ backgroundImage: `url(${Aboutimg})` }}
       >
+        <div className='absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90 rounded-xl'></div>
+
         <motion.div
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true, amount: 0.6 }}
           variants={fadeInUp}
-          className='p-8 rounded-xl text-white text-center max-w-2xl mx-4'
+          className='relative z-10 p-8 rounded-xl text-white text-center max-w-2xl mx-4'
         >
           <h2 className='text-3xl md:text-7xl font-bold mb-4'>ABOUT US</h2>
         </motion.div>
