@@ -1,8 +1,8 @@
 import React from 'react';
 import Serviceshead from '../assets/serviceshead.png';
-import Services1 from '../assets/services1.png';
-import Serviceswho from '../assets/serviceswho.png';
-import Serviceswho1 from '../assets/serviceswho1.png';
+import Services1 from '../assets/career-coaching.jpg';
+import Serviceswho from '../assets/why-it-matters.jpg';
+import Serviceswho1 from '../assets/who-can-join.jpg';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Ready from '../assets/ready.svg';
@@ -109,11 +109,11 @@ const Services = () => {
             </p>
           </motion.div>
 
-          <div className='space-y-1 flex flex-col items-center md:items-start'>
+          <div className='space-y-1 flex flex-col items-center md:items-start w-full'>
             <img
               src={Services1}
               alt='Placeholder 1'
-              className='rounded-lg shadow-lg w-90 '
+              className='rounded-lg shadow-lg w-full max-w-md h-64 md:h-72 object-cover'
             />
           </div>
         </motion.div>
