@@ -36,8 +36,12 @@ import Excerpt18 from '../assets/excerpt/excerpt-18.jpg';
 import Excerpt19 from '../assets/excerpt/excerpt-19.jpg';
 import Excerpt20 from '../assets/excerpt/excerpt-20.jpg';
 import Vol from '../assets/vol.jpg';
-import Second from '../assets/second.jpeg';
-import Jug from '../assets/jug.jpeg';
+import Hero1 from '../assets/hero-1.jpg';
+import Hero2 from '../assets/hero-2.jpg';
+import Hero3 from '../assets/hero-3.jpg';
+import Hero4 from '../assets/hero-4.jpg';
+import Hero5 from '../assets/hero-5.jpg';
+import Hero6 from '../assets/hero-6.jpg';
 // import Ill from '../assets/Illustration.svg';
 // import Podcast from '../components/Podcast';
 import PodcastHero from '../components/PodcastHero';
@@ -216,11 +220,13 @@ const PhotoMasonry = ({ images }) => {
   );
 };
 
-//const images = [Vol, Second, Jug];
 const slides = [
-  { type: 'image', src: Vol },
-  { type: 'image', src: Second },
-  { type: 'image', src: Jug },
+  { type: 'image', src: Hero1 },
+  { type: 'image', src: Hero2 },
+  { type: 'image', src: Hero3 },
+  { type: 'image', src: Hero4 },
+  { type: 'image', src: Hero5 },
+  { type: 'image', src: Hero6 },
 
   // Special slide
   { type: 'glance', src: glanceImage },
@@ -344,7 +350,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
-              className='text-5xl md:text-9xl font-bold leading-tight mb-4'
+              className='text-5xl md:text-9xl font-bold leading-tight mb-4 bg-gradient-to-r from-purple-300 via-primary to-purple-700 bg-clip-text text-transparent'
             >
               BUILD. <br /> INSPIRE. <br /> ACCELERATE.
               <span className='block h-1 w-20 bg-primary rounded-full'></span>
