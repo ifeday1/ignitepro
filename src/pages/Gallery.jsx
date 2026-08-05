@@ -113,6 +113,55 @@ import Mb18 from '../assets/mb18.webp';
 import Mb19 from '../assets/mb19.webp';
 import Mb20 from '../assets/mb20.webp';
 
+// Accelerate 3.0
+import Acc3_01 from '../assets/accelerate3/a3-01.jpg';
+import Acc3_02 from '../assets/accelerate3/a3-02.jpg';
+import Acc3_03 from '../assets/accelerate3/a3-03.jpg';
+import Acc3_04 from '../assets/accelerate3/a3-04.jpg';
+import Acc3_05 from '../assets/accelerate3/a3-05.jpg';
+import Acc3_06 from '../assets/accelerate3/a3-06.jpg';
+import Acc3_07 from '../assets/accelerate3/a3-07.jpg';
+import Acc3_08 from '../assets/accelerate3/a3-08.jpg';
+import Acc3_09 from '../assets/accelerate3/a3-09.jpg';
+import Acc3_10 from '../assets/accelerate3/a3-10.jpg';
+import Acc3_11 from '../assets/accelerate3/a3-11.jpg';
+import Acc3_12 from '../assets/accelerate3/a3-12.jpg';
+import Acc3_13 from '../assets/accelerate3/a3-13.jpg';
+import Acc3_14 from '../assets/accelerate3/a3-14.jpg';
+import Acc3_15 from '../assets/accelerate3/a3-15.jpg';
+import Acc3_16 from '../assets/accelerate3/a3-16.jpg';
+import Acc3_17 from '../assets/accelerate3/a3-17.jpg';
+import Acc3_18 from '../assets/accelerate3/a3-18.jpg';
+import Acc3_19 from '../assets/accelerate3/a3-19.jpg';
+import Acc3_20 from '../assets/accelerate3/a3-20.jpg';
+import Acc3_21 from '../assets/accelerate3/a3-21.jpg';
+import Acc3_22 from '../assets/accelerate3/a3-22.jpg';
+import Acc3_23 from '../assets/accelerate3/a3-23.jpg';
+import Acc3_24 from '../assets/accelerate3/a3-24.jpg';
+import Acc3_25 from '../assets/accelerate3/a3-25.jpg';
+import Acc3_26 from '../assets/accelerate3/a3-26.jpg';
+import Acc3_27 from '../assets/accelerate3/a3-27.jpg';
+import Acc3_28 from '../assets/accelerate3/a3-28.jpg';
+import Acc3_29 from '../assets/accelerate3/a3-29.jpg';
+import Acc3_30 from '../assets/accelerate3/a3-30.jpg';
+import Acc3_31 from '../assets/accelerate3/a3-31.jpg';
+import Acc3_32 from '../assets/accelerate3/a3-32.jpg';
+import Acc3_33 from '../assets/accelerate3/a3-33.jpg';
+import Acc3_34 from '../assets/accelerate3/a3-34.jpg';
+import Acc3_35 from '../assets/accelerate3/a3-35.jpg';
+import Acc3_36 from '../assets/accelerate3/a3-36.jpg';
+import Acc3_37 from '../assets/accelerate3/a3-37.jpg';
+import Acc3_38 from '../assets/accelerate3/a3-38.jpg';
+import Acc3_39 from '../assets/accelerate3/a3-39.jpg';
+import Acc3_40 from '../assets/accelerate3/a3-40.jpg';
+import Acc3_41 from '../assets/accelerate3/a3-41.jpg';
+import Acc3_42 from '../assets/accelerate3/a3-42.jpg';
+import Acc3_43 from '../assets/accelerate3/a3-43.jpg';
+import Acc3_44 from '../assets/accelerate3/a3-44.jpg';
+import Acc3_45 from '../assets/accelerate3/a3-45.jpg';
+import Acc3_46 from '../assets/accelerate3/a3-46.jpg';
+import Acc3_47 from '../assets/accelerate3/a3-47.jpg';
+
 /* ================== IMAGE GROUPS ================== */
 
 const breakfastMentorship = [
@@ -233,9 +282,63 @@ const unwind = [
   Img35,
 ];
 
+const accelerate3 = [
+  Acc3_01,
+  Acc3_02,
+  Acc3_03,
+  Acc3_04,
+  Acc3_05,
+  Acc3_06,
+  Acc3_07,
+  Acc3_08,
+  Acc3_09,
+  Acc3_10,
+  Acc3_11,
+  Acc3_12,
+  Acc3_13,
+  Acc3_14,
+  Acc3_15,
+  Acc3_16,
+  Acc3_17,
+  Acc3_18,
+  Acc3_19,
+  Acc3_20,
+  Acc3_21,
+  Acc3_22,
+  Acc3_23,
+  Acc3_24,
+  Acc3_25,
+  Acc3_26,
+  Acc3_27,
+  Acc3_28,
+  Acc3_29,
+  Acc3_30,
+  Acc3_31,
+  Acc3_32,
+  Acc3_33,
+  Acc3_34,
+  Acc3_35,
+  Acc3_36,
+  Acc3_37,
+  Acc3_38,
+  Acc3_39,
+  Acc3_40,
+  Acc3_41,
+  Acc3_42,
+  Acc3_43,
+  Acc3_44,
+  Acc3_45,
+  Acc3_46,
+  Acc3_47,
+];
+
 /* ================== SECTIONS ================== */
 
 const gallerySections = [
+  {
+    title: 'ACCELERATE 3.0',
+    images: accelerate3,
+  },
   {
     title: 'BREAKFAST MENTORSHIP EXPERIENCE',
     images: breakfastMentorship,
@@ -258,6 +361,21 @@ const gallerySections = [
   },
 ];
 
+const accelerate3Videos = [
+  {
+    src: '/videos/accelerate3-video-1.mp4',
+    poster: '/videos/accelerate3-video-1-poster.jpg',
+  },
+  {
+    src: '/videos/accelerate3-video-2.mp4',
+    poster: '/videos/accelerate3-video-2-poster.jpg',
+  },
+  {
+    src: '/videos/accelerate3-video-3.mp4',
+    poster: '/videos/accelerate3-video-3-poster.jpg',
+  },
+];
+
 const GalleryUse = () => {
   return (
     <>
@@ -275,6 +393,38 @@ const GalleryUse = () => {
             Capturing moments that matter
           </p>
         </div>
+      </section>
+
+      {/* ACCELERATE 3.0 VIDEO HIGHLIGHTS */}
+      <section className='bg-gray-50 pt-20 px-6 md:px-16'>
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className='max-w-7xl mx-auto'
+        >
+          <div className='mb-10 text-center'>
+            <h2 className='text-2xl md:text-4xl font-bold text-gray-800'>
+              ACCELERATE 3.0 VIDEO HIGHLIGHTS
+            </h2>
+            <div className='w-20 h-1 bg-primary mx-auto mt-4 rounded-full'></div>
+          </div>
+
+          <div className='grid grid-cols-1 sm:grid-cols-3 gap-6'>
+            {accelerate3Videos.map((video, index) => (
+              <video
+                key={index}
+                controls
+                preload='none'
+                poster={video.poster}
+                className='w-full aspect-[9/16] object-cover rounded-2xl shadow-sm border border-gray-200 bg-black'
+              >
+                <source src={video.src} type='video/mp4' />
+              </video>
+            ))}
+          </div>
+        </motion.div>
       </section>
 
       {/* GALLERY SECTIONS */}

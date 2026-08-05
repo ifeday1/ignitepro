@@ -1,29 +1,14 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
-};
-
-export default function ImageGallery({ title, images }) {
+export default function ImageGallery({ images }) {
   const [selectedImage, setSelectedImage] = useState(null);
   const [showAll, setShowAll] = useState(false);
 
   const visibleImages = showAll ? images : images.slice(0, 4);
 
   return (
-    <section className='px-6 md:px-24 py-12 bg-gray-50 mt-16'>
-      <motion.h1
-        className='bg-primary text-white text-lg md:text-xl font-medium px-4 py-2 w-fit rounded-lg mb-2'
-        variants={fadeUp}
-        initial='hidden'
-        whileInView='visible'
-        viewport={{ once: true }}
-      >
-        {title}
-      </motion.h1>
-
+    <section>
       <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
         {visibleImages.map((img, index) => (
           <motion.div
