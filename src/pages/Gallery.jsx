@@ -374,6 +374,14 @@ const accelerate3Videos = [
     src: '/videos/accelerate3-video-3.mp4',
     poster: '/videos/accelerate3-video-3-poster.jpg',
   },
+  {
+    src: '/videos/accelerate3-video-4.mp4',
+    poster: '/videos/accelerate3-video-4-poster.jpg',
+  },
+  {
+    src: '/videos/accelerate3-video-5.mp4',
+    poster: '/videos/accelerate3-video-5-poster.jpg',
+  },
 ];
 
 const GalleryUse = () => {
