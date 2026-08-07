@@ -9,7 +9,6 @@ import WhoSpeaker3 from '../assets/who-speaker3.jpg';
 import WhoCrowd from '../assets/who-crowd.jpg';
 import WhoCrowd2 from '../assets/who-crowd2.jpg';
 import WhoCrowd3 from '../assets/who-crowd3.jpg';
-// import Pitchhome from '../assets/pitchhome.png';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
