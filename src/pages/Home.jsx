@@ -1,75 +1,152 @@
-import { React, useState, useEffect } from 'react';
-import GroupPhoto from '../assets/accelerate3-group.jpg';
-import WhoPortrait from '../assets/who-portrait.jpg';
-import WhoPortrait2 from '../assets/who-portrait2.jpg';
-import WhoPortrait3 from '../assets/who-portrait3.jpg';
-import WhoSpeaker from '../assets/who-speaker.jpg';
-import WhoSpeaker2 from '../assets/who-speaker2.jpg';
-import WhoSpeaker3 from '../assets/who-speaker3.jpg';
-import WhoCrowd from '../assets/who-crowd.jpg';
-import WhoCrowd2 from '../assets/who-crowd2.jpg';
-import WhoCrowd3 from '../assets/who-crowd3.jpg';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
+import { NavLink } from 'react-router-dom';
+import { motion, AnimatePresence, useInView, animate } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules';
-import Excerpt1 from '../assets/excerpt/excerpt-1.jpg';
-import Excerpt2 from '../assets/excerpt/excerpt-2.jpg';
-import Excerpt3 from '../assets/excerpt/excerpt-3.jpg';
-import Excerpt4 from '../assets/excerpt/excerpt-4.jpg';
-import Excerpt5 from '../assets/excerpt/excerpt-5.jpg';
-import Excerpt6 from '../assets/excerpt/excerpt-6.jpg';
-import Excerpt7 from '../assets/excerpt/excerpt-7.jpg';
-import Excerpt8 from '../assets/excerpt/excerpt-8.jpg';
-import Excerpt9 from '../assets/excerpt/excerpt-9.jpg';
-import Excerpt10 from '../assets/excerpt/excerpt-10.jpg';
-import Excerpt11 from '../assets/excerpt/excerpt-11.jpg';
-import Excerpt12 from '../assets/excerpt/excerpt-12.jpg';
-import Excerpt13 from '../assets/excerpt/excerpt-13.jpg';
-import Excerpt14 from '../assets/excerpt/excerpt-14.jpg';
-import Excerpt15 from '../assets/excerpt/excerpt-15.jpg';
-import Excerpt16 from '../assets/excerpt/excerpt-16.jpg';
-import Excerpt17 from '../assets/excerpt/excerpt-17.jpg';
-import Excerpt18 from '../assets/excerpt/excerpt-18.jpg';
-import Excerpt19 from '../assets/excerpt/excerpt-19.jpg';
-import Excerpt20 from '../assets/excerpt/excerpt-20.jpg';
-import Vol from '../assets/vol.jpg';
+import {
+  Play,
+  X,
+  ArrowRight,
+  Quote,
+  Star,
+  Rocket,
+  Users,
+  Trophy,
+  Mic2,
+  Heart,
+  HandHeart,
+  Download,
+} from 'lucide-react';
+import { testimonials } from '../data/testimonials';
 import Hero1 from '../assets/hero-1.jpg';
 import Hero2 from '../assets/hero-2.jpg';
 import Hero3 from '../assets/hero-3.jpg';
 import Hero4 from '../assets/hero-4.jpg';
 import Hero5 from '../assets/hero-5.jpg';
 import Hero6 from '../assets/hero-6.jpg';
-// import Ill from '../assets/Illustration.svg';
-// import Podcast from '../components/Podcast';
-import PodcastHero from '../components/PodcastHero';
-import { Quote, Star } from 'lucide-react';
+import GroupPhoto from '../assets/accelerate3-group.jpg';
+import CareerCoaching from '../assets/career-coaching.jpg';
+import PitchPhoto from '../assets/pitch2.png';
+import PodcastThumb from '../assets/podthumb1.jpeg';
+import Accelerate2Event from '../assets/accelerate2-event.jpg';
+import Accelerate1Event from '../assets/accelerate1-event.jpg';
+import UnwindEvent from '../assets/unwind-event.jpg';
+import ScholarshipEvent from '../assets/act1.png';
 import glanceImage from '../assets/glance.jpg';
-import csr17 from '../assets/csr17.jpg';
-import mb6 from '../assets/mb6.webp';
-// import { NavLink } from 'react-router-dom';
+import Excerpt1 from '../assets/excerpt/excerpt-1.jpg';
+import Excerpt2 from '../assets/excerpt/excerpt-2.jpg';
+import Excerpt3 from '../assets/excerpt/excerpt-3.jpg';
+import Excerpt4 from '../assets/excerpt/excerpt-4.jpg';
+import Excerpt5 from '../assets/excerpt/excerpt-5.jpg';
+import Excerpt6 from '../assets/excerpt/excerpt-6.jpg';
 
-const textVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8 },
+const heroImages = [Hero1, Hero2, Hero3, Hero4, Hero5, Hero6];
+
+const HERO_VIDEO = '/videos/accelerate3-video-1.mp4';
+const HERO_VIDEO_POSTER = '/videos/accelerate3-video-1-poster.jpg';
+
+// Figures drawn from our past-event records — update as new numbers come in.
+const stats = [
+  { value: 3, suffix: '', label: 'Editions of the Accelerate bootcamp' },
+  { value: 5, suffix: '+', label: 'Transformative events hosted' },
+  { value: 1500, suffix: '+', label: 'Attendees at our bootcamp' },
+  { value: 6, suffix: '+', label: 'Businesses supported with grants' },
+];
+
+const programs = [
+  {
+    title: 'Accelerate Bootcamp',
+    text: 'Our annual leadership and career bootcamp for students, graduates and young professionals.',
+    image: GroupPhoto,
+    to: '/accelerate3.0',
+    icon: Rocket,
   },
-};
+  {
+    title: 'Coaching & Mentorship',
+    text: 'One-on-one coaching, mentorship circles, CV reviews and mock interviews with seasoned professionals.',
+    image: CareerCoaching,
+    to: '/works',
+    icon: Users,
+  },
+  {
+    title: 'Pitch Competition & Grants',
+    text: 'Funding and introductions for purpose-driven startups turning ideas into real businesses.',
+    image: PitchPhoto,
+    to: '/pitch',
+    icon: Trophy,
+  },
+  {
+    title: 'The Ignite Room Podcast',
+    text: 'Honest conversations on purpose-driven leadership, careers and creating impact beyond profit.',
+    image: PodcastThumb,
+    to: '/podcast',
+    icon: Mic2,
+  },
+];
 
-const imageVariants = {
-  hidden: { opacity: 0, x: 50 },
-  visible: (index) => ({
-    opacity: 1,
-    x: 0,
-    transition: {
-      delay: index * 0.3,
-      duration: 0.8,
-    },
-  }),
-};
+const steps = [
+  {
+    title: 'Join the community',
+    text: 'Attend an Ignite Pro event and connect with young people who share your drive to grow.',
+    cta: 'See upcoming events',
+    to: '/upcomingevents',
+  },
+  {
+    title: 'Learn & get mentored',
+    text: 'Build leadership and career skills through bootcamps, coaching and mentorship circles.',
+    cta: 'Explore our works',
+    to: '/works',
+  },
+  {
+    title: 'Launch & grow',
+    text: 'Pitch your venture for grants, land opportunities, and grow a career with purpose.',
+    cta: 'About the pitch competition',
+    to: '/pitch',
+  },
+];
+
+const pastEvents = [
+  {
+    title: 'Accelerate 3.0',
+    tag: 'Future Proof: Sustaining Relevance',
+    image: GroupPhoto,
+  },
+  {
+    title: 'Accelerate 2.0',
+    tag: 'Future Forward: Transforming Visions to Reality',
+    image: Accelerate2Event,
+  },
+  {
+    title: 'Accelerate 1.0',
+    tag: 'Ten Times Better · 1,500 attendees',
+    image: Accelerate1Event,
+  },
+  {
+    title: 'Unwind',
+    tag: 'Revisiting The Vision Board',
+    image: UnwindEvent,
+  },
+  {
+    title: 'Navigating Foreign Scholarships',
+    tag: 'Attendees from 5 countries',
+    image: ScholarshipEvent,
+  },
+];
+
+const galleryPreview = [
+  Excerpt1,
+  Excerpt2,
+  Excerpt3,
+  Excerpt4,
+  Excerpt5,
+  Excerpt6,
+];
+
+// Featured story shown large above the testimonial carousel.
+const featured = testimonials.find((t) => t.role === 'Uri Creative');
+const otherTestimonials = testimonials.filter((t) => t !== featured);
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -82,29 +159,7 @@ const fadeInUp = {
 
 const staggerContainer = {
   hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.3,
-    },
-  },
-};
-
-const fadeInLeft = {
-  hidden: { opacity: 0, x: -40 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.7, ease: 'easeOut' },
-  },
-};
-
-const fadeInRight = {
-  hidden: { opacity: 0, x: 40 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.7, ease: 'easeOut' },
-  },
+  visible: { transition: { staggerChildren: 0.15 } },
 };
 
 const getInitials = (str) => {
@@ -119,705 +174,608 @@ const getInitials = (str) => {
     .toUpperCase();
 };
 
-const RotatingImage = ({ images, alt, className, interval = 4000 }) => {
-  const [index, setIndex] = useState(0);
+const SectionHeading = ({ eyebrow, title, text, center = false }) => (
+  <motion.div
+    initial='hidden'
+    whileInView='visible'
+    viewport={{ once: true, amount: 0.4 }}
+    variants={fadeInUp}
+    className={`mb-12 ${center ? 'text-center mx-auto' : ''} max-w-2xl`}
+  >
+    <p className='text-primary font-semibold uppercase tracking-widest text-sm mb-3'>
+      {eyebrow}
+    </p>
+    <h2 className='text-3xl md:text-5xl font-black text-gray-900 leading-tight'>
+      {title}
+    </h2>
+    {text && (
+      <p className='text-gray-600 text-base md:text-lg leading-relaxed mt-4'>
+        {text}
+      </p>
+    )}
+  </motion.div>
+);
+
+const Counter = ({ value, suffix }) => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+  const [display, setDisplay] = useState(0);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % images.length);
-    }, interval);
-    return () => clearInterval(timer);
-  }, [images.length, interval]);
+    if (!inView) return;
+    const controls = animate(0, value, {
+      duration: 1.6,
+      ease: 'easeOut',
+      onUpdate: (v) => setDisplay(Math.round(v)),
+    });
+    return () => controls.stop();
+  }, [inView, value]);
 
   return (
-    <div className={`relative overflow-hidden ${className}`}>
-      {images.map((img, i) => (
-        <motion.img
-          key={img}
-          src={img}
-          alt={alt}
-          initial={false}
-          animate={{ opacity: i === index ? 1 : 0 }}
-          whileHover={{ scale: 1.05 }}
-          transition={{ opacity: { duration: 1 }, scale: { duration: 0.4 } }}
-          className='absolute inset-0 w-full h-full object-cover'
-        />
-      ))}
-    </div>
+    <span ref={ref}>
+      {display.toLocaleString()}
+      {suffix}
+    </span>
   );
 };
 
-const excerptPhotos = [
-  Excerpt1,
-  Excerpt2,
-  Excerpt3,
-  Excerpt4,
-  Excerpt5,
-  Excerpt6,
-  Excerpt7,
-  Excerpt8,
-  Excerpt9,
-  Excerpt10,
-  Excerpt11,
-  Excerpt12,
-  Excerpt13,
-  Excerpt14,
-  Excerpt15,
-  Excerpt16,
-  Excerpt17,
-  Excerpt18,
-  Excerpt19,
-  Excerpt20,
-];
-
-const PhotoMasonry = ({ images }) => {
-  const [selected, setSelected] = useState(null);
+const VideoModal = ({ open, onClose }) => {
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e) => e.key === 'Escape' && onClose();
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [open, onClose]);
 
   return (
-    <>
-      <div className='columns-2 sm:columns-3 lg:columns-5 gap-4 space-y-4'>
-        {images.map((img, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5, delay: (i % 5) * 0.08 }}
-            className='break-inside-avoid overflow-hidden rounded-xl shadow-sm cursor-pointer'
-            onClick={() => setSelected(img)}
+    <AnimatePresence>
+      {open && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className='fixed inset-0 z-[60] bg-black/85 flex items-center justify-center p-4 md:p-10'
+          onClick={onClose}
+        >
+          <button
+            onClick={onClose}
+            aria-label='Close video'
+            className='absolute top-5 right-5 text-white/80 hover:text-white'
           >
-            <img
-              src={img}
-              alt={`Accelerate 3.0 excerpt ${i + 1}`}
-              className='w-full h-auto object-cover hover:scale-105 transition-transform duration-500'
-            />
-          </motion.div>
-        ))}
-      </div>
-
-      <AnimatePresence>
-        {selected && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className='fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-6'
-            onClick={() => setSelected(null)}
-          >
-            <motion.img
-              src={selected}
-              alt='Accelerate 3.0 excerpt enlarged'
-              initial={{ scale: 0.9 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.9 }}
-              className='max-w-full max-h-[90vh] rounded-xl shadow-2xl'
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+            <X className='w-8 h-8' />
+          </button>
+          <motion.video
+            initial={{ scale: 0.92 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0.92 }}
+            src={HERO_VIDEO}
+            poster={HERO_VIDEO_POSTER}
+            controls
+            autoPlay
+            playsInline
+            onClick={(e) => e.stopPropagation()}
+            className='w-full max-w-5xl max-h-[85vh] rounded-2xl shadow-2xl bg-black'
+          />
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
-
-const slides = [
-  { type: 'image', src: Hero1 },
-  { type: 'image', src: Hero2 },
-  { type: 'image', src: Hero3 },
-  { type: 'image', src: Hero4 },
-  { type: 'image', src: Hero5 },
-  { type: 'image', src: Hero6 },
-
-  // Special slide
-  { type: 'glance', src: glanceImage },
-];
 
 const Home = () => {
   const [current, setCurrent] = useState(0);
+  const [videoOpen, setVideoOpen] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-    }, 8000);
+      setCurrent((prev) => (prev + 1) % heroImages.length);
+    }, 7000);
     return () => clearInterval(interval);
   }, []);
-  const [showMore, setShowMore] = useState(false);
 
-  const testimonials = [
-    {
-      quote:
-        'Thank you! I saw excellence in this conference and I was wowed. Thank you for the intentionality, for the careful selection of speakers and for giving us an amazing experience. Well done!',
-      name: 'Juliana Edem',
-      role: 'Student, Accelerate 3.0',
-      rating: 5,
-    },
-    {
-      quote:
-        'I love everything Ignite Pro stands for. It’s a picture of possibilities that I truly believe is limitless. The conference enthusiast in me is thoroughly satisfied. This made my month.',
-      name: 'Rosephnienaan Dickson',
-      role: 'Student, Accelerate 3.0',
-      rating: 5,
-    },
-    {
-      quote:
-        'Thank you for investing your time, effort and resources into organising this event. I left inspired, challenged and motivated to become a better version of myself. Keep up the amazing work.',
-      name: 'Oluebube Ezeabasili',
-      role: 'Graduate, Accelerate 3.0',
-      rating: 5,
-    },
-    {
-      quote:
-        'For Uri, winning the Ignite Pro Competition in Port Harcourt and receiving the grant came at the perfect time. The support has helped us strengthen our product, onboard new clients, and accelerate growth. Beyond funding, the competition also opened doors to valuable introductions and new client opportunities. We’re truly grateful for this boost and the belief in our vision.',
-      name: ' ',
-      role: 'Uri Creative',
-    },
-    {
-      quote:
-        'The Ignite Pro grant has really helped us at Straqa. We’re passionate about building tools that support SMEs and businesses to grow, and this support gave us the push we needed to move faster and reach more people.',
-      name: ' ',
-      role: 'Straqa',
-    },
-    {
-      quote:
-        'Ignite Pro is doing a great job as a community for young professionals and entrepreneurs, Accelerate 2.0 was an exciting experience, filled with impactful sessions. A lot was revealed by the speakers, we also got financial support from the pitching event, which enabled push our product development to another level. Ignite Pro is a community I recommend for aspiring entrepreneurs and leaders.',
-      name: ' ',
-      role: 'Green Paragon Limited',
-    },
-    {
-      quote:
-        'I am deeply grateful to IGNITE Pro Community for the life-changing grant that enabled me to pursue my trading career. Their support was instrumental in my success, and I am thankful for the opportunity. Their investment in me has paid off, and I am proud to be a testament to their impactful work .Thanks Team!',
-      name: ' ',
-      role: 'William Michael',
-    },
-
-    {
-      quote:
-        'With a deep gratitude and a heart felt appreciation to IGNITE PRO COMMUNITY for the life- changing business grant opportunity. Winning the grant was more than just a financial boost; it was a powerful vote of confidence in my vision, Business and potential. It was just a grant to the others, but  to me, it was a "transformative impact". Today,Mamachigos Beauty Touch is a step ahead, new skills has being added, new working equipment bought, more customers has been served and  lots more. Thank you!!! once more IGNITE pro community, your investment and impact in me is an unforgettable one!!.Thank you Team!!😊',
-      name: ' ',
-      role: 'Osuagwu chigozirim Basillia',
-    },
-    {
-      quote:
-        'Reflecting on the events of that day, particularly  as an awardee for-the business grant, I would say it was truly remarkable and inspiring. It was a sign that our mission was relevant to current realities and that our story was being heard. In a world where social enterprises and nonprofits are expected to do more with limited resources, Ignite Pro Community displayed a firm belief that its time to shift the narrative and focus on what truly matters, and that is none other than changing lives.',
-      name: ' ',
-      role: 'Confidence Jonathan Nwosu Founder, RAJ Foundation',
-    },
-    {
-      quote:
-        'Receiving the data analytics scholarship from Beylearning has been a truly life-changing opportunity. The program equipped me with practical, in-demand skills in data analysis, visualization, and critical thinking. I want to express my deepest gratitude to the instructors, whose expertise, patience, and support made complex concepts accessible and engaging. Their guidance played a key role in my growth and confidence in the field. I’m especially thankful to Beylearning for investing in me and creating an inclusive platform that bridges the gap between education and opportunity. As someone navigating the entry level of the analytics field, this experience has provided a strong foundation and a clearer sense of direction.',
-      name: '',
-      role: ' ',
-    },
-    {
-      quote:
-        'I am grateful to IGNITE Pro Community for opening the door to the Data Analytics Scholarship through their incredible network. With their support, I’ve built a strong foundation in data skills and gained clarity on my career direction. Their belief in learners like me has been both motivating and empowering. It truly gladdens my heart to be part of a community that invests in growth and potential.Thank you, IGNITE Pro Team!',
-      name: '.',
-      role: 'Diseph Mogbolu',
-    },
-  ];
   return (
     <>
-      <div className='relative h-screen w-full overflow-hidden mt-20'>
-        {/* BACKGROUND SLIDES */}
-        <div className='absolute inset-0 z-0'>
-          {slides.map((slide, index) => (
-            <motion.div
-              key={index}
-              className='absolute h-full w-full'
-              initial={{ opacity: 0 }}
-              animate={{ opacity: index === current ? 1 : 0 }}
-              transition={{ duration: 1 }}
-            >
-              <img
-                src={slide.src}
-                alt='slide'
-                className='h-full w-full object-cover'
-              />
-
-              {/* Overlay ONLY for normal slides */}
-              {slide.type !== 'glance' && (
-                <div className='absolute inset-0 bg-black/70'></div>
-              )}
-            </motion.div>
+      {/* HERO */}
+      <section className='relative h-[calc(100vh-5rem)] min-h-[560px] w-full overflow-hidden mt-20'>
+        <div className='absolute inset-0'>
+          {heroImages.map((src, index) => (
+            <motion.img
+              key={src}
+              src={src}
+              alt=''
+              className='absolute inset-0 h-full w-full object-cover'
+              initial={false}
+              animate={{
+                opacity: index === current ? 1 : 0,
+                scale: index === current ? 1.06 : 1,
+              }}
+              transition={{
+                opacity: { duration: 1.2 },
+                scale: { duration: 8, ease: 'linear' },
+              }}
+            />
           ))}
+          <div className='absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/80' />
         </div>
 
-        {/* HERO TEXT (hidden on glance slide) */}
-        {slides[current].type !== 'glance' && (
-          <div className='relative z-10 flex flex-col justify-center h-full text-white px-6 md:px-16'>
-            <motion.h1
-              key={current}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-              className='text-5xl md:text-9xl font-bold leading-tight mb-4 bg-gradient-to-r from-purple-300 via-primary to-purple-700 bg-clip-text text-transparent'
-            >
-              BUILD. <br /> INSPIRE. <br /> ACCELERATE.
-              <span className='block h-1 w-20 bg-primary rounded-full'></span>
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 1 }}
-              className='text-lg md:text-xl mb-6 max-w-lg'
-            >
-              Shaping Future Leaders, to Thrive with Purpose.
-            </motion.p>
-          </div>
-        )}
-
-        {/* 2025 AT A GLANCE CONTENT */}
-        {slides[current].type === 'glance' && (
-          <div className='relative z-10 flex items-center justify-center h-full px-6'>
-            <motion.div
-              key='glance'
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              className='bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-10 text-center max-w-xl'
-            >
-              <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>
-                2025 At a Glance
-              </h2>
-
-              <p className='text-gray-600 mb-6'>
-                A quick snapshot of the impact Ignite Pro Community made in 2025
-                empowering young professionals, hosting leadership bootcamps,
-                and creating meaningful opportunities for growth.
-              </p>
-
-              <img
-                src={glanceImage}
-                alt='2025 Impact'
-                className='rounded-xl shadow-lg'
-              />
-            </motion.div>
-          </div>
-        )}
-      </div>
-
-      <section className='relative overflow-hidden bg-light py-16 md:py-24 px-4 sm:px-6 lg:px-12 mt-16 md:mt-24'>
-        <div className='absolute -top-16 -right-16 w-72 h-72 bg-primary/10 rounded-full blur-3xl'></div>
-
-        <div className='relative max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 lg:gap-16 items-center'>
-          {/* IMAGE */}
-          <motion.div
-            initial='hidden'
-            whileInView='visible'
-            viewport={{ once: true, amount: 0.2 }}
-            variants={imageVariants}
-            className='relative pb-8 sm:pb-0'
+        <div className='relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-6'>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className='uppercase tracking-[0.3em] text-xs md:text-sm text-white/80 mb-6'
           >
-            <img
-              src={GroupPhoto}
-              alt='Ignite Pro Community at Accelerate 3.0'
-              className='w-full rounded-3xl shadow-xl object-cover aspect-[3/2]'
+            Ignite Pro Community
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.1 }}
+            className='text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.05] max-w-5xl'
+          >
+            Build. Inspire.{' '}
+            <span className='bg-gradient-to-r from-purple-300 to-orange-300 bg-clip-text text-transparent'>
+              Accelerate.
+            </span>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.3 }}
+            className='text-base md:text-xl text-white/85 max-w-2xl mt-6'
+          >
+            We empower students, graduates and young professionals with the
+            skills, mentorship and opportunities they need to lead and thrive
+            with purpose.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.5 }}
+            className='flex flex-col sm:flex-row items-center gap-4 mt-10'
+          >
+            <NavLink
+              to='/upcomingevents'
+              className='inline-flex items-center gap-2 bg-primary hover:bg-purple-700 text-white px-7 py-4 rounded-full font-semibold shadow-lg transition'
+            >
+              Join an upcoming event <ArrowRight className='w-5 h-5' />
+            </NavLink>
+            <button
+              onClick={() => setVideoOpen(true)}
+              className='group inline-flex items-center gap-3 text-white font-semibold'
+            >
+              <span className='relative flex h-14 w-14 items-center justify-center rounded-full bg-white/15 backdrop-blur border border-white/40 group-hover:bg-white/25 transition'>
+                <span className='absolute inset-0 rounded-full border border-white/40 animate-ping' />
+                <Play className='w-5 h-5 fill-white ml-0.5' />
+              </span>
+              Watch the Accelerate 3.0 recap
+            </button>
+          </motion.div>
+        </div>
+
+        <div className='absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex gap-2'>
+          {heroImages.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              aria-label={`Show slide ${i + 1}`}
+              className={`h-1.5 rounded-full transition-all ${
+                i === current ? 'w-8 bg-white' : 'w-3 bg-white/40'
+              }`}
             />
-
-            {/* FLOATING BADGE */}
-            <div className='absolute bottom-0 sm:-bottom-6 left-6 bg-white shadow-lg rounded-2xl px-5 py-3 border border-purple-100 flex items-center gap-3'>
-              <div className='h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center text-lg shrink-0'>
-                🔥
-              </div>
-              <div>
-                <h4 className='font-bold text-gray-900 text-sm'>
-                  Accelerate 3.0
-                </h4>
-                <p className='text-xs text-gray-500'>
-                  Future Proof: Sustaining Relevance
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* TEXT */}
-          <motion.div
-            initial='hidden'
-            whileInView='visible'
-            viewport={{ once: true, amount: 0.3 }}
-            variants={textVariants}
-          >
-            <h2 className='text-white bg-primary w-fit px-5 py-2 rounded-md text-sm md:text-lg font-medium mb-6'>
-              WHO WE ARE
-            </h2>
-            <p className='text-gray-700 text-base sm:text-lg md:text-xl leading-relaxed'>
-              Welcome to <strong>IgnitePro Community</strong>. We’re a
-              faith-based NGO dedicated to empowering students, graduates, and
-              young professionals to achieve success. Our dynamic community
-              provides a platform for youths to discover their passions, develop
-              essential personal and leadership skills, and build thriving
-              careers.
-            </p>
-          </motion.div>
+          ))}
         </div>
       </section>
 
-      <section className='px-6 py-16 md:py-24 max-w-7xl mx-auto'>
+      <VideoModal open={videoOpen} onClose={() => setVideoOpen(false)} />
+
+      {/* IMPACT STATS */}
+      <section className='bg-white border-b border-purple-100'>
         <motion.div
           initial='hidden'
           whileInView='visible'
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
           variants={staggerContainer}
-          className='grid md:grid-cols-2 gap-10 items-start'
+          className='max-w-7xl mx-auto px-6 py-14 md:py-20 grid grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-6'
         >
-          {/* Text Section */}
-          <motion.div variants={fadeInUp}>
-            <h2 className='text-white bg-primary w-fit px-5 py-2 rounded-md text-sm md:text-lg font-medium mb-6'>
-              WHO WE ARE AND WHAT WE DO
-            </h2>
-            <p className='text-gray-800 text-lg leading-relaxed mb-6'>
-              Ignite Pro Community is a one-stop hub designed to empower and
-              propel students and young professionals towards success. We're a
-              dynamic community where they can ignite their passions, develop
-              essential skills, and build a thriving career.
-            </p>
-            <p className='text-gray-800 text-lg leading-relaxed'>
-              We provide a supportive ecosystem filled with resources to help
-              individuals excel. Our programs offer valuable industry insights
-              and practical skills through sessions led by experienced
-              professionals.{' '}
-              {!showMore && (
-                <>
-                  <span
-                    className='text-primary font-medium cursor-pointer'
-                    onClick={() => setShowMore(true)}
-                  >
-                    Read more
-                  </span>
-                </>
-              )}
-              {showMore && (
-                <>
-                  Additionally, we connect participants with seasoned mentors
-                  who offer guidance, answer pressing questions, and provide
-                  invaluable career advice. Beyond learning, we foster a vibrant
-                  community where individuals can network with like-minded
-                  peers, build meaningful relationships, and expand their
-                  professional network.
-                  <span
-                    className='block mt-2 text-primary font-semibold cursor-pointer'
-                    onClick={() => setShowMore(false)}
-                  >
-                    Show less
-                  </span>
-                </>
-              )}
-            </p>
-          </motion.div>
-
-          {/* Image Section */}
-          <motion.div
-            variants={fadeInUp}
-            className='grid grid-cols-2 gap-4 max-w-lg mx-auto md:mx-0 md:max-w-none'
-          >
-            <RotatingImage
-              images={[WhoPortrait, WhoPortrait2, WhoPortrait3]}
-              alt='Speaker at Accelerate 3.0'
-              className='row-span-2 rounded-2xl shadow-lg'
-              interval={4500}
-            />
-            <RotatingImage
-              images={[WhoSpeaker, WhoSpeaker2, WhoSpeaker3]}
-              alt='Keynote session at Accelerate 3.0'
-              className='rounded-2xl shadow-lg h-40 md:h-48'
-              interval={5000}
-            />
-            <RotatingImage
-              images={[WhoCrowd, WhoCrowd2, WhoCrowd3]}
-              alt='Community energy at Accelerate 3.0'
-              className='rounded-2xl shadow-lg h-40 md:h-48'
-              interval={5500}
-            />
-          </motion.div>
+          {stats.map((s) => (
+            <motion.div
+              key={s.label}
+              variants={fadeInUp}
+              className='text-center'
+            >
+              <p className='text-4xl md:text-6xl font-black text-primary'>
+                <Counter value={s.value} suffix={s.suffix} />
+              </p>
+              <p className='text-gray-600 text-sm md:text-base mt-2 max-w-[14rem] mx-auto'>
+                {s.label}
+              </p>
+            </motion.div>
+          ))}
         </motion.div>
       </section>
 
-      {/* <AccelerateSection /> */}
+      {/* WHO WE ARE */}
+      <section className='max-w-7xl mx-auto px-6 py-20 md:py-28 grid lg:grid-cols-2 gap-14 items-center'>
+        <motion.div
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true, amount: 0.3 }}
+          variants={fadeInUp}
+        >
+          <p className='text-primary font-semibold uppercase tracking-widest text-sm mb-3'>
+            Who we are
+          </p>
+          <h2 className='text-3xl md:text-5xl font-black text-gray-900 leading-tight'>
+            A one-stop hub for young people ready to grow.
+          </h2>
+          <p className='text-gray-600 text-base md:text-lg leading-relaxed mt-6'>
+            Ignite Pro Community is a faith-based NGO dedicated to empowering
+            students, graduates and young professionals. We give young people
+            a platform to discover their passions, develop essential personal
+            and leadership skills, and build thriving careers.
+          </p>
+          <p className='text-gray-600 text-base md:text-lg leading-relaxed mt-4'>
+            Through sessions led by experienced professionals, mentors who
+            answer the hard questions, and a vibrant network of like-minded
+            peers, we help every member excel.
+          </p>
+          <div className='flex flex-wrap gap-4 mt-8'>
+            <NavLink
+              to='/about'
+              className='inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all'
+            >
+              More about us <ArrowRight className='w-5 h-5' />
+            </NavLink>
+            <a
+              href='/Ignite Pro Impact Note 20251.pdf'
+              download
+              className='inline-flex items-center gap-2 text-gray-700 font-semibold hover:text-primary transition'
+            >
+              <Download className='w-5 h-5' /> Download our Impact Note
+            </a>
+          </div>
+        </motion.div>
 
-      <section className='relative overflow-hidden bg-gradient-to-br from-[#FFF7FB] via-[#FDF4FF] to-[#F3E8FF] py-16 md:py-24 px-6 md:px-12 rounded-[2rem] max-w-7xl mx-auto mt-14 mb-28 shadow-sm border border-purple-100'>
-        <div className='absolute -top-20 -left-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl'></div>
-
-        <div className='absolute bottom-0 right-0 h-72 w-72 bg-orange-400/10 rounded-full blur-3xl'></div>
-
-        {/* SMALL DECORATION */}
-        <div className='absolute top-10 right-10 h-24 w-24 border border-primary/10 rounded-full hidden md:block'></div>
-
-        <div className='relative z-10 flex flex-col-reverse lg:flex-row items-center justify-between gap-14'>
-          {/* LEFT CONTENT */}
-          <motion.div
-            className='w-full lg:w-1/2 text-center lg:text-left'
-            initial='hidden'
-            whileInView='visible'
-            viewport={{ once: true }}
-            variants={fadeInLeft}
-          >
-            {/* BADGE */}
-            <div className='inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6'>
-              <span className='h-2 w-2 rounded-full bg-primary animate-pulse'></span>
-              Upcoming Experiences
-            </div>
-
-            {/* HEADING */}
-            <h2 className='text-4xl md:text-5xl font-black leading-tight text-gray-900'>
-              Exciting Events
-              <span className='block text-primary mt-1'>
-                Are Coming Your Way
-              </span>
-            </h2>
-
-            {/* LINE */}
-            <div className='h-1 w-24 bg-primary rounded-full mt-6 mx-auto lg:mx-0'></div>
-
-            {/* TEXT */}
-            <p className='text-gray-700 text-base md:text-lg leading-relaxed mt-6 max-w-2xl mx-auto lg:mx-0'>
-              Stay plugged in with transformative gatherings designed to inspire
-              growth, spark fresh ideas, and build meaningful connections.
-              <br />
-              <br />
-              From leadership bootcamps to mentorship experiences and networking
-              sessions, Ignite Pro creates spaces where future leaders are
-              equipped to thrive.
-              <br />
-              <br />✨ More impactful events are on the horizon don’t miss the
-              next Ignite experience.
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8 }}
+          className='relative'
+        >
+          <img
+            src={glanceImage}
+            alt='Ignite Pro Community 2025 at a glance'
+            className='w-full rounded-3xl shadow-xl'
+          />
+          <div className='absolute -bottom-6 left-6 bg-white shadow-lg rounded-2xl px-5 py-3 border border-purple-100'>
+            <p className='font-bold text-gray-900 text-sm'>2025 at a glance</p>
+            <p className='text-xs text-gray-500'>
+              Leadership · Mentorship · Growth
             </p>
+          </div>
+        </motion.div>
+      </section>
 
-            {/* BUTTONS */}
-            <div className='flex flex-col sm:flex-row items-center gap-4 mt-8 justify-center lg:justify-start'>
-              <motion.a
-                href='/upcomingevents'
-                className='inline-flex items-center gap-2 bg-primary text-white px-7 py-4 rounded-2xl font-semibold shadow-lg transition-all duration-300'
-                whileHover={{ y: -3 }}
-                whileTap={{ scale: 0.96 }}
-              >
-                View Upcoming Events →
-              </motion.a>
-            </div>
-          </motion.div>
-
-          {/* RIGHT VISUAL SECTION */}
+      {/* PROGRAMS */}
+      <section className='bg-light py-20 md:py-28'>
+        <div className='max-w-7xl mx-auto px-6'>
+          <SectionHeading
+            eyebrow='What we do'
+            title='Programs that move you forward'
+            text='Everything we run is built to help young people learn, connect and grow — from our flagship bootcamp to hands-on mentorship.'
+          />
           <motion.div
-            className='w-full lg:w-1/2 relative flex justify-center items-center'
             initial='hidden'
             whileInView='visible'
-            viewport={{ once: true }}
-            variants={fadeInRight}
+            viewport={{ once: true, amount: 0.15 }}
+            variants={staggerContainer}
+            className='grid sm:grid-cols-2 lg:grid-cols-4 gap-6'
           >
-            {/* BACKGROUND GLOW */}
-            <div className='absolute w-[420px] h-[420px] bg-primary/10 rounded-full blur-3xl'></div>
-
-            {/* MAIN CARD */}
-            <div className='relative z-10 w-full max-w-[520px]'>
-              {/* TOP FLOATING TAG */}
-              <div className='absolute -top-5 left-6 bg-white shadow-lg rounded-2xl px-5 py-3 border border-purple-100 hidden md:flex items-center gap-3 z-20'>
-                <div className='h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center'>
-                  <span className='text-xl'>🔥</span>
-                </div>
-
-                <div>
-                  <h4 className='font-bold text-gray-900 text-sm'>
-                    Ignite Pro Experiences
-                  </h4>
-                  <p className='text-xs text-gray-500'>
-                    Leadership • Mentorship • Growth
-                  </p>
-                </div>
-              </div>
-
-              {/* IMAGE GRID */}
-              <div className='grid grid-cols-2 gap-4'>
-                {/* LARGE IMAGE */}
-                <div className='col-span-2 overflow-hidden rounded-[2rem] shadow-xl h-[280px] md:h-[340px]'>
-                  <img
-                    src={Vol}
-                    alt='Accelerate Event'
-                    className='w-full h-full object-cover hover:scale-105 transition duration-700'
-                  />
-                </div>
-
-                {/* SMALL IMAGE 1 */}
-                <div className='overflow-hidden rounded-[1.5rem] shadow-md h-[180px]'>
-                  <img
-                    src={csr17}
-                    alt='Mentorship Breakfast'
-                    className='w-full h-full object-cover hover:scale-105 transition duration-700'
-                  />
-                </div>
-
-                {/* SMALL IMAGE 2 */}
-                <div className='overflow-hidden rounded-[1.5rem] shadow-md h-[180px]'>
-                  <img
-                    src={mb6}
-                    alt='CSR Initiative'
-                    className='w-full h-full object-cover hover:scale-105 transition duration-700'
-                  />
-                </div>
-              </div>
-
-              {/* BOTTOM FLOATING CARD */}
-              <div className='absolute -bottom-5 right-4 bg-white shadow-lg rounded-2xl px-6 py-4 border border-purple-100 hidden md:block'>
-                <h3 className='text-3xl font-black text-primary'>5+</h3>
-
-                <p className='text-sm text-gray-500'>
-                  Transformative Events Hosted
-                </p>
-              </div>
-            </div>
+            {programs.map(({ title, text, image, to, icon: Icon }) => (
+              <motion.div key={title} variants={fadeInUp}>
+                <NavLink
+                  to={to}
+                  className='group flex flex-col h-full bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow'
+                >
+                  <div className='relative h-52 overflow-hidden'>
+                    <img
+                      src={image}
+                      alt={title}
+                      className='h-full w-full object-cover group-hover:scale-105 transition-transform duration-700'
+                    />
+                    <span className='absolute top-4 left-4 h-11 w-11 rounded-xl bg-white/90 backdrop-blur flex items-center justify-center text-primary'>
+                      <Icon className='w-5 h-5' />
+                    </span>
+                  </div>
+                  <div className='flex flex-col flex-1 p-6'>
+                    <h3 className='text-xl font-bold text-gray-900'>{title}</h3>
+                    <p className='text-gray-600 text-sm leading-relaxed mt-2 flex-1'>
+                      {text}
+                    </p>
+                    <span className='inline-flex items-center gap-2 text-primary font-semibold text-sm mt-5 group-hover:gap-3 transition-all'>
+                      Learn more <ArrowRight className='w-4 h-4' />
+                    </span>
+                  </div>
+                </NavLink>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
 
-      <PodcastHero />
-
-      {/* <section className='px-6 py-16 max-w-7xl mx-auto'>
-        <div className='flex items-center justify-between mb-6'>
-          <motion.h2
-            initial='hidden'
-            whileInView='visible'
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className='text-white bg-primary px-4 py-2 rounded-md text-lg font-medium w-fit'
-          >
-            PITCH COMPETITION
-          </motion.h2>
-        </div>
-
-        <motion.p
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true }}
-          variants={fadeInUp}
-          className='text-gray-800 text-base leading-relaxed '
-        >
-          The Future Forward Pitch Competition is a central highlight of
-          Accelerate 2.0. It aims to identify and support innovative,
-          purpose-driven startups that have moved beyond the idea stage and
-          developed a Minimum Viable Product (MVP) with sustainable traction. We
-          are looking for ventures that address real national challenges across
-          sectors, from education to agriculture, hardware technology,
-          healthcare, and beyond.
-        </motion.p>
-        <motion.a
-          href='/pitch'
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true }}
-          variants={fadeInUp}
-          className='text-primary font-semibold hover:underline text-sm'
-        ></motion.a>
-
-        <NavLink
-          to='/pitch'
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true }}
-          variants={fadeInUp}
-          className='text-primary font-semibold hover:underline text-sm'
-        >
-          VIEW MORE
-        </NavLink>
-
-        <motion.img
-          src={Pitchhome}
-          alt='Pitch Competition Winners'
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          className='rounded-2xl w-full object-cover shadow-lg mt-10'
+      {/* HOW IT WORKS */}
+      <section className='max-w-7xl mx-auto px-6 py-20 md:py-28'>
+        <SectionHeading
+          eyebrow='How it works'
+          title='Your journey with Ignite Pro'
+          center
         />
-      </section> */}
+        <motion.div
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true, amount: 0.2 }}
+          variants={staggerContainer}
+          className='grid md:grid-cols-3 gap-8 md:gap-10 relative'
+        >
+          <div className='hidden md:block absolute top-8 left-[16%] right-[16%] h-px bg-gradient-to-r from-primary/10 via-primary/40 to-primary/10' />
+          {steps.map((step, i) => (
+            <motion.div
+              key={step.title}
+              variants={fadeInUp}
+              className='relative text-center'
+            >
+              <div className='mx-auto h-16 w-16 rounded-full bg-primary text-white text-2xl font-black flex items-center justify-center shadow-lg shadow-primary/30'>
+                {i + 1}
+              </div>
+              <h3 className='text-xl md:text-2xl font-bold text-gray-900 mt-6'>
+                {step.title}
+              </h3>
+              <p className='text-gray-600 leading-relaxed mt-3 max-w-xs mx-auto'>
+                {step.text}
+              </p>
+              <NavLink
+                to={step.to}
+                className='inline-flex items-center gap-2 text-primary font-semibold text-sm mt-4 hover:gap-3 transition-all'
+              >
+                {step.cta} <ArrowRight className='w-4 h-4' />
+              </NavLink>
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
 
-      <section className='bg-light py-16 md:py-20 px-6 md:px-12'>
-        <div className='max-w-7xl mx-auto'>
-          <h2 className='text-white bg-primary px-4 py-2 rounded-md text-sm md:text-lg font-medium w-fit mb-2'>
-            TESTIMONIALS
-          </h2>
-          <p className='text-gray-600 mb-10 max-w-xl'>
-            Real words from the professionals, students, and graduates who've
-            been part of an Ignite Pro experience.
-          </p>
+      {/* EVENTS CAROUSEL */}
+      <section className='bg-gray-950 text-white py-20 md:py-28'>
+        <div className='max-w-7xl mx-auto px-6'>
+          <div className='flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12'>
+            <div className='max-w-2xl'>
+              <p className='text-purple-300 font-semibold uppercase tracking-widest text-sm mb-3'>
+                Our events
+              </p>
+              <h2 className='text-3xl md:text-5xl font-black leading-tight'>
+                Experiences that shape future leaders
+              </h2>
+            </div>
+            <div className='flex gap-4'>
+              <NavLink
+                to='/upcomingevents'
+                className='inline-flex items-center gap-2 bg-primary hover:bg-purple-700 px-6 py-3 rounded-full font-semibold transition'
+              >
+                Upcoming events
+              </NavLink>
+              <NavLink
+                to='/pastevents'
+                className='inline-flex items-center gap-2 border border-white/30 hover:bg-white/10 px-6 py-3 rounded-full font-semibold transition'
+              >
+                Past events
+              </NavLink>
+            </div>
+          </div>
 
           <Swiper
-            slidesPerView={1}
-            spaceBetween={24}
+            slidesPerView={1.15}
+            spaceBetween={20}
             pagination={{ clickable: true }}
-            autoplay={{ delay: 4000, disableOnInteraction: false }}
+            autoplay={{ delay: 4500, disableOnInteraction: false }}
             breakpoints={{
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
+              640: { slidesPerView: 2.2 },
+              1024: { slidesPerView: 3.2 },
             }}
             modules={[Pagination, Autoplay]}
             style={{
-              '--swiper-pagination-color': '#5D1AE5',
-              '--swiper-pagination-bullet-inactive-color': '#5D1AE5',
-              '--swiper-pagination-bullet-inactive-opacity': 0.2,
-              paddingBottom: '2.5rem',
+              '--swiper-pagination-color': '#ffffff',
+              '--swiper-pagination-bullet-inactive-color': '#ffffff',
+              '--swiper-pagination-bullet-inactive-opacity': 0.3,
+              paddingBottom: '3rem',
             }}
           >
-            {testimonials.map((t, i) => (
-              <SwiperSlide key={i}>
-                <motion.div
-                  custom={i}
-                  initial='hidden'
-                  whileInView='visible'
-                  viewport={{ once: true }}
-                  variants={fadeInUp}
-                  className='bg-white border border-purple-100 rounded-2xl shadow-sm hover:shadow-md transition-all p-6 h-full flex flex-col'
+            {pastEvents.map((event) => (
+              <SwiperSlide key={event.title}>
+                <NavLink
+                  to='/pastevents'
+                  className='group block relative h-96 rounded-3xl overflow-hidden'
                 >
-                  <Quote className='w-8 h-8 text-primary/15 mb-2' />
-
-                  {t.rating && (
-                    <div className='flex items-center gap-1 mb-3'>
-                      {Array.from({ length: 5 }).map((_, idx) => (
-                        <Star
-                          key={idx}
-                          className={`w-4 h-4 ${
-                            idx < t.rating
-                              ? 'fill-orange-500 text-orange-500'
-                              : 'text-purple-100'
-                          }`}
-                        />
-                      ))}
-                    </div>
-                  )}
-
-                  <p className='text-sm text-gray-700 leading-relaxed mb-5 flex-1'>
-                    {t.quote}
-                  </p>
-
-                  <div className='flex items-center gap-3 pt-4 border-t border-purple-50'>
-                    <div className='h-10 w-10 rounded-full bg-primary/10 text-primary font-semibold text-sm flex items-center justify-center shrink-0'>
-                      {getInitials(t.name) || getInitials(t.role) || '★'}
-                    </div>
-                    <div>
-                      {t.name?.trim() && (
-                        <p className='font-semibold text-gray-900 text-sm'>
-                          {t.name}
-                        </p>
-                      )}
-                      <p className='text-gray-500 text-xs'>{t.role}</p>
-                    </div>
+                  <img
+                    src={event.image}
+                    alt={event.title}
+                    className='absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-700'
+                  />
+                  <div className='absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent' />
+                  <div className='absolute bottom-0 p-6'>
+                    <h3 className='text-2xl font-bold'>{event.title}</h3>
+                    <p className='text-white/75 text-sm mt-1'>{event.tag}</p>
                   </div>
-                </motion.div>
+                </NavLink>
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
       </section>
 
-      <div className='px-6 md:px-12 py-16 md:py-20 max-w-7xl mx-auto'>
-        <motion.h2
+      {/* FEATURED STORY + TESTIMONIALS */}
+      <section className='max-w-7xl mx-auto px-6 py-20 md:py-28'>
+        <SectionHeading
+          eyebrow='Stories'
+          title='Real people, real growth'
+          text="Words from the students, graduates, founders and professionals who've been part of an Ignite Pro experience."
+        />
+
+        {featured && (
+          <motion.div
+            initial='hidden'
+            whileInView='visible'
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInUp}
+            className='relative bg-primary text-white rounded-[2rem] p-8 md:p-14 overflow-hidden mb-12'
+          >
+            <div className='absolute -top-20 -right-20 h-72 w-72 rounded-full bg-white/10 blur-2xl' />
+            <Quote className='w-12 h-12 text-white/30 mb-6' />
+            <p className='relative text-xl md:text-3xl font-medium leading-relaxed max-w-4xl'>
+              “{featured.quote}”
+            </p>
+            <div className='flex items-center gap-4 mt-8'>
+              <div className='h-12 w-12 rounded-full bg-white text-primary font-bold flex items-center justify-center'>
+                {getInitials(featured.role)}
+              </div>
+              <div>
+                <p className='font-bold'>{featured.role}</p>
+                <p className='text-white/70 text-sm'>
+                  Ignite Pro Pitch Competition grant winner
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        )}
+
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={24}
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 5000, disableOnInteraction: false }}
+          breakpoints={{
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          modules={[Pagination, Autoplay]}
+          style={{
+            '--swiper-pagination-color': '#5D1AE5',
+            '--swiper-pagination-bullet-inactive-color': '#5D1AE5',
+            '--swiper-pagination-bullet-inactive-opacity': 0.2,
+            paddingBottom: '2.5rem',
+          }}
+        >
+          {otherTestimonials.map((t, i) => (
+            <SwiperSlide key={i} className='!h-auto'>
+              <div className='bg-white border border-purple-100 rounded-2xl shadow-sm p-6 h-full flex flex-col'>
+                {t.rating && (
+                  <div className='flex items-center gap-1 mb-3'>
+                    {Array.from({ length: 5 }).map((_, idx) => (
+                      <Star
+                        key={idx}
+                        className={`w-4 h-4 ${
+                          idx < t.rating
+                            ? 'fill-orange-500 text-orange-500'
+                            : 'text-purple-100'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                )}
+                <p className='text-sm text-gray-700 leading-relaxed mb-5 flex-1 line-clamp-[8]'>
+                  {t.quote}
+                </p>
+                <div className='flex items-center gap-3 pt-4 border-t border-purple-50'>
+                  <div className='h-10 w-10 rounded-full bg-primary/10 text-primary font-semibold text-sm flex items-center justify-center shrink-0'>
+                    {getInitials(t.name) || getInitials(t.role) || '★'}
+                  </div>
+                  <div>
+                    {t.name?.trim() && t.name.trim() !== '.' && (
+                      <p className='font-semibold text-gray-900 text-sm'>
+                        {t.name}
+                      </p>
+                    )}
+                    <p className='text-gray-500 text-xs'>{t.role}</p>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </section>
+
+      {/* GALLERY PREVIEW */}
+      <section className='bg-light py-20 md:py-24'>
+        <div className='max-w-7xl mx-auto px-6'>
+          <div className='flex flex-col md:flex-row md:items-end md:justify-between gap-6'>
+            <SectionHeading
+              eyebrow='Gallery'
+              title='Moments from Accelerate 3.0'
+            />
+            <NavLink
+              to='/gallery'
+              className='inline-flex items-center gap-2 text-primary font-semibold mb-12 hover:gap-3 transition-all'
+            >
+              View full gallery <ArrowRight className='w-5 h-5' />
+            </NavLink>
+          </div>
+          <div className='grid grid-cols-2 md:grid-cols-3 gap-4'>
+            {galleryPreview.map((img, i) => (
+              <motion.div
+                key={img}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, delay: (i % 3) * 0.1 }}
+                className='overflow-hidden rounded-2xl aspect-[4/3]'
+              >
+                <img
+                  src={img}
+                  alt={`Accelerate 3.0 moment ${i + 1}`}
+                  className='h-full w-full object-cover hover:scale-105 transition-transform duration-700'
+                />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* GET INVOLVED */}
+      <section className='max-w-7xl mx-auto px-6 py-20 md:py-28'>
+        <motion.div
           initial='hidden'
           whileInView='visible'
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
           variants={fadeInUp}
-          className='text-white bg-primary px-4 py-2 rounded-md text-sm md:text-lg font-medium w-fit mb-6'
+          className='relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-primary to-purple-900 text-white px-8 py-14 md:px-16 md:py-20 text-center'
         >
-          PICTURE EXCERPT FROM ACCELERATE 3.0
-        </motion.h2>
-        <PhotoMasonry images={excerptPhotos} />
-      </div>
+          <div className='absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-orange-400/20 blur-3xl' />
+          <div className='absolute -top-24 -right-24 h-80 w-80 rounded-full bg-white/10 blur-3xl' />
+          <h2 className='relative text-3xl md:text-5xl font-black leading-tight max-w-3xl mx-auto'>
+            Help us ignite the next generation of leaders
+          </h2>
+          <p className='relative text-white/85 text-base md:text-lg max-w-2xl mx-auto mt-5'>
+            Our bootcamps, grants and mentorship are made possible by generous
+            partners, volunteers and donors. Maybe you'd like to be involved.
+          </p>
+          <div className='relative flex flex-col sm:flex-row justify-center gap-4 mt-10'>
+            <NavLink
+              to='/donate'
+              className='inline-flex items-center justify-center gap-2 bg-white text-primary px-8 py-4 rounded-full font-bold hover:bg-orange-50 transition'
+            >
+              <Heart className='w-5 h-5' /> Donate
+            </NavLink>
+            <NavLink
+              to='/contact'
+              className='inline-flex items-center justify-center gap-2 border border-white/50 px-8 py-4 rounded-full font-bold hover:bg-white/10 transition'
+            >
+              <HandHeart className='w-5 h-5' /> Partner or volunteer
+            </NavLink>
+          </div>
+        </motion.div>
+      </section>
     </>
   );
 };
