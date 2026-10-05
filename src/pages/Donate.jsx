@@ -1,6 +1,7 @@
 // import React, { useState } from 'react';
 // import { motion, AnimatePresence } from 'framer-motion';
 import a23 from '../assets/a23.jpeg';
+import BookDriveCallout from '../components/BookDriveCallout';
 import DonationAccounts from '../components/DonationAccounts';
 
 const Donate = () => {
@@ -141,6 +142,8 @@ const Donate = () => {
           </div>
         </div>
       </section>
+
+      <BookDriveCallout />
 
       <DonationAccounts />
 

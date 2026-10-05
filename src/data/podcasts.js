@@ -9,6 +9,10 @@ const podcasts = [
     thumbnail: Podthumb4,
     youtube: 'https://www.youtube.com/watch?v=iDE-S5CLTkA',
     date: '27th,June 2026',
+    guest: 'Babatunde Akin Moses',
+    guestRole: 'Founder & Social Impact Leader',
+    description:
+      'Discover how purpose-driven leadership can create meaningful impact beyond financial success. Join this powerful conversation featuring practical insights, leadership lessons, and real-life experiences.',
   },
   {
     title: 'TAKING CHANCES: The Audacity to Turn Challenges Into Opportunities',

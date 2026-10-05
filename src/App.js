@@ -19,6 +19,9 @@ import Podcast from './components/Podcast';
 import AcceleratePage from './pages/AcceleratePage';
 import Donate from './pages/Donate';
 import ScholarshipPage from './pages/ScholarshipPage';
+import Programs from './pages/Programs';
+import ProgramPage from './pages/ProgramPage';
+import EditionPage from './pages/EditionPage';
 
 function App() {
   return (
@@ -43,6 +46,12 @@ function App() {
           <Route path='/accelerate3.0' element={<AcceleratePage />} />
           <Route path='/accelerate3.0/scholarship' element={<ScholarshipPage />} />
           <Route path='/donate' element={<Donate />} />
+          <Route path='/programs' element={<Programs />} />
+          <Route path='/programs/:programSlug' element={<ProgramPage />} />
+          <Route
+            path='/programs/:programSlug/:editionSlug'
+            element={<EditionPage />}
+          />
         </Routes>
       
 

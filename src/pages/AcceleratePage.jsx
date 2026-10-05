@@ -3,69 +3,13 @@ import { motion } from 'framer-motion';
 
 import HeroImage from '../assets/accelerate3.jpeg';
 
-import Speaker1 from '../assets/Falade.jpeg';
-import Speaker2 from '../assets/Olusola.jpg';
-
-import Fire1 from '../assets/Nixon.jpeg';
-
-import Panel1 from '../assets/Obi.jpeg';
-import Panel2 from '../assets/Sola.jpeg';
-import Panel3 from '../assets/Tracy.jpeg';
-import Panel4 from '../assets/Hanson.jpeg';
-
-import Fac from '../assets/Nei.jpeg';
-
-const speakers = [
-  {
-    image: Speaker1,
-    name: 'Adegbite Falade',
-    role: ' MD/CEO of Aradel Holdings Plc',
-  },
-  {
-    image: Speaker2,
-    name: 'Olusola Olaleye',
-    role: ' Serial Entrepreneur & Business Consultant',
-  },
-];
-
-const fireside = [
-  {
-    image: Fire1,
-    name: ' Nixon Iwedi',
-    role: 'Managing Director/Chief Executive Officer of Signature Bank Limited',
-  },
-];
-
-const panelists = [
-  {
-    image: Panel1,
-    name: 'Obi Imemba ',
-    role: 'Executive Director at TotalEnergies EP Nigeria Limited.',
-  },
-  {
-    image: Panel2,
-    name: 'Sola Adesakin',
-    role: 'Founder of Smart Stewards Financial Advisory',
-  },
-  {
-    image: Panel3,
-    name: 'Tracy Diamonds',
-    role: 'Founder and CEO of Saint Tracy',
-  },
-  {
-    image: Panel4,
-    name: 'Dr. (Mrs) Edughom Hanson',
-    role: 'CEO of Rivulet Solutions Limited',
-  },
-];
-
-const facilitator = [
-  {
-    image: Fac,
-    name: 'Shammah Nei ',
-    role: 'Managing Director at Renaissance Innovation Labs',
-  },
-];
+import TeamSection from '../components/TeamSection';
+import {
+  accelerate3Speakers as speakers,
+  accelerate3Fireside as fireside,
+  accelerate3Panelists as panelists,
+  accelerate3Facilitator as facilitator,
+} from '../data/speakers';
 
 const AcceleratePage = () => {
   return (
@@ -380,55 +324,6 @@ const AcceleratePage = () => {
         </div>
       </section>
     </div>
-  );
-};
-
-/* ========================================
-   TEAM SECTION COMPONENT
-======================================== */
-
-const TeamSection = ({ title, data, bg = 'bg-white' }) => {
-  return (
-    <section className={`py-20 px-6 md:px-16 ${bg}`}>
-      <div className='max-w-7xl mx-auto'>
-        <div className='text-center mb-16'>
-          <h2 className='text-4xl md:text-5xl font-bold text-gray-900'>
-            {title}
-          </h2>
-        </div>
-
-        <div className='grid sm:grid-cols-2 lg:grid-cols-4 gap-8'>
-          {data.map((person, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className='group bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:-translate-y-3 transition duration-300'
-            >
-              <div className='overflow-hidden'>
-                <img
-                  src={person.image}
-                  alt={person.name}
-                  className='w-full h-80 object-cover group-hover:scale-105 transition duration-500'
-                />
-              </div>
-
-              <div className='p-6 text-center'>
-                <h3 className='text-xl font-bold text-gray-900'>
-                  {person.name}
-                </h3>
-
-                <p className='text-gray-600 mt-2 text-sm leading-relaxed'>
-                  {person.role}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
   );
 };
 

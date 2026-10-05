@@ -20,6 +20,7 @@ import {
   Download,
 } from 'lucide-react';
 import { testimonials } from '../data/testimonials';
+import BookDriveCallout from '../components/BookDriveCallout';
 import Hero1 from '../assets/hero-1.jpg';
 import Hero2 from '../assets/hero-2.jpg';
 import Hero3 from '../assets/hero-3.jpg';
@@ -505,6 +506,9 @@ const Home = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* CSR BOOK DRIVE */}
+      <BookDriveCallout />
 
       {/* HOW IT WORKS */}
       <section className='max-w-7xl mx-auto px-6 py-20 md:py-28'>

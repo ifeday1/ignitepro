@@ -1,11 +1,44 @@
-import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../assets/logo.png';
+import { programs, programPath, editionPath } from '../data/programs';
+
+// A program with more than one edition gets its own sub-dropdown; otherwise
+// it links straight to its page.
+const programsDropdown = [
+  { to: '/programs', label: 'All Programs' },
+  ...programs.map((program) => ({
+    to: programPath(program),
+    label: program.name,
+    children:
+      program.editions.length > 1
+        ? program.editions.map((edition) => ({
+            to: editionPath(program, edition),
+            label: edition.name,
+          }))
+        : null,
+  })),
+];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const [openSub, setOpenSub] = useState(null);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    setIsOpen(false);
+    setOpenDropdown(null);
+    setOpenSub(null);
+  }, [pathname]);
+
+  const toggleDropdown = (label) => {
+    setOpenDropdown(openDropdown === label ? null : label);
+    setOpenSub(null);
+  };
+
+  const toggleSub = (label) => setOpenSub(openSub === label ? null : label);
 
   const navItems = [
     { to: '/', label: 'Home' },
@@ -27,6 +60,8 @@ export default function Navbar() {
         },
       ],
     },
+
+    { label: 'Programs', match: '/programs', dropdown: programsDropdown },
 
     { to: '/works', label: 'Works' },
 
@@ -54,6 +89,18 @@ export default function Navbar() {
       viewBox='0 0 24 24'
     >
       <path strokeLinecap='round' strokeLinejoin='round' d='M19 9l-7 7-7-7' />
+    </svg>
+  );
+
+  const ChevronRightIcon = () => (
+    <svg
+      className='w-4 h-4'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='2'
+      viewBox='0 0 24 24'
+    >
+      <path strokeLinecap='round' strokeLinejoin='round' d='M9 5l7 7-7 7' />
     </svg>
   );
 
@@ -92,16 +139,27 @@ export default function Navbar() {
                   key={index}
                   className='relative'
                   onMouseEnter={() => setOpenDropdown(item.label)}
-                  onMouseLeave={() => setOpenDropdown(null)}
+                  onMouseLeave={() => {
+                    setOpenDropdown(null);
+                    setOpenSub(null);
+                  }}
                 >
-                  <button className='inline-flex items-center px-2 py-1 hover:text-primary transition duration-300'>
+                  <button
+                    onClick={() => toggleDropdown(item.label)}
+                    aria-expanded={openDropdown === item.label}
+                    className={`inline-flex items-center px-2 py-1 hover:text-primary transition duration-300 ${
+                      item.match && pathname.startsWith(item.match)
+                        ? 'text-primary font-semibold'
+                        : ''
+                    }`}
+                  >
                     {item.label}
                     <ChevronDownIcon rotate={openDropdown === item.label} />
                   </button>
 
                   {/* DROPDOWN */}
                   <div
-                    className={`absolute left-0 top-10 w-60 bg-white border border-gray-100 rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 ${
+                    className={`absolute left-0 top-10 w-60 bg-white border border-gray-100 rounded-2xl shadow-2xl transition-all duration-300 before:absolute before:inset-x-0 before:-top-3 before:h-3 before:content-[''] ${
                       openDropdown === item.label
                         ? 'opacity-100 visible translate-y-0'
                         : 'opacity-0 invisible -translate-y-2'
@@ -119,11 +177,64 @@ export default function Navbar() {
                             {sub.label}
                             <DownloadIcon />
                           </a>
+                        ) : sub.children ? (
+                          <div
+                            key={subIdx}
+                            className='relative'
+                            onMouseEnter={() => setOpenSub(sub.label)}
+                            onMouseLeave={() => setOpenSub(null)}
+                          >
+                            <div className='flex items-center hover:bg-gray-50 transition'>
+                              <NavLink
+                                to={sub.to}
+                                className='flex-1 pl-5 py-3 text-sm'
+                              >
+                                {sub.label}
+                              </NavLink>
+                              <button
+                                onClick={() => toggleSub(sub.label)}
+                                aria-label={`Show ${sub.label} editions`}
+                                aria-expanded={openSub === sub.label}
+                                className={`px-4 py-3 text-gray-400 hover:text-primary transition-transform duration-300 ${
+                                  openSub === sub.label
+                                    ? 'rotate-90 lg:rotate-0 text-primary'
+                                    : ''
+                                }`}
+                              >
+                                <ChevronRightIcon />
+                              </button>
+                            </div>
+
+                            {/* SUB-DROPDOWN: flyout on large screens, inline below that */}
+                            {openSub === sub.label && (
+                              <div className='bg-gray-50 py-1 lg:absolute lg:left-full lg:top-0 lg:-mt-2 lg:w-72 lg:bg-white lg:border lg:border-gray-100 lg:rounded-2xl lg:shadow-2xl lg:py-2'>
+                                {sub.children.map((child) => (
+                                  <NavLink
+                                    key={child.to}
+                                    to={child.to}
+                                    title={child.label}
+                                    className={({ isActive }) =>
+                                      `block truncate pl-8 pr-5 lg:px-5 py-2.5 text-sm hover:bg-gray-50 lg:hover:bg-gray-50 transition ${
+                                        isActive ? 'text-primary font-semibold' : ''
+                                      }`
+                                    }
+                                  >
+                                    {child.label}
+                                  </NavLink>
+                                ))}
+                              </div>
+                            )}
+                          </div>
                         ) : (
                           <NavLink
                             key={subIdx}
                             to={sub.to}
-                            className='block px-5 py-3 text-sm hover:bg-gray-50 transition'
+                            end
+                            className={({ isActive }) =>
+                              `block px-5 py-3 text-sm hover:bg-gray-50 transition ${
+                                isActive ? 'text-primary font-semibold' : ''
+                              }`
+                            }
                           >
                             {sub.label}
                           </NavLink>
@@ -203,16 +314,13 @@ export default function Navbar() {
               transition={{ duration: 0.3 }}
               className='md:hidden overflow-hidden bg-white border-t border-gray-100'
             >
-              <div className='px-4 py-6 space-y-5'>
+              <div className='px-4 py-6 space-y-5 max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain'>
                 {navItems.map((item, i) =>
                   item.dropdown ? (
                     <div key={i}>
                       <button
-                        onClick={() =>
-                          setOpenDropdown(
-                            openDropdown === item.label ? null : item.label,
-                          )
-                        }
+                        onClick={() => toggleDropdown(item.label)}
+                        aria-expanded={openDropdown === item.label}
                         className='w-full flex justify-between items-center font-medium text-gray-800'
                       >
                         {item.label}
@@ -232,6 +340,43 @@ export default function Navbar() {
                                 {sub.label}
                                 <DownloadIcon />
                               </a>
+                            ) : sub.children ? (
+                              <div key={j}>
+                                <div className='flex items-center justify-between'>
+                                  <NavLink
+                                    to={sub.to}
+                                    onClick={() => setIsOpen(false)}
+                                    className='text-sm text-gray-700'
+                                  >
+                                    {sub.label}
+                                  </NavLink>
+                                  <button
+                                    onClick={() => toggleSub(sub.label)}
+                                    aria-label={`Show ${sub.label} editions`}
+                                    aria-expanded={openSub === sub.label}
+                                    className='pl-4 text-gray-500'
+                                  >
+                                    <ChevronDownIcon
+                                      rotate={openSub === sub.label}
+                                    />
+                                  </button>
+                                </div>
+
+                                {openSub === sub.label && (
+                                  <div className='mt-3 pl-4 space-y-3 border-l border-gray-200'>
+                                    {sub.children.map((child) => (
+                                      <NavLink
+                                        key={child.to}
+                                        to={child.to}
+                                        onClick={() => setIsOpen(false)}
+                                        className='block text-sm text-gray-600'
+                                      >
+                                        {child.label}
+                                      </NavLink>
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
                             ) : (
                               <NavLink
                                 key={j}
