@@ -5,7 +5,7 @@ import Podthumb4 from '../assets/Podthumb4.jpeg';
 
 const podcasts = [
   {
-    title: 'CREATING IMPACT BEYOND PROFIT',
+    title: 'Creating Impact Beyond Profit',
     thumbnail: Podthumb4,
     youtube: 'https://www.youtube.com/watch?v=iDE-S5CLTkA',
     date: '27th,June 2026',
@@ -15,7 +15,7 @@ const podcasts = [
       'Discover how purpose-driven leadership can create meaningful impact beyond financial success. Join this powerful conversation featuring practical insights, leadership lessons, and real-life experiences.',
   },
   {
-    title: 'TAKING CHANCES: The Audacity to Turn Challenges Into Opportunities',
+    title: 'Taking Chances: The Audacity to Turn Challenges Into Opportunities',
     thumbnail: Podthumb3,
     youtube: 'https://youtu.be/ZZ5ZbrbW6JY?si=g-K53Aisd6gUgYuY',
     date: '25th,May 2026',

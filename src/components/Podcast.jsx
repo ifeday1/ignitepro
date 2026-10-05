@@ -72,6 +72,26 @@ const Podcast = () => {
           </div>
         </div>
       </section>
+
+      {/* IMPACT NOTE */}
+      <section className='px-6 md:px-16 pb-24'>
+        <div className='max-w-4xl mx-auto rounded-2xl bg-white/5 border border-white/10 backdrop-blur-lg p-8 md:p-12 text-center'>
+          <h2 className='text-2xl md:text-3xl font-semibold mb-3'>
+            Podcast <span className='text-purple-500'>Impact Note</span>
+          </h2>
+          <p className='text-gray-300 max-w-2xl mx-auto mb-8'>
+            See the reach and impact of The Ignite Room Leadership Podcast —
+            the conversations, the guests, and the lives being shaped.
+          </p>
+          <a
+            href='/Podcast Impact Note.pdf'
+            download='Ignite-Room-Podcast-Impact-Note.pdf'
+            className='inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-500 text-white font-medium px-6 py-3 rounded-lg transition duration-300'
+          >
+            Download Impact Note ↓
+          </a>
+        </div>
+      </section>
     </div>
   );
 };

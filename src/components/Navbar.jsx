@@ -71,6 +71,11 @@ export default function Navbar() {
         { to: '/upcomingevents', label: 'Upcoming Events' },
         { to: '/pastevents', label: 'Past Events' },
         { to: '/podcast', label: 'Podcast' },
+        {
+          type: 'download',
+          href: '/Podcast Impact Note.pdf',
+          label: 'Download Podcast Impact Note',
+        },
         { to: '/gallery', label: 'Gallery' },
       ],
     },

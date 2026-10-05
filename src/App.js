@@ -22,6 +22,7 @@ import ScholarshipPage from './pages/ScholarshipPage';
 import Programs from './pages/Programs';
 import ProgramPage from './pages/ProgramPage';
 import EditionPage from './pages/EditionPage';
+import ScrollReveal from './components/ScrollReveal';
 
 function App() {
   return (
@@ -29,30 +30,32 @@ function App() {
       <Router>
         <Scroll />
         <Navbar />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/meet-the-team' element={<Team />} />
-          <Route path='/works' element={<Services />} />
-          <Route path='/pastevents' element={<PEvent />} />
-          <Route path='/upcomingevents' element={<Events />} />
-          <Route path='/podcast' element={<Podcast />} />
-          <Route path='/gallery' element={<Gallery />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='/pitch' element={<Pitch />} />
-          <Route path='/terms-and-condition' element={<Terms />} />
-          <Route path='/pitch-form' element={<Form />} />
-          <Route path='/speakers' element={<Speakers />} />
-          <Route path='/accelerate3.0' element={<AcceleratePage />} />
-          <Route path='/accelerate3.0/scholarship' element={<ScholarshipPage />} />
-          <Route path='/donate' element={<Donate />} />
-          <Route path='/programs' element={<Programs />} />
-          <Route path='/programs/:programSlug' element={<ProgramPage />} />
-          <Route
-            path='/programs/:programSlug/:editionSlug'
-            element={<EditionPage />}
-          />
-        </Routes>
+        <ScrollReveal>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/meet-the-team' element={<Team />} />
+            <Route path='/works' element={<Services />} />
+            <Route path='/pastevents' element={<PEvent />} />
+            <Route path='/upcomingevents' element={<Events />} />
+            <Route path='/podcast' element={<Podcast />} />
+            <Route path='/gallery' element={<Gallery />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='/pitch' element={<Pitch />} />
+            <Route path='/terms-and-condition' element={<Terms />} />
+            <Route path='/pitch-form' element={<Form />} />
+            <Route path='/speakers' element={<Speakers />} />
+            <Route path='/accelerate3.0' element={<AcceleratePage />} />
+            <Route path='/accelerate3.0/scholarship' element={<ScholarshipPage />} />
+            <Route path='/donate' element={<Donate />} />
+            <Route path='/programs' element={<Programs />} />
+            <Route path='/programs/:programSlug' element={<ProgramPage />} />
+            <Route
+              path='/programs/:programSlug/:editionSlug'
+              element={<EditionPage />}
+            />
+          </Routes>
+        </ScrollReveal>
       
 
         <ScrollToTop />

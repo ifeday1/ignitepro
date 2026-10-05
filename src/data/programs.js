@@ -10,6 +10,14 @@ import Csr19 from '../assets/csr19.jpg';
 import BookDrive from '../assets/csr-book-drive.jpg';
 import BookDriveFlyer from '../assets/csr-book-drive-flyer.jpg';
 import PodcastThumb from '../assets/podthumb1.jpeg';
+import PitchPhoto from '../assets/pitch2.png';
+import ScholarshipPhoto from '../assets/SCimg.jpeg';
+import PitchWinner from '../assets/a23.jpeg';
+import PitchFirstRunnerUp from '../assets/a24.jpeg';
+import PitchSecondRunnerUp from '../assets/a21.jpeg';
+import PitchFinalists from '../assets/a25.jpeg';
+import PitchStage from '../assets/a27.jpeg';
+import PitchJudges from '../assets/a17.jpeg';
 import { getPastEvent } from './pastEvents';
 import {
   accelerate1,
@@ -226,6 +234,84 @@ Our Give a Book drive collects secondary school textbooks for students who need 
     ],
   },
   {
+    slug: 'ignite-skills-lab',
+    name: 'Ignite Skills Lab',
+    image: PitchPhoto,
+    short:
+      'Hands-on programmes that equip young professionals and founders with practical, in-demand skills.',
+    about: [
+      'Ignite Skills Lab is where learning turns into doing. It brings together the Ignite Pro Community’s practical skills programmes, from pitching a venture to investors to building a career in Product Management.',
+      'Each programme pairs hands-on training with mentorship from industry experts, so participants leave with skills they can put to work straight away.',
+    ],
+    audience:
+      'Students, graduates, early-career professionals and startup founders.',
+    gains: [
+      'Practical, in-demand skills taught by industry experts.',
+      'Mentorship, feedback and real-world exposure.',
+      'Access to funding, scholarships and career opportunities.',
+      'A community of driven peers to grow with.',
+    ],
+    editions: [
+      {
+        slug: 'pitch-tank-competition',
+        name: 'Pitch Tank Competition',
+        theme: 'The Future Forward Pitch Tank',
+        year: getPastEvent('accelerate-2-0').year,
+        date: 'July 26, 2025',
+        venue: { name: 'Celebr8 Centre', address: 'Port Harcourt' },
+        image: PitchFinalists,
+        summary: `The Future Forward Pitch Tank was held on 26 July 2025 at Celebr8 Centre, Port Harcourt, as a central highlight of Accelerate 2.0. The competition set out to identify and support innovative, purpose-driven startups that had moved beyond the idea stage and built a Minimum Viable Product (MVP) with real market traction.
+
+Founders and co-founders of registered businesses that had been operating for more than six months applied with a short video pitch and a pitch deck. Ventures came from across sectors, from education and agriculture to hardware technology and healthcare, and both tech-enabled and non-tech solutions were welcome.
+
+Applications were screened on pitch quality, market clarity, innovation, team strength and traction. The top 5 finalists then pitched live before a panel of expert judges, and three startups were awarded a combined ₦10 million in grants, alongside mentorship and support to grow their businesses and deepen their impact.`,
+        stats: [
+          { value: '₦10M', label: 'Total grant prize pool' },
+          { value: '5', label: 'Finalists pitched live' },
+          { value: '3', label: 'Startups awarded grants' },
+        ],
+        winners: {
+          title: 'Pitch Tank 2025 winners',
+          text: 'Congratulations to the founders who took home grants at the Future Forward Pitch Tank, Accelerate 2.0.',
+          data: [
+            { place: 'Winner', prize: '₦5,000,000', image: PitchWinner },
+            { place: '1st Runner Up', prize: '₦3,000,000', image: PitchFirstRunnerUp },
+            { place: '2nd Runner Up', prize: '₦2,000,000', image: PitchSecondRunnerUp },
+          ],
+        },
+        gallery: [
+          PitchStage,
+          PitchFinalists,
+          PitchWinner,
+          PitchFirstRunnerUp,
+          PitchSecondRunnerUp,
+          PitchJudges,
+        ],
+        testimonialRoles: ['Green Paragon Limited'],
+      },
+      {
+        slug: 'productdive',
+        name: 'ProductDive',
+        theme: 'Earn a Scholarship to Learn Product Management',
+        year: '2026',
+        image: ScholarshipPhoto,
+        summary: `Through a partnership with ProductDive, Accelerate 3.0 offered scholarships worth ₦420,000 each to ambitious students, recent graduates and early-career professionals in Rivers State, giving them the opportunity to gain practical Product Management skills.
+
+The scholarship covered the full programme fee and gave the selected scholars Product Management training from industry experts, industry exposure, community access and career opportunities.
+
+The scholarship was open to Accelerate 3.0 registrants aged 18 to 35 living in Port Harcourt or Rivers State: final-year students graduating in 2026, graduates of 2022–2025 and early-career professionals with 1–3 years’ experience, each with consistent access to a laptop. Applications closed in June 2026, and scholars were selected through a screening process.`,
+        stats: [
+          { value: '₦420K', label: 'Scholarship value per participant' },
+          { value: '100%', label: 'Of the programme fee covered' },
+          { value: '18–35', label: 'Age range' },
+        ],
+        links: [
+          { to: '/accelerate3.0', label: 'Accelerate 3.0 event page' },
+        ],
+      },
+    ],
+  },
+  {
     slug: 'ignite-podcast',
     name: 'Ignite Podcast',
     fullName: 'The Ignite Room Leadership Podcast',
@@ -245,6 +331,10 @@ Our Give a Book drive collects secondary school textbooks for students who need 
       {
         href: 'https://www.youtube.com/@IgniteProCommunity',
         label: 'Subscribe on YouTube',
+      },
+      {
+        href: '/Podcast Impact Note.pdf',
+        label: 'Download Podcast Impact Note',
       },
     ],
     editions: podcasts.map((episode) => ({

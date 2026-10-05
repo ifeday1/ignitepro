@@ -128,6 +128,50 @@ const EditionPage = () => {
             </section>
           )}
 
+          {/* WINNERS */}
+          {edition.winners && (
+            <section className='bg-light py-20 md:py-28'>
+              <div className='max-w-7xl mx-auto px-6'>
+                <SectionHeading
+                  eyebrow='Winners'
+                  title={edition.winners.title}
+                  text={edition.winners.text}
+                />
+                <div className='grid md:grid-cols-3 gap-8'>
+                  {edition.winners.data.map((w, i) => (
+                    <motion.div
+                      key={w.place}
+                      initial='hidden'
+                      whileInView='visible'
+                      viewport={{ once: true, amount: 0.2 }}
+                      variants={fadeInUp}
+                      className={`bg-white rounded-3xl overflow-hidden shadow-sm border ${
+                        i === 0 ? 'border-primary ring-2 ring-primary/20' : 'border-purple-100'
+                      }`}
+                    >
+                      <img
+                        src={w.image}
+                        alt={`${w.place}, ${edition.name}`}
+                        className='w-full aspect-[4/3] object-cover'
+                      />
+                      <div className='p-6'>
+                        <p className='text-sm uppercase tracking-widest text-primary font-semibold'>
+                          {w.place}
+                        </p>
+                        <p className='text-3xl font-black text-gray-900 mt-2'>
+                          {w.prize}
+                        </p>
+                        {w.name && (
+                          <p className='text-gray-600 mt-1'>{w.name}</p>
+                        )}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
+
           {/* DONATION APPEAL */}
           {edition.appeal && (
             <section className='bg-light py-20 md:py-28'>
