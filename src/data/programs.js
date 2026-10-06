@@ -12,6 +12,7 @@ import BookDriveFlyer from '../assets/csr-book-drive-flyer.jpg';
 import PodcastThumb from '../assets/podthumb1.jpeg';
 import PitchPhoto from '../assets/pitch2.png';
 import ScholarshipPhoto from '../assets/SCimg.jpeg';
+import ProductDiveFlyer from '../assets/productdive-flyer.jpeg';
 import PitchWinner from '../assets/a23.jpeg';
 import PitchFirstRunnerUp from '../assets/a24.jpeg';
 import PitchSecondRunnerUp from '../assets/a21.jpeg';
@@ -287,7 +288,7 @@ Applications were screened on pitch quality, market clarity, innovation, team st
           PitchSecondRunnerUp,
           PitchJudges,
         ],
-        testimonialRoles: ['Green Paragon Limited'],
+        testimonialRoles: ['Uri Creative', 'Straqa', 'Green Paragon Limited'],
       },
       {
         slug: 'productdive',
@@ -295,6 +296,7 @@ Applications were screened on pitch quality, market clarity, innovation, team st
         theme: 'Earn a Scholarship to Learn Product Management',
         year: '2026',
         image: ScholarshipPhoto,
+        flyer: ProductDiveFlyer,
         summary: `Through a partnership with ProductDive, Accelerate 3.0 offered scholarships worth ₦420,000 each to ambitious students, recent graduates and early-career professionals in Rivers State, giving them the opportunity to gain practical Product Management skills.
 
 The scholarship covered the full programme fee and gave the selected scholars Product Management training from industry experts, industry exposure, community access and career opportunities.

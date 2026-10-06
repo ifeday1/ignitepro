@@ -102,7 +102,7 @@ const members = [
     role: 'Deputy Project Lead',
     image: Nyeche,
     linkedin: '#',
-    desc: 'Nyeche Konita Onyinyechi serves as the Deputy Project Lead at Ignite Pro Community, supporting the coordination and execution of the organization’s programs and initiatives.',
+    desc: 'Konita Nyeche is a Chartered Accountant and Financial Analyst at Prado Power Limited, with a B.Sc. from Covenant University. She has a background in community development and outreach, including serving as a chapter lead with Naza Agape Foundation and contributing to youth-focused initiatives. She currently serves as the State Director of Women Impacting Nigeria, Abuja. Her interests lie at the intersection of finance and social impact, particularly nonprofit management, impact investing, and sustainable NGO financing. She is passionate about using her skills to support initiatives that create meaningful opportunities for young people and communities.',
   },
   {
     name: 'Awah-Isaac Monovie Esther',

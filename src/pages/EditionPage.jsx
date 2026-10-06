@@ -107,6 +107,17 @@ const EditionPage = () => {
                   text={edition.venue.address}
                 />
               )}
+              {edition.flyer && (
+                <motion.img
+                  initial='hidden'
+                  whileInView='visible'
+                  viewport={{ once: true, amount: 0.2 }}
+                  variants={fadeInUp}
+                  src={edition.flyer}
+                  alt={`${edition.name} flyer`}
+                  className='w-full max-w-md mx-auto rounded-3xl shadow-xl'
+                />
+              )}
             </div>
           </section>
 
